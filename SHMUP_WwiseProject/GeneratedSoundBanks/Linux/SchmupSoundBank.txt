@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1097980931	TestEvent			\Default Work Unit\TestEvent	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	320446847	FIRE loop sound effect	D:\Donnees\Travail\Projets_Unity\SHMUP\SHMUP_WwiseProject\.cache\Linux\SFX\FIRE loop sound effect_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\FIRE loop sound effect		4064036
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8514F812-C151-4368-93E1-D1BC280C19AC}" SchemaVersion="80">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{8514F812-C151-4368-93E1-D1BC280C19AC}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="TestEvent" ID="{780A47A6-F6D9-4AEB-9772-1660C7F5E43C}">
+					<ChildrenList>
+						<Action Name="" ID="{E47A16BE-6D28-4025-A724-EE615C63B9C7}" ShortID="638152463">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FIRE loop sound effect" ID="{48D7E016-CA3B-4F84-A937-CE07C582BF2F}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
