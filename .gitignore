@@ -39,3 +39,5 @@ sysinfo.txt
 # Wwise
 /SHMUP_WwiseProject/Originals/SFX/*.akd
 /SHMUP_WwiseProject/.cache/
+/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
+/Assets/WwiseSettings.xml
