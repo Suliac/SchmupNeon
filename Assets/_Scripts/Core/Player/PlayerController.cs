@@ -27,24 +27,29 @@ public class PlayerController : MonoBehaviour, IKillable
 
     // Components
     private Rigidbody playerBody;
+    private Shoot shoot;
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
 
-	private float horizMove;
+    private float horizMove;
     private float vertiMove;
     private bool isJumping;
     private bool hasMoved = false;
     private bool hasJumped = false;
 
+    private bool isShooting;
+
+    private float currentLife = 0.0f;
     #endregion
 
     #region Initialize
 
     private void Awake()
-	{
-		playerBody = GetComponent<Rigidbody> ();
-	}
+    {
+        playerBody = GetComponent<Rigidbody>();
+        shoot = GetComponent<Shoot>();
+    }
 
     private void OnEnable()
     {
@@ -56,11 +61,21 @@ public class PlayerController : MonoBehaviour, IKillable
     #endregion
 
     #region Core
+
     private void InputPlayer()
     {
         horizMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Horizontal");
         vertiMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Vertical");
         isJumping = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButtonDown("FireA");
+
+        if(PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButtonDown("FireB"))
+        {
+            shoot.SetIsShooting(true);
+        }
+        else if(PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButtonUp("FireB"))
+        {
+            shoot.SetIsShooting(false);
+        }
 
         if (horizMove != 0 || vertiMove != 0)
             hasMoved = true;
@@ -83,11 +98,11 @@ public class PlayerController : MonoBehaviour, IKillable
             hasJumped = false;
         }
     }
-    
+
     /////////////////////////////////////////////////////
 
-	private void Update()
-	{
+    private void Update()
+    {
         if (updateTimer.Ready())
         {
 
@@ -95,17 +110,17 @@ public class PlayerController : MonoBehaviour, IKillable
         InputPlayer();
     }
 
-	private void FixedUpdate()
-	{
+    private void FixedUpdate()
+    {
         MovePlayer();
-	}
+    }
 
     #endregion
 
     [FoldoutGroup("Debug"), Button("Kill")]
     public void Kill()
-	{
-		Debug.Log ("Dead");
+    {
+        Debug.Log("Dead");
         gameObject.SetActive(false);
-	}
+    }
 }

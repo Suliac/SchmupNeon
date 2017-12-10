@@ -21,6 +21,7 @@ public class SpawnPlayer : MonoBehaviour
     public PlayerController PlayerController { get { return playerController; } }
     private bool isSpawning = false;                    //le joueur est-il en train d'être spawn ?
 
+    private LifeBehavior playerLife;
     #endregion
 
     #region Initialization
@@ -31,6 +32,7 @@ public class SpawnPlayer : MonoBehaviour
         {
             playerController = player.GetComponent<PlayerController>();
             playerController.IdPlayer = transform.GetSiblingIndex();
+            playerLife = player.GetComponent<LifeBehavior>();
             player.transform.SetParent(GameManager.GetSingleton.MovingPlatform);
             player.transform.position = transform.position;
             animSpawn.SpawnPlayer = this;
@@ -72,6 +74,7 @@ public class SpawnPlayer : MonoBehaviour
         isSpawning = false;
         animSpawn.gameObject.SetActive(false);
         player.SetActive(true);
+        playerLife.InitLife(); // reinit life ici ?
     }
 
 
