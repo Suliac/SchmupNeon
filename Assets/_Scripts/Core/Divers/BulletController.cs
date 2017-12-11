@@ -7,14 +7,12 @@ using Sirenix.OdinInspector;
 public class BulletController : MonoBehaviour, IKillable
 {
     #region Attributes
-    [FoldoutGroup("Gameplay"), Tooltip("dommage sur les objets"), SerializeField]
-    private float bulletDamage = 50.0f;
+    //[FoldoutGroup("Gameplay"), Tooltip("dommage sur les objets"), SerializeField]
+    //private float bulletDamage = 50.0f;
 
     [FoldoutGroup("Gameplay"), Tooltip("speed de la bullet"), SerializeField]
     private float speedBullet = 3f;
-
-
-
+    
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
 	private FrequencyTimer updateTimer;
 
@@ -40,7 +38,7 @@ public class BulletController : MonoBehaviour, IKillable
     /// </summary>
     public void SetUpBullet()
     {
-        Debug.Log("ici active bullet");
+        //Debug.Log("ici active bullet");
         enabledBullet = true;           //active le bullet !
         isOnCamera.isOnScreen = true;
         isOnCamera.enabled = true;
@@ -71,20 +69,20 @@ public class BulletController : MonoBehaviour, IKillable
         }
     }
 
-    private void OnTriggerEnter(Collider col)
-    {
-        if (!enabledBullet) //si le bullet est désactivé, ne pas effectuer de test...
-            return;
+    //private void OnTriggerEnter(Collider col)
+    //{
+    //    if (!enabledBullet) //si le bullet est désactivé, ne pas effectuer de test...
+    //        return;
 
-        LifeBehavior life = col.gameObject.GetComponent<LifeBehavior>();
-        if (life)
-        {
-            enabledBullet = false;  //desactiver le bullet !
-            Debug.Log("bang");
-            life.TakeDamages(bulletDamage);
-            Kill();
-        }
-    }
+    //    LifeBehavior life = col.gameObject.GetComponent<LifeBehavior>();
+    //    if (life)
+    //    {
+    //        enabledBullet = false;  //desactiver le bullet !
+    //        //Debug.Log("bang");
+    //        life.TakeDamages(bulletDamage);
+    //        Kill();
+    //    }
+    //}
 
     public void Kill()
     {
