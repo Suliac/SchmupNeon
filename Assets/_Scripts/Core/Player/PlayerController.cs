@@ -34,9 +34,18 @@ public class PlayerController : MonoBehaviour, IKillable
     private Rigidbody playerBody;           //rigidbody du joueur
     public Rigidbody PlayerBody { get { return playerBody; } }
 
+    private int scorePlayer;                //score du player...
+    public int ScorePlayer { set
+        {
+            scorePlayer = value;
+            if (scorePlayer < 0)
+                scorePlayer = 0;
+            GameManager.GetSingleton.ScoreManager.setScore(idPlayer, scorePlayer);
+        } get { return scorePlayer; } }
 
     private float horizMove;                //mouvement horizontal du joueur
     private float vertiMove;                //mouvement vertical du joueur
+    
 
     private bool hasMoved = false;          //a-t-on bougé ?
 
@@ -129,6 +138,7 @@ public class PlayerController : MonoBehaviour, IKillable
     public void Kill()
     {
         Debug.Log("Dead");
+        ScorePlayer -= 5;
         gameObject.SetActive(false);
     }
 }

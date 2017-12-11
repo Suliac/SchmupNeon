@@ -9,6 +9,18 @@ using System.IO;
 public class DataSaver
 {
     #region Core
+
+    /*/// <summary>
+    /// Delete save file
+    /// </summary>
+    public static void Create(string name)
+    {
+        if (File.Exists(Application.persistentDataPath + name))
+        {
+            File.Delete(Application.persistentDataPath + name);
+        }
+    }*/
+
     /// <summary>
     /// Save data from path
     /// </summary>

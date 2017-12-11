@@ -34,9 +34,16 @@ public class BulletHell : Weapons
             Debug.LogError("y'en a + que prévue, voir dans objectPool pour ajouter des bullet");
             return;
         }
+        
         bullet.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);            //set le parent
         bullet.transform.rotation = transform.rotation;                                         //set la position
         bullet.transform.position = transform.position + transform.right * forwardBullet;       //set la rotation
+
+        //get le projectile du bullet, et le setup (qui peut être de plusieurs types !)
+        Projectile projectile = bullet.GetComponent<Projectile>();
+        projectile.SetUpBullet(PlayerController, PlayerController.PlayerBody.velocity.magnitude);
+
+        //enfin, l'activer
         bullet.SetActive(true);                                                                 //active l'objet
     }
 

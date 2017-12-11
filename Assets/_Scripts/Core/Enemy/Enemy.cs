@@ -29,11 +29,11 @@ public class Enemy : MonoBehaviour, IKillable
 
     private void Update()
     {
-      //optimisation des fps
-      if (updateTimer.Ready())
-      {
+        //optimisation des fps
+        if (updateTimer.Ready())
+        {
 
-      }
+        }
     }
 
     [FoldoutGroup("Debug"), Button("Kill")]

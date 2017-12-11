@@ -25,7 +25,13 @@ public class LifeBehavior : MonoBehaviour
 
     #region Core
 
-    public void TakeDamages(float damages)
+    /// <summary>
+    /// prend des dommages, renvoi vrai si on meurt
+    /// (pour le scorring)
+    /// </summary>
+    /// <param name="damages"></param>
+    /// <returns></returns>
+    public bool TakeDamages(float damages)
     {
         currentLife = Mathf.Max(0, currentLife - damages);
 
@@ -36,8 +42,10 @@ public class LifeBehavior : MonoBehaviour
             if (killable != null)
             {
                 killable.Kill();
+                return (true);
             }
         }
+        return (false);
     }
 
     public void InitLife()
