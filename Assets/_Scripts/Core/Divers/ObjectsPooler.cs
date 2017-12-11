@@ -72,13 +72,13 @@ public class ObjectsPooler : MonoBehaviour
     /// retourn un objet actuellement désactivé
     /// </summary>
     /// <returns></returns>
-    public GameObject GetPooledObject(string tag)
+    public GameObject GetPooledObject(string tag, bool startActive = true)
     {
         for (int i = 0; i < pooledObjects.Count; i++)
         {
             if (!pooledObjects[i].activeInHierarchy && pooledObjects[i].tag == tag)
             {
-                pooledObjects[i].SetActive(true);
+                pooledObjects[i].SetActive(startActive);
                 return pooledObjects[i];
             }
         }
@@ -91,8 +91,8 @@ public class ObjectsPooler : MonoBehaviour
                 if (item.shouldExpand)
                 {
                     GameObject obj = Instantiate(item.objectToPool, transform) as GameObject;
-                    if (!obj.activeSelf)
-                        obj.SetActive(true);
+
+                    obj.SetActive(startActive);
                     pooledObjects.Add(obj);
                     return (obj);
                 }

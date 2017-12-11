@@ -12,7 +12,7 @@ public class DataSaver
     /// <summary>
     /// Save data from path
     /// </summary>
-	public void Save(PersistantData data)
+	public static void Save(PersistantData data)
     {
 		if (!data.GetType().IsSerializable)
 		{
@@ -30,7 +30,7 @@ public class DataSaver
     /// <summary>
     /// Load data from path
     /// </summary>
-	public T Load<T>(string path)
+	public static T Load<T>(string path)
     {
 		if (typeof(T).IsSerializable && File.Exists (Application.persistentDataPath + path))
 		{
@@ -49,7 +49,7 @@ public class DataSaver
     /// <summary>
     /// Delete save file
     /// </summary>
-	public void DeleteSave(string name)
+	public static void DeleteSave(string name)
     {
 		if (File.Exists(Application.persistentDataPath + name))
         {

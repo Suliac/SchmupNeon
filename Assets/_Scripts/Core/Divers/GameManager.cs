@@ -7,6 +7,9 @@ using System.Collections.Generic;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
+    [FoldoutGroup("GamePlay"), Tooltip("Sauvegarde du joueur"), SerializeField]
+    public PlayerData data;
+
     private static GameManager instance;
     public static GameManager GetSingleton
     {
@@ -19,8 +22,8 @@ public class GameManager : MonoBehaviour
     public List<SpawnPlayer> SpawnPlayer { get { return spawnPlayer; } }
 
     [FoldoutGroup("Object In World"), Tooltip("Platform mouvante"), SerializeField]
-    private Transform movingPlatform;
-    public Transform MovingPlatform { get { return movingPlatform; } }
+    private Transform objectDynamiclyCreated;
+    public Transform ObjectDynamiclyCreated { get { return objectDynamiclyCreated; } }
 
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]
     private GameObject prefabsPlayer;
@@ -47,10 +50,60 @@ public class GameManager : MonoBehaviour
     {
         SetSingleton();
         playerConnect = PlayerConnected.GetSingleton;
+        if (!objectDynamiclyCreated)
+            Debug.LogError("error");
+    }
+
+    /// <summary>
+    /// lors du start: load les données, sinon, sauvegarder !
+    /// </summary>
+    private void Start()
+    {
+        if (!load())
+            resetAll();
     }
     #endregion
 
     #region Core
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void resetAll()
+    {
+        Debug.Log("reset les stats du joueurs");
+        data.scorePlayer = 0;
+        save();
+    }
+
+
+    /// <summary>
+    /// renvoi VRAI si ça à loadé !
+    /// </summary>
+    /// <returns></returns>
+    [FoldoutGroup("Debug"), Button("load")]
+    public bool load()
+    {
+        data = DataSaver.Load<PlayerData>("playerData.dat");
+        if (data == null)
+            return (false);
+        return (!(data == null));
+    }
+
+
+    [FoldoutGroup("Debug"), Button("save")]
+    public void save()
+    {
+        DataSaver.Save(data);
+    }
+
+    [FoldoutGroup("Debug"), Button("delete")]
+    public void delete()
+    {
+        DataSaver.DeleteSave("playerData.dat");
+    }
+
+
     /// <summary>
     /// ici gère la déconexion des manettes
     /// (si une manette se connecte, le spawnPlayer va automatiquement

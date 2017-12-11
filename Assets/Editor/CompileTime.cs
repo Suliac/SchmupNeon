@@ -32,6 +32,8 @@ class CompileTime : EditorWindow
         {
             startTime = EditorApplication.timeSinceStartup;
             PlayerPrefs.SetFloat("CompileStartTime", (float)startTime);
+            if (!PlayerPrefs.HasKey("TotalCompileTime"))
+                PlayerPrefs.SetFloat("TotalCompileTime", (float)0);
             isTrackingTime = true;
         }
         else if (!EditorApplication.isCompiling && isTrackingTime)
@@ -40,6 +42,14 @@ class CompileTime : EditorWindow
             isTrackingTime = false;
             var compileTime = finishTime - startTime;
             PlayerPrefs.DeleteKey("CompileStartTime");
+            
+            if (PlayerPrefs.HasKey("TotalCompileTime"))
+            {
+                float totalTime = PlayerPrefs.GetFloat("TotalCompileTime");
+                totalTime += (float)compileTime;
+                PlayerPrefs.SetFloat("TotalCompileTime", totalTime);
+                Debug.Log("TotalCompileTime: " + totalTime.ToString("0.000") + "s");
+            }
             Debug.Log("Compilation time: " + compileTime.ToString("0.000") + "s");
         }
     }

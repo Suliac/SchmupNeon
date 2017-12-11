@@ -33,7 +33,7 @@ public class SpawnPlayer : MonoBehaviour
             playerController = player.GetComponent<PlayerController>();
             playerController.IdPlayer = transform.GetSiblingIndex();
             playerLife = player.GetComponent<LifeBehavior>();
-            player.transform.SetParent(GameManager.GetSingleton.MovingPlatform);
+            player.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
             player.transform.position = transform.position;
             animSpawn.SpawnPlayer = this;
             animSpawn.gameObject.SetActive(false);
