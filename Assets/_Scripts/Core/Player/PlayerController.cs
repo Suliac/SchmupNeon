@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour, IKillable
 {
     #region Attributes
 
-    [FoldoutGroup("Gameplay"), Tooltip("Mouvement du joueur"), SerializeField]
+    [FoldoutGroup("Gameplay"), Tooltip("Vitesse de déplacement du joueur"), SerializeField]
     private float moveSpeed = 10.0f;
 
 
@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour, IKillable
     private Rigidbody playerBody;           //rigidbody du joueur
     public Rigidbody PlayerBody { get { return playerBody; } }
 
+    private LifeBehavior lifeBehavior;      //liens vers la vie du joueur
+
     private int scorePlayer;                //score du player...
     public int ScorePlayer { set
         {
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour, IKillable
     
 
     private bool hasMoved = false;          //a-t-on bougé ?
+    
 
     #endregion
 
@@ -56,6 +59,7 @@ public class PlayerController : MonoBehaviour, IKillable
     private void Awake()
     {
         playerBody = GetComponent<Rigidbody>();
+        lifeBehavior = GetComponent<LifeBehavior>();
         weapons = new List<Weapons>();
         SetupListWeapons();                     //setup la lsit des weapons
     }
@@ -138,7 +142,7 @@ public class PlayerController : MonoBehaviour, IKillable
     public void Kill()
     {
         Debug.Log("Dead");
-        ScorePlayer -= 5;
+        ScorePlayer -= lifeBehavior.ScoreToRemove;
         gameObject.SetActive(false);
     }
 }

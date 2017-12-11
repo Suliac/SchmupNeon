@@ -58,9 +58,10 @@ public class BulletController : Projectile
             enabledBullet = false;  //desactiver le bullet !
             Debug.Log("bang");
             //le life prend des dommages, si le life meurt... on s'ajoute du score !
-            if (life.TakeDamages(bulletDamage))
+            int score = life.TakeDamages(bulletDamage);
+            if (score != 0)
             {
-                PlayerController.ScorePlayer++;
+                PlayerController.ScorePlayer+= score;
             }
             Kill();
         }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Sirenix.OdinInspector;
 
 /// <summary>
 /// LifeBehavior Description
@@ -7,11 +8,17 @@ public class LifeBehavior : MonoBehaviour
 {
     #region Attributes
 
-    //[Tooltip("opti fps"), SerializeField]
-    //private FrequencyTimer updateTimer;
+    [FoldoutGroup("Gameplay"), Tooltip("La vie initialise de l'objet"), SerializeField]
+    private float StartLife = 100.0f;
+    [FoldoutGroup("Gameplay"), Tooltip("Score à donner aux joueur quand cet objet meurt"), SerializeField]
+    private int scoreToGiveToOther = 0;  //score à donner aux autre quand on meurt
+    [FoldoutGroup("Gameplay"), Tooltip("Score à enlever au joueur quand on meurt"), SerializeField]
+    private int scoreToRemove = 0;   //score à enlever à soit même quand on meurt (pour les joueurs)
+    public int ScoreToRemove { get { return scoreToRemove; } }
 
-    public float currentLife = 0.0f;
-    public float StartLife = 100.0f;
+    [FoldoutGroup("Debug"), Tooltip("vie courante de l'objet"), SerializeField]
+    private float currentLife = 0.0f;
+
     #endregion
 
     #region Initialization
@@ -26,12 +33,12 @@ public class LifeBehavior : MonoBehaviour
     #region Core
 
     /// <summary>
-    /// prend des dommages, renvoi vrai si on meurt
+    /// prend des dommages, renvoi X point de score à rajouter si on meurt ! sinon 0
     /// (pour le scorring)
     /// </summary>
     /// <param name="damages"></param>
     /// <returns></returns>
-    public bool TakeDamages(float damages)
+    public int TakeDamages(float damages)
     {
         currentLife = Mathf.Max(0, currentLife - damages);
 
@@ -42,12 +49,15 @@ public class LifeBehavior : MonoBehaviour
             if (killable != null)
             {
                 killable.Kill();
-                return (true);
+                return (scoreToGiveToOther); //ici get le nombre de score que le gameObject donne en mourrant
             }
         }
-        return (false);
+        return (0);
     }
 
+    /// <summary>
+    /// itinialise la vie du joueur au début (ou au respawn)
+    /// </summary>
     public void InitLife()
     {
         currentLife = StartLife;
