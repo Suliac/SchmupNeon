@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4595459802124488}
+  - component: {fileID: 114357998273640360}
   - component: {fileID: 33918471589832094}
   - component: {fileID: 135443642289461902}
   - component: {fileID: 135674505060997816}
@@ -26,7 +27,8 @@ GameObject:
   - component: {fileID: 54966931066097826}
   - component: {fileID: 114588804504731022}
   - component: {fileID: 114482737029558584}
-  m_Layer: 0
+  - component: {fileID: 114292211328603702}
+  m_Layer: 9
   m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,9 +41,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221095074222132}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.98, y: 1.09, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.62, y: 0, z: 0}
+  m_LocalScale: {x: 0.54864454, y: 0.54864454, z: 0.54864454}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,11 +99,37 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!114 &114292211328603702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221095074222132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f16b0e461b58a21489bff73e78732879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLife: 0
+  StartLife: 5
+--- !u!114 &114357998273640360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221095074222132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6017ec658fb52684f89901dd2a8e791d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateTimer:
+    updateFrequency: 0
 --- !u!114 &114482737029558584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02507aa4c9fda784b9ee08ef23dd77c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killByTag: []
+  killOnEnter: 1
+  killOnExit: 0
 --- !u!114 &114588804504731022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,40 +154,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341817a154a515c44b5e51862b0afd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasSortOrder: 0
   startVisible: 1
-  usedDrawMode: 0
-  timeOpti: 0
-  isInPlayer: 0
-  isMulti: 0
-  addUp: 83
-  isOpPowerPlayer: 0
-  opacityOpOnScreen: 0.6
-  opacityOpOutScreen: 1
   hideOnScreen: 0
   onScreenSprite: {fileID: 21300000, guid: d5bf0a1cdcb164f45bb6171e3ec5f5d4, type: 3}
   onScreenTextureColor: {r: 1, g: 1, b: 1, a: 1}
-  onScreenTextureSize: 0.1
+  onScreenTextureSize: 0.14
   onScreenTextureRotation: 0
   hideOutofScreen: 0
-  outofScreenSprite: {fileID: 21300000, guid: 8092f7be72b4ab144bb2a383e0e020a3, type: 3}
-  outofScreenSpriteArray: []
+  outofScreenSprite: {fileID: 21300000, guid: 02387b373df477f499ccbf66ba190f3a, type: 3}
   outofScreenTextureColor: {r: 1, g: 1, b: 1, a: 1}
-  outofScreenTextureScreenPercentSize: 0.1
+  outofScreenTextureScreenPercentSize: 0.22
   outofScreenBorderOffset: {x: 0, y: 0}
   outofScreenTextureRotation: 0
   outofScreenRotateTexture: 1
-  outofScreenBaseOrientation: 0
+  outofScreenBaseOrientation: 180
+  presiceRotation: 0
+  opacityOpOnScreen: 0.6
+  opacityOpOutScreen: 1
   fadeInDuration: 2
-  fadeOutDuration: 4
-  minScale: 0.25
-  maxScale: 1
+  minScale: 0.1
+  maxScale: 1.5
   minDistance: 1
   maxDistance: 20
   scaleOnScreen: 0.6
-  animationMode: 0
-  scaleAnimAmplitude: 0.5
-  scaleAnimSmooth: 0.4
+  animationMode: 2
+  scaleAnimAmplitude: 0.1
+  scaleAnimSmooth: 0.26
+  updateTimer:
+    updateFrequency: 0
+  canvasSortOrder: 0
 --- !u!135 &135443642289461902
 SphereCollider:
   m_ObjectHideFlags: 1

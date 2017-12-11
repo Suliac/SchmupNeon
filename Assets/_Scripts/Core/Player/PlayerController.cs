@@ -96,7 +96,13 @@ public class PlayerController : MonoBehaviour, IKillable
     {
         if (hasMoved)
         {
-            playerBody.velocity = new Vector3(horizMove * moveSpeed, playerBody.velocity.y, 0.0F);
+            Vector3 movement = new Vector3(horizMove * moveSpeed * Time.deltaTime, vertiMove * moveSpeed * Time.deltaTime, 0.0f);
+
+            playerBody.velocity = Vector3.ClampMagnitude(movement, moveSpeed);
+        }
+        else
+        {
+            playerBody.velocity = Vector3.zero;
         }
 
     }

@@ -54,5 +54,5 @@ MonoBehaviour:
   itemsToPool:
   - objectToPool: {fileID: 1840052071805302, guid: d2c3ddcc3eadecd44ab628df33b06b51,
       type: 2}
-    pooledAmount: 50
+    pooledAmount: 200
     shouldExpand: 0

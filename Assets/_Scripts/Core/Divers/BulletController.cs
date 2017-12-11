@@ -18,6 +18,7 @@ public class BulletController : MonoBehaviour, IKillable
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
 	private FrequencyTimer updateTimer;
 
+    private bool enabledBullet = false; //le bullet, au démarage ne fait pas de dégat !
     private Rigidbody bodyBullet;   //ref du rigidbody
     private IsOnCamera isOnCamera;  //ref du IsOnCamera pour savoir si le bullet est hors champs
     #endregion
@@ -29,7 +30,7 @@ public class BulletController : MonoBehaviour, IKillable
         isOnCamera = GetComponent<IsOnCamera>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         SetUpBullet();
     }
@@ -39,6 +40,8 @@ public class BulletController : MonoBehaviour, IKillable
     /// </summary>
     public void SetUpBullet()
     {
+        Debug.Log("ici active bullet");
+        enabledBullet = true;           //active le bullet !
         isOnCamera.isOnScreen = true;
         isOnCamera.enabled = true;
         bodyBullet.velocity = Vector3.zero;
@@ -54,7 +57,10 @@ public class BulletController : MonoBehaviour, IKillable
 
     private void Update()
     {
-        bodyBullet.velocity = new Vector3(speedBullet, 0, 0);
+        if (!enabledBullet) //si le bullet est désactivé, ne pas effectuer de test...
+            return;
+
+        bodyBullet.velocity = new Vector3(speedBullet * Time.deltaTime, 0, 0);
         //optimisation des fps
         if (updateTimer.Ready())
         {
@@ -67,9 +73,13 @@ public class BulletController : MonoBehaviour, IKillable
 
     private void OnTriggerEnter(Collider col)
     {
+        if (!enabledBullet) //si le bullet est désactivé, ne pas effectuer de test...
+            return;
+
         LifeBehavior life = col.gameObject.GetComponent<LifeBehavior>();
         if (life)
         {
+            enabledBullet = false;  //desactiver le bullet !
             Debug.Log("bang");
             life.TakeDamages(bulletDamage);
             Kill();
@@ -79,7 +89,7 @@ public class BulletController : MonoBehaviour, IKillable
     public void Kill()
     {
         isOnCamera.enabled = false;
-        isOnCamera.isOnScreen = true;
+        //isOnCamera.isOnScreen = true;
         gameObject.SetActive(false);
     }
 

@@ -48,9 +48,9 @@ class CompileTime : EditorWindow
                 float totalTime = PlayerPrefs.GetFloat("TotalCompileTime");
                 totalTime += (float)compileTime;
                 PlayerPrefs.SetFloat("TotalCompileTime", totalTime);
-                Debug.Log("TotalCompileTime: " + totalTime.ToString("0.000") + "s");
+                Debug.Log("Tot: " + totalTime.ToString("0.000") + "s");
             }
-            Debug.Log("Compilation time: " + compileTime.ToString("0.000") + "s");
+            Debug.Log("Now: " + compileTime.ToString("0.000") + "s");
         }
     }
     #endregion

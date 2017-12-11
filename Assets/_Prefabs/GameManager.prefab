@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4849396341888180}
   - component: {fileID: 114785173296525566}
-  - component: {fileID: 114811979947870536}
   - component: {fileID: 114905330761730176}
+  - component: {fileID: 114974945941140728}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -56,17 +56,6 @@ MonoBehaviour:
   fadeOutTexture: {fileID: 2800000, guid: 354a901c80b1d554d93fc3508f7201b2, type: 3}
   fadeSpeed: 0.8
   alpha: 1
---- !u!114 &114811979947870536
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331242726934870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5472e59b7f4252f44aa614cde22afe20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114905330761730176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,3 +67,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4144ad4639e74d4f9f33a003700e579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114974945941140728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1331242726934870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3bf7f66c0015b459b50def0cbf1d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    scorePlayer: 0
+  spawnPlayer:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  objectDynamiclyCreated: {fileID: 0}
+  prefabsPlayer: {fileID: 1078389107829744, guid: 9fb3f57496f178d48a3ba21caf5f5880,
+    type: 2}
+  updateTimer:
+    updateFrequency: 0
