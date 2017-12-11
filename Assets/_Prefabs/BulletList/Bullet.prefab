@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114043123539690148}
   - component: {fileID: 54411358247267332}
   - component: {fileID: 114467227826020928}
+  - component: {fileID: 114045245328282548}
   m_Layer: 10
   m_Name: Bullet
   m_TagString: Bullet
@@ -112,10 +113,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fc58a6df9b9a040b59a7f63f092787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDamage: 1
-  speedBullet: 400
   updateTimer:
     updateFrequency: 0.1
+  speedBullet: 400
+--- !u!114 &114045245328282548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1840052071805302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be7d6aad4df3fe4599dfb4f57a8f1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateTimer:
+    updateFrequency: 0
+  damages: 1
+  collisionBeforeKilling: 1
+  collideOnEnter: 1
+  collideOnExit: 0
+  damagePlayer: 0
+  damageEnnemy: 1
+  damageProjectile: 1
+  oneShot: 0
 --- !u!114 &114467227826020928
 MonoBehaviour:
   m_ObjectHideFlags: 1

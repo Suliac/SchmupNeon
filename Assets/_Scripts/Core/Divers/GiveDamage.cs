@@ -11,6 +11,9 @@ public class GiveDamage : MonoBehaviour
     [Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
 
+    [FoldoutGroup("Debug")] [Tooltip("ref sur playerController")] private PlayerController playerController;
+    public PlayerController PlayerController { set { playerController = value; } get { return playerController; } }
+
     [FoldoutGroup("Gameplay"), Tooltip("Dommages sur les objets"), SerializeField]
     private float damages = 50.0f;
 
@@ -48,6 +51,11 @@ public class GiveDamage : MonoBehaviour
     #endregion
 
     #region Core
+    public void LinkToPlayer(PlayerController sourcePlayerController)
+    {
+        playerController = sourcePlayerController;
+    }
+
     private void Init()
     {
         isSourceEnabled = true;
@@ -60,24 +68,21 @@ public class GiveDamage : MonoBehaviour
         LifeBehavior life = col.gameObject.GetComponent<LifeBehavior>();
         if (life && !currentlyIntoTrigger)
         {
-            var entity = life.GetEntityType();
+            var entity = life.EntityType;
             if ((entity == EntityType.Player && damagePlayer) || (entity == EntityType.Projectile && damageProjectile) || (entity == EntityType.Ennemy && damageEnnemy))
             {
                 counterCollision++;
-                bool killTarget = false;
-
-                if (oneShot)
+                int score = life.TakeDamages(damages, oneShot);
+                if (score != 0)
                 {
-                    life.OneShot();
-                    killTarget = true;
+                    PlayerController.ScorePlayer += score;
                 }
                 else
-                    killTarget = life.TakeDamages(damages);
-
-                // Si on kill la target pas besoin de désactiver la source de dommage 
-                // Important car TriggerExit jamais appelé donc currentlyIntoTrigger reste à true
-                if (!killTarget)
+                {
+                    // Si on kill la target pas besoin de désactiver la source de dommage 
+                    // Important car TriggerExit jamais appelé donc currentlyIntoTrigger reste à true
                     currentlyIntoTrigger = true;
+                }
 
                 if (collisionBeforeKilling >= 0 && counterCollision >= collisionBeforeKilling)
                 {
@@ -113,7 +118,6 @@ public class GiveDamage : MonoBehaviour
 
     private void OnTriggerExit(Collider col)
     {
-        Debug.Log("exit");
         currentlyIntoTrigger = false;
         if (!isSourceEnabled || !collideOnExit)
             return;

@@ -124,7 +124,7 @@ public class PlayerConnected : MonoBehaviour
     /// <summary>
     /// get id of player
     /// </summary>
-    /// <param name="id"></param>
+    /// <param name="id">-1 (system default), 0 - inf (player id)</param>
     public Player getPlayer(int id)
     {
         if (id == -1)

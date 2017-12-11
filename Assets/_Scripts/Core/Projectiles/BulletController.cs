@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 /// <summary>
 /// BulletController Description
 /// </summary>
-public class BulletController : MonoBehaviour, IKillable
+public class BulletController : Projectile
 {
     #region Attributes
     //[FoldoutGroup("Gameplay"), Tooltip("dommage sur les objets"), SerializeField]
@@ -12,62 +12,40 @@ public class BulletController : MonoBehaviour, IKillable
 
     [FoldoutGroup("Gameplay"), Tooltip("speed de la bullet"), SerializeField]
     private float speedBullet = 3f;
-    
-    [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
-	private FrequencyTimer updateTimer;
+    private float additionalSpeed = 0f; //additional speed added by the palyer at start
 
-    private bool enabledBullet = false; //le bullet, au démarage ne fait pas de dégat !
-    private Rigidbody bodyBullet;   //ref du rigidbody
-    private IsOnCamera isOnCamera;  //ref du IsOnCamera pour savoir si le bullet est hors champs
     #endregion
 
     #region Initialization
-    private void Awake()
-    {
-        bodyBullet = GetComponent<Rigidbody>();
-        isOnCamera = GetComponent<IsOnCamera>();
-    }
+    
 
     private void OnEnable()
     {
-        SetUpBullet();
+        //SetUpBullet();
     }
 
     /// <summary>
     /// setup le bullet
     /// </summary>
-    public void SetUpBullet()
+    public override void SetUpBullet(PlayerController referencePlayer, float addSpeed)
     {
-        //Debug.Log("ici active bullet");
+        PlayerController = referencePlayer;
         enabledBullet = true;           //active le bullet !
         isOnCamera.isOnScreen = true;
         isOnCamera.enabled = true;
         bodyBullet.velocity = Vector3.zero;
-        //bodyBullet.AddForce(transform.right * (speedBullet), ForceMode.Impulse);
+        additionalSpeed = addSpeed;
     }
     #endregion
 
     #region Core
-
+    protected override void MoveProjectile()
+    {
+        bodyBullet.velocity = new Vector3((speedBullet + additionalSpeed) * Time.deltaTime, 0, 0);
+    }
     #endregion
 
     #region Unity ending functions
-
-    private void Update()
-    {
-        if (!enabledBullet) //si le bullet est désactivé, ne pas effectuer de test...
-            return;
-
-        bodyBullet.velocity = new Vector3(speedBullet * Time.deltaTime, 0, 0);
-        //optimisation des fps
-        if (updateTimer.Ready())
-        {
-            if (!isOnCamera.enabled)
-                isOnCamera.enabled = true;
-            if (!isOnCamera.isOnScreen)
-                Kill();
-        }
-    }
 
     //private void OnTriggerEnter(Collider col)
     //{
@@ -78,13 +56,18 @@ public class BulletController : MonoBehaviour, IKillable
     //    if (life)
     //    {
     //        enabledBullet = false;  //desactiver le bullet !
-    //        //Debug.Log("bang");
-    //        life.TakeDamages(bulletDamage);
+    //        Debug.Log("bang");
+    //        //le life prend des dommages, si le life meurt... on s'ajoute du score !
+    //        int score = life.TakeDamages(bulletDamage);
+    //        if (score != 0)
+    //        {
+    //            PlayerController.ScorePlayer+= score;
+    //        }
     //        Kill();
     //    }
     //}
 
-    public void Kill()
+    public override void Kill()
     {
         isOnCamera.enabled = false;
         //isOnCamera.isOnScreen = true;

@@ -21,22 +21,25 @@ public class SpawnPlayer : MonoBehaviour
     public PlayerController PlayerController { get { return playerController; } }
     private bool isSpawning = false;                    //le joueur est-il en train d'être spawn ?
 
-    private LifeBehavior playerLife;
+    private LifeBehavior playerLife;    //reference a playerLife
     #endregion
 
     #region Initialization
 
     private void Start()
     {
-        if (player && animSpawn)
+        //init le player
+        if (player && animSpawn)    //si tout est ok dans les references
         {
-            playerController = player.GetComponent<PlayerController>();
-            playerController.IdPlayer = transform.GetSiblingIndex();
-            playerLife = player.GetComponent<LifeBehavior>();
-            player.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
-            player.transform.position = transform.position;
-            animSpawn.SpawnPlayer = this;
-            animSpawn.gameObject.SetActive(false);
+            playerController = player.GetComponent<PlayerController>(); //get la reference du playerCOntroller
+            playerController.IdPlayer = transform.GetSiblingIndex();    //set son id selon la position du spawnPlayer dans la hiérarchie
+            playerController.ScorePlayer = GameManager.GetSingleton.ScoreManager.Data.scorePlayer[playerController.IdPlayer];   //set son score
+            playerLife = player.GetComponent<LifeBehavior>();   //get reference de la vie
+            player.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);    //set son emplacement dans la hiérarchie
+            player.transform.position = transform.position; //change sa position
+
+            animSpawn.SpawnPlayer = this;   //set la reference à l'animation
+            animSpawn.gameObject.SetActive(false);  //desactive l'animation si elle est activé (on est en initialisation, on active pas encore...
         }
     }
     #endregion

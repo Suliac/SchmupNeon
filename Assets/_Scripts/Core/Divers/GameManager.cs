@@ -5,18 +5,11 @@ using System.Collections.Generic;
 /// <summary>
 /// GameManager Description
 /// </summary>
+[RequireComponent(typeof(ScoreManager))]    //le scoreManager doit être accroché à l'objet
 public class GameManager : MonoBehaviour
 {
-    [FoldoutGroup("GamePlay"), Tooltip("Sauvegarde du joueur"), SerializeField]
-    public PlayerData data;
-
-    private static GameManager instance;
-    public static GameManager GetSingleton
-    {
-        get { return instance; }
-    }
-
     #region Attributes
+
     [FoldoutGroup("Object In World"), Tooltip("Spawn des players"), SerializeField]
     private List<SpawnPlayer> spawnPlayer;
     public List<SpawnPlayer> SpawnPlayer { get { return spawnPlayer; } }
@@ -28,11 +21,23 @@ public class GameManager : MonoBehaviour
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]
     private GameObject prefabsPlayer;
 
-    [SerializeField]
+    [FoldoutGroup("Debug"), Tooltip("optimisation fps"), SerializeField]
 	private FrequencyTimer updateTimer;
 
+    //ref player
     private PlayerConnected playerConnect;
     public PlayerConnected PlayerConnect { get { return playerConnect; } }
+
+    private ScoreManager scoreManager;  //reference du scoreManager;
+    public ScoreManager ScoreManager { get { return scoreManager; } }
+
+
+    //singleton
+    private static GameManager instance;
+    public static GameManager GetSingleton
+    {
+        get { return instance; }
+    }
 
     #endregion
 
@@ -50,60 +55,14 @@ public class GameManager : MonoBehaviour
     {
         SetSingleton();
         playerConnect = PlayerConnected.GetSingleton;
+        scoreManager = GetComponent<ScoreManager>();
         if (!objectDynamiclyCreated)
             Debug.LogError("error");
     }
 
-    /// <summary>
-    /// lors du start: load les données, sinon, sauvegarder !
-    /// </summary>
-    private void Start()
-    {
-        if (!load())
-            resetAll();
-    }
     #endregion
 
     #region Core
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public void resetAll()
-    {
-        Debug.Log("reset les stats du joueurs");
-        data.scorePlayer = 0;
-        save();
-    }
-
-
-    /// <summary>
-    /// renvoi VRAI si ça à loadé !
-    /// </summary>
-    /// <returns></returns>
-    [FoldoutGroup("Debug"), Button("load")]
-    public bool load()
-    {
-        data = DataSaver.Load<PlayerData>("playerData.dat");
-        if (data == null)
-            return (false);
-        return (!(data == null));
-    }
-
-
-    [FoldoutGroup("Debug"), Button("save")]
-    public void save()
-    {
-        DataSaver.Save(data);
-    }
-
-    [FoldoutGroup("Debug"), Button("delete")]
-    public void delete()
-    {
-        DataSaver.DeleteSave("playerData.dat");
-    }
-
-
     /// <summary>
     /// ici gère la déconexion des manettes
     /// (si une manette se connecte, le spawnPlayer va automatiquement
@@ -114,13 +73,32 @@ public class GameManager : MonoBehaviour
         if (!connected)
             spawnPlayer[id].PlayerController.Kill();
     }
+
+    /// <summary>
+    /// quite le jeu ?
+    /// </summary>
+    private void Quit()
+    {
+        if (PlayerConnected.GetSingleton.getPlayer(-1).GetButtonDown("Escape")
+            || PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("Start"))
+        {
+            scoreManager.save();
+            SceneChangeManager.GetSingleton.Quit();
+        }
+    }
     #endregion
 
     #region Unity ending functions
 
     private void Update()
     {
+        if (updateTimer.Ready())
+        {
 
+        }
+
+        Quit();
+        
     }
 
 	#endregion

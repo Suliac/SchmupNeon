@@ -7,14 +7,25 @@ public class PlayerData : PersistantData
 {
 	#region Attributes
 
-	[Tooltip("La progression du joueur en mode solo: l'id de la dernière map débloqué")]
-	public int scorePlayer;
+	[Tooltip("score des 4 players")]
+    public List<int> scorePlayer = new List<int>();
+    #endregion
 
-	#endregion
 
-	#region Core
+    #region Core
+    /// <summary>
+    /// reset toute les valeurs à celle d'origine pour le jeu
+    /// </summary>
+    public void SetDefault()
+    {
+        scorePlayer.Clear();
+        scorePlayer.Add(0);
+        scorePlayer.Add(0);
+        scorePlayer.Add(0);
+        scorePlayer.Add(0);
+    }
 
-	public override string GetFilePath ()
+    public override string GetFilePath ()
 	{
 		return "playerData.dat";
 	}
