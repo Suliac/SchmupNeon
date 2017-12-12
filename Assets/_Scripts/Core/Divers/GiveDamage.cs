@@ -63,13 +63,39 @@ public class GiveDamage : MonoBehaviour
         currentlyIntoTrigger = false;
     }
 
+    /// <summary>
+    /// test si le type de l'objet est damageable
+    /// </summary>
+    private bool isDamagingThis(EntityType playerEntity)
+    {
+        switch (playerEntity)
+        {
+            case (EntityType.Player):
+                if (damagePlayer)
+                    return (true);
+                break;
+            case (EntityType.Projectile):
+                if (damageProjectile)
+                    return (true);
+                break;
+            case (EntityType.Ennemy):
+                if (damageEnnemy)
+                    return (true);
+                break;
+        }
+        return (false);
+    }
+
+    /// <summary>
+    /// test la collision avec l'objet
+    /// </summary>
     private void CollisionBehavior(Collider col)
     {
         LifeBehavior life = col.gameObject.GetComponent<LifeBehavior>();
         if (life && !currentlyIntoTrigger)
         {
-            var entity = life.EntityType;
-            if ((entity == EntityType.Player && damagePlayer) || (entity == EntityType.Projectile && damageProjectile) || (entity == EntityType.Ennemy && damageEnnemy))
+            bool damageable = isDamagingThis(life.EntityType);
+            if (damageable)
             {
                 counterCollision++;
                 int score = life.TakeDamages(damages, oneShot);

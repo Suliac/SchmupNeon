@@ -13,6 +13,8 @@ public class BulletHell : Weapons
     private string tagBullet;
     [FoldoutGroup("Gameplay"), Tooltip("Cree le bullet un peu devant le joueur [0 = sur le joueur, inf]"), SerializeField]
     private float forwardBullet = 1f;
+    [FoldoutGroup("Gameplay"), Tooltip("AdditionalSpeed when player is moving"), SerializeField]
+    private float AdditionalSpeed = 50f;
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
@@ -41,7 +43,7 @@ public class BulletHell : Weapons
 
         //get le projectile du bullet, et le setup (qui peut être de plusieurs types !)
         Projectile projectile = bullet.GetComponent<Projectile>();
-        projectile.SetUpBullet(PlayerController, PlayerController.PlayerBody.velocity.magnitude);
+        projectile.SetUpBullet(PlayerController, PlayerController.PlayerBody.velocity.magnitude * AdditionalSpeed);
 
         GiveDamage giveDamage = bullet.GetComponent<GiveDamage>();
         giveDamage.LinkToPlayer(PlayerController);
