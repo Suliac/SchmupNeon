@@ -96,6 +96,24 @@ public static class UtilityFunctions
         return (false);
     }
 
+    /// <summary>
+    /// convert un int to HH:MM:SS
+    /// </summary>
+    public static string convertToSecond(int counter)
+    {
+        string final = "";
+        int hours = counter / 3600;
+        int minutes = (counter % 3600) / 60;
+        int seconds = (counter % 3600) % 60;
+
+        if (hours >= 1)
+            final += (hours + "h");
+        if (minutes >= 1)
+            final += (minutes + "m");
+        final += (seconds + "s");
+        return (final);
+    }
+
     //setup un layerMask en enlevant certain layer...
     //int layerMask = ~((1 << LayerMask.NameToLayer("Walls")) | (1 << LayerMask.NameToLayer("Lock")) | (1 << LayerMask.NameToLayer("Ignore Raycast")) );
 
