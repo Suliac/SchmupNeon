@@ -22,6 +22,25 @@
 						<ActiveSource Name="fire_effect_test" ID="{9AF0540F-ACB1-4F43-A074-DB10C1DD183F}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="sound_dead_activated2" ID="{9580CD01-9D81-476D-9E12-45BFDA65480D}" ShortID="1023690734">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sound_dead_activated2" ID="{23E6F9EB-B752-421C-A720-5B303B39A9EB}" ShortID="771622396">
+							<Language>SFX</Language>
+							<AudioFile>sound_dead_activated2.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sound_dead_activated2" ID="{23E6F9EB-B752-421C-A720-5B303B39A9EB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
