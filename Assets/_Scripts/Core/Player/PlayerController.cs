@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour, IKillable
     public Rigidbody PlayerBody { get { return playerBody; } }
 
     private LifeBehavior lifeBehavior;      //liens vers la vie du joueur
-
     private WeaponHandler weaponHandle;
+    private PickupHandler pickupHandle;
 
     private int scorePlayer;                //score du player...
     public int ScorePlayer { set
@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour, IKillable
         playerBody = GetComponent<Rigidbody>();
         lifeBehavior = GetComponent<LifeBehavior>();
         weaponHandle = GetComponent<WeaponHandler>();
+        pickupHandle = GetComponent<PickupHandler>();
         //weapons = new List<Weapons>();
         //SetupListWeapons();                     //setup la lsit des weapons
     }
@@ -101,6 +102,11 @@ public class PlayerController : MonoBehaviour, IKillable
         {
             //weapons[idWeapon].TryShoot();
             weaponHandle.UseWeapon();
+        }
+
+        if(PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
+        {
+            pickupHandle.UseItem();
         }
 
         if (horizMove != 0 || vertiMove != 0)

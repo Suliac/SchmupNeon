@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114785173296525566}
   - component: {fileID: 114905330761730176}
   - component: {fileID: 114974945941140728}
+  - component: {fileID: 114541318639044876}
+  - component: {fileID: 114324849644174634}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -42,6 +44,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114324849644174634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1331242726934870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045f9482df2d4c54eb10b9424ad93e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasPlayer:
+  - {fileID: 0}
+  defaultObjectSpriteInUI: {fileID: 21300086, guid: 71ae9cf2cbddbbf46afcc9b7c0ab1d27,
+    type: 3}
+--- !u!114 &114541318639044876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1331242726934870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cc8498b0add45499f85f12f96508eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasPlayer:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  data:
+    scorePlayer: 00000000000000000000000000000000
 --- !u!114 &114785173296525566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,8 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3bf7f66c0015b459b50def0cbf1d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data:
-    scorePlayer: 0
   spawnPlayer:
   - {fileID: 0}
   - {fileID: 0}

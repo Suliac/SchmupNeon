@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114640442921096836}
   - component: {fileID: 114451966517514430}
   - component: {fileID: 114615846370654086}
+  - component: {fileID: 114811304330663058}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -210,6 +211,17 @@ MonoBehaviour:
   updateTimer:
     updateFrequency: 0
   parentWeapons: {fileID: 4707590934284084}
+--- !u!114 &114811304330663058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078389107829744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 514611aa7fe81cd41b2f4c362ebb4745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135137611386496990
 SphereCollider:
   m_ObjectHideFlags: 1

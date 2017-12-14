@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     private ScoreManager scoreManager;  //reference du scoreManager;
     public ScoreManager ScoreManager { get { return scoreManager; } }
 
+    private ItemManager itemManager;  //reference de l'itemManager;
+    public ItemManager ItemManager { get { return itemManager; } }
 
     //singleton
     private static GameManager instance;
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
         SetSingleton();
         playerConnect = PlayerConnected.GetSingleton;
         scoreManager = GetComponent<ScoreManager>();
+        itemManager = GetComponent<ItemManager>();
         if (!objectDynamiclyCreated)
             Debug.LogError("error");
     }
