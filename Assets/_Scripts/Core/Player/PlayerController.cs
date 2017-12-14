@@ -14,27 +14,29 @@ public class PlayerController : MonoBehaviour, IKillable
     private float moveSpeed = 10.0f;
 
 
-    [FoldoutGroup("Debug"), Tooltip("objets weapons"), SerializeField]
-    private Transform parentWeapons;
+    //[FoldoutGroup("Debug"), Tooltip("objets weapons"), SerializeField]
+    //private Transform parentWeapons;
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
 
 
-    //id weapons du joueur
-    private int idWeapon = 0;
-    public int IdWeapon { set { idWeapon = value; } get { return idWeapon; } }
+    ////id weapons du joueur
+    //private int idWeapon = 0;
+    //public int IdWeapon { set { idWeapon = value; } get { return idWeapon; } }
 
     //id du joueur (relatif à sa manette)
     private int idPlayer = 0;
     public int IdPlayer { set { idPlayer = value; } get { return idPlayer; } }
 
-    private List<Weapons> weapons;          //list des weapons du joueur
+    //private List<Weapons> weapons;          //list des weapons du joueur
 
     private Rigidbody playerBody;           //rigidbody du joueur
     public Rigidbody PlayerBody { get { return playerBody; } }
 
     private LifeBehavior lifeBehavior;      //liens vers la vie du joueur
+
+    private WeaponHandler weaponHandle;
 
     private int scorePlayer;                //score du player...
     public int ScorePlayer { set
@@ -60,8 +62,9 @@ public class PlayerController : MonoBehaviour, IKillable
     {
         playerBody = GetComponent<Rigidbody>();
         lifeBehavior = GetComponent<LifeBehavior>();
-        weapons = new List<Weapons>();
-        SetupListWeapons();                     //setup la lsit des weapons
+        weaponHandle = GetComponent<WeaponHandler>();
+        //weapons = new List<Weapons>();
+        //SetupListWeapons();                     //setup la lsit des weapons
     }
 
     private void OnEnable()
@@ -74,16 +77,16 @@ public class PlayerController : MonoBehaviour, IKillable
     /// <summary>
     /// replie la list des weapoins du joueurs
     /// </summary>
-    private void SetupListWeapons()
-    {
-        weapons.Clear();
-        for (int i = 0; i < parentWeapons.childCount; i++)
-        {
-            Weapons childWeapon = parentWeapons.GetChild(i).GetComponent<Weapons>();
-            childWeapon.PlayerController = this;
-            weapons.Add(childWeapon);
-        }
-    }
+    //private void SetupListWeapons()
+    //{
+    //    weapons.Clear();
+    //    for (int i = 0; i < parentWeapons.childCount; i++)
+    //    {
+    //        Weapons childWeapon = parentWeapons.GetChild(i).GetComponent<Weapons>();
+    //        childWeapon.PlayerController = this;
+    //        weapons.Add(childWeapon);
+    //    }
+    //}
 
     #endregion
 
@@ -96,7 +99,8 @@ public class PlayerController : MonoBehaviour, IKillable
 
         if(PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButton("FireA"))
         {
-            weapons[idWeapon].TryShoot();
+            //weapons[idWeapon].TryShoot();
+            weaponHandle.UseWeapon();
         }
 
         if (horizMove != 0 || vertiMove != 0)

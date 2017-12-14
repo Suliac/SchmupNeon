@@ -32,7 +32,7 @@ public abstract class Projectile : MonoBehaviour, IKillable
 
     #region Core
 
-    abstract public void SetUpBullet(PlayerController refPlayer, float addSpeed);
+    abstract public void SetUpBullet(PlayerController refPlayer, float addSpeed, BulletOrientation orientation);
     abstract protected void MoveProjectile();
     public virtual void Kill() { }
     #endregion

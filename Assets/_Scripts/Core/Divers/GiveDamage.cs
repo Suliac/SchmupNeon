@@ -101,7 +101,8 @@ public class GiveDamage : MonoBehaviour
                 int score = life.TakeDamages(damages, oneShot);
                 if (score != 0)
                 {
-                    PlayerController.ScorePlayer += score;
+                    if (PlayerController) // NB si un ennemi fait des degats, il ne gagne pas de points et ne devrait pas avoir de playerController
+                        PlayerController.ScorePlayer += score;
                 }
                 else
                 {

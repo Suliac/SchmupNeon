@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using Sirenix.OdinInspector;
 
+public enum BulletOrientation
+{
+    Right,
+    Left
+}
+
 /// <summary>
 /// BulletController Description
 /// </summary>
@@ -13,7 +19,7 @@ public class BulletController : Projectile
     [FoldoutGroup("Gameplay"), Tooltip("speed de la bullet"), SerializeField]
     private float speedBullet = 3f;
     private float additionalSpeed = 0f; //additional speed added by the palyer at start
-
+    private BulletOrientation orientation;
     #endregion
 
     #region Initialization
@@ -27,7 +33,7 @@ public class BulletController : Projectile
     /// <summary>
     /// setup le bullet
     /// </summary>
-    public override void SetUpBullet(PlayerController referencePlayer, float addSpeed)
+    public override void SetUpBullet(PlayerController referencePlayer, float addSpeed, BulletOrientation orientationWanted)
     {
         PlayerController = referencePlayer;
         enabledBullet = true;           //active le bullet !
@@ -35,13 +41,18 @@ public class BulletController : Projectile
         isOnCamera.enabled = true;
         bodyBullet.velocity = Vector3.zero;
         additionalSpeed = addSpeed;
+        orientation = orientationWanted;
     }
     #endregion
 
     #region Core
     protected override void MoveProjectile()
     {
-        bodyBullet.velocity = new Vector3((speedBullet + additionalSpeed) * Time.deltaTime, 0, 0);
+        float bulletVelocityWanted = (speedBullet + additionalSpeed) * Time.deltaTime;
+        if (orientation == BulletOrientation.Left)
+            bulletVelocityWanted *= -1;
+
+        bodyBullet.velocity = new Vector3(bulletVelocityWanted, 0, 0);
     }
     #endregion
 

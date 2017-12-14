@@ -39,11 +39,16 @@ public class BulletHell : Weapons
 
         bullet.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);            //set le parent
         bullet.transform.rotation = transform.rotation;                                         //set la position
-        bullet.transform.position = transform.position + transform.right * forwardBullet;       //set la rotation
+
+        BulletOrientation orientation = PlayerController ? BulletOrientation.Right : BulletOrientation.Left;
+        Vector3 projectileOrientation = PlayerController ? transform.right : -transform.right;  // si bullet hell sur un ennemi -> il tire vers la gauche
+        bullet.transform.position = transform.position + projectileOrientation * forwardBullet;       //set la rotation
 
         //get le projectile du bullet, et le setup (qui peut être de plusieurs types !)
         Projectile projectile = bullet.GetComponent<Projectile>();
-        projectile.SetUpBullet(PlayerController, PlayerController.PlayerBody.velocity.magnitude * AdditionalSpeed);
+
+        float initSpeed = PlayerController != null ? PlayerController.PlayerBody.velocity.magnitude * AdditionalSpeed : 0.0f;
+        projectile.SetUpBullet(PlayerController, initSpeed, orientation);
 
         GiveDamage giveDamage = bullet.GetComponent<GiveDamage>();
         giveDamage.LinkToPlayer(PlayerController);
