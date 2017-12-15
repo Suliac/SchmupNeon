@@ -14,12 +14,21 @@ public class GameManager : MonoBehaviour
     private List<SpawnPlayer> spawnPlayer;
     public List<SpawnPlayer> SpawnPlayer { get { return spawnPlayer; } }
 
-    [FoldoutGroup("Object In World"), Tooltip("Platform mouvante"), SerializeField]
+    [FoldoutGroup("Object In World"), Tooltip("Entitées créées dynamiquement mouvantes"), SerializeField]
     private Transform objectDynamiclyCreated;
     public Transform ObjectDynamiclyCreated { get { return objectDynamiclyCreated; } }
 
+
+    [FoldoutGroup("Object In World"), Tooltip("Entitées créées dynamiquement fixes"), SerializeField]
+    private Transform objectNotMovingDynamiclyCreated;
+    public Transform ObjectNotMovingDynamiclyCreated { get { return objectNotMovingDynamiclyCreated; } }
+
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]
     private GameObject prefabsPlayer;
+
+    [FoldoutGroup("Debug"), Tooltip("movingPlatform"), SerializeField]
+    private MovePlatform movingPlatform;
+    //public MovePlatform MovingPlatform { get { return movingPlatform; } }
 
     [FoldoutGroup("Debug"), Tooltip("optimisation fps"), SerializeField]
 	private FrequencyTimer updateTimer;
@@ -63,6 +72,11 @@ public class GameManager : MonoBehaviour
             Debug.LogError("error");
     }
 
+    private void Start()
+    {
+        ActiveGame();
+    }
+
     #endregion
 
     #region Core
@@ -87,6 +101,18 @@ public class GameManager : MonoBehaviour
         {
             scoreManager.save();
             SceneChangeManager.GetSingleton.Quit();
+        }
+    }
+
+    [FoldoutGroup("Debug")]
+    [Button("ActiveGame")]
+    public void ActiveGame()
+    {
+        bool active = true;
+        movingPlatform.IsScrollingAcrtive = active;
+        for (int i = 0; i < spawnPlayer.Count; i++)
+        {
+            spawnPlayer[i].gameObject.SetActive(active);
         }
     }
     #endregion
