@@ -10,11 +10,6 @@ public class SceneChangeManager : MonoBehaviour
     /// <summary>
     /// variable privé
     /// </summary>
-    [SerializeField, Tooltip("Persistent scene")]  private List<string> persistentScene;
-    [SerializeField, Tooltip("Scene loaded at start")]  private List<string> SceneToLoadAtStart;
-    [SerializeField, Tooltip("Scene currently loader")]  private List<string> currentlyLoadedScene;
-    
-
 
     private static SceneChangeManager instance;   //singleton
     public static SceneChangeManager GetSingleton

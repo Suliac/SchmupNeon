@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: 1786003660
-    m_lastTimePart2: -1999290386
+    m_lastTimePsrt1: -744467882
+    m_lastTimePart2: -1999289409
     List:
     - Name: TestEvent
       Path: Default Work Unit\TestEvent
@@ -33,29 +33,29 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}'
-    m_lastTimePsrt1: 1788213607
-    m_lastTimePart2: -1999290386
+    m_lastTimePsrt1: -742472629
+    m_lastTimePart2: -1999289409
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{3822E0A2-7722-45A1-AF3C-32EE7A20C4DF}'
-    m_lastTimePsrt1: 1796163663
-    m_lastTimePart2: -1999290386
+    m_lastTimePsrt1: -741549918
+    m_lastTimePart2: -1999289409
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{68F6EB55-4DA4-4B32-A7F9-81D5A7B52B09}'
-    m_lastTimePsrt1: 1796223602
-    m_lastTimePart2: -1999290386
+    m_lastTimePsrt1: -741540163
+    m_lastTimePart2: -1999289409
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8C84201B-D9D0-40FE-B479-AA99A1A7EEFD}'
-    m_lastTimePsrt1: 1788773603
-    m_lastTimePart2: -1999290386
+    m_lastTimePsrt1: -741600323
+    m_lastTimePart2: -1999289409
     List:
     - Name: SchmupSoundBank
       Path: Default Work Unit\SchmupSoundBank
@@ -70,15 +70,15 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{1E9B848A-855A-40C2-9386-A1C1EF9C8A84}'
-    m_lastTimePsrt1: 1786013603
-    m_lastTimePart2: -1999290386
+    m_lastTimePsrt1: -744447887
+    m_lastTimePart2: -1999289409
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{754452DD-0CA5-40F5-AFB4-B05FFE130201}'
-    m_lastTimePsrt1: 1796233609
-    m_lastTimePart2: -1999290386
+    m_lastTimePsrt1: -741530134
+    m_lastTimePart2: -1999289409
     List: []
   ExpandedItems:
   - /SHMUP_WwiseProject
