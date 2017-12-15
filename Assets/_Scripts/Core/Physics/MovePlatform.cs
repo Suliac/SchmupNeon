@@ -12,6 +12,8 @@ public class MovePlatform : MonoBehaviour
     private float speedScrolling = 10.0f;
     /*[SerializeField]
 	private FrequencyTimer updateTimer; Disable for frame control */
+    private bool isScrollingAcrtive = false;
+    public bool IsScrollingAcrtive { get { return isScrollingAcrtive; } set { isScrollingAcrtive = value; } }
 
     #endregion
 
@@ -38,7 +40,8 @@ public class MovePlatform : MonoBehaviour
 
     private void Update()
     {
-        Scroll();
+        if (isScrollingAcrtive)
+            Scroll();
     }
 
 	#endregion

@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]
     private GameObject prefabsPlayer;
 
+    [FoldoutGroup("Debug"), Tooltip("movingPlatform"), SerializeField]
+    private MovePlatform movingPlatform;
+    //public MovePlatform MovingPlatform { get { return movingPlatform; } }
+
     [FoldoutGroup("Debug"), Tooltip("optimisation fps"), SerializeField]
 	private FrequencyTimer updateTimer;
 
@@ -63,6 +67,11 @@ public class GameManager : MonoBehaviour
             Debug.LogError("error");
     }
 
+    private void Start()
+    {
+        ActiveGame();
+    }
+
     #endregion
 
     #region Core
@@ -87,6 +96,18 @@ public class GameManager : MonoBehaviour
         {
             scoreManager.save();
             SceneChangeManager.GetSingleton.Quit();
+        }
+    }
+
+    [FoldoutGroup("Debug")]
+    [Button("ActiveGame")]
+    public void ActiveGame()
+    {
+        bool active = true;
+        movingPlatform.IsScrollingAcrtive = active;
+        for (int i = 0; i < spawnPlayer.Count; i++)
+        {
+            spawnPlayer[i].gameObject.SetActive(active);
         }
     }
     #endregion

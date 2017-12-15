@@ -127,7 +127,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8063550
 Transform:
   m_ObjectHideFlags: 0
@@ -574,6 +574,11 @@ Prefab:
       propertyPath: data.scorePlayer.Array.data[1]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: movingPlatform
+      value: 
+      objectReference: {fileID: 192990897}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dead104ab74320a4c82bbee4b1f85136, type: 2}
   m_IsPrefabParent: 0
@@ -1491,7 +1496,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &395696175
 Transform:
   m_ObjectHideFlags: 0
@@ -2371,7 +2376,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &736542098
 Transform:
   m_ObjectHideFlags: 0
@@ -2417,7 +2422,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &749843465
 Transform:
   m_ObjectHideFlags: 0
