@@ -5,7 +5,9 @@ using System.Collections.Generic;
 /// <summary>
 /// GameManager Description
 /// </summary>
+[RequireComponent(typeof(TutoStart))]    //tuto !!
 [RequireComponent(typeof(ScoreManager))]    //le scoreManager doit être accroché à l'objet
+[RequireComponent(typeof(ItemManager))]    //item manager
 public class GameManager : MonoBehaviour
 {
     #region Attributes
@@ -18,11 +20,16 @@ public class GameManager : MonoBehaviour
     private Transform objectDynamiclyCreated;
     public Transform ObjectDynamiclyCreated { get { return objectDynamiclyCreated; } }
 
+    [FoldoutGroup("Object In World"), Tooltip("movingPlatform"), SerializeField]
+    private MovePlatform movingPlatform;
+
+    [FoldoutGroup("Object In World"), Tooltip("panel Canvas des joueurs (in game)"), SerializeField]
+    private GameObject panelCanvasInGame;
+
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]
     private GameObject prefabsPlayer;
 
-    [FoldoutGroup("Debug"), Tooltip("movingPlatform"), SerializeField]
-    private MovePlatform movingPlatform;
+    
     //public MovePlatform MovingPlatform { get { return movingPlatform; } }
 
     [FoldoutGroup("Debug"), Tooltip("optimisation fps"), SerializeField]
@@ -37,6 +44,9 @@ public class GameManager : MonoBehaviour
 
     private ItemManager itemManager;  //reference de l'itemManager;
     public ItemManager ItemManager { get { return itemManager; } }
+
+    private TutoStart tutoStart;  //reference de l'itemManager;
+    public TutoStart TutoStart { get { return tutoStart; } }
 
     //singleton
     private static GameManager instance;
@@ -61,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
         SetSingleton();
         playerConnect = PlayerConnected.GetSingleton;
+        tutoStart = GetComponent<TutoStart>();
         scoreManager = GetComponent<ScoreManager>();
         itemManager = GetComponent<ItemManager>();
         if (!objectDynamiclyCreated)
@@ -69,7 +80,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        ActiveGame();
+        ActiveGame(false);  //desactive tout au start au cas ou
+        tutoStart.ActiveTuto(true); //active les tutos
     }
 
     #endregion
@@ -82,7 +94,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void updateJoypadDisconnect(int id, bool connected)
     {
-        if (!connected)
+        if (!connected && spawnPlayer[id] && spawnPlayer[id].PlayerController)
             spawnPlayer[id].PlayerController.Kill();
     }
 
@@ -101,13 +113,23 @@ public class GameManager : MonoBehaviour
 
     [FoldoutGroup("Debug")]
     [Button("ActiveGame")]
-    public void ActiveGame()
+    public void ActiveGame() { ActiveGame(true); }
+
+    public void ActiveGame(bool active)
     {
-        bool active = true;
-        movingPlatform.IsScrollingAcrtive = active;
-        for (int i = 0; i < spawnPlayer.Count; i++)
+        panelCanvasInGame.SetActive(active);                //active le canvas des scores
+        movingPlatform.IsScrollingAcrtive = active;         //active la platforme mouvante
+        if (!active)
         {
-            spawnPlayer[i].gameObject.SetActive(active);
+            for (int i = 0; i < spawnPlayer.Count; i++)
+            {
+                spawnPlayer[i].gameObject.SetActive(active);    //active les spawn des players
+            }
+        }
+        else
+        {
+            tutoStart.ActiveTuto(false);
+            tutoStart.enabled = false;
         }
     }
     #endregion

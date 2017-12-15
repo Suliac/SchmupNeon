@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour, IKillable
     private Rigidbody playerBody;           //rigidbody du joueur
     public Rigidbody PlayerBody { get { return playerBody; } }
 
+    private bool enabledPlayer = false;
+    public bool EnabledPlayer { get { return enabledPlayer; } }
+
     private LifeBehavior lifeBehavior;      //liens vers la vie du joueur
     private WeaponHandler weaponHandle;
     private PickupHandler pickupHandle;
@@ -73,6 +76,7 @@ public class PlayerController : MonoBehaviour, IKillable
         gameObject.SetActive(true);
         playerBody.velocity = Vector3.zero;
         hasMoved = false;
+        enabledPlayer = true;
     }
 
     /// <summary>
@@ -131,6 +135,11 @@ public class PlayerController : MonoBehaviour, IKillable
     }
 
     /////////////////////////////////////////////////////
+
+    private void OnDisable()
+    {
+        enabledPlayer = false;
+    }
 
     private void Update()
     {
