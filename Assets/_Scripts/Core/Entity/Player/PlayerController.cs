@@ -41,6 +41,9 @@ public class PlayerController : MonoBehaviour, IKillable
     private WeaponHandler weaponHandle;
     private PickupHandler pickupHandle;
 
+    private bool immobilisePlayer = false;
+    public bool ImmobilisePlayer { get { return immobilisePlayer; } set { immobilisePlayer = value; } }
+
     private int scorePlayer;                //score du player...
     public int ScorePlayer { set
         {
@@ -147,7 +150,9 @@ public class PlayerController : MonoBehaviour, IKillable
         {
 
         }
-        InputPlayer();
+
+        if (!immobilisePlayer)
+            InputPlayer(); 
     }
 
     private void FixedUpdate()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -240,7 +240,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4595459802124488, guid: ba06735fc58c53f41a8482f307cf24e1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 15.07
+      value: 2.26
       objectReference: {fileID: 0}
     - target: {fileID: 4595459802124488, guid: ba06735fc58c53f41a8482f307cf24e1, type: 2}
       propertyPath: m_LocalPosition.y
@@ -715,8 +715,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 139884971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 337, y: 159, z: 0}
-  m_LocalScale: {x: 0.3215, y: 0.3215, z: 0.3215}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1995393779}
   m_Father: {fileID: 0}
@@ -1568,6 +1568,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4595459802124488, guid: 87fa3e67ad21edc489f2bad83263f119, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221095074222132, guid: 87fa3e67ad21edc489f2bad83263f119, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3334,10 +3338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5472e59b7f4252f44aa614cde22afe20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  persistentScene:
-  - Game
-  SceneToLoadAtStart: []
-  currentlyLoadedScene: []
 --- !u!1 &1275308001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,6 +3817,10 @@ Prefab:
     - target: {fileID: 114279593261256906, guid: 20c229f626031834f8623d0f8f0da1ca,
         type: 2}
       propertyPath: isOnScreen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221095074222132, guid: 20c229f626031834f8623d0f8f0da1ca, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4856,12 +4860,15 @@ MonoBehaviour:
         _categoryId: 0
         _layoutId: 0
       _defaultMouseMaps: []
-      _defaultKeyboardMaps: []
+      _defaultKeyboardMaps:
+      - _enabled: 1
+        _categoryId: 0
+        _layoutId: 0
       _defaultCustomControllerMaps: []
       _startingCustomControllers: []
       _assignMouseOnStart: 0
-      _assignKeyboardOnStart: 0
-      _excludeFromControllerAutoAssignment: 0
+      _assignKeyboardOnStart: 1
+      _excludeFromControllerAutoAssignment: 1
     - _id: 7
       _name: Player3
       _descriptiveName: joypad player 3
@@ -5625,6 +5632,10 @@ Prefab:
       propertyPath: isOnScreen
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1221095074222132, guid: 9110235b5aacb33429ec8eb81c575c92, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9110235b5aacb33429ec8eb81c575c92, type: 2}
   m_IsPrefabParent: 0
@@ -5637,7 +5648,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4595459802124488, guid: ba06735fc58c53f41a8482f307cf24e1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 11.91
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4595459802124488, guid: ba06735fc58c53f41a8482f307cf24e1, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6198,7 +6209,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1995393778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 494.55676, z: 0}
+  m_LocalPosition: {x: 0, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 816319379}
