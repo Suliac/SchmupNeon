@@ -47,7 +47,9 @@ public class BulletHell : Weapons
         //get le projectile du bullet, et le setup (qui peut être de plusieurs types !)
         Projectile projectile = bullet.GetComponent<Projectile>();
 
-        float initSpeed = PlayerController != null ? PlayerController.PlayerBody.velocity.magnitude * AdditionalSpeed : 0.0f;
+        //initialise
+        float initSpeed = (isMovingRight) ? PlayerController.PlayerBody.velocity.magnitude * AdditionalSpeed : 0f;
+
         projectile.SetUpBullet(PlayerController, initSpeed, orientation);
 
         GiveDamage giveDamage = bullet.GetComponent<GiveDamage>();

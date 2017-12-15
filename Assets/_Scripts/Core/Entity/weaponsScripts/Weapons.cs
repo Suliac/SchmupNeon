@@ -16,6 +16,7 @@ public abstract class Weapons : MonoBehaviour
     [FoldoutGroup("Gameplay")] [Tooltip("ref sur playerController"), SerializeField] protected float cooldown;
 
 	private float nextShoot;    //gère le lancé du next shoot
+    protected bool isMovingRight = false;
     #endregion
 
     #region Initialization
@@ -28,25 +29,30 @@ public abstract class Weapons : MonoBehaviour
 		if (nextShoot <= 0)
 		{
 			nextShoot = cooldown;
-			Shoot ();
+            UpdateDirectionVelocity();
+            Shoot ();
 		}
 	}
 
-    /*
-    //abstract public void Dir(float horizMove, float vertiMove);
-	//public virtual void OnShootRelease(){}
+    /// <summary>
+    /// cet fonction update la variable isMovingRight selon les déplacements du player
+    /// </summary>
+    private void UpdateDirectionVelocity()
+    {
+        if (PlayerController != null && PlayerController.PlayerBody.velocity.x > 0)
+        {
+            isMovingRight = true;
+        }
+        else
+            isMovingRight = false;
 
-	public virtual float WeaponPercent()
-	{
-		return Mathf.Clamp((cooldown - nextShoot) / cooldown, 0.0F, 1.0F);
-	}
-    */
+    }
 
     abstract protected void Shoot ();
     #endregion
 
     #region Unity ending functions
-    void LateUpdate()
+    private void LateUpdate()
     {
         if (nextShoot > 0)
         {
