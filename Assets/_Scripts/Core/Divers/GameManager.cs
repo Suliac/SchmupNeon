@@ -14,9 +14,14 @@ public class GameManager : MonoBehaviour
     private List<SpawnPlayer> spawnPlayer;
     public List<SpawnPlayer> SpawnPlayer { get { return spawnPlayer; } }
 
-    [FoldoutGroup("Object In World"), Tooltip("Platform mouvante"), SerializeField]
+    [FoldoutGroup("Object In World"), Tooltip("Entitées créées dynamiquement mouvantes"), SerializeField]
     private Transform objectDynamiclyCreated;
     public Transform ObjectDynamiclyCreated { get { return objectDynamiclyCreated; } }
+
+
+    [FoldoutGroup("Object In World"), Tooltip("Entitées créées dynamiquement fixes"), SerializeField]
+    private Transform objectNotMovingDynamiclyCreated;
+    public Transform ObjectNotMovingDynamiclyCreated { get { return objectNotMovingDynamiclyCreated; } }
 
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]
     private GameObject prefabsPlayer;
