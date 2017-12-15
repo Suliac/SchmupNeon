@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        Quit();
+        Quit(); //input quitter
         
     }
 
