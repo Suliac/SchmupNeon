@@ -24,14 +24,21 @@ public abstract class Weapons : MonoBehaviour
     #endregion
 
     #region Core
-    public void TryShoot()
+    /// <summary>
+    /// Essaie de shoot
+    /// </summary>
+    /// <returns><see cref="true"/> si on a pu tirer ou <see cref="false"/> si on a apas pu tirer</returns>
+    public bool TryShoot()
 	{
 		if (nextShoot <= 0)
 		{
 			nextShoot = cooldown;
             UpdateDirectionVelocity();
             Shoot ();
+            return true;
 		}
+
+        return false;
 	}
 
     /// <summary>

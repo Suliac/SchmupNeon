@@ -23,7 +23,7 @@ public abstract class Projectile : MonoBehaviour, IKillable
     #endregion
 
     #region Initialization
-    private void Awake()
+    protected void Awake()
     {
         bodyBullet = GetComponent<Rigidbody>();
         isOnCamera = GetComponent<IsOnCamera>();
