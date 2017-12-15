@@ -4,7 +4,9 @@ using Sirenix.OdinInspector;
 public enum BulletOrientation
 {
     Right,
-    Left
+    Left,
+    Top,
+    Down
 }
 
 /// <summary>
@@ -49,10 +51,23 @@ public class BulletController : Projectile
     protected override void MoveProjectile()
     {
         float bulletVelocityWanted = (speedBullet + additionalSpeed) * Time.deltaTime;
-        if (orientation == BulletOrientation.Left)
-            bulletVelocityWanted *= -1;
-
-        bodyBullet.velocity = new Vector3(bulletVelocityWanted, 0, 0);
+        switch (orientation)
+        {
+            case BulletOrientation.Right:
+                bodyBullet.velocity = new Vector3(bulletVelocityWanted, 0, 0);
+                break;
+            case BulletOrientation.Left:
+                bodyBullet.velocity = new Vector3(-bulletVelocityWanted, 0, 0);
+                break;
+            case BulletOrientation.Top:
+                bodyBullet.velocity = new Vector3(0, bulletVelocityWanted, 0);
+                break;
+            case BulletOrientation.Down:
+                bodyBullet.velocity = new Vector3(0, -bulletVelocityWanted, 0);
+                break;
+            default:
+                break;
+        }
     }
     #endregion
 

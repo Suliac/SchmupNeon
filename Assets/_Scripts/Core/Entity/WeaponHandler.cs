@@ -48,9 +48,9 @@ public class WeaponHandler : MonoBehaviour
     #endregion
 
     #region Core
-    public void UseWeapon()
+    public bool UseWeapon()
     {
-        weapons[idWeapon].TryShoot();
+        return weapons[idWeapon].TryShoot();
     }
     #endregion
 
