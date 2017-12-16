@@ -1,12 +1,13 @@
-﻿using UnityEngine;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 /// <summary>
-/// Shoot Description
+/// LaserWeapon Description
 /// </summary>
-public class BulletHell : Weapons
+public class LaserWeapon : Weapons
 {
-    #region Attributes    
+    #region Attributes
+
     [FoldoutGroup("Gameplay"), Tooltip("Tag du bullet"), SerializeField]
     private string tagBullet;
     [FoldoutGroup("Gameplay"), Tooltip("Cree le bullet un peu devant le joueur [0 = sur le joueur, inf]"), SerializeField]
@@ -18,14 +19,18 @@ public class BulletHell : Weapons
     private FrequencyTimer updateTimer;
 
     private GameObject bullet = null;
+
     #endregion
 
     #region Initialization
 
+    private void Start()
+    {
+		// Start function
+    }
     #endregion
 
     #region Core
-
     protected override void Shoot()
     {
         bullet = ObjectsPooler.GetSingleton.GetPooledObject(tagBullet, false);                  //cree un bullet
@@ -39,7 +44,7 @@ public class BulletHell : Weapons
         bullet.transform.rotation = transform.rotation;                                         //set la position
 
         BulletOrientation orientation = PlayerController ? BulletOrientation.Right : BulletOrientation.Left;
-        Vector3 projectileOrientation = PlayerController ? transform.right : -transform.right;  // si bullet hell sur un ennemi -> il tire vers la gauche
+        Vector3 projectileOrientation = PlayerController ? transform.right : -transform.right;  // si sur un ennemi -> il tire vers la gauche
         bullet.transform.position = transform.position + projectileOrientation * forwardBullet;       //set la rotation
 
         //get le projectile du bullet, et le setup (qui peut être de plusieurs types !)
@@ -56,19 +61,18 @@ public class BulletHell : Weapons
         //enfin, l'activer
         bullet.SetActive(true);                                                                 //active l'objet
     }
-
     #endregion
 
     #region Unity ending functions
 
     private void Update()
     {
-        //optimisation des fps
-        if (updateTimer.Ready())
-        {
+      //optimisation des fps
+      if (updateTimer.Ready())
+      {
 
-        }
+      }
     }
 
-    #endregion
+	#endregion
 }
