@@ -38,8 +38,8 @@ public class ExternalEntityActivation : MonoBehaviour
       {
             if (isOnCamera && enemyToActivate)
             {
-                //if (isOnCamera.isOnScreen)
-                    //enemyToActivate.WantToEnable = true;
+                if (isOnCamera.isOnScreen)
+                    enemyToActivate.WantToEnable = true;
             }
       }
     }
