@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GUIManager : MonoBehaviour {
 
@@ -10,11 +11,11 @@ public class GUIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    
 	}
 
     public void Play()
     {
-        Application.LoadLevel("Example_Level");
+        SceneManager.LoadScene("2_Game");
     }
 }
