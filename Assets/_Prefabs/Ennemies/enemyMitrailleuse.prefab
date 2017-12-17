@@ -36,7 +36,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1163884468164268
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   updateTimer:
     updateFrequency: 0
   speed: 1
+  wantToEnable: 1
   angleRotation: 25
   timeRotation: 1
   NumberOfShoots: 1

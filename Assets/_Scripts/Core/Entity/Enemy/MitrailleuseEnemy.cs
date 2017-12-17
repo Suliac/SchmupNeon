@@ -50,6 +50,10 @@ public class MitrailleuseEnemy : ShootingEnemy
             }
         }
     }
+        protected override void OnBeforeKill()
+    {
+        // Nothing to do
+    }
     #endregion
 
     IEnumerator SmoothRotation(float timeForRotation, float angle)

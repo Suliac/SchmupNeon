@@ -1,28 +1,27 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// SimpleShootingEnemy Description
+/// ShootOnDeathEnemy Description
 /// </summary>
-public class SimpleShootingEnemy : ShootingEnemy
+public class ShootOnDeathEnemy : ShootingEnemy
 {
     #region Attributes
 
     #endregion
 
     #region Initialization
-    
+
 
     #endregion
 
     #region Core
+    
 
     /// <summary>
     /// Fonction appelée à chaque frame depuis la classe <see cref="BaseEnemy"/>
     /// </summary>
     protected override void Shoot()
     {
-        if (weaponHandle)
-            weaponHandle.UseWeapon(); // Shoot every time it cans
     }
 
     protected override void Move()
@@ -31,9 +30,9 @@ public class SimpleShootingEnemy : ShootingEnemy
 
     protected override void OnBeforeKill()
     {
-        // Nothing to do
+        if (weaponHandle)
+            weaponHandle.UseWeapon();
     }
+
     #endregion
-
-
 }
