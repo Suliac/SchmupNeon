@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114526599724453376}
   m_Layer: 0
   m_Name: Laser
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateTimer:
     updateFrequency: 0
-  speedBullet: 3
+  speedBullet: 1000
 --- !u!114 &114526599724453376
 MonoBehaviour:
   m_ObjectHideFlags: 1

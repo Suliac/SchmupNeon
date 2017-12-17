@@ -64,3 +64,7 @@ MonoBehaviour:
       type: 2}
     pooledAmount: 200
     shouldExpand: 0
+  - objectToPool: {fileID: 1840052071805302, guid: ef09a9d59130c1a44a675da4525a245c,
+      type: 2}
+    pooledAmount: 200
+    shouldExpand: 0
