@@ -153,6 +153,7 @@ MonoBehaviour:
   updateTimer:
     updateFrequency: 0
   speed: 1
+  wantToEnable: 1
   angleRotation: 90
   timeRotation: 2
   NumberOfShoots: 1

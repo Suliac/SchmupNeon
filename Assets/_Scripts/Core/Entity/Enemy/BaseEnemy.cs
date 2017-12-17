@@ -14,6 +14,13 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     [FoldoutGroup("Gameplay"), Tooltip("Vitesse des ennemis"), SerializeField]
     protected float speed = 1.0f;
 
+    [FoldoutGroup("Gameplay"), Tooltip("Ennemi activé par défaut"), SerializeField]
+    protected bool wantToEnable = true;         // Etat actuel de l'ennemi
+    public bool WantToEnable { get { return wantToEnable; } set { wantToEnable = value; } }
+
+    protected bool wantToDisable = false;         // Etat actuel de l'ennemi
+    public bool WantToDisable { get { return wantToDisable; } set { wantToDisable = value; } }
+
     protected bool enableEnemy = false;         // Etat actuel de l'ennemi
     protected IsOnCamera isOnCamera;
     protected Rigidbody body;             //ref du rigidbody
@@ -33,11 +40,24 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     #region Core
     abstract protected void Move();
     abstract protected void Shoot();
+    abstract protected void OnBeforeKill();
+
+
+    protected void OnEnemyEnable()
+    {
+        enableEnemy = true;
+    }
+
+    protected void OnEnemyDisable()
+    {
+        enableEnemy = true;
+    }
 
     [FoldoutGroup("Debug"), Button("Kill")]
     public void Kill()
     {
-        Debug.Log("Dead");
+        //Debug.Log("Dead");
+        OnBeforeKill();
         Destroy(gameObject);
     }
     #endregion
@@ -46,8 +66,8 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     protected void Update()
     {
-        if (isOnCamera.isOnScreen && !enableEnemy) // Si l'ennemi vient d'apparaitre & n'a pas déja été spawn
-            enableEnemy = true;
+        if (((isOnCamera && isOnCamera.isOnScreen) || (!isOnCamera && wantToEnable)) && !enableEnemy) // Si l'ennemi vient d'apparaitre & n'a pas déja été spawn
+            OnEnemyEnable();
 
         if (!enableEnemy)
             return;
@@ -58,10 +78,19 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
         //optimisation des fps
         if (updateTimer.Ready())
         {
-            if (!isOnCamera.enabled)
-                isOnCamera.enabled = true;
-            if (!isOnCamera.isOnScreen)
-                Kill(); // Kill si sort de l'écran
+            if (isOnCamera)
+            {
+                if (!isOnCamera.enabled)
+                    isOnCamera.enabled = true;
+                if (!isOnCamera.isOnScreen)
+                    wantToDisable = true; // Kill si sort de l'écran 
+            }
+
+            if (wantToDisable) // Sert pour gérer le cas ou l'ennemi est activé depuis l'exterieur
+            {
+                wantToEnable = false;
+                Kill();
+            }
         }
     }
 

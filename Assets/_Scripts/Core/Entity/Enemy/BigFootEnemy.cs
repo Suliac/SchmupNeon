@@ -82,9 +82,14 @@ public class BigFootEnemy : ShootingEnemy
             }
         }
     }
+
+    protected override void OnBeforeKill()
+    {
+        // Nothing to do
+    }
     #endregion
 
     #region Unity ending functions
-    
+
     #endregion
 }

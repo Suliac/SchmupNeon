@@ -48,6 +48,11 @@ public class ZigZogEnemy : ShootingEnemy {
 
     }
 
+    protected override void OnBeforeKill()
+    {
+       // Nothing to do
+    }
+
     protected override void Shoot()
     {
         if(isShooting)

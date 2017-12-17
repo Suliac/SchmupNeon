@@ -38,6 +38,10 @@ public class CheminotEnemy : ShootingEnemy
         if (weaponHandle)
             weaponHandle.UseWeapon();
     }
+        protected override void OnBeforeKill()
+    {
+        // Nothing to do
+    }
     #endregion
 
     IEnumerator SmoothRotation(float timeForRotation, float angle)
