@@ -7,6 +7,8 @@ TagManager:
   - Sound
   - Bullet
   - BulletForEnemy
+  - BulletBigForEnemy
+  - Laser
   layers:
   - Default
   - TransparentFX

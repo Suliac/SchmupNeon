@@ -21,7 +21,7 @@ public class BulletController : Projectile
     [FoldoutGroup("Gameplay"), Tooltip("speed de la bullet"), SerializeField]
     private float speedBullet = 3f;
     private float additionalSpeed = 0f; //additional speed added by the palyer at start
-    private BulletOrientation orientation;
+    private Vector3 orientation;
     #endregion
 
     #region Initialization
@@ -35,7 +35,7 @@ public class BulletController : Projectile
     /// <summary>
     /// setup le bullet
     /// </summary>
-    public override void SetUpBullet(PlayerController referencePlayer, float addSpeed, BulletOrientation orientationWanted)
+    public override void SetUpBullet(PlayerController referencePlayer, float addSpeed, Vector3 orientationWanted)
     {
         PlayerController = referencePlayer;
         enabledBullet = true;           //active le bullet !
@@ -50,24 +50,7 @@ public class BulletController : Projectile
     #region Core
     protected override void MoveProjectile()
     {
-        float bulletVelocityWanted = (speedBullet + additionalSpeed) * Time.deltaTime;
-        switch (orientation)
-        {
-            case BulletOrientation.Right:
-                bodyBullet.velocity = new Vector3(bulletVelocityWanted, 0, 0);
-                break;
-            case BulletOrientation.Left:
-                bodyBullet.velocity = new Vector3(-bulletVelocityWanted, 0, 0);
-                break;
-            case BulletOrientation.Top:
-                bodyBullet.velocity = new Vector3(0, bulletVelocityWanted, 0);
-                break;
-            case BulletOrientation.Down:
-                bodyBullet.velocity = new Vector3(0, -bulletVelocityWanted, 0);
-                break;
-            default:
-                break;
-        }
+       bodyBullet.velocity = orientation * (speedBullet + additionalSpeed) * Time.deltaTime;
     }
     #endregion
 

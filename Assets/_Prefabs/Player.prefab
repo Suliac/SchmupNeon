@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4275624561490790}
-  - component: {fileID: 114235257888751904}
+  - component: {fileID: 114433648237004666}
   m_Layer: 0
   m_Name: LaserBeam
   m_TagString: Untagged
@@ -88,9 +88,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4019558465647982}
-  - component: {fileID: 114294304760620802}
+  - component: {fileID: 114194868793474678}
   m_Layer: 0
-  m_Name: bulletHell
+  m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,24 +180,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 1
---- !u!114 &114235257888751904
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1434836409449778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84f4271486c342409ce5b30098b1643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 0
-  tagBullet: Laser
-  forwardBullet: 1
-  AdditionalSpeed: 50
-  updateTimer:
-    updateFrequency: 0
---- !u!114 &114294304760620802
+--- !u!114 &114194868793474678
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -205,13 +188,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1620903068532602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df7799cc9a02a0d4fb0d474238ada629, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c530700f97d83940a52bf118dba123d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0.1
   tagBullet: Bullet
   forwardBullet: 1
   AdditionalSpeed: 50
+  NbrBulletPerShot: 1
+  FirstAngleShot: 0
+  angleBetweenEachShoot: 0
+  updateTimer:
+    updateFrequency: 0
+--- !u!114 &114433648237004666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434836409449778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c530700f97d83940a52bf118dba123d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.01
+  tagBullet: Laser
+  forwardBullet: 1
+  AdditionalSpeed: 50
+  NbrBulletPerShot: 1
+  FirstAngleShot: 0
+  angleBetweenEachShoot: 0
   updateTimer:
     updateFrequency: 0
 --- !u!114 &114451966517514430
