@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583733155802228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 18.24, z: 0}
+  m_LocalPosition: {x: 0, y: 8.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4929048192767570}
@@ -159,7 +159,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876281702354740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17, y: -4.74, z: 0}
+  m_LocalPosition: {x: -1.92, y: -7.35, z: 0}
   m_LocalScale: {x: 1.0012487, y: 1.0012487, z: 1.0012487}
   m_Children:
   - {fileID: 4424713349138666}
@@ -174,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1039744866255642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.41, z: 0}
+  m_LocalPosition: {x: 0, y: -0.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4929048192767570}
@@ -342,7 +342,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateTimer:
     updateFrequency: 0
-  speed: 50
+  speed: 5
+  wantToEnable: 1
   timeShooting: 2
   NumberOfShoots: 1
 --- !u!114 &114780286731405066

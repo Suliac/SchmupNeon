@@ -66,7 +66,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     protected void Update()
     {
-        if (((isOnCamera && isOnCamera.isOnScreen) || wantToEnable) && !enableEnemy) // Si l'ennemi vient d'apparaitre & n'a pas déja été spawn
+        if (((isOnCamera && isOnCamera.isOnScreen) || (!isOnCamera && wantToEnable)) && !enableEnemy) // Si l'ennemi vient d'apparaitre & n'a pas déja été spawn
             OnEnemyEnable();
 
         if (!enableEnemy)
