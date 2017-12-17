@@ -12,6 +12,9 @@ public abstract class Pickup : MonoBehaviour, IKillable
     protected PickupHandler currentHandler;
     public PickupHandler CurrentHandler { get { return currentHandler; } set { currentHandler = value; } }
 
+    [FoldoutGroup("Gameplay"), Tooltip("Destruction du pickup juste après utilisation"), SerializeField]
+    private bool killOnUse = false;
+
     #endregion
 
     #region Core
@@ -23,6 +26,12 @@ public abstract class Pickup : MonoBehaviour, IKillable
     public void TryUse()
     {
         Use();
+        if (killOnUse)
+            Stop();
+    }
+
+    protected void Stop()
+    {
         Kill();
         currentHandler = null;
     }

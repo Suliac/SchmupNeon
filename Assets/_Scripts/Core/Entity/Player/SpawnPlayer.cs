@@ -21,6 +21,9 @@ public class SpawnPlayer : MonoBehaviour
     public PlayerController PlayerController { get { return playerController; } }
     private bool isSpawning = false;                    //le joueur est-il en train d'être spawn ?
 
+    private bool spawnedOnce = false;          //reference du playerController
+    public bool SpawnedOnce { get { return spawnedOnce; } }
+
     private LifeBehavior playerLife;    //reference a playerLife
     #endregion
 
@@ -31,6 +34,7 @@ public class SpawnPlayer : MonoBehaviour
         //init le player
         if (player && animSpawn)    //si tout est ok dans les references
         {
+            spawnedOnce = false;
             playerController = player.GetComponent<PlayerController>(); //get la reference du playerCOntroller
             playerController.IdPlayer = transform.GetSiblingIndex();    //set son id selon la position du spawnPlayer dans la hiérarchie
             playerController.ScorePlayer = GameManager.GetSingleton.ScoreManager.Data.scorePlayer[playerController.IdPlayer];   //set son score
@@ -74,9 +78,11 @@ public class SpawnPlayer : MonoBehaviour
             Debug.LogError("on n'est pas censé être ici...");
             return;
         }
+        
         isSpawning = false;
         animSpawn.gameObject.SetActive(false);
         player.SetActive(true);
+        spawnedOnce = true;
         playerLife.InitLife(); // reinit life ici ?
     }
 

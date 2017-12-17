@@ -56,3 +56,15 @@ MonoBehaviour:
       type: 2}
     pooledAmount: 200
     shouldExpand: 0
+  - objectToPool: {fileID: 1840052071805302, guid: da52d8478a7e8e84692ccb169a1fec94,
+      type: 2}
+    pooledAmount: 200
+    shouldExpand: 0
+  - objectToPool: {fileID: 1275753836747768, guid: a3acc21c72f4f7c41aa7f22597f9ed81,
+      type: 2}
+    pooledAmount: 200
+    shouldExpand: 0
+  - objectToPool: {fileID: 1840052071805302, guid: ef09a9d59130c1a44a675da4525a245c,
+      type: 2}
+    pooledAmount: 200
+    shouldExpand: 0
