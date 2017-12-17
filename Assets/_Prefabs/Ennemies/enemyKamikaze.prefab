@@ -42,8 +42,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221095074222132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.19644642, y: 0.19644642, z: 0.19644642}
+  m_LocalPosition: {x: 5.1334, y: -5.8669, z: 0}
+  m_LocalScale: {x: 1.2287221, y: 1.2287221, z: 1.2287221}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -181,7 +181,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.75
+  m_Radius: 0.26
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135537223401837464
 SphereCollider:
@@ -193,7 +193,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212037098434311236
 SpriteRenderer:
@@ -229,12 +229,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: edee90451a5e10a4383bf45096c8dde4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3dd85f25c5bfab4c9cff380f6e079e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8, y: 8}
+  m_Size: {x: 0.8, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
