@@ -684,28 +684,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4621614100972944, guid: 9fb3f57496f178d48a3ba21caf5f5880, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4621614100972944, guid: 9fb3f57496f178d48a3ba21caf5f5880, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4621614100972944, guid: 9fb3f57496f178d48a3ba21caf5f5880, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4621614100972944, guid: 9fb3f57496f178d48a3ba21caf5f5880, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 135137611386496990, guid: 9fb3f57496f178d48a3ba21caf5f5880,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 135897557789719448, guid: 9fb3f57496f178d48a3ba21caf5f5880,
-        type: 2}
-      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2626,7 +2604,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4528191324019808, guid: 5caf8fc4904b0054f82d76e01753afad, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5caf8fc4904b0054f82d76e01753afad, type: 2}
@@ -3380,7 +3358,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4595459802124488, guid: 87fa3e67ad21edc489f2bad83263f119, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114292211328603702, guid: 87fa3e67ad21edc489f2bad83263f119,
         type: 2}
@@ -4367,7 +4345,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4605773007476854, guid: d2c3ddcc3eadecd44ab628df33b06b51, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2c3ddcc3eadecd44ab628df33b06b51, type: 2}
@@ -8903,11 +8881,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 779908338}
     m_Modifications:
-    - target: {fileID: 114895835926672908, guid: 359519712c5dca14abf1fc56dcaa6159,
-        type: 2}
-      propertyPath: itemsToPool.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4061269643163014, guid: 359519712c5dca14abf1fc56dcaa6159, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8939,44 +8912,6 @@ Prefab:
     - target: {fileID: 4061269643163014, guid: 359519712c5dca14abf1fc56dcaa6159, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895835926672908, guid: 359519712c5dca14abf1fc56dcaa6159,
-        type: 2}
-      propertyPath: itemsToPool.Array.data[1].objectToPool
-      value: 
-      objectReference: {fileID: 1840052071805302, guid: da52d8478a7e8e84692ccb169a1fec94,
-        type: 2}
-    - target: {fileID: 114895835926672908, guid: 359519712c5dca14abf1fc56dcaa6159,
-        type: 2}
-      propertyPath: itemsToPool.Array.data[1].pooledAmount
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895835926672908, guid: 359519712c5dca14abf1fc56dcaa6159,
-        type: 2}
-      propertyPath: itemsToPool.Array.data[1].shouldExpand
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895835926672908, guid: 359519712c5dca14abf1fc56dcaa6159,
-        type: 2}
-      propertyPath: itemsToPool.Array.data[2].objectToPool
-      value: 
-      objectReference: {fileID: 1275753836747768, guid: a3acc21c72f4f7c41aa7f22597f9ed81,
-        type: 2}
-    - target: {fileID: 114895835926672908, guid: 359519712c5dca14abf1fc56dcaa6159,
-        type: 2}
-      propertyPath: itemsToPool.Array.data[2].pooledAmount
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 114895835926672908, guid: 359519712c5dca14abf1fc56dcaa6159,
-        type: 2}
-      propertyPath: itemsToPool.Array.data[3].objectToPool
-      value: 
-      objectReference: {fileID: 1840052071805302, guid: ef09a9d59130c1a44a675da4525a245c,
-        type: 2}
-    - target: {fileID: 114895835926672908, guid: 359519712c5dca14abf1fc56dcaa6159,
-        type: 2}
-      propertyPath: itemsToPool.Array.data[3].pooledAmount
-      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 359519712c5dca14abf1fc56dcaa6159, type: 2}
