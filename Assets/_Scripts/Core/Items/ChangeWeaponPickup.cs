@@ -1,6 +1,14 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
+public enum Weapon
+{
+    SimpleRifle = 0,
+    LaserBeam = 1,
+    Shotgun = 2,
+    Wavegun = 3
+}
+
 /// <summary>
 /// ChangeWeaponPickup Description
 /// </summary>
@@ -12,7 +20,7 @@ public class ChangeWeaponPickup : Pickup
     private FrequencyTimer updateTimer;
 
     [FoldoutGroup("Gameplay"), Tooltip("ref sur HandablePickup"), SerializeField]
-    private int NewWeaponId = 0;
+    private Weapon NewWeaponId = Weapon.LaserBeam;
 
     #endregion
 
