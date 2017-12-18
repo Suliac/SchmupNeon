@@ -62,7 +62,7 @@ public class Rifle : Weapons
             if (PlayerController)
                 initSpeed = (isMovingRight) ? PlayerController.PlayerBody.velocity.magnitude * AdditionalSpeed : 0f;
 
-            projectile.SetUpBullet(PlayerController, initSpeed, projectileOrientation);
+            projectile.Setup(PlayerController, initSpeed, projectileOrientation);
 
             if (PlayerController)
             {

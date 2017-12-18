@@ -20,6 +20,7 @@ public class BulletController : Projectile
 
     [FoldoutGroup("Gameplay"), Tooltip("speed de la bullet"), SerializeField]
     private float speedBullet = 3f;
+
     private float additionalSpeed = 0f; //additional speed added by the palyer at start
     private Vector3 orientation;
     #endregion
@@ -35,7 +36,7 @@ public class BulletController : Projectile
     /// <summary>
     /// setup le bullet
     /// </summary>
-    public override void SetUpBullet(PlayerController referencePlayer, float addSpeed, Vector3 orientationWanted)
+    protected override void SetUpBullet(PlayerController referencePlayer, float addSpeed, Vector3 orientationWanted)
     {
         PlayerController = referencePlayer;
         enabledBullet = true;           //active le bullet !
@@ -81,6 +82,11 @@ public class BulletController : Projectile
         isOnCamera.enabled = false;
         //isOnCamera.isOnScreen = true;
         gameObject.SetActive(false);
+    }
+
+    protected override void OnProjectileTooFar()
+    {
+        Kill(); // for a classic bullet, if it goes too far, just kill it 
     }
 
     #endregion

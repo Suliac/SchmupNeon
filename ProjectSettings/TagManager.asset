@@ -9,6 +9,7 @@ TagManager:
   - BulletForEnemy
   - BulletBigForEnemy
   - Laser
+  - BulletShotgun
   layers:
   - Default
   - TransparentFX
