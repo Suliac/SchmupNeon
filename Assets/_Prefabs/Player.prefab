@@ -280,6 +280,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 300
+  prefabsDeathTag: DeathPlayer
+  timeBeforeRespawn: 0.5
+  animPlayer: {fileID: 1053026637923514}
   updateTimer:
     updateFrequency: 0
 --- !u!114 &114615846370654086

@@ -12,6 +12,7 @@ TagManager:
   - BulletShotgun
   - DeathBullet
   - DeathBulletEnemy
+  - DeathPlayer
   layers:
   - Default
   - TransparentFX

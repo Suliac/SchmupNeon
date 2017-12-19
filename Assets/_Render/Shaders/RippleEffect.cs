@@ -17,15 +17,17 @@ public class RippleEffect : MonoBehaviour
         new Keyframe(0.99f, 0.50f, 0, 0)
     );
 
-    [Range(0.01f, 1.0f)]
+    public bool stopRadius = false;
+
+    [Range(0.01f, 5.0f)]
     public float refractionStrength = 0.5f;
 
     public Color reflectionColor = Color.gray;
 
-    [Range(0.01f, 1.0f)]
+    [Range(0.01f, 5.0f)]
     public float reflectionStrength = 0.7f;
 
-    [Range(1.0f, 3.0f)]
+    [Range(0.1f, 3.0f)]
     public float waveSpeed = 1.25f;
 
     public float dropInterval = 0.5f;
@@ -119,9 +121,13 @@ public class RippleEffect : MonoBehaviour
                 timer -= dropInterval;
             }
         }
+        
+        if (!stopRadius)
+        {
 
-        foreach (var d in droplets) d.Update();
+            foreach (var d in droplets) d.Update();
 
+        }
         UpdateShaderParameters();
     }
 
