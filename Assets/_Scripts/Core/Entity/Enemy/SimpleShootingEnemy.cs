@@ -22,11 +22,13 @@ public class SimpleShootingEnemy : ShootingEnemy
     protected override void Shoot()
     {
         if (weaponHandle)
-            weaponHandle.UseWeapon(); // Shoot every time it cans
+            if (weaponHandle.UseWeapon())// Shoot every time it can
+                currentState = EnemyState.Moving;
     }
 
     protected override void Move()
     {
+        currentState = EnemyState.Preshot;
     }
 
     protected override void OnBeforeKill()
