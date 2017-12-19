@@ -57,26 +57,6 @@ public class BulletController : Projectile
 
     #region Unity ending functions
 
-    //private void OnTriggerEnter(Collider col)
-    //{
-    //    if (!enabledBullet) //si le bullet est désactivé, ne pas effectuer de test...
-    //        return;
-
-    //    LifeBehavior life = col.gameObject.GetComponent<LifeBehavior>();
-    //    if (life)
-    //    {
-    //        enabledBullet = false;  //desactiver le bullet !
-    //        Debug.Log("bang");
-    //        //le life prend des dommages, si le life meurt... on s'ajoute du score !
-    //        int score = life.TakeDamages(bulletDamage);
-    //        if (score != 0)
-    //        {
-    //            PlayerController.ScorePlayer+= score;
-    //        }
-    //        Kill();
-    //    }
-    //}
-
     public override void Kill()
     {
         if (isOnCamera.CheckOnCamera())
