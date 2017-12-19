@@ -10,6 +10,8 @@ TagManager:
   - BulletBigForEnemy
   - Laser
   - BulletShotgun
+  - DeathBullet
+  - DeathBulletEnemy
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - FriendProjectile
   - EnemyProjectile
   - Walls
-  - 
+  - Lock
   - 
   - 
   - 

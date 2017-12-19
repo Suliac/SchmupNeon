@@ -144,6 +144,7 @@ public class TutoStart : MonoBehaviour
     {
         if (onChrono)   //si on est déjà en mode chrono...
             return;
+        StopAllCoroutines();
         onChrono = true;
         tutoChrono.SetActive(true);
         currentChrono = timerTuto;
@@ -155,7 +156,7 @@ public class TutoStart : MonoBehaviour
         if (!onChrono)   //si on est déjà en mode chrono...
             return;
         Debug.Log("ici ??");
-        StopCoroutine(ChronoPass());
+        StopAllCoroutines();
         tutoChrono.SetActive(false);
         onChrono = false;
     }
