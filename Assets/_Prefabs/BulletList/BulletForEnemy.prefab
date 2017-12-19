@@ -96,7 +96,7 @@ MonoBehaviour:
   damagePlayer: 1
   damageEnnemy: 0
   damageProjectile: 0
-  oneShot: 1
+  oneShot: 0
 --- !u!114 &114467227826020928
 MonoBehaviour:
   m_ObjectHideFlags: 1

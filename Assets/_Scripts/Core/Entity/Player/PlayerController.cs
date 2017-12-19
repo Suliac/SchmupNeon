@@ -186,6 +186,9 @@ public class PlayerController : MonoBehaviour, IKillable
             Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du player");
             return;
         }
+        deathBullet.transform.position = transform.position;
+        deathBullet.SetActive(true);
+
         enabledPlayer = false;
         animPlayer.SetActive(false);
         Invoke("RespawnIt", timeBeforeRespawn);        
