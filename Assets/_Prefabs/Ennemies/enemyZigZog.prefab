@@ -243,6 +243,7 @@ MonoBehaviour:
     updateFrequency: 0
   speed: 1
   wantToEnable: 1
+  prefabsDeathTag: DeathZigZog
   angleTop: 135
   angleBot: 225
   timeMoving: 2

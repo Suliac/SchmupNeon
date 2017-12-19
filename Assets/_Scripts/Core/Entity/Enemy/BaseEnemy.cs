@@ -11,12 +11,15 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     [Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
 
-    [FoldoutGroup("Gameplay"), Tooltip("Vitesse des ennemis"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Vitesse des ennemis"), SerializeField]
     protected float speed = 1.0f;
 
-    [FoldoutGroup("Gameplay"), Tooltip("Ennemi activé par défaut"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Ennemi activé par défaut"), SerializeField]
     protected bool wantToEnable = true;         // Etat actuel de l'ennemi
     public bool WantToEnable { get { return wantToEnable; } set { wantToEnable = value; } }
+
+    [FoldoutGroup("GamePlay"), Tooltip("ref du prefabs de la particule de mort"), SerializeField]
+    private string prefabsDeathTag;
 
     protected bool wantToDisable = false;         // Etat actuel de l'ennemi
     public bool WantToDisable { get { return wantToDisable; } set { wantToDisable = value; } }
@@ -53,11 +56,25 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
         enableEnemy = true;
     }
 
+    private void CreateDeathObject()
+    {
+        GameObject deathEnemy = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
+        if (!deathEnemy)
+        {
+            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du player");
+            return;
+        }
+        deathEnemy.transform.position = transform.position;
+        deathEnemy.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+        deathEnemy.SetActive(true);
+    }
+
     [FoldoutGroup("Debug"), Button("Kill")]
     public void Kill()
     {
         //Debug.Log("Dead");
         OnBeforeKill();
+        CreateDeathObject();
         Destroy(gameObject);
     }
     #endregion

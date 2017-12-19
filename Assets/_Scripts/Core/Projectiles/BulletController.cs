@@ -68,6 +68,7 @@ public class BulletController : Projectile
                 return;
             }
             deathBullet.transform.position = transform.position;
+            deathBullet.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
             deathBullet.SetActive(true);
         }
         

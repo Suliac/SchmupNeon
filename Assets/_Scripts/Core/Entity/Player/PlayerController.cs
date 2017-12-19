@@ -161,6 +161,19 @@ public class PlayerController : MonoBehaviour, IKillable
         MovePlayer();
     }
 
+    private void CreateDeathObject()
+    {
+        GameObject deathBullet = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
+        if (!deathBullet)
+        {
+            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du player");
+            return;
+        }
+        deathBullet.transform.position = transform.position;
+        deathBullet.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+        deathBullet.SetActive(true);
+    }
+
     /// <summary>
     /// pour respawn... juste désactive l'objet !
     /// </summary>
@@ -179,15 +192,8 @@ public class PlayerController : MonoBehaviour, IKillable
         
         ScorePlayer -= lifeBehavior.ScoreToRemove;
 
-        
-        GameObject deathBullet = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
-        if (!deathBullet)
-        {
-            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du player");
-            return;
-        }
-        deathBullet.transform.position = transform.position;
-        deathBullet.SetActive(true);
+
+        CreateDeathObject();
 
         enabledPlayer = false;
         animPlayer.SetActive(false);

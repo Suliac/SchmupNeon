@@ -13,6 +13,7 @@ TagManager:
   - DeathBullet
   - DeathBulletEnemy
   - DeathPlayer
+  - DeathZigZog
   layers:
   - Default
   - TransparentFX

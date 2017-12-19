@@ -46,7 +46,7 @@ public class Rifle : Weapons
                 return;
             }
 
-            bullet.transform.SetParent(GameManager.GetSingleton.ObjectNotMovingDynamiclyCreated);            //set le parent
+            bullet.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);            //set le parent
             bullet.transform.rotation = transform.rotation;                                         //set la position
 
             //Vector3 projectileOrientation = new Vector3(Mathf.Cos(Mathf.Deg2Rad * currentShotAngle), Mathf.Sin(Mathf.Deg2Rad * currentShotAngle), 0);
