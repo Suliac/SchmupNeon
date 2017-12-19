@@ -18,7 +18,7 @@ public class BulletController : Projectile
     //[FoldoutGroup("Gameplay"), Tooltip("dommage sur les objets"), SerializeField]
     //private float bulletDamage = 50.0f;
 
-    [FoldoutGroup("Gameplay"), Tooltip("speed de la bullet"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("speed de la bullet"), SerializeField]
     private float speedBullet = 3f;
 
     private float additionalSpeed = 0f; //additional speed added by the palyer at start
@@ -79,6 +79,19 @@ public class BulletController : Projectile
 
     public override void Kill()
     {
+        if (isOnCamera.CheckOnCamera())
+        {
+            GameObject deathBullet = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
+            if (!deathBullet)
+            {
+                Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du BulletCOntroller");
+                return;
+            }
+            deathBullet.transform.position = transform.position;
+            deathBullet.SetActive(true);
+        }
+        
+
         isOnCamera.enabled = false;
         //isOnCamera.isOnScreen = true;
         gameObject.SetActive(false);

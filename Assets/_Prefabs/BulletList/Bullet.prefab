@@ -116,7 +116,7 @@ MonoBehaviour:
   updateTimer:
     updateFrequency: 0.1
   maxDistance: 0
-  speedBullet: 400
+  speedBullet: 800
 --- !u!114 &114045245328282548
 MonoBehaviour:
   m_ObjectHideFlags: 1
