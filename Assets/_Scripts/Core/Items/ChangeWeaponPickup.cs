@@ -35,14 +35,11 @@ public class ChangeWeaponPickup : Pickup
     #region Core
     protected override void Use()
     {
-        print("BITCH ?");
         if (currentHandler)
         {
-            print("BITCH ARE YOU HERE ?");
             WeaponHandler handler = currentHandler.PlayerController.GetComponent<WeaponHandler>();
             if (handler)
             {
-                print("BITCH");
                 handler.IdWeapon = NewWeaponId;
             }
         }

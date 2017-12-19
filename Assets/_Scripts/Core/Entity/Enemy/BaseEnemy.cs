@@ -1,5 +1,13 @@
 ﻿using Sirenix.OdinInspector;
+using System.Collections;
 using UnityEngine;
+
+public enum EnemyState
+{
+    Moving,
+    Preshot,
+    Shooting
+}
 
 /// <summary>
 /// BaseEnemy Description
@@ -21,11 +29,18 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     protected bool wantToDisable = false;         // Etat actuel de l'ennemi
     public bool WantToDisable { get { return wantToDisable; } set { wantToDisable = value; } }
 
+    private float blinkDuration = 1.0f;
+    private float blinkRedDuration = 0.2f;
+    private float preShotTimer = 0.0f;
+    private bool coroutineStarted = false;
+    private Renderer renderer;
+
     protected bool enableEnemy = false;         // Etat actuel de l'ennemi
     protected IsOnCamera isOnCamera;
     protected Rigidbody body;             //ref du rigidbody
 
-
+    
+    protected EnemyState currentState = EnemyState.Moving;
     #endregion
 
     #region Initialization
@@ -33,6 +48,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     {
         isOnCamera = GetComponent<IsOnCamera>();
         body = GetComponent<Rigidbody>();
+        renderer = GetComponent<Renderer>();
     }
 
     #endregion
@@ -42,6 +58,11 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     abstract protected void Shoot();
     abstract protected void OnBeforeKill();
 
+    protected void OnPreShotPhase()
+    {
+        if (!coroutineStarted)
+            StartCoroutine(Blink(blinkDuration, blinkRedDuration));
+    }
 
     protected void OnEnemyEnable()
     {
@@ -51,6 +72,42 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     protected void OnEnemyDisable()
     {
         enableEnemy = true;
+    }
+
+    IEnumerator Blink(float totalDuration, float oneColorDuration)
+    {
+        coroutineStarted = true;
+        bool isRed = false;
+        float myTimer = 0.0f;
+
+        while (preShotTimer < totalDuration)
+        {
+            preShotTimer += Time.deltaTime;
+            myTimer += Time.deltaTime;
+
+            if(myTimer > oneColorDuration)
+            {
+                isRed = !isRed;
+                myTimer = 0.0f;
+            }
+            
+            if (isRed)
+            {
+                renderer.material.color = Color.red;
+            }
+            else
+            {
+                renderer.material.color = Color.white;
+            }
+
+            yield return null;
+        }
+
+        print("End blink");
+        preShotTimer = 0.0f;
+        coroutineStarted = false;
+        currentState = EnemyState.Shooting;
+        yield return null;
     }
 
     [FoldoutGroup("Debug"), Button("Kill")]
@@ -72,8 +129,20 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
         if (!enableEnemy)
             return;
 
-        Move();
-        Shoot();
+        switch (currentState)
+        {
+            case EnemyState.Moving:
+                Move();
+                break;
+            case EnemyState.Preshot:
+                OnPreShotPhase();
+                break;
+            case EnemyState.Shooting:
+                Shoot();
+                break;
+            default:
+                break;
+        }
 
         //optimisation des fps
         if (updateTimer.Ready())
