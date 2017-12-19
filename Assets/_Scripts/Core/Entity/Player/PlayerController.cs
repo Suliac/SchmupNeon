@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour, IKillable
 {
     #region Attributes
 
-    [FoldoutGroup("Gameplay"), Tooltip("Vitesse de déplacement du joueur"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Vitesse de déplacement du joueur"), SerializeField]
     private float moveSpeed = 10.0f;
 
     [FoldoutGroup("GamePlay"), Tooltip("ref du prefabs de la particule de mort"), SerializeField]
