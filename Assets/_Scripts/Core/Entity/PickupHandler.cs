@@ -14,6 +14,7 @@ public class PickupHandler : MonoBehaviour
     [FoldoutGroup("Debug")]
     [Tooltip("ref sur PlayerController")]
     private PlayerController playerController;
+    public PlayerController PlayerController { get { return playerController; } }
     #endregion
 
     #region Initialization
@@ -56,8 +57,11 @@ public class PickupHandler : MonoBehaviour
         {
             Pickup instantPickup = col.GetComponent<Pickup>(); // Si pikcup n'est pas Handable mais un pickup quand meme -> on l'utilise de suite
 
-            if(instantPickup != null)
+            if (instantPickup != null)
+            {
+                instantPickup.CurrentHandler = this;
                 instantPickup.TryUse();
+            }
         }
 
     }

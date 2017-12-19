@@ -20,6 +20,14 @@ public class GameManager : MonoBehaviour
     private Transform objectDynamiclyCreated;
     public Transform ObjectDynamiclyCreated { get { return objectDynamiclyCreated; } }
 
+    [FoldoutGroup("Object In World"), Tooltip("Entitées créées dynamiquement fixes"), SerializeField]
+    private Transform objectNotMovingDynamiclyCreated;
+    public Transform ObjectNotMovingDynamiclyCreated { get { return objectNotMovingDynamiclyCreated; } }
+
+    [FoldoutGroup("Object In World"), Tooltip("Group des Ennemy"), SerializeField]
+    private Transform enemyGroup;
+    public Transform EnemyGroup { get { return enemyGroup; } }
+
 
     [FoldoutGroup("Object In World"), Tooltip("movingPlatform"), SerializeField]
     private MovePlatform movingPlatform;
@@ -27,10 +35,6 @@ public class GameManager : MonoBehaviour
     [FoldoutGroup("Object In World"), Tooltip("panel Canvas des joueurs (in game)"), SerializeField]
     private GameObject panelCanvasInGame;
 
-
-    [FoldoutGroup("Object In World"), Tooltip("Entitées créées dynamiquement fixes"), SerializeField]
-    private Transform objectNotMovingDynamiclyCreated;
-    public Transform ObjectNotMovingDynamiclyCreated { get { return objectNotMovingDynamiclyCreated; } }
 
 
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]

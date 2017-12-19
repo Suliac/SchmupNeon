@@ -29,7 +29,7 @@ public class IsOnCamera : MonoBehaviour
     /// <summary>
     /// Check object is on screen
     /// <summary>
-    bool CheckOnCamera()
+    public bool CheckOnCamera()
     {
         if (!Camera.main)
         {

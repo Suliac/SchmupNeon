@@ -3,6 +3,7 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// TutoStart Description
@@ -15,7 +16,9 @@ public class TutoStart : MonoBehaviour
     private float redLineX = 0.3f;
     [FoldoutGroup("GamePlay"), Tooltip("Autorise moins de 4 manettes"), SerializeField]
     private bool fourPlayerOnly = false;
-
+    [FoldoutGroup("GamePlay"), Tooltip("Timer Chrono"), SerializeField]
+    private int timerTuto = 3;
+    
 
     [FoldoutGroup("Object In World"), Tooltip("panel Tuto"), SerializeField]
     private GameObject panelTutoInGame;
@@ -28,7 +31,10 @@ public class TutoStart : MonoBehaviour
     private List<GameObject> connectJoypad;
     [FoldoutGroup("Object In World"), Tooltip("redLine"), SerializeField]
     private Image redLine;
-
+    [FoldoutGroup("Object In World"), Tooltip("Chrono tuto"), SerializeField]
+    private GameObject tutoChrono;
+    [FoldoutGroup("Object In World"), Tooltip("Text chrono"), SerializeField]
+    private TextMeshProUGUI textChrono;
 
     [FoldoutGroup("Debug"), Tooltip("canvas des players"), SerializeField]
     private int[] listTutoState = new int[4];
@@ -39,6 +45,8 @@ public class TutoStart : MonoBehaviour
     private GameManager gameManager;
     private Camera cam;
     private bool enableTuto = true;
+    private int currentChrono;
+    private bool onChrono = false;
     #endregion
 
     #region Initialization
@@ -61,6 +69,8 @@ public class TutoStart : MonoBehaviour
     public void ActiveTuto(bool active)
     {
         panelTutoInGame.SetActive(active);
+        tutoChrono.SetActive(false);
+        onChrono = false;
         if (active)
         {
             listTutoBackLeftPX[0].SetActive(false);
@@ -128,6 +138,45 @@ public class TutoStart : MonoBehaviour
     }
 
     /// <summary>
+    /// commence le chrono
+    /// </summary>
+    private void ChronoTuto()
+    {
+        if (onChrono)   //si on est déjà en mode chrono...
+            return;
+        StopAllCoroutines();
+        onChrono = true;
+        tutoChrono.SetActive(true);
+        currentChrono = timerTuto;
+        StartCoroutine(ChronoPass());
+    }
+
+    private void stopChronoTuto()
+    {
+        if (!onChrono)   //si on est déjà en mode chrono...
+            return;
+        Debug.Log("ici ??");
+        StopAllCoroutines();
+        tutoChrono.SetActive(false);
+        onChrono = false;
+    }
+
+    IEnumerator ChronoPass()
+    {
+        while (currentChrono >= 0)
+        {
+            if (!onChrono)
+                yield break;
+            textChrono.text = currentChrono.ToString();
+            yield return new WaitForSeconds(1);
+            currentChrono--;
+        }
+        Debug.Log("la");
+        tutoChrono.SetActive(false);
+        activeGame();
+    }
+
+    /// <summary>
     /// 
     /// </summary>
     private void UpdateRedLine()
@@ -148,14 +197,13 @@ public class TutoStart : MonoBehaviour
         {
             //ici red line !
             redLine.color = Color.red;
+            stopChronoTuto();
         }
         else
         {
             //ici green line !
             redLine.color = Color.green;
-            enableTuto = false;
-            ActiveTuto(false);
-            gameManager.ActiveGame(true);
+            ChronoTuto();
         }
     }
 
@@ -183,6 +231,16 @@ public class TutoStart : MonoBehaviour
                 ChangeState(i);
             }
         }
+    }
+
+    /// <summary>
+    /// active le jeu après le tuto
+    /// </summary>
+    private void activeGame()
+    {
+        enableTuto = false;
+        ActiveTuto(false);
+        gameManager.ActiveGame(true);
     }
     #endregion
 

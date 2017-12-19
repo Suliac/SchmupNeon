@@ -10,16 +10,23 @@ using Sirenix.OdinInspector;
 public abstract class Projectile : MonoBehaviour, IKillable
 {
     #region Attributes
+    [FoldoutGroup("GamePlay")] [Tooltip("ref du prefabs de la particule de mort"), SerializeField] protected string prefabsDeathTag;
+    //public string PrefabsDeathTag { get { return prefabsDeathTag; } }
+
+
     [FoldoutGroup("Debug")] [Tooltip("ref sur playerController")] private PlayerController playerController;
     public PlayerController PlayerController { set { playerController = value; } get { return playerController; } }
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
+    
+    [FoldoutGroup("GamePlay"), Tooltip("Distance maximale de la balle (0 = pas de limitation)"), SerializeField]
+    private float maxDistance = 0.0f; // NB : max distance == 0 -> pas de limitation de distance
 
     protected Rigidbody bodyBullet;   //ref du rigidbody
     protected IsOnCamera isOnCamera;  //ref du IsOnCamera pour savoir si le bullet est hors champs
     protected bool enabledBullet = false; //le bullet, au démarage ne fait pas de dégat !
-
+    protected Vector3 startPosition;
     #endregion
 
     #region Initialization
@@ -29,12 +36,19 @@ public abstract class Projectile : MonoBehaviour, IKillable
         isOnCamera = GetComponent<IsOnCamera>();
     }
     #endregion
-
+    
     #region Core
+    public void Setup(PlayerController refPlayer, float addSpeed, Vector3 orientation)
+    {
+        startPosition = transform.position;
+        SetUpBullet(refPlayer, addSpeed, orientation);
+    }
 
-    abstract public void SetUpBullet(PlayerController refPlayer, float addSpeed, Vector3 orientation);
+    abstract protected void SetUpBullet(PlayerController refPlayer, float addSpeed, Vector3 orientation);
     abstract protected void MoveProjectile();
+    abstract protected void OnProjectileTooFar();
     public virtual void Kill() { }
+    public virtual void Kill(bool createBullet) { }
     #endregion
 
     #region Unity ending functions
@@ -44,6 +58,15 @@ public abstract class Projectile : MonoBehaviour, IKillable
             return;
 
         MoveProjectile();
+
+        if(maxDistance > 0)
+        {
+            Vector3 distance = transform.position - startPosition;
+            if(distance.magnitude > maxDistance)
+            {
+                OnProjectileTooFar();
+            }
+        }
 
         if (updateTimer.Ready())
         {
