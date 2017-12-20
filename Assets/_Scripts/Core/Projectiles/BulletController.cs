@@ -18,7 +18,7 @@ public class BulletController : Projectile
     //[FoldoutGroup("Gameplay"), Tooltip("dommage sur les objets"), SerializeField]
     //private float bulletDamage = 50.0f;
 
-    [FoldoutGroup("Gameplay"), Tooltip("speed de la bullet"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("speed de la bullet"), SerializeField]
     private float speedBullet = 3f;
 
     private float additionalSpeed = 0f; //additional speed added by the palyer at start
@@ -57,28 +57,22 @@ public class BulletController : Projectile
 
     #region Unity ending functions
 
-    //private void OnTriggerEnter(Collider col)
-    //{
-    //    if (!enabledBullet) //si le bullet est désactivé, ne pas effectuer de test...
-    //        return;
-
-    //    LifeBehavior life = col.gameObject.GetComponent<LifeBehavior>();
-    //    if (life)
-    //    {
-    //        enabledBullet = false;  //desactiver le bullet !
-    //        Debug.Log("bang");
-    //        //le life prend des dommages, si le life meurt... on s'ajoute du score !
-    //        int score = life.TakeDamages(bulletDamage);
-    //        if (score != 0)
-    //        {
-    //            PlayerController.ScorePlayer+= score;
-    //        }
-    //        Kill();
-    //    }
-    //}
-
     public override void Kill()
     {
+        if (isOnCamera.CheckOnCamera())
+        {
+            GameObject deathBullet = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
+            if (!deathBullet)
+            {
+                Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du BulletCOntroller");
+                return;
+            }
+            deathBullet.transform.position = transform.position;
+            deathBullet.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+            deathBullet.SetActive(true);
+        }
+        
+
         isOnCamera.enabled = false;
         //isOnCamera.isOnScreen = true;
         gameObject.SetActive(false);

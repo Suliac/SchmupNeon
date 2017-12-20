@@ -71,8 +71,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fc58a6df9b9a040b59a7f63f092787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabsDeathTag: DeathBulletEnemy
   updateTimer:
     updateFrequency: 0.1
+  maxDistance: 0
   speedBullet: 400
 --- !u!114 &114045245328282548
 MonoBehaviour:

@@ -36,7 +36,8 @@ public class CheminotEnemy : ShootingEnemy
     protected override void Shoot()
     {
         if (weaponHandle)
-            weaponHandle.UseWeapon();
+            if (weaponHandle.UseWeapon())
+                currentState = EnemyState.Moving;
     }
         protected override void OnBeforeKill()
     {
@@ -62,6 +63,7 @@ public class CheminotEnemy : ShootingEnemy
             transform.rotation = Quaternion.Lerp(startRotation, endRotation, Mathf.Min(1, partOfTotalTime));
             yield return null;
         }
+        currentState = EnemyState.Shooting;
         rotateRight = !rotateRight;
         coroutineRunning = false;
     }

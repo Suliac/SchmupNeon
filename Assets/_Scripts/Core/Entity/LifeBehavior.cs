@@ -20,11 +20,11 @@ public class LifeBehavior : MonoBehaviour
 
     private IKillable killable;
 
-    [FoldoutGroup("Gameplay"), Tooltip("La vie initialise de l'objet"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("La vie initialise de l'objet"), SerializeField]
     private float StartLife = 100.0f;
-    [FoldoutGroup("Gameplay"), Tooltip("Score à donner aux joueur quand cet objet meurt"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Score à donner aux joueur quand cet objet meurt"), SerializeField]
     private int scoreToGiveToOther = 0;  //score à donner aux autre quand on meurt
-    [FoldoutGroup("Gameplay"), Tooltip("Score à enlever au joueur quand on meurt"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Score à enlever au joueur quand on meurt"), SerializeField]
     private int scoreToRemove = 0;   //score à enlever à soit même quand on meurt (pour les joueurs)
     public int ScoreToRemove { get { return scoreToRemove; } }
 

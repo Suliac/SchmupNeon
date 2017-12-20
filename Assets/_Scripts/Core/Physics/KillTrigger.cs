@@ -1,12 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Kill any IKillable instance on contact
 /// <summary>
 public class KillTrigger : MonoBehaviour
 {
-	#region Attributes
-	[SerializeField]
+
+    #region Attributes
+    [SerializeField]
+    private List<string> tagToKill;
+
+    [SerializeField]
 	private bool killOnEnter = true;
 
 	[SerializeField]
@@ -20,6 +25,18 @@ public class KillTrigger : MonoBehaviour
         IKillable killable = other.GetComponent<IKillable>();
         if (killable != null)
         {
+            if (tagToKill.Count > 0)
+            {
+                for (int i = 0; i < tagToKill.Count; i++)
+                {
+                    if (other.tag == tagToKill[i])
+                    {
+                        killable.Kill();
+                        return;
+                    }
+                }
+                return;
+            }
             killable.Kill();
         }
     }
