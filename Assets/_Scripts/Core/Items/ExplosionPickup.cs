@@ -13,9 +13,9 @@ public class ExplosionPickup : HandablePickup
 	private FrequencyTimer updateTimer;
 
 
-    [FoldoutGroup("Gameplay"), Tooltip("Rayon de l'explosion"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Rayon de l'explosion"), SerializeField]
     private float radius = 5.0f;
-    [FoldoutGroup("Gameplay"), Tooltip("Force de poussée"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Force de poussée"), SerializeField]
     private float speedPush = 5.0f;
 
     [FoldoutGroup("Debug"), Tooltip("Est ce que l'item a été utilisé")]
@@ -56,7 +56,7 @@ public class ExplosionPickup : HandablePickup
                     playersToPush.Add(otherPlayer);
                 }
             }
-
+            CreateTakeObject(currentPlayer.gameObject.transform, prefabsUsePickup); //utilise 
             print(playersToPush.Count);
         }
 
