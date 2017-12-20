@@ -7,12 +7,11 @@ using UnityEngine;
 public class PickupHandler : MonoBehaviour
 {
     #region Attributes
-    [FoldoutGroup("Debug")]
-    [Tooltip("ref sur HandablePickup")]
+
+    [FoldoutGroup("Debug"), Tooltip("ref sur HandablePickup")]
     private HandablePickup currentPickup;
 
-    [FoldoutGroup("Debug")]
-    [Tooltip("ref sur PlayerController")]
+    [FoldoutGroup("Debug"), Tooltip("ref sur PlayerController")]
     private PlayerController playerController;
     public PlayerController PlayerController { get { return playerController; } }
     #endregion

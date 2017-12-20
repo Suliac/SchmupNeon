@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114893664170048022}
   - component: {fileID: 212578966633934068}
   - component: {fileID: 135457847265140654}
+  - component: {fileID: 95943995025157444}
   m_Layer: 9
   m_Name: enemyZigZog
   m_TagString: Untagged
@@ -100,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221095074222132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.04, y: -0.43, z: 0}
+  m_LocalPosition: {x: -2.4, y: -0.6300001, z: -0.16068913}
   m_LocalScale: {x: 0.82594997, y: 0.82594997, z: 0.82594997}
   m_Children:
   - {fileID: 4258900196123364}
@@ -122,6 +123,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!95 &95943995025157444
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221095074222132}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3a6ae686aa75064d8794e63b4231abb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114140503068013892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,7 +212,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221095074222132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 341817a154a515c44b5e51862b0afd99, type: 3}
   m_Name: 
@@ -243,7 +261,7 @@ MonoBehaviour:
     updateFrequency: 0
   speed: 5
   wantToEnable: 1
-  prefabsDeathTag: DeathZigZog
+  prefabsDeathTag: DeathEnemy
   blinkDuration: 1
   blinkFrequency: 0.2
   timeBeforeMoving: 0.1

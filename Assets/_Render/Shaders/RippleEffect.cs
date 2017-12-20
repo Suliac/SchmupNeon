@@ -17,7 +17,7 @@ public class RippleEffect : MonoBehaviour
         new Keyframe(0.99f, 0.50f, 0, 0)
     );
 
-    public bool stopRadius = false;
+    public bool onlyOnStart = true;
 
     [Range(0.01f, 5.0f)]
     public float refractionStrength = 0.5f;
@@ -34,7 +34,7 @@ public class RippleEffect : MonoBehaviour
 
     private Camera cam;
 
-    [SerializeField, HideInInspector]
+    [SerializeField]
     private Shader shader;
 
     class Droplet
@@ -87,6 +87,14 @@ public class RippleEffect : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
+        /*if (goToCamera)
+        {
+            RippleEffect ripple = cam.gameObject.AddComponent(typeof(RippleEffect)) as RippleEffect;
+            ripple = this;
+            Destroy(this);
+            return;
+        }*/
+
         droplets = new Droplet[3];
         droplets[0] = new Droplet();
         droplets[1] = new Droplet();
@@ -110,9 +118,17 @@ public class RippleEffect : MonoBehaviour
         UpdateShaderParameters();
     }
 
+    /// <summary>
+    /// au start, emit l'objet une fois !
+    /// </summary>
+    public void StartPlay(Vector2 pos)
+    {
+        Emit(pos);
+    }
+
     void Update()
     {
-        if (dropInterval > 0)
+        if (dropInterval > 0 && !onlyOnStart)
         {
             timer += Time.deltaTime;
             while (timer > dropInterval)
@@ -122,12 +138,9 @@ public class RippleEffect : MonoBehaviour
             }
         }
         
-        if (!stopRadius)
-        {
 
-            foreach (var d in droplets) d.Update();
+        foreach (var d in droplets) d.Update();
 
-        }
         UpdateShaderParameters();
     }
 
