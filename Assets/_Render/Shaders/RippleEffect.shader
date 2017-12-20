@@ -1,4 +1,4 @@
-﻿Shader "Hidden/Ripple Effect"
+﻿Shader ".Perso/Ripple Effect"
 {
     Properties
     {

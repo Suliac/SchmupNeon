@@ -22,7 +22,7 @@
 						<ActiveSource Name="fire_effect_test" ID="{9AF0540F-ACB1-4F43-A074-DB10C1DD183F}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="sound_dead_activated2" ID="{9580CD01-9D81-476D-9E12-45BFDA65480D}" ShortID="1023690734">
+				<ActorMixer Name="Musiques" ID="{7D378198-104D-426B-8869-0557F2C8526B}" ShortID="480766112">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -32,15 +32,52 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="sound_dead_activated2" ID="{23E6F9EB-B752-421C-A720-5B303B39A9EB}" ShortID="771622396">
-							<Language>SFX</Language>
-							<AudioFile>sound_dead_activated2.wav</AudioFile>
-						</AudioFileSource>
+						<Sound Name="ingame" ID="{04449F7E-D075-45E3-8599-78C7DCA73B66}" ShortID="71435198">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ingame schmup" ID="{6774634D-3242-4366-8E28-58ECD56C9F56}" ShortID="470110280">
+									<Language>SFX</Language>
+									<AudioFile>ingame schmup.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ingame schmup" ID="{6774634D-3242-4366-8E28-58ECD56C9F56}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Menu" ID="{88B43792-C261-4912-A8CB-E0596FF1B25B}" ShortID="873073919">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="recherche schmup" ID="{4D09BC60-F32D-4A43-B28E-8A9799FE2B82}" ShortID="92670017">
+									<Language>SFX</Language>
+									<AudioFile>recherche schmup.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="recherche schmup" ID="{4D09BC60-F32D-4A43-B28E-8A9799FE2B82}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="sound_dead_activated2" ID="{23E6F9EB-B752-421C-A720-5B303B39A9EB}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

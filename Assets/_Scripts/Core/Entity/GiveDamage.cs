@@ -106,6 +106,10 @@ public class GiveDamage : MonoBehaviour
                 }
                 else
                 {
+                    //si on est pas mort, ajouter quand même le score au joueur ! (le score des dommages infligé only)
+                    if (PlayerController)
+                        PlayerController.ScorePlayer += (int)damages;
+
                     // Si on kill la target pas besoin de désactiver la source de dommage 
                     // Important car TriggerExit jamais appelé donc currentlyIntoTrigger reste à true
                     currentlyIntoTrigger = true;

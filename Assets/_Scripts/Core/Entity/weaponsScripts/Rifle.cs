@@ -68,6 +68,7 @@ public class Rifle : Weapons
             {
                 GiveDamage giveDamage = bullet.GetComponent<GiveDamage>();
                 giveDamage.LinkToPlayer(PlayerController);
+                projectile.ColorBullet = PlayerController.ColorPlayer;
             }
 
             //enfin, l'activer
