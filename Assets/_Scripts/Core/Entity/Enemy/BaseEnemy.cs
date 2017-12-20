@@ -32,18 +32,27 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     protected bool wantToDisable = false;         // Etat actuel de l'ennemi
     public bool WantToDisable { get { return wantToDisable; } set { wantToDisable = value; } }
 
+    [FoldoutGroup("GamePlay"), Tooltip("Durée du blink"), SerializeField]
     private float blinkDuration = 1.0f;
-    private float blinkRedDuration = 0.2f;
+    [FoldoutGroup("GamePlay"), Tooltip("Fréquence du blink"), SerializeField]
+    private float blinkFrequency = 0.2f;
     private float preShotTimer = 0.0f;
     private bool coroutineStarted = false;
+    private bool coroutinePrepareToMoveStarted = false;
+    private bool readyToMove = true;
+
     private Renderer renderer;
+
+    [FoldoutGroup("GamePlay"), Tooltip("Temps avant de relancer le mouvement"), SerializeField]
+    private float timeBeforeMoving = 1.0f;
 
     protected bool enableEnemy = false;         // Etat actuel de l'ennemi
     protected IsOnCamera isOnCamera;
     protected Rigidbody body;             //ref du rigidbody
 
-    
+
     protected EnemyState currentState = EnemyState.Moving;
+    protected EnemyState previousState;
     #endregion
 
     #region Initialization
@@ -64,7 +73,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     protected void OnPreShotPhase()
     {
         if (!coroutineStarted)
-            StartCoroutine(Blink(blinkDuration, blinkRedDuration));
+            StartCoroutine(Blink(blinkDuration, blinkFrequency));
     }
 
     protected void OnEnemyEnable()
@@ -101,28 +110,33 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
             preShotTimer += Time.deltaTime;
             myTimer += Time.deltaTime;
 
-            if(myTimer > oneColorDuration)
+            if (myTimer > oneColorDuration)
             {
                 isRed = !isRed;
                 myTimer = 0.0f;
             }
-            
+
             if (isRed)
-            {
                 renderer.material.color = Color.red;
-            }
             else
-            {
                 renderer.material.color = Color.white;
-            }
 
             yield return null;
         }
+        renderer.material.color = Color.white;
 
-        print("End blink");
         preShotTimer = 0.0f;
         coroutineStarted = false;
         currentState = EnemyState.Shooting;
+        yield return null;
+    }
+
+    IEnumerator ReadyToMove(float time)
+    {
+        coroutinePrepareToMoveStarted = true;
+        yield return new WaitForSeconds(time);
+        readyToMove = true;
+        coroutinePrepareToMoveStarted = false;
         yield return null;
     }
 
@@ -145,11 +159,24 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
         if (!enableEnemy)
             return;
+        if (previousState != currentState)
+        {
+            readyToMove = false;
 
+        }
         switch (currentState)
         {
             case EnemyState.Moving:
-                Move();
+
+                if (readyToMove)
+                {
+                    Move();
+                }
+                else
+                {
+                    if (!coroutinePrepareToMoveStarted)
+                        StartCoroutine(ReadyToMove(timeBeforeMoving));
+                }
                 break;
             case EnemyState.Preshot:
                 OnPreShotPhase();
@@ -178,6 +205,9 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
                 Kill();
             }
         }
+
+
+        previousState = currentState;
     }
 
     #endregion

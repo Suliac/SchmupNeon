@@ -4317,6 +4317,16 @@ Prefab:
       propertyPath: isOnScreen
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114893664170048022, guid: 20c229f626031834f8623d0f8f0da1ca,
+        type: 2}
+      propertyPath: TimeBeforeMoving
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114893664170048022, guid: 20c229f626031834f8623d0f8f0da1ca,
+        type: 2}
+      propertyPath: timeBeforeMoving
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20c229f626031834f8623d0f8f0da1ca, type: 2}
   m_IsPrefabParent: 0
