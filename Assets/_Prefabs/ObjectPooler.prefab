@@ -54,11 +54,11 @@ MonoBehaviour:
   itemsToPool:
   - objectToPool: {fileID: 1840052071805302, guid: d2c3ddcc3eadecd44ab628df33b06b51,
       type: 2}
-    pooledAmount: 200
+    pooledAmount: 300
     shouldExpand: 0
   - objectToPool: {fileID: 1840052071805302, guid: da52d8478a7e8e84692ccb169a1fec94,
       type: 2}
-    pooledAmount: 200
+    pooledAmount: 300
     shouldExpand: 0
   - objectToPool: {fileID: 1275753836747768, guid: a3acc21c72f4f7c41aa7f22597f9ed81,
       type: 2}
