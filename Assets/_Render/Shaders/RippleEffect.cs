@@ -87,11 +87,12 @@ public class RippleEffect : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
-        /*if (!gameObject.transform.CompareTag("MainCamera"))
+        /*if (goToCamera)
         {
             RippleEffect ripple = cam.gameObject.AddComponent(typeof(RippleEffect)) as RippleEffect;
             ripple = this;
             Destroy(this);
+            return;
         }*/
 
         droplets = new Droplet[3];
@@ -120,11 +121,9 @@ public class RippleEffect : MonoBehaviour
     /// <summary>
     /// au start, emit l'objet une fois !
     /// </summary>
-    private void Start()
+    public void StartPlay(Vector2 pos)
     {
-        if (onlyOnStart)
-            //Emit(cam.WorldToViewportPoint(transform.position));
-            Emit(new Vector2(0.5f, 0.5f));
+        Emit(pos);
     }
 
     void Update()
