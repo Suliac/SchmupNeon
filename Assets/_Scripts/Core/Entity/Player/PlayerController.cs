@@ -10,9 +10,17 @@ public class PlayerController : MonoBehaviour, IKillable
 {
     #region Attributes
 
-    [FoldoutGroup("Gameplay"), Tooltip("Vitesse de déplacement du joueur"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Vitesse de déplacement du joueur"), SerializeField]
     private float moveSpeed = 10.0f;
 
+    [FoldoutGroup("GamePlay"), Tooltip("ref du prefabs de la particule de mort"), SerializeField]
+    private string prefabsDeathTag;
+
+    [FoldoutGroup("GamePlay"), Tooltip("Temps avant le respawn du joueur"), SerializeField]
+    private float timeBeforeRespawn = 0.5f;
+
+    [FoldoutGroup("GamePlay"), Tooltip("Objet Animator"), SerializeField]
+    private GameObject animPlayer;
 
     //[FoldoutGroup("Debug"), Tooltip("objets weapons"), SerializeField]
     //private Transform parentWeapons;
@@ -77,24 +85,11 @@ public class PlayerController : MonoBehaviour, IKillable
     private void OnEnable()
     {
         gameObject.SetActive(true);
+        animPlayer.SetActive(true);
         playerBody.velocity = Vector3.zero;
         hasMoved = false;
         enabledPlayer = true;
     }
-
-    /// <summary>
-    /// replie la list des weapoins du joueurs
-    /// </summary>
-    //private void SetupListWeapons()
-    //{
-    //    weapons.Clear();
-    //    for (int i = 0; i < parentWeapons.childCount; i++)
-    //    {
-    //        Weapons childWeapon = parentWeapons.GetChild(i).GetComponent<Weapons>();
-    //        childWeapon.PlayerController = this;
-    //        weapons.Add(childWeapon);
-    //    }
-    //}
 
     #endregion
 
@@ -146,6 +141,9 @@ public class PlayerController : MonoBehaviour, IKillable
 
     private void Update()
     {
+        if (!enabledPlayer)
+            return;
+
         if (updateTimer.Ready())
         {
 
@@ -157,16 +155,48 @@ public class PlayerController : MonoBehaviour, IKillable
 
     private void FixedUpdate()
     {
+        if (!enabledPlayer)
+            return;
+
         MovePlayer();
     }
 
+    private void CreateDeathObject()
+    {
+        GameObject deathBullet = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
+        if (!deathBullet)
+        {
+            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du player");
+            return;
+        }
+        deathBullet.transform.position = transform.position;
+        deathBullet.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+        deathBullet.SetActive(true);
+    }
+
+    /// <summary>
+    /// pour respawn... juste désactive l'objet !
+    /// </summary>
+    private void RespawnIt()
+    {
+        gameObject.SetActive(false);
+    }
     #endregion
 
     [FoldoutGroup("Debug"), Button("Kill")]
     public void Kill()
     {
+        if (!enabledPlayer)
+            return;
         Debug.Log("Dead");
+        
         ScorePlayer -= lifeBehavior.ScoreToRemove;
-        gameObject.SetActive(false);
+
+
+        CreateDeathObject();
+
+        enabledPlayer = false;
+        animPlayer.SetActive(false);
+        Invoke("RespawnIt", timeBeforeRespawn);        
     }
 }

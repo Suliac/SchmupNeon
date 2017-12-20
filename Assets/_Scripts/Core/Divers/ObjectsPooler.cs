@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 /// <summary>
 /// list d'objets poolé au démarage !
@@ -18,6 +19,7 @@ public class ObjectPoolItem
 public class ObjectsPooler : MonoBehaviour
 {
     #region Attributes
+
     private static ObjectsPooler instance;
     public static ObjectsPooler GetSingleton
     {

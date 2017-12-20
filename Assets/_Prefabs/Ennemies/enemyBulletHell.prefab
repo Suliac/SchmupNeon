@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4595459802124488}
   - component: {fileID: 33918471589832094}
-  - component: {fileID: 135443642289461902}
   - component: {fileID: 135674505060997816}
   - component: {fileID: 23683034975918812}
   - component: {fileID: 54966931066097826}
@@ -282,6 +281,7 @@ MonoBehaviour:
   updateTimer:
     updateFrequency: 1
   speed: 1
+  wantToEnable: 1
 --- !u!114 &114921683491897296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,18 +303,6 @@ MonoBehaviour:
   damageEnnemy: 0
   damageProjectile: 1
   oneShot: 0
---- !u!135 &135443642289461902
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1221095074222132}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135674505060997816
 SphereCollider:
   m_ObjectHideFlags: 1

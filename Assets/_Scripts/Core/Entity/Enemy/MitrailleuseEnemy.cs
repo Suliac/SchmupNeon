@@ -15,40 +15,39 @@ public class MitrailleuseEnemy : ShootingEnemy
     private float timeRotation = 1.0f;
 
     [FoldoutGroup("Gameplay"), Tooltip("Nombre de tir durant les phases de tir"), SerializeField]
-    private int NumberOfShoots = 1;    
+    private int NumberOfShoots = 1;
 
     private int currentNumberOfShoots = 0;
 
-    private bool isMoving = true;
     private bool coroutineRunning = false;
     #endregion
 
     #region Core
     protected override void Move()
     {
-        if (isMoving)
-        {
-            if (!coroutineRunning)
-                StartCoroutine(SmoothRotation(timeRotation, angleRotation));
-        }
+        if (!coroutineRunning)
+            StartCoroutine(SmoothRotation(timeRotation, angleRotation));
 
     }
 
     protected override void Shoot()
     {
-        if (!isMoving)
+
+        if (currentNumberOfShoots < NumberOfShoots)
         {
-            if (currentNumberOfShoots < NumberOfShoots)
-            {
-                if (weaponHandle.UseWeapon())
-                    currentNumberOfShoots++;
-            }
-            else
-            {
-                currentNumberOfShoots = 0;
-                isMoving = true;
-            }
+            if (weaponHandle.UseWeapon())
+                currentNumberOfShoots++;
         }
+        else
+        {
+            currentNumberOfShoots = 0;
+            currentState = EnemyState.Moving;
+        }
+
+    }
+    protected override void OnBeforeKill()
+    {
+        // Nothing to do
     }
     #endregion
 
@@ -69,7 +68,7 @@ public class MitrailleuseEnemy : ShootingEnemy
             transform.rotation = Quaternion.Lerp(startRotation, endRotation, Mathf.Min(1, partOfTotalTime));
             yield return null;
         }
-        isMoving = false;
+        currentState = EnemyState.Preshot;
         coroutineRunning = false;
     }
 

@@ -16,8 +16,8 @@ public class WeaponHandler : MonoBehaviour
     private Transform parentWeapons;
 
     //id weapons de l'entitée (joueur ou ennemi)
-    private int idWeapon = 0;
-    public int IdWeapon { set { idWeapon = value; } get { return idWeapon; } }
+    private Weapon idWeapon = 0;
+    public Weapon IdWeapon { set { idWeapon = value; } get { return idWeapon; } }
 
     private List<Weapons> weapons;          //list des weapons de l'entitée (joueur ou ennemi)
 
@@ -50,7 +50,7 @@ public class WeaponHandler : MonoBehaviour
     #region Core
     public bool UseWeapon()
     {
-        return weapons[idWeapon].TryShoot();
+        return weapons[(int)idWeapon].TryShoot();
     }
     #endregion
 

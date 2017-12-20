@@ -22,5 +22,10 @@ public class KamikazeEnemy : BaseEnemy
     {
         // Nothing to do
     }
+
+    protected override void OnBeforeKill()
+    {
+        // Nothing to do
+    }
     #endregion
 }

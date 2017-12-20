@@ -88,11 +88,24 @@ public class PlayerConnected : MonoBehaviour
     {
         foreach (Player player in ReInput.players.GetPlayers(true))
         {
-            foreach (Joystick j in player.controllers.Joysticks)
+            
+            if(player.controllers.joystickCount > 0)
             {
-                setPlayerController(player.id, true);
-                break;
+                foreach (Joystick j in player.controllers.Joysticks)
+                {
+                    setPlayerController(player.id, true);
+                    break;
+                }
             }
+            //else // si aucune manette on met le keyboard comme controller
+            //{
+            //    if (player.id == 0)
+            //    {
+            //        player.controllers.hasKeyboard = true;
+            //        setPlayerController(player.id, true);
+            //        break;
+            //    }
+            //}
         }
     }
     #endregion
@@ -119,6 +132,16 @@ public class PlayerConnected : MonoBehaviour
         playerArrayConnected[id] = isConnected;
         GameManager.GetSingleton.updateJoypadDisconnect(id, isConnected);
 
+    }
+
+    public bool NoPlayer()
+    {
+        for (int i = 0; i < playerArrayConnected.Length; i++)
+        {
+            if (playerArrayConnected[i])
+                return (false);
+        }
+        return (true);
     }
 
     /// <summary>

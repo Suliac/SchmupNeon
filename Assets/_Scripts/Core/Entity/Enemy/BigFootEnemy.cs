@@ -41,50 +41,45 @@ public class BigFootEnemy : ShootingEnemy
     #region Core
     protected override void Move()
     {
-        if (!isShooting)
+        currentTimeShooting += Time.deltaTime;
+
+        Vector3 nextCheckPoint = goingTop ? topPosition : botPosition;
+
+        Vector3 dir = nextCheckPoint - transform.position;
+        body.velocity = dir.normalized * speed;
+
+        if ((goingTop && transform.position.y >= topPosition.y) || (!goingTop && transform.position.y <= botPosition.y))
+            goingTop = !goingTop;
+
+        if (currentTimeShooting >= timeShooting)
         {
-            Vector3 nextCheckPoint = goingTop ? topPosition : botPosition;
-
-            Vector3 dir = nextCheckPoint - transform.position;            
-            body.velocity = dir.normalized * speed;
-
-            if ((goingTop && transform.position.y >= topPosition.y)
-                    || (!goingTop && transform.position.y <= botPosition.y))
-                goingTop = !goingTop;
+            currentState = EnemyState.Preshot;
+            currentTimeShooting = 0.0f;
         }
-        else
-        {
-            body.velocity = Vector3.zero;
-        }
-
     }
 
     protected override void Shoot()
     {
-        currentTimeShooting += Time.deltaTime; // shoot each timeShooting seconds
+        body.velocity = Vector3.zero;
+        if (weaponHandle.UseWeapon())
+            currentNumberOfShoots++;
 
-        if (currentTimeShooting >= timeShooting && !isShooting)
+        if (currentNumberOfShoots >= NumberOfShoots)
         {
-            isShooting = true;
-        }
+            isShooting = false;
+            currentState = EnemyState.Moving;
 
-        if (isShooting)
-        {
-            body.velocity = Vector3.zero;
-            if (weaponHandle.UseWeapon())
-                currentNumberOfShoots++;
-
-            if (currentNumberOfShoots >= NumberOfShoots)
-            {
-                isShooting = false;
-                currentNumberOfShoots = 0;
-                currentTimeShooting = 0.0f;
-            }
+            currentNumberOfShoots = 0;
         }
+    }
+
+    protected override void OnBeforeKill()
+    {
+        // Nothing to do
     }
     #endregion
 
     #region Unity ending functions
-    
+
     #endregion
 }
