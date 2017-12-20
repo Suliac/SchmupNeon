@@ -97,15 +97,15 @@ public class PlayerConnected : MonoBehaviour
                     break;
                 }
             }
-            else // si aucune manette on met le keyboard comme controller
-            {
-                if (player.id == 0)
-                {
-                    player.controllers.hasKeyboard = true;
-                    setPlayerController(player.id, true);
-                    break;
-                }
-            }
+            //else // si aucune manette on met le keyboard comme controller
+            //{
+            //    if (player.id == 0)
+            //    {
+            //        player.controllers.hasKeyboard = true;
+            //        setPlayerController(player.id, true);
+            //        break;
+            //    }
+            //}
         }
     }
     #endregion
