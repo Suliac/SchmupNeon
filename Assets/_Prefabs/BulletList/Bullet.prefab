@@ -101,9 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsDeathTag: DeathBullet
+  maxDistance: 0
+  objectSprite: {fileID: 212034024625345876}
   updateTimer:
     updateFrequency: 0.1
-  maxDistance: 0
   speedBullet: 800
 --- !u!114 &114045245328282548
 MonoBehaviour:
