@@ -30,4 +30,9 @@ public class Main_Menu : MonoBehaviour {
     {
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(PlayButton);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

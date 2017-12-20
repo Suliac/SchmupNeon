@@ -5,15 +5,30 @@ using UnityEngine.EventSystems;
 
 public class Option_Menu : MonoBehaviour {
 
-    public GameObject selectButton;
+    public GameObject FullScreen;
+    public GameObject Resolution1;
+    public GameObject Resolution2;
+    public GameObject Resolution3;
+    public GameObject Quality1;
+    public GameObject Quality2;
+    public GameObject Quality3;
+    public GameObject Volume;
     public GameObject Back;
     GameObject myEventSystem;
 
     public void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject != selectButton && EventSystem.current.currentSelectedGameObject != Back)
+        if (EventSystem.current.currentSelectedGameObject != FullScreen
+            && EventSystem.current.currentSelectedGameObject != Resolution1
+            && EventSystem.current.currentSelectedGameObject != Resolution2
+            && EventSystem.current.currentSelectedGameObject != Resolution3
+            && EventSystem.current.currentSelectedGameObject != Quality1
+            && EventSystem.current.currentSelectedGameObject != Quality2
+            && EventSystem.current.currentSelectedGameObject != Quality3
+            && EventSystem.current.currentSelectedGameObject != Volume
+            && EventSystem.current.currentSelectedGameObject != Back)
         {
-            EventSystem.current.SetSelectedGameObject(selectButton);
+            EventSystem.current.SetSelectedGameObject(Back);
         }
     }
 
@@ -24,6 +39,6 @@ public class Option_Menu : MonoBehaviour {
 
     public void OnEnable()
     {
-        myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(selectButton);
+        myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(FullScreen);
     }
 }
