@@ -156,6 +156,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  goToCamera: 1
   onlyOnStart: 1
   refractionStrength: 0.01
   reflectionColor: {r: 1, g: 0, b: 0, a: 1}

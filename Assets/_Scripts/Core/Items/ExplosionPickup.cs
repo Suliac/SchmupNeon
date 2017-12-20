@@ -57,9 +57,9 @@ public class ExplosionPickup : HandablePickup
                 }
             }
             CreateTakeObject(currentPlayer.gameObject.transform, prefabsUsePickup); //utilise 
+            UtilityFunctions.createWave(currentPlayer.transform.position, 0);
             print(playersToPush.Count);
         }
-
     }
     #endregion
 

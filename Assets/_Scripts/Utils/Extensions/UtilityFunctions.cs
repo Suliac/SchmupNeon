@@ -114,6 +114,17 @@ public static class UtilityFunctions
         return (final);
     }
 
+    /// <summary>
+    /// cree une wave !
+    /// </summary>
+    /// <param name="pos"></param>
+    public static void createWave(Vector3 pos, int index)
+    {
+        Camera cam = Camera.main;
+        Vector2 ViewportPosition = cam.WorldToViewportPoint(pos);
+        cam.GetComponents<RippleEffect>()[index].StartPlay(ViewportPosition);
+    }
+
     //setup un layerMask en enlevant certain layer...
     //int layerMask = ~((1 << LayerMask.NameToLayer("Walls")) | (1 << LayerMask.NameToLayer("Lock")) | (1 << LayerMask.NameToLayer("Ignore Raycast")) );
 
