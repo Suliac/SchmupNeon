@@ -11,7 +11,8 @@ public class Sure_Menu : MonoBehaviour {
 
     public void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject != Yes && EventSystem.current.currentSelectedGameObject != No)
+        if (EventSystem.current.currentSelectedGameObject != Yes
+            && EventSystem.current.currentSelectedGameObject != No)
         {
             EventSystem.current.SetSelectedGameObject(Yes);
         }
