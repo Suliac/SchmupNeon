@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="80">
-	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="922893967" DateHigh="30635037"/>
+	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="3554673943" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="922913777" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="922993918" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="923014283" DateHigh="30635037"/>
@@ -18,6 +18,7 @@
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Presets\Default Work Unit.wwu" DateLow="933562084" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Queries\Default Work Unit.wwu" DateLow="933573288" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Queries\Factory Queries.wwu" DateLow="933582385" DateHigh="30635037"/>
+	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\SHMUP_WwiseProject.marie.wsettings" DateLow="1055703214" DateHigh="30635042"/>
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\SHMUP_WwiseProject.wproj" DateLow="934334171" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="934344091" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="934354109" DateHigh="30635037"/>
