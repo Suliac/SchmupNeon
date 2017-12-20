@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        if (!load())
+        //if (!load())
             resetAll();
         SetupTextScore();
     }
