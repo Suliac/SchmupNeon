@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Linux" BasePlatform="Linux" SchemaVersion="11" SoundbankVersion="125">
 	<RootPaths>
-		<ProjectRoot>D:\Donnees\Travail\Projets_Unity\SHMUP\SHMUP_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Donnees\Travail\Projets_Unity\SHMUP\SHMUP_WwiseProject\.cache\Linux\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Donnees\Travail\Projets_Unity\SHMUP\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</SoundBanksRoot>
+		<ProjectRoot>D:\Schmup\SHMUP_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Schmup\SHMUP_WwiseProject\.cache\Linux\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Schmup\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Donnees\Travail\Projets_Unity\SHMUP\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Schmup\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -21,12 +21,19 @@
 			<ShortName>SchmupSoundBank</ShortName>
 			<Path>SchmupSoundBank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1097980931" Name="TestEvent" ObjectPath="\Events\Default Work Unit\TestEvent"/>
+				<Event Id="3686970753" Name="Play_ingame" ObjectPath="\Events\Default Work Unit\Play_ingame"/>
+				<Event Id="1278378707" Name="Play_Menu" ObjectPath="\Events\Default Work Unit\Play_Menu"/>
+				<Event Id="1248442111" Name="Stop_ingame" ObjectPath="\Events\Default Work Unit\Stop_ingame" MaxAttenuation="0.000000"/>
+				<Event Id="2914981333" Name="Stop_Menu" ObjectPath="\Events\Default Work Unit\Stop_Menu" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="320446847" Language="SFX">
-					<ShortName>FIRE loop sound effect.wav</ShortName>
-					<Path>SFX\FIRE loop sound effect_1C9C67B2.wem</Path>
+				<File Id="92670017" Language="SFX">
+					<ShortName>recherche schmup.wav</ShortName>
+					<Path>SFX\recherche schmup_F17FB28C.wem</Path>
+				</File>
+				<File Id="470110280" Language="SFX">
+					<ShortName>ingame schmup.wav</ShortName>
+					<Path>SFX\ingame schmup_F17FB28C.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

@@ -12,7 +12,13 @@ public abstract class Pickup : MonoBehaviour, IKillable
     protected PickupHandler currentHandler;
     public PickupHandler CurrentHandler { get { return currentHandler; } set { currentHandler = value; } }
 
-    [FoldoutGroup("Gameplay"), Tooltip("Destruction du pickup juste après utilisation"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("prefabs quand on prend le pickup"), SerializeField]
+    protected string prefabsTakePickup;
+
+    [FoldoutGroup("GamePlay"), Tooltip("prefabs quand on active le pickup"), SerializeField]
+    protected string prefabsUsePickup;
+
+    [FoldoutGroup("GamePlay"), Tooltip("Destruction du pickup juste après utilisation"), SerializeField]
     private bool killOnUse = false;
 
     #endregion
@@ -22,6 +28,22 @@ public abstract class Pickup : MonoBehaviour, IKillable
     /// Applique l'effet de l'objet
     /// </summary>
     protected abstract void Use();
+
+    /// <summary>
+    /// ici est appelé lorsque l'on prend le pickup
+    /// </summary>
+    protected void CreateTakeObject(Transform refObject, string tagParticle)
+    {
+        GameObject deathTake = ObjectsPooler.GetSingleton.GetPooledObject(tagParticle, false);
+        if (!deathTake)
+        {
+            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du player");
+            return;
+        }
+        deathTake.transform.position = refObject.position;
+        deathTake.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+        deathTake.SetActive(true);
+    }
 
     public void TryUse()
     {

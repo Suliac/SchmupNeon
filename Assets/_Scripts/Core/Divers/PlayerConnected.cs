@@ -97,15 +97,15 @@ public class PlayerConnected : MonoBehaviour
                     break;
                 }
             }
-            else // si aucune manette on met le keyboard comme controller
-            {
-                if (player.id == 0)
-                {
-                    player.controllers.hasKeyboard = true;
-                    setPlayerController(player.id, true);
-                    break;
-                }
-            }
+            //else // si aucune manette on met le keyboard comme controller
+            //{
+            //    if (player.id == 0)
+            //    {
+            //        player.controllers.hasKeyboard = true;
+            //        setPlayerController(player.id, true);
+            //        break;
+            //    }
+            //}
         }
     }
     #endregion
@@ -132,6 +132,16 @@ public class PlayerConnected : MonoBehaviour
         playerArrayConnected[id] = isConnected;
         GameManager.GetSingleton.updateJoypadDisconnect(id, isConnected);
 
+    }
+
+    public bool NoPlayer()
+    {
+        for (int i = 0; i < playerArrayConnected.Length; i++)
+        {
+            if (playerArrayConnected[i])
+                return (false);
+        }
+        return (true);
     }
 
     /// <summary>
