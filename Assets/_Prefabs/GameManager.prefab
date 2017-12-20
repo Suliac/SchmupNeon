@@ -122,9 +122,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   objectDynamiclyCreated: {fileID: 0}
+  objectNotMovingDynamiclyCreated: {fileID: 0}
+  enemyGroup: {fileID: 0}
   movingPlatform: {fileID: 0}
   panelCanvasInGame: {fileID: 0}
-  objectNotMovingDynamiclyCreated: {fileID: 0}
   prefabsPlayer: {fileID: 1078389107829744, guid: 9fb3f57496f178d48a3ba21caf5f5880,
     type: 2}
   updateTimer:
