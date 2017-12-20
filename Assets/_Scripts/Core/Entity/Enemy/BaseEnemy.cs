@@ -1,12 +1,14 @@
 ﻿using Sirenix.OdinInspector;
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public enum EnemyState
 {
     Moving,
     Preshot,
-    Shooting
+    Shooting,
+    Death
 }
 
 /// <summary>
@@ -42,6 +44,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     private bool readyToMove = true;
 
     private Renderer renderer;
+    protected Animator animator;
 
     [FoldoutGroup("GamePlay"), Tooltip("Temps avant de relancer le mouvement"), SerializeField]
     private float timeBeforeMoving = 1.0f;
@@ -61,6 +64,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
         isOnCamera = GetComponent<IsOnCamera>();
         body = GetComponent<Rigidbody>();
         renderer = GetComponent<Renderer>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     #endregion
@@ -78,6 +82,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     protected void OnEnemyEnable()
     {
+        animator.SetBool("IsDead", false);
         enableEnemy = true;
     }
 
@@ -91,7 +96,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
         GameObject deathEnemy = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
         if (!deathEnemy)
         {
-            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du player");
+            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du player tag:" + prefabsDeathTag + " | " + name);
             return;
         }
         deathEnemy.transform.position = transform.position;
@@ -144,8 +149,28 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     public void Kill()
     {
         //Debug.Log("Dead");
-        OnBeforeKill();
-        CreateDeathObject();
+        if (currentState != EnemyState.Death)
+        {
+            currentState = EnemyState.Death;
+            OnBeforeKill();
+            CreateDeathObject();
+
+            if (animator)
+            {
+                animator.SetBool("isDead", true);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
+            enableEnemy = false;
+        }
+    }
+
+    public void DeathAnimationFinised()
+    {
+        print("real destroy");
         Destroy(gameObject);
     }
     #endregion
