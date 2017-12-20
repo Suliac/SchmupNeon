@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1378212966994414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.97, y: 3.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.09, y: -5.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,9 +107,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4a3434b06ffdf4db9485606294ebac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabsTakePickup: PickupConsumed
+  prefabsUsePickup: PickupRepulseActive
   killOnUse: 0
   objectSpriteInUI: {fileID: 21300074, guid: 71ae9cf2cbddbbf46afcc9b7c0ab1d27, type: 3}
   updateTimer:
     updateFrequency: 0
-  radius: 5
+  radius: 3.38
   speedPush: 5

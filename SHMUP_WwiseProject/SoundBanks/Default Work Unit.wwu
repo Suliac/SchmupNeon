@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="SchmupSoundBank" ID="{697907A9-FDA7-4599-BC73-F1C9307BF4AB}">
 					<ObjectInclusionList>
-						<ObjectRef Name="TestEvent" ID="{780A47A6-F6D9-4AEB-9772-1660C7F5E43C}" WorkUnitID="{8514F812-C151-4368-93E1-D1BC280C19AC}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Default Work Unit" ID="{8514F812-C151-4368-93E1-D1BC280C19AC}" WorkUnitID="{8514F812-C151-4368-93E1-D1BC280C19AC}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

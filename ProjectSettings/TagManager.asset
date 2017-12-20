@@ -14,7 +14,8 @@ TagManager:
   - DeathBulletEnemy
   - DeathPlayer
   - DeathZigZog
-  - DeathEnemy
+  - PickupConsumed
+  - PickupRepulseActive
   layers:
   - Default
   - TransparentFX

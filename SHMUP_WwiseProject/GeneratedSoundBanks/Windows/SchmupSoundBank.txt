@@ -1,6 +1,10 @@
 Event	ID	Name			Wwise Object Path	Notes
-	1097980931	TestEvent			\Default Work Unit\TestEvent	
+	1248442111	Stop_ingame			\Default Work Unit\Stop_ingame	
+	1278378707	Play_Menu			\Default Work Unit\Play_Menu	
+	2914981333	Stop_Menu			\Default Work Unit\Stop_Menu	
+	3686970753	Play_ingame			\Default Work Unit\Play_ingame	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	320446847	FIRE loop sound effect	D:\Donnees\Travail\Projets_Unity\SHMUP\SHMUP_WwiseProject\.cache\Windows\SFX\FIRE loop sound effect_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\FIRE loop sound effect		4064036
+	92670017	Menu	D:\Schmup\SHMUP_WwiseProject\.cache\Windows\SFX\recherche schmup_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\Menu		10936864
+	470110280	ingame	D:\Schmup\SHMUP_WwiseProject\.cache\Windows\SFX\ingame schmup_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\ingame		12700864
 
