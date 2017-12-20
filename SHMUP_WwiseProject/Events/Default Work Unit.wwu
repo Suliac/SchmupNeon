@@ -3,15 +3,57 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{8514F812-C151-4368-93E1-D1BC280C19AC}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="TestEvent" ID="{780A47A6-F6D9-4AEB-9772-1660C7F5E43C}">
+				<Event Name="Play_ingame" ID="{5642DFDB-CB19-4193-B0E3-EBA0A9D712C5}">
 					<ChildrenList>
-						<Action Name="" ID="{E47A16BE-6D28-4025-A724-EE615C63B9C7}" ShortID="638152463">
+						<Action Name="" ID="{9B65296E-54A4-4B1D-BE18-9EEBCC85BA4B}" ShortID="229481918">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="FIRE loop sound effect" ID="{48D7E016-CA3B-4F84-A937-CE07C582BF2F}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+									<ObjectRef Name="ingame" ID="{04449F7E-D075-45E3-8599-78C7DCA73B66}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_ingame" ID="{006824AF-CC0F-44BF-93C0-08E8AED93695}">
+					<ChildrenList>
+						<Action Name="" ID="{41B27519-4931-42E7-9245-15520FB18F91}" ShortID="709758507">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ingame" ID="{04449F7E-D075-45E3-8599-78C7DCA73B66}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Menu" ID="{BF73D2C2-A172-486F-8AC2-5C042EDA7C43}">
+					<ChildrenList>
+						<Action Name="" ID="{517C6060-8D16-4E6B-94AB-FF87DB817B51}" ShortID="404735852">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu" ID="{88B43792-C261-4912-A8CB-E0596FF1B25B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Menu" ID="{EB28AC17-004D-40F3-B87B-5D2C883E6753}">
+					<ChildrenList>
+						<Action Name="" ID="{82EF6AB7-5106-4829-A7CF-3FC0C8F77055}" ShortID="458979240">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu" ID="{88B43792-C261-4912-A8CB-E0596FF1B25B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -3,7 +3,12 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{E17706EC-945B-4232-B9F1-68F47A2C9A41}">
 			<PropertyList>
-				<Property Name="AudioFilesImporter\Path" Type="string" Value="D:\Game Jams\Mytholojam\Bruitages"/>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\marie\Desktop\Schmup"/>
+				<Property Name="Event Action List\{006824AF-CC0F-44BF-93C0-08E8AED93695}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{5642DFDB-CB19-4193-B0E3-EBA0A9D712C5}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{780A47A6-F6D9-4AEB-9772-1660C7F5E43C}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{BF73D2C2-A172-486F-8AC2-5C042EDA7C43}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{EB28AC17-004D-40F3-B87B-5D2C883E6753}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
@@ -23,9 +28,9 @@
 				</Property>
 				<Property Name="General\LatestLanguage" Type="int32" Value="684519430"/>
 				<Property Name="General\LatestPlatform" Type="string" Value="Android"/>
-				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value=""/>
-				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value=""/>
-				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value=""/>
+				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value="BvDMKA=="/>
+				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="Do+pAvwL2kCvj7CLr/btSLGdnkEAwONFmuB82cpQ55FQxW1zJXRzSoQmg2pYnSOjQJNsq6HIgUGmbSD/mNpM1A=="/>
+				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="qQd5aaf9mUW8c/HJMHv0qw=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
