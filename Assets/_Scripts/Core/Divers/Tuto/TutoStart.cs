@@ -193,7 +193,7 @@ public class TutoStart : MonoBehaviour
                 isAllOk = false;
             }
         }
-        if (!isAllOk)
+        if (!isAllOk || PlayerConnected.GetSingleton.NoPlayer())
         {
             //ici red line !
             redLine.color = Color.red;

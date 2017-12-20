@@ -134,6 +134,16 @@ public class PlayerConnected : MonoBehaviour
 
     }
 
+    public bool NoPlayer()
+    {
+        for (int i = 0; i < playerArrayConnected.Length; i++)
+        {
+            if (playerArrayConnected[i])
+                return (false);
+        }
+        return (true);
+    }
+
     /// <summary>
     /// get id of player
     /// </summary>
