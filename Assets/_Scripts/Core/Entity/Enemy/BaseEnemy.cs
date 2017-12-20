@@ -82,7 +82,9 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     protected void OnEnemyEnable()
     {
-        animator.SetBool("IsDead", false);
+        if (animator)
+            animator.SetBool("IsDead", false);
+
         enableEnemy = true;
     }
 
