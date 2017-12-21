@@ -13,11 +13,9 @@ public class MitrailleuseEnemy : ShootingEnemy
 
     [FoldoutGroup("Gameplay"), Tooltip("Durée des phases de déplacement"), SerializeField]
     private float timeRotation = 1.0f;
-
-    [FoldoutGroup("Gameplay"), Tooltip("Nombre de tir durant les phases de tir"), SerializeField]
-    private int NumberOfShoots = 1;
-
-    private int currentNumberOfShoots = 0;
+    
+    [FoldoutGroup("Gameplay"), Tooltip("Tir toutes les X secondes"), SerializeField]
+    private FrequencyTimer shootFrequency;
 
     private bool coroutineRunning = false;
     #endregion
@@ -32,18 +30,11 @@ public class MitrailleuseEnemy : ShootingEnemy
 
     protected override void Shoot()
     {
-
-        if (currentNumberOfShoots < NumberOfShoots)
+        if (shootFrequency.Ready())
         {
-            if (weaponHandle.UseWeapon())
-                currentNumberOfShoots++;
+            if (weaponHandle)
+                weaponHandle.UseWeapon();
         }
-        else
-        {
-            currentNumberOfShoots = 0;
-            currentState = EnemyState.Moving;
-        }
-
     }
     protected override void OnBeforeKill()
     {
@@ -68,7 +59,6 @@ public class MitrailleuseEnemy : ShootingEnemy
             transform.rotation = Quaternion.Lerp(startRotation, endRotation, Mathf.Min(1, partOfTotalTime));
             yield return null;
         }
-        currentState = EnemyState.Preshot;
         coroutineRunning = false;
     }
 

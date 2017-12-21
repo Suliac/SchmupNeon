@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4595459802124488}
   - component: {fileID: 54966931066097826}
-  - component: {fileID: 114588804504731022}
   - component: {fileID: 114292211328603702}
   - component: {fileID: 114921683491897296}
   - component: {fileID: 114279593261256906}
@@ -41,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221095074222132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.67, y: -0.87, z: -0.16068913}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,51 +108,12 @@ MonoBehaviour:
     updateFrequency: 0
   speed: 10
   wantToEnable: 1
-  prefabsDeathTag: DeathZigZog
-  blinkDuration: 1
-  blinkFrequency: 0.2
+  prefabsDeathTag: DeathEnemy
   timeBeforeMoving: 0
+  isShooting: 0
+  isMoving: 1
+  isDead: 0
   angle: 180
---- !u!114 &114588804504731022
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1221095074222132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 341817a154a515c44b5e51862b0afd99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startVisible: 1
-  hideOnScreen: 0
-  onScreenSprite: {fileID: 21300000, guid: d5bf0a1cdcb164f45bb6171e3ec5f5d4, type: 3}
-  onScreenTextureColor: {r: 1, g: 1, b: 1, a: 1}
-  onScreenTextureSize: 0.14
-  onScreenTextureRotation: 0
-  hideOutofScreen: 0
-  outofScreenSprite: {fileID: 21300000, guid: 02387b373df477f499ccbf66ba190f3a, type: 3}
-  outofScreenTextureColor: {r: 1, g: 1, b: 1, a: 1}
-  outofScreenTextureScreenPercentSize: 0.22
-  outofScreenBorderOffset: {x: 0, y: 0}
-  outofScreenTextureRotation: 0
-  outofScreenRotateTexture: 1
-  outofScreenBaseOrientation: 180
-  presiceRotation: 0
-  opacityOpOnScreen: 0.6
-  opacityOpOutScreen: 1
-  fadeInDuration: 2
-  minScale: 0.1
-  maxScale: 1.5
-  minDistance: 1
-  maxDistance: 20
-  scaleOnScreen: 0.6
-  animationMode: 2
-  scaleAnimAmplitude: 0.1
-  scaleAnimSmooth: 0.26
-  updateTimer:
-    updateFrequency: 0
-  canvasSortOrder: 0
 --- !u!114 &114921683491897296
 MonoBehaviour:
   m_ObjectHideFlags: 1
