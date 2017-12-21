@@ -41,8 +41,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221095074222132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.043994, y: -5.1403394, z: -0.16068913}
-  m_LocalScale: {x: 1.2287221, y: 1.2287221, z: 1.2287221}
+  m_LocalPosition: {x: 18.67, y: -0.87, z: -0.16068913}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,8 +74,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateTimer:
-    updateFrequency: 1
-  xMargin: 0
+    updateFrequency: 0
+  xMargin: -0.001
   yMargin: 0
   isOnScreen: 0
 --- !u!114 &114292211328603702
@@ -109,6 +109,10 @@ MonoBehaviour:
     updateFrequency: 0
   speed: 10
   wantToEnable: 1
+  prefabsDeathTag: DeathZigZog
+  blinkDuration: 1
+  blinkFrequency: 0.2
+  timeBeforeMoving: 0
   angle: 180
 --- !u!114 &114588804504731022
 MonoBehaviour:
