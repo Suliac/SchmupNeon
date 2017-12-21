@@ -41,6 +41,9 @@ public class MainMenuManager : MonoBehaviour
         buttonsMainMenu[0].Select();
         displayOptionGame(false);
         menuOption.SetActive(false);
+
+        SoundManager.GetSingularity.PlaySound("Stop_ingame");
+        SoundManager.GetSingularity.PlaySound("Play_Menu");
     }
     #endregion
 

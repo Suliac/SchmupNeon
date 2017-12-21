@@ -17,14 +17,14 @@ public abstract class HandablePickup : Pickup
     public bool IsAlreadyPicked {  get { return isAlreadyPicked; } }
 
     private Renderer renderer;
-    private BoxCollider boxCollider;
+    private Collider collider;
     #endregion
 
     #region Initialization
     private void Awake()
     {
         renderer = GetComponent<Renderer>();
-        boxCollider = GetComponent<BoxCollider>();
+        collider = GetComponent<Collider>();
     }
 
     private void OnEnable()
@@ -44,7 +44,7 @@ public abstract class HandablePickup : Pickup
     protected void Hide()
     {
         renderer.enabled = false;
-        boxCollider.enabled = false;
+        collider.enabled = false;
     }
 
     public void Pick(PickupHandler handler)

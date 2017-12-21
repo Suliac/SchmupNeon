@@ -1,6 +1,5 @@
 ﻿using Sirenix.OdinInspector;
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public enum EnemyState
@@ -83,7 +82,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     protected void OnEnemyEnable()
     {
         if (animator)
-            animator.SetBool("IsDead", false);
+            animator.SetBool("isDead", false);
 
         enableEnemy = true;
     }
@@ -153,18 +152,15 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
         //Debug.Log("Dead");
         if (currentState != EnemyState.Death)
         {
+            body.velocity = Vector3.zero;
             currentState = EnemyState.Death;
             OnBeforeKill();
             CreateDeathObject();
 
             if (animator)
-            {
-                animator.SetBool("isDead", true);
-            }
+                animator.SetBool("enemyIsDead", true);
             else
-            {
                 Destroy(gameObject);
-            }
 
             enableEnemy = false;
         }

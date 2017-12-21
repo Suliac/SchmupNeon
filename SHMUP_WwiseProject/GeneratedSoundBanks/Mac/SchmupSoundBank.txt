@@ -5,6 +5,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	3686970753	Play_ingame			\Default Work Unit\Play_ingame	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	92670017	Menu	D:\Schmup\SHMUP_WwiseProject\.cache\Mac\SFX\recherche schmup_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\Menu		10936864
-	470110280	ingame	D:\Schmup\SHMUP_WwiseProject\.cache\Mac\SFX\ingame schmup_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\ingame		12700864
+	92670017	Menu	D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\recherche schmup_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\Menu		10936864
+	470110280	ingame	D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\ingame schmup_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\ingame		12700864
 

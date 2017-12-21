@@ -9,8 +9,8 @@ public class WeaponHandler : MonoBehaviour
 {
     #region Attributes
 
-	[Tooltip("opti fps"), SerializeField]
-	private FrequencyTimer updateTimer;
+    [Tooltip("opti fps"), SerializeField]
+    private FrequencyTimer updateTimer;
 
     [FoldoutGroup("Debug"), Tooltip("objets weapons"), SerializeField]
     private Transform parentWeapons;
@@ -45,6 +45,11 @@ public class WeaponHandler : MonoBehaviour
             weapons.Add(childWeapon);
         }
     }
+
+    public void Init()
+    {
+        idWeapon = 0;
+    }
     #endregion
 
     #region Core
@@ -55,6 +60,6 @@ public class WeaponHandler : MonoBehaviour
     #endregion
 
     #region Unity ending functions
-    
-	#endregion
+
+    #endregion
 }

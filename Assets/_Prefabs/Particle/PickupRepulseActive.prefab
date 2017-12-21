@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4931049221832446}
   - component: {fileID: 212933271924613236}
   - component: {fileID: 95459842091938048}
+  - component: {fileID: 114506258623556476}
   m_Layer: 0
   m_Name: Repulsator_SpriteSheet_0
   m_TagString: Untagged
@@ -88,6 +89,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114506258623556476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1976616316643534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40fde85cc837e95419b677d859a8e2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114741067395482288
 MonoBehaviour:
   m_ObjectHideFlags: 1

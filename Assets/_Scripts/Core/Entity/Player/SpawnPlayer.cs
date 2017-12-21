@@ -78,12 +78,16 @@ public class SpawnPlayer : MonoBehaviour
             Debug.LogError("on n'est pas censé être ici...");
             return;
         }
-        
-        isSpawning = false;
-        animSpawn.gameObject.SetActive(false);
-        player.SetActive(true);
-        spawnedOnce = true;
-        playerLife.InitLife(); // reinit life ici ?
+
+        if (StateManager.Get.State != StateManager.GameState.GameOver)
+        {
+            isSpawning = false;
+            animSpawn.gameObject.SetActive(false);
+            player.SetActive(true);
+            spawnedOnce = true;
+            playerLife.InitLife(); // reinit life ici ? 
+            playerController.Init();
+        }
     }
 
 

@@ -45,6 +45,14 @@ public class ItemManager : MonoBehaviour
     {
         canvasPlayer[idPlayer].sprite = defaultObjectSpriteInUI;
     }
+
+    public void ResetAll()
+    {
+        for (int i = 0; i < canvasPlayer.Count; i++)
+        {
+            canvasPlayer[i].sprite = defaultObjectSpriteInUI;
+        }
+    }
     #endregion
 
     #region Unity ending functions

@@ -4,7 +4,11 @@
 		<UserProjectSettings Name="" ID="{F33F8C9C-C985-4420-B7CC-D47EE9537790}">
 			<PropertyList>
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="D:\Donnees\Travail\Projets_Unity\SHMUP\Assets\Audio"/>
+				<Property Name="Event Action List\{006824AF-CC0F-44BF-93C0-08E8AED93695}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{5642DFDB-CB19-4193-B0E3-EBA0A9D712C5}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{780A47A6-F6D9-4AEB-9772-1660C7F5E43C}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{BF73D2C2-A172-486F-8AC2-5C042EDA7C43}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{EB28AC17-004D-40F3-B87B-5D2C883E6753}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
@@ -23,7 +27,7 @@
 					</ValueList>
 				</Property>
 				<Property Name="General\LatestLanguage" Type="int32" Value="684519430"/>
-				<Property Name="General\LatestPlatform" Type="string" Value="Android"/>
+				<Property Name="General\LatestPlatform" Type="string" Value="Windows"/>
 				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value="BvDMKA=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="QJNsq6HIgUGmbSD/mNpM1A=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="qQd5aaf9mUW8c/HJMHv0qw=="/>
@@ -35,6 +39,10 @@
 				<Property Name="MonitoringManager\WatchMgr\WatchesVersion" Type="int32" Value="6"/>
 				<Property Name="MonitoringManager\WatchMgr\x64_GameSyncWatches" Type="string" Value=""/>
 				<Property Name="MonitoringManager\WatchMgr\x64_Watches" Type="string" Value=""/>
+				<Property Name="OverrideCacheFolder\Active" Type="bool" Value="False"/>
+				<Property Name="OverrideCacheFolder\Path" Type="string" Value=".cache"/>
+				<Property Name="OverrideOriginalFolder\Active" Type="bool" Value="False"/>
+				<Property Name="OverrideOriginalFolder\Path" Type="string" Value="Originals"/>
 				<Property Name="ProjectExplorer\FirstVisible_10_1" Type="string" Value="{4C96B38B-3DB4-40C7-91C9-665510E38993}"/>
 				<Property Name="ProjectExplorer\FirstVisible_11_1" Type="string" Value="{23EC2DE3-3ED8-4B82-AC99-92E25F2E4C6B}"/>
 				<Property Name="ProjectExplorer\FirstVisible_1_1" Type="string" Value="{2388DAEA-9775-46C6-A2ED-C5222A397756}"/>
