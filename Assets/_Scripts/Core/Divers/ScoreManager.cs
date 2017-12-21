@@ -54,7 +54,7 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    private void resetAll()
+    public void resetAll()
     {
         Debug.Log("reset les stats du joueurs");
         if (data == null)

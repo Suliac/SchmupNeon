@@ -22,6 +22,11 @@ public class PickupHandler : MonoBehaviour
         playerController = GetComponent<PlayerController>();
     }
 
+    public void Init()
+    {
+        currentPickup = null;
+    }
+
     #endregion
 
     #region Core

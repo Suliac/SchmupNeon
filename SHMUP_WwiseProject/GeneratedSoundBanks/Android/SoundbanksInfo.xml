@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Android" BasePlatform="Android" SchemaVersion="11" SoundbankVersion="125">
 	<RootPaths>
-		<ProjectRoot>D:\Schmup\SHMUP_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Schmup\SHMUP_WwiseProject\.cache\Android\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Schmup\SHMUP_WwiseProject\GeneratedSoundBanks\Android\</SoundBanksRoot>
+		<ProjectRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Android\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Android\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Schmup\SHMUP_WwiseProject\GeneratedSoundBanks\Android\</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Android\</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>

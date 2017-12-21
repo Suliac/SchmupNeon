@@ -30,6 +30,7 @@ public class LifeBehavior : MonoBehaviour
 
     [FoldoutGroup("Debug"), Tooltip("vie courante de l'objet"), SerializeField]
     private float currentLife = 0.0f;
+    public float CurrentLife { get { return currentLife; } }
     #endregion
 
     #region Initialization

@@ -83,6 +83,15 @@ public class PlayerController : MonoBehaviour, IKillable
         weaponHandle = GetComponent<WeaponHandler>();
         pickupHandle = GetComponent<PickupHandler>();
         animPlayer.GetComponent<SpriteRenderer>().color = colorPlayer;
+
+        for (int i = 0; i < 4; i++)
+        {
+            GameObject animator = transform.GetChild(1).GetChild(i).gameObject;
+            if (i == idPlayer) // desactive tous les animatirs sauf celui du joueur actuel
+                animPlayer = animator;
+            else
+                animator.SetActive(false);
+        }
         //weapons = new List<Weapons>();
         //SetupListWeapons();                     //setup la lsit des weapons
     }
@@ -94,6 +103,15 @@ public class PlayerController : MonoBehaviour, IKillable
         playerBody.velocity = Vector3.zero;
         hasMoved = false;
         enabledPlayer = true;
+    }
+
+    public void Init()
+    {               
+        if (weaponHandle)
+            weaponHandle.Init();
+               
+        if (pickupHandle)
+            pickupHandle.Init();
     }
 
     #endregion

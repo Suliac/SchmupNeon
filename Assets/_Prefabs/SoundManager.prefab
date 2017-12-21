@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4582697995709298}
   - component: {fileID: 114527576946456384}
+  - component: {fileID: 114321846729331366}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -33,13 +34,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929623129252586}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114321846729331366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1929623129252586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e805cc66c9ec6409f90ee3cedbe874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114527576946456384
 MonoBehaviour:
   m_ObjectHideFlags: 1

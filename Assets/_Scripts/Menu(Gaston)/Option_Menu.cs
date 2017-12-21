@@ -36,7 +36,7 @@ public class Option_Menu : MonoBehaviour {
     {
         myEventSystem = GameObject.Find("EventSystem");
     }
-
+    
     public void OnEnable()
     {
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(FullScreen);

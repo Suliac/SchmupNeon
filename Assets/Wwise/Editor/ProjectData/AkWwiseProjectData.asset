@@ -16,13 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-<<<<<<< HEAD
-    m_lastTimePsrt1: 1967410665
-    m_lastTimePart2: -1999288404
-=======
-    m_lastTimePsrt1: -941703429
-    m_lastTimePart2: -1999288393
->>>>>>> b8af4de74e6a0e37053534d88ddb6cb5a95d777d
+    m_lastTimePsrt1: -1092001309
+    m_lastTimePart2: -1999288361
     List:
     - Name: Play_ingame
       Path: Default Work Unit\Play_ingame
@@ -89,13 +84,8 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8C84201B-D9D0-40FE-B479-AA99A1A7EEFD}'
-<<<<<<< HEAD
-    m_lastTimePsrt1: 1978773531
-    m_lastTimePart2: -1999288404
-=======
-    m_lastTimePsrt1: -930784189
-    m_lastTimePart2: -1999288393
->>>>>>> b8af4de74e6a0e37053534d88ddb6cb5a95d777d
+    m_lastTimePsrt1: -1080370077
+    m_lastTimePart2: -1999288361
     List:
     - Name: SchmupSoundBank
       Path: Default Work Unit\SchmupSoundBank

@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
+using Rewired;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// GameManager Description
 /// </summary>
 [RequireComponent(typeof(TutoStart))]    //tuto !!
-[RequireComponent(typeof(ScoreManager))]    //le scoreManager doit être accroché à l'objet
-[RequireComponent(typeof(ItemManager))]    //item manager
+[RequireComponent(typeof(ScoreManager))]    // le scoreManager doit être accroché à l'objet
+[RequireComponent(typeof(ItemManager))]    // item manager
+[RequireComponent(typeof(StateManager))]    // state
 public class GameManager : MonoBehaviour
 {
     #region Attributes
@@ -35,16 +38,18 @@ public class GameManager : MonoBehaviour
     [FoldoutGroup("Object In World"), Tooltip("panel Canvas des joueurs (in game)"), SerializeField]
     private GameObject panelCanvasInGame;
 
+    [FoldoutGroup("Object In World"), Tooltip("panel Canvas de gameover"), SerializeField]
+    private GameObject panelCanvasGameOver;
 
 
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]
     private GameObject prefabsPlayer;
 
-    
+
     //public MovePlatform MovingPlatform { get { return movingPlatform; } }
 
     [FoldoutGroup("Debug"), Tooltip("optimisation fps"), SerializeField]
-	private FrequencyTimer updateTimer;
+    private FrequencyTimer updateTimer;
 
     //ref player
     private PlayerConnected playerConnect;
@@ -91,8 +96,25 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Init();   
+    }
+
+    private void Init()
+    {
+        print("yo");
+        StateManager.Get.State = StateManager.GameState.Tuto;
+        SoundManager.GetSingularity.PlaySound("Stop_Menu");
+        SoundManager.GetSingularity.PlaySound("Play_ingame");
+
+
         ActiveGame(false);  //desactive tout au start au cas ou
         tutoStart.ActiveTuto(true); //active les tutos
+
+        panelCanvasGameOver.SetActive(false);
+        scoreManager.resetAll();
+        itemManager.ResetAll();
+        
+
     }
 
     #endregion
@@ -139,8 +161,64 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            StateManager.Get.State = StateManager.GameState.Play;
+
             tutoStart.ActiveTuto(false);
             tutoStart.enabled = false;
+        }
+    }
+
+    public void IsGameOver()
+    {
+        if (StateManager.Get.State == StateManager.GameState.Play)
+        {
+            int countDeadPlayer = 0;
+            foreach (var player in spawnPlayer)
+            {
+                if (player.PlayerController)
+                {
+                    LifeBehavior life = player.PlayerController.GetComponent<LifeBehavior>();
+
+                    if (!life || life.CurrentLife <= 0)
+                        countDeadPlayer++;
+                }
+                else
+                {
+                    countDeadPlayer++;
+                }
+            }
+
+            if (countDeadPlayer >= spawnPlayer.Count)
+                GameOver();
+
+        }
+
+    }
+
+    private void GameOver()
+    {
+        StateManager.Get.State = StateManager.GameState.GameOver;
+        panelCanvasGameOver.SetActive(true);
+        panelCanvasInGame.SetActive(false);
+        movingPlatform.IsScrollingAcrtive = false;
+    }
+
+    private void InputGameOver()
+    {
+        if (StateManager.Get.State == StateManager.GameState.GameOver)
+        {
+            if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
+            {
+                ////Init();
+                //StateManager.Get.State = StateManager.GameState.Tuto;
+                //SceneManager.LoadScene("2_Game");
+            }
+            if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
+            {
+                //Init();
+                StateManager.Get.State = StateManager.GameState.Tuto;
+                SceneManager.LoadScene("1_Menu");
+            }
         }
     }
     #endregion
@@ -151,12 +229,13 @@ public class GameManager : MonoBehaviour
     {
         if (updateTimer.Ready())
         {
-
         }
 
+        IsGameOver();
+        InputGameOver();
         Quit(); //input quitter
-        
+
     }
 
-	#endregion
+    #endregion
 }
