@@ -7,6 +7,7 @@ public class Main_Menu : MonoBehaviour {
 
     public GameObject PlayButton;
     public GameObject OptionButton;
+    public GameObject Controls;
     public GameObject CreditsButton;
     public GameObject QuitButton;
 
@@ -14,8 +15,11 @@ public class Main_Menu : MonoBehaviour {
 
     public void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject != PlayButton && EventSystem.current.currentSelectedGameObject != OptionButton &&
-            EventSystem.current.currentSelectedGameObject != CreditsButton && EventSystem.current.currentSelectedGameObject != QuitButton)
+        if (EventSystem.current.currentSelectedGameObject != PlayButton &&
+            EventSystem.current.currentSelectedGameObject != OptionButton &&
+            EventSystem.current.currentSelectedGameObject != Controls &&
+            EventSystem.current.currentSelectedGameObject != CreditsButton &&
+            EventSystem.current.currentSelectedGameObject != QuitButton)
         {
             EventSystem.current.SetSelectedGameObject(PlayButton);
         }
@@ -29,10 +33,5 @@ public class Main_Menu : MonoBehaviour {
     public void OnEnable()
     {
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(PlayButton);
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 }

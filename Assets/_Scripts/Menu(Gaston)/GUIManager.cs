@@ -18,4 +18,16 @@ public class GUIManager : MonoBehaviour {
     {
         SceneManager.LoadScene("2_Game");
     }
+
+
+    public void LevelRestart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
+    public void GoToMain()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

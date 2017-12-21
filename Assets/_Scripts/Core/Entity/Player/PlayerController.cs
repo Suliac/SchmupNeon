@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour, IKillable
     [FoldoutGroup("GamePlay"), Tooltip("Objet Animator"), SerializeField]
     private GameObject animPlayer;
 
+    [FoldoutGroup("GamePlay"), Tooltip("Objet Animator"), SerializeField]
+    private Color colorPlayer = Color.yellow;
+    public Color ColorPlayer { get { return colorPlayer; } }
+
     //[FoldoutGroup("Debug"), Tooltip("objets weapons"), SerializeField]
     //private Transform parentWeapons;
 
@@ -78,6 +82,7 @@ public class PlayerController : MonoBehaviour, IKillable
         lifeBehavior = GetComponent<LifeBehavior>();
         weaponHandle = GetComponent<WeaponHandler>();
         pickupHandle = GetComponent<PickupHandler>();
+        animPlayer.GetComponent<SpriteRenderer>().color = colorPlayer;
         //weapons = new List<Weapons>();
         //SetupListWeapons();                     //setup la lsit des weapons
     }

@@ -26,7 +26,7 @@ public class BulletController : Projectile
     #endregion
 
     #region Initialization
-    
+
 
     private void OnEnable()
     {

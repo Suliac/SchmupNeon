@@ -284,6 +284,7 @@ MonoBehaviour:
   prefabsDeathTag: DeathPlayer
   timeBeforeRespawn: 0.5
   animPlayer: {fileID: 1053026637923514}
+  colorPlayer: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   updateTimer:
     updateFrequency: 0
 --- !u!114 &114615846370654086

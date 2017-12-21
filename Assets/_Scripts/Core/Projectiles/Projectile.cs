@@ -13,16 +13,30 @@ public abstract class Projectile : MonoBehaviour, IKillable
     [FoldoutGroup("GamePlay")] [Tooltip("ref du prefabs de la particule de mort"), SerializeField] protected string prefabsDeathTag;
     //public string PrefabsDeathTag { get { return prefabsDeathTag; } }
 
+    [FoldoutGroup("GamePlay"), Tooltip("Distance maximale de la balle (0 = pas de limitation)"), SerializeField]
+    private float maxDistance = 0.0f; // NB : max distance == 0 -> pas de limitation de distance
+
+
 
     [FoldoutGroup("Debug")] [Tooltip("ref sur playerController")] private PlayerController playerController;
     public PlayerController PlayerController { set { playerController = value; } get { return playerController; } }
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
-    private FrequencyTimer updateTimer;
-    
-    [FoldoutGroup("GamePlay"), Tooltip("Distance maximale de la balle (0 = pas de limitation)"), SerializeField]
-    private float maxDistance = 0.0f; // NB : max distance == 0 -> pas de limitation de distance
+    private SpriteRenderer objectSprite;
 
+    [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
+    private FrequencyTimer updateTimer;
+
+    private Color colorBullet;
+    public Color ColorBullet
+    {
+        //get { return colorBullet; }
+        set
+        {
+            colorBullet = value;
+            objectSprite.color = colorBullet;
+        }
+    }
     protected Rigidbody bodyBullet;   //ref du rigidbody
     protected IsOnCamera isOnCamera;  //ref du IsOnCamera pour savoir si le bullet est hors champs
     protected bool enabledBullet = false; //le bullet, au démarage ne fait pas de dégat !
