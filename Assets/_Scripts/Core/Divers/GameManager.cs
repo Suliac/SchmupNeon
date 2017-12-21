@@ -216,7 +216,7 @@ public class GameManager : MonoBehaviour
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
             {
                 //Init();
-                StateManager.Get.State = StateManager.GameState.Tuto;
+                StateManager.Get.State = StateManager.GameState.Menu;
                 SceneManager.LoadScene("1_Menu");
             }
         }

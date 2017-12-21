@@ -124,24 +124,33 @@ public class PlayerController : MonoBehaviour, IKillable
 
     private void InputPlayer()
     {
-        horizMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Horizontal");
-        vertiMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Vertical");
-
-        if (PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButton("FireA"))
+        if (!immobilisePlayer)
         {
-            //weapons[idWeapon].TryShoot();
-            weaponHandle.UseWeapon();
-        }
+            horizMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Horizontal");
+            vertiMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Vertical");
 
-        if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
-        {
-            pickupHandle.UseItem();
-        }
+            if (PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButton("FireA"))
+            {
+                //weapons[idWeapon].TryShoot();
+                weaponHandle.UseWeapon();
+            }
 
-        if (horizMove != 0 || vertiMove != 0)
-            hasMoved = true;
+            if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
+            {
+                pickupHandle.UseItem();
+            }
+
+            if (horizMove != 0 || vertiMove != 0)
+                hasMoved = true;
+            else
+                hasMoved = false;
+        }
         else
+        {
+            horizMove = 0f;
+            vertiMove = 0f;
             hasMoved = false;
+        }
     }
 
     private void MovePlayer()
@@ -168,14 +177,14 @@ public class PlayerController : MonoBehaviour, IKillable
 
     private void Update()
     {
-        if (!enabledPlayer || immobilisePlayer)
+        if (!enabledPlayer)
             return;
 
         if (updateTimer.Ready())
         {
 
         }
-
+        
         InputPlayer();
     }
 

@@ -1,4 +1,5 @@
 ﻿using Sirenix.OdinInspector;
+using System.Collections;
 using UnityEngine;
 
 public enum EntityType
@@ -31,6 +32,14 @@ public class LifeBehavior : MonoBehaviour
     [FoldoutGroup("Debug"), Tooltip("vie courante de l'objet"), SerializeField]
     private float currentLife = 0.0f;
     public float CurrentLife { get { return currentLife; } }
+
+    private bool coroutineStarted = false;
+
+    [FoldoutGroup("GamePlay"), Tooltip("Invincibilité"), SerializeField]
+    private bool invincible = false;
+
+    [FoldoutGroup("GamePlay"), Tooltip("Renderer à faire blink lros de l'invincibilité"), SerializeField]
+    private Renderer entityRenderer;
     #endregion
 
     #region Initialization
@@ -57,18 +66,21 @@ public class LifeBehavior : MonoBehaviour
     /// <returns></returns>
     public int TakeDamages(float damages, bool oneShot)
     {
-        if (oneShot)
-            damages = currentLife;
-
-        currentLife = Mathf.Max(0, currentLife - damages);
-
-        if (currentLife <= 0)
+        if (!invincible)
         {
-            if (killable != null)
+            if (oneShot)
+                damages = currentLife;
+
+            currentLife = Mathf.Max(0, currentLife - damages);
+
+            if (currentLife <= 0)
             {
-                killable.Kill();
-                return (scoreToGiveToOther); //ici get le nombre de score que le gameObject donne en mourrant
-            }
+                if (killable != null)
+                {
+                    killable.Kill();
+                    return (scoreToGiveToOther); //ici get le nombre de score que le gameObject donne en mourrant
+                }
+            } 
         }
         return (0);
     }
@@ -79,6 +91,54 @@ public class LifeBehavior : MonoBehaviour
     public void InitLife()
     {
         currentLife = StartLife;
+    }
+
+    public void Invicible(float time)
+    {
+        print("invincible");
+        if (!coroutineStarted)
+            StartCoroutine(InvicibleForSeconds(time));
+    }
+
+    IEnumerator InvicibleForSeconds(float time)
+    {
+        invincible = true;
+        coroutineStarted = true;
+
+        float currentTime = 0.0f;
+        float currentPhaseTime = 0.0f;
+
+        float phaseDuration = 0.1f;
+        float alpha = 1.0f;
+
+        while (currentTime < time)
+        {
+            currentTime += Time.deltaTime;
+            currentPhaseTime += Time.deltaTime;
+
+            if (currentPhaseTime > phaseDuration)
+            {
+                alpha = alpha > 0 ? 0.0f : 1.0f;
+                currentPhaseTime = 0.0f;
+            }
+
+            if (entityRenderer)
+            {
+                //print("alpha " + alpha);
+                Color color = entityRenderer.material.color;
+                color.a = alpha;
+                entityRenderer.material.color = color;
+            }
+
+            yield return null;
+        }
+        Color colorAlphaOne = entityRenderer.material.color;
+        colorAlphaOne.a = 1f;
+        entityRenderer.material.color = colorAlphaOne;
+
+        coroutineStarted = false;
+        invincible = false;
+        yield return null;
     }
     #endregion
 
