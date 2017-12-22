@@ -2,13 +2,6 @@
 using System.Collections;
 using UnityEngine;
 
-public enum EnemyState
-{
-    Moving,
-    Preshot,
-    Shooting,
-    Death
-}
 
 /// <summary>
 /// BaseEnemy Description
@@ -33,17 +26,14 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     protected bool wantToDisable = false;         // Etat actuel de l'ennemi
     public bool WantToDisable { get { return wantToDisable; } set { wantToDisable = value; } }
 
-    [FoldoutGroup("GamePlay"), Tooltip("Durée du blink"), SerializeField]
-    private float blinkDuration = 1.0f;
-    [FoldoutGroup("GamePlay"), Tooltip("Fréquence du blink"), SerializeField]
-    private float blinkFrequency = 0.2f;
-    private float preShotTimer = 0.0f;
-    private bool coroutineStarted = false;
-    private bool coroutinePrepareToMoveStarted = false;
-    private bool readyToMove = true;
+    //[FoldoutGroup("GamePlay"), Tooltip("Durée du blink"), SerializeField]
+    //private float blinkDuration = 1.0f;
+    //[FoldoutGroup("GamePlay"), Tooltip("Fréquence du blink"), SerializeField]
+    //private float blinkFrequency = 0.2f;
+    //private float preShotTimer = 0.0f;
+    //private bool coroutineStarted = false;
 
-    private Renderer renderer;
-    protected Animator animator;
+    private bool coroutinePrepareToMoveStarted = false;
 
     [FoldoutGroup("GamePlay"), Tooltip("Temps avant de relancer le mouvement"), SerializeField]
     private float timeBeforeMoving = 1.0f;
@@ -51,10 +41,19 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     protected bool enableEnemy = false;         // Etat actuel de l'ennemi
     protected IsOnCamera isOnCamera;
     protected Rigidbody body;             //ref du rigidbody
+    //private Renderer renderer;
+    protected Animator animator;
 
+    [FoldoutGroup("GamePlay"), Tooltip("Ennemi en train de tirer"), SerializeField]
+    protected bool isShooting = true;
 
-    protected EnemyState currentState = EnemyState.Moving;
-    protected EnemyState previousState;
+    [FoldoutGroup("GamePlay"), Tooltip("Ennemi en train de bouger"), SerializeField]
+    protected bool isMoving = false;
+    protected bool lastFrameMoving = false;
+    private bool readyToMove = false;
+
+    [FoldoutGroup("GamePlay"), Tooltip("Ennemi mort"), SerializeField]
+    protected bool isDead = false;
     #endregion
 
     #region Initialization
@@ -62,8 +61,10 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     {
         isOnCamera = GetComponent<IsOnCamera>();
         body = GetComponent<Rigidbody>();
-        renderer = GetComponent<Renderer>();
         animator = gameObject.GetComponent<Animator>();
+        //renderer = GetComponent<Renderer>();
+
+        readyToMove = isMoving;
     }
 
     #endregion
@@ -73,17 +74,15 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     abstract protected void Shoot();
     abstract protected void OnBeforeKill();
 
-    protected void OnPreShotPhase()
-    {
-        if (!coroutineStarted)
-            StartCoroutine(Blink(blinkDuration, blinkFrequency));
-    }
+    //protected void OnPreShotPhase()
+    //{
+    //    if (!coroutineStarted)
+    //        StartCoroutine(Blink(blinkDuration, blinkFrequency));
+    //}
 
     protected void OnEnemyEnable()
     {
-        if (animator)
-            animator.SetBool("isDead", false);
-
+        print("enable : " + name);
         enableEnemy = true;
     }
 
@@ -105,64 +104,62 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
         deathEnemy.SetActive(true);
     }
 
-    IEnumerator Blink(float totalDuration, float oneColorDuration)
-    {
-        coroutineStarted = true;
-        bool isRed = false;
-        float myTimer = 0.0f;
+    //IEnumerator Blink(float totalDuration, float oneColorDuration)
+    //{
+    //    coroutineStarted = true;
+    //    bool isRed = false;
+    //    float myTimer = 0.0f;
 
-        while (preShotTimer < totalDuration)
-        {
-            preShotTimer += Time.deltaTime;
-            myTimer += Time.deltaTime;
+    //    while (preShotTimer < totalDuration)
+    //    {
+    //        preShotTimer += Time.deltaTime;
+    //        myTimer += Time.deltaTime;
 
-            if (myTimer > oneColorDuration)
-            {
-                isRed = !isRed;
-                myTimer = 0.0f;
-            }
+    //        if (myTimer > oneColorDuration)
+    //        {
+    //            isRed = !isRed;
+    //            myTimer = 0.0f;
+    //        }
 
-            if (isRed)
-                renderer.material.color = Color.red;
-            else
-                renderer.material.color = Color.white;
+    //        if (isRed)
+    //            renderer.material.color = Color.red;
+    //        else
+    //            renderer.material.color = Color.white;
 
-            yield return null;
-        }
-        renderer.material.color = Color.white;
+    //        yield return null;
+    //    }
+    //    renderer.material.color = Color.white;
 
-        preShotTimer = 0.0f;
-        coroutineStarted = false;
-        currentState = EnemyState.Shooting;
-        yield return null;
-    }
+    //    preShotTimer = 0.0f;
+    //    coroutineStarted = false;
+    //    currentState = EnemyState.Shooting;
+    //    yield return null;
+    //}
 
     IEnumerator ReadyToMove(float time)
     {
         coroutinePrepareToMoveStarted = true;
         yield return new WaitForSeconds(time);
-        readyToMove = true;
         coroutinePrepareToMoveStarted = false;
+        readyToMove = true;
         yield return null;
     }
 
     [FoldoutGroup("Debug"), Button("Kill")]
     public void Kill()
     {
-        //Debug.Log("Dead");
-        if (currentState != EnemyState.Death)
+        if (!isDead)
         {
+            isDead = true;
+            enableEnemy = false;
             body.velocity = Vector3.zero;
-            currentState = EnemyState.Death;
             OnBeforeKill();
             CreateDeathObject();
 
             if (animator)
-                animator.SetBool("enemyIsDead", true);
+                animator.SetTrigger("enemyIsDead");
             else
                 Destroy(gameObject);
-
-            enableEnemy = false;
         }
     }
 
@@ -177,60 +174,50 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     protected void Update()
     {
-        if (((isOnCamera && isOnCamera.isOnScreen) || (!isOnCamera && wantToEnable)) && !enableEnemy) // Si l'ennemi vient d'apparaitre & n'a pas déja été spawn
-            OnEnemyEnable();
-
-        if (!enableEnemy)
-            return;
-        if (previousState != currentState)
+        if (!isDead)
         {
-            readyToMove = false;
+            if (((isOnCamera && isOnCamera.isOnScreen) || (!isOnCamera && wantToEnable)) && !enableEnemy) // Si l'ennemi vient d'apparaitre & n'a pas déja été spawn
+                OnEnemyEnable();
 
-        }
-        switch (currentState)
-        {
-            case EnemyState.Moving:
+            if (!enableEnemy)
+                return;
+
+            if (isMoving)
+            {
+                if (!coroutinePrepareToMoveStarted && !readyToMove)
+                    StartCoroutine(ReadyToMove(timeBeforeMoving));
 
                 if (readyToMove)
-                {
                     Move();
-                }
-                else
-                {
-                    if (!coroutinePrepareToMoveStarted)
-                        StartCoroutine(ReadyToMove(timeBeforeMoving));
-                }
-                break;
-            case EnemyState.Preshot:
-                OnPreShotPhase();
-                break;
-            case EnemyState.Shooting:
+            }
+            else
+            {
+                readyToMove = false;
+            }
+
+            if (isShooting)
                 Shoot();
-                break;
-            default:
-                break;
-        }
 
-        //optimisation des fps
-        if (updateTimer.Ready())
-        {
-            if (isOnCamera)
+            //optimisation des fps
+            if (updateTimer.Ready())
             {
-                if (!isOnCamera.enabled)
-                    isOnCamera.enabled = true;
-                if (!isOnCamera.isOnScreen)
-                    wantToDisable = true; // Kill si sort de l'écran 
+                if (isOnCamera)
+                {
+                    if (!isOnCamera.enabled)
+                        isOnCamera.enabled = true;
+                    if (!isOnCamera.isOnScreen)
+                        wantToDisable = true; // Kill si sort de l'écran 
+                }
+
+                if (wantToDisable) // Sert pour gérer le cas ou l'ennemi est activé depuis l'exterieur
+                {
+                    wantToEnable = false;
+                    Kill();
+                }
             }
 
-            if (wantToDisable) // Sert pour gérer le cas ou l'ennemi est activé depuis l'exterieur
-            {
-                wantToEnable = false;
-                Kill();
-            }
+            lastFrameMoving = isMoving;
         }
-
-
-        previousState = currentState;
     }
 
     #endregion

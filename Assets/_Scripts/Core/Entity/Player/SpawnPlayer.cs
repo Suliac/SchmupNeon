@@ -24,6 +24,9 @@ public class SpawnPlayer : MonoBehaviour
     private bool spawnedOnce = false;          //reference du playerController
     public bool SpawnedOnce { get { return spawnedOnce; } }
 
+    [FoldoutGroup("Debug"), Tooltip("Temps d'invincibilité au respawn"), SerializeField]
+    private float invincibilityWhenRespawn = 1.0f;                        //affichage du spawn
+
     private LifeBehavior playerLife;    //reference a playerLife
     #endregion
 
@@ -86,6 +89,7 @@ public class SpawnPlayer : MonoBehaviour
             player.SetActive(true);
             spawnedOnce = true;
             playerLife.InitLife(); // reinit life ici ? 
+            playerLife.Invicible(invincibilityWhenRespawn);
             playerController.Init();
         }
     }
@@ -104,7 +108,13 @@ public class SpawnPlayer : MonoBehaviour
         {
             if (player && !isSpawning && !player.activeInHierarchy)
             {
-                prepareSpawning();
+                if (spawnedOnce)
+                    prepareSpawning();
+                else
+                {
+                    isSpawning = true;
+                    spawnIt();
+                }
             }
                 
         }

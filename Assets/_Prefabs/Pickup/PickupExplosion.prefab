@@ -56,11 +56,12 @@ MonoBehaviour:
   prefabsTakePickup: PickupConsumed
   prefabsUsePickup: PickupRepulseActive
   killOnUse: 0
-  objectSpriteInUI: {fileID: 21300074, guid: 71ae9cf2cbddbbf46afcc9b7c0ab1d27, type: 3}
+  objectSpriteInUI: {fileID: 21300000, guid: c85f0f524116f654f9bea14f1f46a768, type: 3}
   updateTimer:
     updateFrequency: 0
-  radius: 3.38
-  speedPush: 5
+  maxDuration: 2
+  radius: 5
+  speedPush: 8
 --- !u!135 &135639206203568342
 SphereCollider:
   m_ObjectHideFlags: 1

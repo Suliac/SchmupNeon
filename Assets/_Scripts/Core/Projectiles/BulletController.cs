@@ -64,7 +64,7 @@ public class BulletController : Projectile
             GameObject deathBullet = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
             if (!deathBullet)
             {
-                Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du BulletCOntroller");
+                Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du BulletCOntroller | "+ prefabsDeathTag);
                 return;
             }
             deathBullet.transform.position = transform.position;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 /// <summary>
 /// SimpleShootingEnemy Description
@@ -6,11 +7,12 @@
 public class SimpleShootingEnemy : ShootingEnemy
 {
     #region Attributes
-
+    [FoldoutGroup("Gameplay"), Tooltip("Tir toutes les X secondes"), SerializeField]
+    private FrequencyTimer shootFrequency;
     #endregion
 
     #region Initialization
-    
+
 
     #endregion
 
@@ -21,14 +23,16 @@ public class SimpleShootingEnemy : ShootingEnemy
     /// </summary>
     protected override void Shoot()
     {
-        if (weaponHandle)
-            if (weaponHandle.UseWeapon())// Shoot every time it can
-                currentState = EnemyState.Moving;
+        if (shootFrequency.Ready())
+        {
+            if (weaponHandle)
+                weaponHandle.UseWeapon(); 
+        }
     }
 
     protected override void Move()
     {
-        currentState = EnemyState.Preshot;
+        
     }
 
     protected override void OnBeforeKill()

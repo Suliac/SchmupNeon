@@ -81,7 +81,6 @@ GameObject:
   - component: {fileID: 4700646376949048}
   - component: {fileID: 212509791403550010}
   - component: {fileID: 54971868219493350}
-  - component: {fileID: 114004476141048598}
   - component: {fileID: 114780286731405066}
   - component: {fileID: 114175740408080036}
   - component: {fileID: 114894522981364198}
@@ -131,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583733155802228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 18.24, z: 0}
+  m_LocalPosition: {x: 0, y: 10.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4929048192767570}
@@ -158,8 +157,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876281702354740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2594062, y: -4.013439, z: -0.16068913}
-  m_LocalScale: {x: 1.0012487, y: 1.0012487, z: 1.0012487}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4424713349138666}
   - {fileID: 4929048192767570}
@@ -221,46 +220,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 1.04, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114004476141048598
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1876281702354740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 341817a154a515c44b5e51862b0afd99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startVisible: 1
-  hideOnScreen: 0
-  onScreenSprite: {fileID: 21300000, guid: d5bf0a1cdcb164f45bb6171e3ec5f5d4, type: 3}
-  onScreenTextureColor: {r: 1, g: 1, b: 1, a: 1}
-  onScreenTextureSize: 0.14
-  onScreenTextureRotation: 0
-  hideOutofScreen: 0
-  outofScreenSprite: {fileID: 21300000, guid: 02387b373df477f499ccbf66ba190f3a, type: 3}
-  outofScreenTextureColor: {r: 1, g: 1, b: 1, a: 1}
-  outofScreenTextureScreenPercentSize: 0.22
-  outofScreenBorderOffset: {x: 0, y: 0}
-  outofScreenTextureRotation: 0
-  outofScreenRotateTexture: 1
-  outofScreenBaseOrientation: 180
-  presiceRotation: 0
-  opacityOpOnScreen: 0.6
-  opacityOpOutScreen: 1
-  fadeInDuration: 2
-  minScale: 0.1
-  maxScale: 1.5
-  minDistance: 1
-  maxDistance: 20
-  scaleOnScreen: 0.6
-  animationMode: 2
-  scaleAnimAmplitude: 0.1
-  scaleAnimSmooth: 0.26
-  updateTimer:
-    updateFrequency: 0
-  canvasSortOrder: 0
 --- !u!114 &114077812399037218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,9 +288,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateTimer:
     updateFrequency: 0
-  speed: 50
+  speed: 3
   wantToEnable: 1
-  timeShooting: 2
+  prefabsDeathTag: DeathEnemy
+  timeBeforeMoving: 0
+  isShooting: 1
+  isMoving: 1
+  isDead: 0
+  shootFrequency:
+    updateFrequency: 0.5
   NumberOfShoots: 1
 --- !u!114 &114780286731405066
 MonoBehaviour:
@@ -348,7 +313,7 @@ MonoBehaviour:
   StartLife: 5
   scoreToGiveToOther: 50
   scoreToRemove: 0
-  currentLife: 0
+  currentLife: 5
 --- !u!114 &114894522981364198
 MonoBehaviour:
   m_ObjectHideFlags: 1

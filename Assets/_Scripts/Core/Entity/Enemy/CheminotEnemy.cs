@@ -14,10 +14,8 @@ public class CheminotEnemy : ShootingEnemy
     [FoldoutGroup("Gameplay"), Tooltip("Durée des phases de déplacement"), SerializeField]
     private float timeRotation = 1.0f;
 
-    [FoldoutGroup("Gameplay"), Tooltip("Nombre de tir durant les phases de tir"), SerializeField]
-    private int NumberOfShoots = 1;
-
-    private int currentNumberOfShoots = 0;
+    [FoldoutGroup("Gameplay"), Tooltip("Tir toutes les X secondes"), SerializeField]
+    private FrequencyTimer shootFrequency;
 
     private bool rotateRight = true;
     private bool coroutineRunning = false;
@@ -26,20 +24,20 @@ public class CheminotEnemy : ShootingEnemy
     #region Core
     protected override void Move()
     {
-
         if (!coroutineRunning)
             StartCoroutine(SmoothRotation(timeRotation, angleRotation));
-
-
     }
 
     protected override void Shoot()
     {
-        if (weaponHandle)
-            if (weaponHandle.UseWeapon())
-                currentState = EnemyState.Moving;
+        if (shootFrequency.Ready())
+        {
+            if (weaponHandle)
+                weaponHandle.UseWeapon(); 
+        }
     }
-        protected override void OnBeforeKill()
+
+    protected override void OnBeforeKill()
     {
         // Nothing to do
     }
@@ -63,7 +61,6 @@ public class CheminotEnemy : ShootingEnemy
             transform.rotation = Quaternion.Lerp(startRotation, endRotation, Mathf.Min(1, partOfTotalTime));
             yield return null;
         }
-        currentState = EnemyState.Shooting;
         rotateRight = !rotateRight;
         coroutineRunning = false;
     }

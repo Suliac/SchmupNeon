@@ -8,7 +8,7 @@ public class BigFootEnemy : ShootingEnemy
 {
     #region Attributes
     [FoldoutGroup("Gameplay"), Tooltip("Tir toutes les X secondes"), SerializeField]
-    private float timeShooting = 1.0f;
+    private FrequencyTimer shootFrequency;
 
     [FoldoutGroup("Gameplay"), Tooltip("Nombre de tir durant les phases de tir"), SerializeField]
     private int NumberOfShoots = 3;
@@ -17,14 +17,12 @@ public class BigFootEnemy : ShootingEnemy
     private Vector3 botPosition;
 
     private int currentNumberOfShoots = 0;
-    private float currentTimeShooting = 0.0f;
 
     private bool goingTop = true;
-    private bool isShooting = false;
     #endregion
 
     #region Initialization
-    protected void Awake()
+    protected new void Awake()
     {
         base.Awake();
         topPosition = transform.GetChild(1).GetChild(0).position; // crado !
@@ -41,8 +39,6 @@ public class BigFootEnemy : ShootingEnemy
     #region Core
     protected override void Move()
     {
-        currentTimeShooting += Time.deltaTime;
-
         Vector3 nextCheckPoint = goingTop ? topPosition : botPosition;
 
         Vector3 dir = nextCheckPoint - transform.position;
@@ -50,26 +46,21 @@ public class BigFootEnemy : ShootingEnemy
 
         if ((goingTop && transform.position.y >= topPosition.y) || (!goingTop && transform.position.y <= botPosition.y))
             goingTop = !goingTop;
-
-        if (currentTimeShooting >= timeShooting)
-        {
-            currentState = EnemyState.Preshot;
-            currentTimeShooting = 0.0f;
-        }
     }
 
     protected override void Shoot()
     {
-        body.velocity = Vector3.zero;
-        if (weaponHandle.UseWeapon())
-            currentNumberOfShoots++;
-
-        if (currentNumberOfShoots >= NumberOfShoots)
+        if (shootFrequency.Ready())
         {
-            isShooting = false;
-            currentState = EnemyState.Moving;
-
-            currentNumberOfShoots = 0;
+            if (currentNumberOfShoots < NumberOfShoots)
+            {
+                if (weaponHandle.UseWeapon())
+                    currentNumberOfShoots++;
+            }
+            else
+            {
+                currentNumberOfShoots = 0;
+            } 
         }
     }
 

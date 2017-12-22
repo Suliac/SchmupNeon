@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
 
     public void ActiveGame(bool active)
     {
-        panelCanvasInGame.SetActive(active);                //active le canvas des scores
+        panelCanvasInGame.SetActive(true);                //active le canvas des scores
         movingPlatform.IsScrollingAcrtive = active;         //active la platforme mouvante
         if (!active)
         {
@@ -216,7 +216,7 @@ public class GameManager : MonoBehaviour
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
             {
                 //Init();
-                StateManager.Get.State = StateManager.GameState.Tuto;
+                StateManager.Get.State = StateManager.GameState.Menu;
                 SceneManager.LoadScene("1_Menu");
             }
         }
