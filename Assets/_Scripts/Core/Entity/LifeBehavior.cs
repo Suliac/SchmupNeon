@@ -38,8 +38,11 @@ public class LifeBehavior : MonoBehaviour
     [FoldoutGroup("GamePlay"), Tooltip("Invincibilité"), SerializeField]
     private bool invincible = false;
 
-    [FoldoutGroup("GamePlay"), Tooltip("Renderer à faire blink lros de l'invincibilité"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Renderer à faire blink lors de l'invincibilité"), SerializeField]
     private Renderer entityRenderer;
+    
+    [FoldoutGroup("GamePlay"), Tooltip("Couleur du blink lors de l'invincibilité"), SerializeField]
+    private Color invincibilityColorBlink;
     #endregion
 
     #region Initialization
@@ -109,32 +112,32 @@ public class LifeBehavior : MonoBehaviour
         float currentPhaseTime = 0.0f;
 
         float phaseDuration = 0.1f;
-        float alpha = 1.0f;
+        bool isGrey = true;
+
+        Color oldColor = entityRenderer ? entityRenderer.material.color : Color.white;
 
         while (currentTime < time)
         {
             currentTime += Time.deltaTime;
             currentPhaseTime += Time.deltaTime;
 
-            if (currentPhaseTime > phaseDuration)
-            {
-                alpha = alpha > 0 ? 0.0f : 1.0f;
-                currentPhaseTime = 0.0f;
-            }
-
             if (entityRenderer)
             {
-                //print("alpha " + alpha);
-                Color color = entityRenderer.material.color;
-                color.a = alpha;
-                entityRenderer.material.color = color;
+                if (currentPhaseTime > phaseDuration)
+                {
+                    isGrey = !isGrey;
+                    currentPhaseTime = 0.0f;
+                }
+
+                if (isGrey)
+                    entityRenderer.material.color = invincibilityColorBlink;
+                else
+                    entityRenderer.material.color = oldColor;
             }
 
             yield return null;
         }
-        Color colorAlphaOne = entityRenderer.material.color;
-        colorAlphaOne.a = 1f;
-        entityRenderer.material.color = colorAlphaOne;
+        entityRenderer.material.color = oldColor;
 
         coroutineStarted = false;
         invincible = false;

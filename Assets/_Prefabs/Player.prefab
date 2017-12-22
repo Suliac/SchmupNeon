@@ -476,6 +476,9 @@ MonoBehaviour:
   scoreToGiveToOther: 0
   scoreToRemove: 5
   currentLife: 0
+  invincible: 0
+  entityRenderer: {fileID: 0}
+  invincibilityColorBlink: {r: 0.52205884, g: 0.52205884, b: 0.52205884, a: 1}
 --- !u!114 &114640442921096836
 MonoBehaviour:
   m_ObjectHideFlags: 1
