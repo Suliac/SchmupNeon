@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4477697364357580}
   - component: {fileID: 135439414002407198}
   - component: {fileID: 54726741903409570}
-  - component: {fileID: 114466144047475190}
   - component: {fileID: 114038484861629292}
   - component: {fileID: 114425661987737560}
   - component: {fileID: 114809486763952458}
@@ -100,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021431564853822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.9532366, y: -1.2834446, z: -0.16068913}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.54864, y: 0.54864, z: 0.54864}
   m_Children:
   - {fileID: 4428785178517224}
@@ -137,7 +136,7 @@ MonoBehaviour:
   StartLife: 5
   scoreToGiveToOther: 50
   scoreToRemove: 0
-  currentLife: 0
+  currentLife: 5
 --- !u!114 &114066983380488950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,9 +152,15 @@ MonoBehaviour:
     updateFrequency: 0
   speed: 1
   wantToEnable: 1
+  prefabsDeathTag: DeathEnemy
+  timeBeforeMoving: 0
+  isShooting: 1
+  isMoving: 1
+  isDead: 0
   angleRotation: 90
   timeRotation: 2
-  NumberOfShoots: 1
+  shootFrequency:
+    updateFrequency: 0
 --- !u!114 &114071884693724784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.1
   tagBullet: BulletForEnemy
-  forwardBullet: 1
+  forwardBullet: 2
   AdditionalSpeed: 0
   NbrBulletPerShot: 8
   FirstAngleShot: 180
@@ -197,46 +202,6 @@ MonoBehaviour:
   damageEnnemy: 0
   damageProjectile: 1
   oneShot: 1
---- !u!114 &114466144047475190
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1021431564853822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 341817a154a515c44b5e51862b0afd99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startVisible: 1
-  hideOnScreen: 0
-  onScreenSprite: {fileID: 21300000, guid: d5bf0a1cdcb164f45bb6171e3ec5f5d4, type: 3}
-  onScreenTextureColor: {r: 1, g: 1, b: 1, a: 1}
-  onScreenTextureSize: 0.14
-  onScreenTextureRotation: 0
-  hideOutofScreen: 0
-  outofScreenSprite: {fileID: 21300000, guid: 02387b373df477f499ccbf66ba190f3a, type: 3}
-  outofScreenTextureColor: {r: 1, g: 1, b: 1, a: 1}
-  outofScreenTextureScreenPercentSize: 0.22
-  outofScreenBorderOffset: {x: 0, y: 0}
-  outofScreenTextureRotation: 0
-  outofScreenRotateTexture: 1
-  outofScreenBaseOrientation: 180
-  presiceRotation: 0
-  opacityOpOnScreen: 0.6
-  opacityOpOutScreen: 1
-  fadeInDuration: 2
-  minScale: 0.1
-  maxScale: 1.5
-  minDistance: 1
-  maxDistance: 20
-  scaleOnScreen: 0.6
-  animationMode: 2
-  scaleAnimAmplitude: 0.1
-  scaleAnimSmooth: 0.26
-  updateTimer:
-    updateFrequency: 0
-  canvasSortOrder: 0
 --- !u!114 &114641274278503226
 MonoBehaviour:
   m_ObjectHideFlags: 1

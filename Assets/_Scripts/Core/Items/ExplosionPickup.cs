@@ -9,9 +9,12 @@ public class ExplosionPickup : HandablePickup
 {
     #region Attributes
 
-	[Tooltip("opti fps"), SerializeField]
-	private FrequencyTimer updateTimer;
+    [Tooltip("opti fps"), SerializeField]
+    private FrequencyTimer updateTimer;
 
+    [FoldoutGroup("GamePlay"), Tooltip("Durée maximale de l'effet"), SerializeField]
+    private float maxDuration = 5.0f;
+    private float currentDuration;
 
     [FoldoutGroup("GamePlay"), Tooltip("Rayon de l'explosion"), SerializeField]
     private float radius = 5.0f;
@@ -58,7 +61,7 @@ public class ExplosionPickup : HandablePickup
             }
             CreateTakeObject(currentPlayer.gameObject.transform, prefabsUsePickup); //utilise 
             UtilityFunctions.createWave(currentPlayer.transform.position, 0);
-            print(playersToPush.Count);
+            //print(playersToPush.Count);
         }
     }
     #endregion
@@ -69,10 +72,12 @@ public class ExplosionPickup : HandablePickup
     {
         if (launched)
         {
+            currentDuration += Time.deltaTime;
+
             //optimisation des fps
             if (updateTimer.Ready())
             {
-                if (playersToPush.Count > 0)
+                if (playersToPush.Count > 0 && currentDuration < maxDuration)
                 {
                     List<PlayerController> tmpPlayers = new List<PlayerController>(playersToPush);
                     foreach (var playerToPush in tmpPlayers)
@@ -92,12 +97,20 @@ public class ExplosionPickup : HandablePickup
                 }
                 else
                 {
-                    print("Stop this shit");
+                    if (playersToPush.Count > 0)
+                    {
+                        print("Yo");
+                        foreach (var playerToPush in playersToPush)
+                            playerToPush.ImmobilisePlayer = false;
+
+                        playersToPush.Clear();
+                    }
+                    //print("Stop this shit");
                     Stop();
                 }
-            } 
+            }
         }
     }
 
-	#endregion
+    #endregion
 }

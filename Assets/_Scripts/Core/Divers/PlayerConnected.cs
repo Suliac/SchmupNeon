@@ -88,8 +88,13 @@ public class PlayerConnected : MonoBehaviour
     {
         foreach (Player player in ReInput.players.GetPlayers(true))
         {
-            
-            if(player.controllers.joystickCount > 0)
+            //if (player.id == 0)
+            //{
+            //    player.controllers.hasKeyboard = true;
+            //    setPlayerController(player.id, true);
+            //}
+
+            if (player.controllers.joystickCount > 0)
             {
                 foreach (Joystick j in player.controllers.Joysticks)
                 {
@@ -97,15 +102,6 @@ public class PlayerConnected : MonoBehaviour
                     break;
                 }
             }
-            //else // si aucune manette on met le keyboard comme controller
-            //{
-            //    if (player.id == 0)
-            //    {
-            //        player.controllers.hasKeyboard = true;
-            //        setPlayerController(player.id, true);
-            //        break;
-            //    }
-            //}
         }
     }
     #endregion

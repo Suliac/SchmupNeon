@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/MENU_GASTON.unity
-    guid: cbc761f3859cb314fb2b6265296a8020
+    path: Assets/_Scenes/1_Menu.unity
+    guid: 26dfd6978b58f394c9221971b2676dfa
+  - enabled: 1
+    path: Assets/_Scenes/2_Game.unity
+    guid: 35ac766fafa6a844a80b087f90a3ed3a

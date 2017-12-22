@@ -2,10 +2,10 @@
 <WwiseSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <WwiseProjectPath>../SHMUP_WwiseProject/SHMUP_WwiseProject.wproj</WwiseProjectPath>
   <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
-  <CreateWwiseGlobal>true</CreateWwiseGlobal>
+  <CreateWwiseGlobal>false</CreateWwiseGlobal>
   <CreateWwiseListener>true</CreateWwiseListener>
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
-  <WwiseInstallationPathWindows>D:\Wwise 2017.1.3.6377</WwiseInstallationPathWindows>
+  <WwiseInstallationPathWindows>D:\Travail\Logiciels\WWise</WwiseInstallationPathWindows>
   <WwiseInstallationPathMac>null</WwiseInstallationPathMac>
   <CreatedPicker>true</CreatedPicker>
 </WwiseSettings>

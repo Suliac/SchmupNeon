@@ -24,6 +24,9 @@ public class SpawnPlayer : MonoBehaviour
     private bool spawnedOnce = false;          //reference du playerController
     public bool SpawnedOnce { get { return spawnedOnce; } }
 
+    [FoldoutGroup("Debug"), Tooltip("Temps d'invincibilité au respawn"), SerializeField]
+    private float invincibilityWhenRespawn = 1.0f;                        //affichage du spawn
+
     private LifeBehavior playerLife;    //reference a playerLife
     #endregion
 
@@ -78,12 +81,17 @@ public class SpawnPlayer : MonoBehaviour
             Debug.LogError("on n'est pas censé être ici...");
             return;
         }
-        
-        isSpawning = false;
-        animSpawn.gameObject.SetActive(false);
-        player.SetActive(true);
-        spawnedOnce = true;
-        playerLife.InitLife(); // reinit life ici ?
+
+        if (StateManager.Get.State != StateManager.GameState.GameOver)
+        {
+            isSpawning = false;
+            animSpawn.gameObject.SetActive(false);
+            player.SetActive(true);
+            spawnedOnce = true;
+            playerLife.InitLife(); // reinit life ici ? 
+            playerLife.Invicible(invincibilityWhenRespawn);
+            playerController.Init();
+        }
     }
 
 
@@ -100,7 +108,13 @@ public class SpawnPlayer : MonoBehaviour
         {
             if (player && !isSpawning && !player.activeInHierarchy)
             {
-                prepareSpawning();
+                if (spawnedOnce)
+                    prepareSpawning();
+                else
+                {
+                    isSpawning = true;
+                    spawnIt();
+                }
             }
                 
         }

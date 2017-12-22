@@ -13,8 +13,6 @@ public class ZigZogEnemy : ShootingEnemy
     private float angleBot = 225.0f;
 
     [FoldoutGroup("GamePlay"), Tooltip("Durée des phases de déplacement"), SerializeField]
-
-
     private float timeMoving = 1.0f;
 
     [FoldoutGroup("GamePlay"), Tooltip("Nombre de tir durant les phases de tir"), SerializeField]
@@ -24,8 +22,6 @@ public class ZigZogEnemy : ShootingEnemy
     private float currentTimeMoving = 0.0f;
 
     private bool goingTop = true;
-
-    private bool isShooting = false;
     private bool spaceEnemyGroup = true;
 
     #endregion
@@ -51,10 +47,13 @@ public class ZigZogEnemy : ShootingEnemy
                 transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
                 spaceEnemyGroup = false;
             }
+
             body.velocity = Vector3.zero;
-            currentState = EnemyState.Preshot;
             currentTimeMoving = 0.0f;
             goingTop = !goingTop;
+
+            isMoving = false;
+            isShooting = true;
         }
     }
 
@@ -72,7 +71,8 @@ public class ZigZogEnemy : ShootingEnemy
         if (currentNumberOfShoots >= NumberOfShoots)
         {
             currentNumberOfShoots = 0;
-            currentState = EnemyState.Moving;
+            isMoving = true;
+            isShooting = false;
         }
     }
     #endregion

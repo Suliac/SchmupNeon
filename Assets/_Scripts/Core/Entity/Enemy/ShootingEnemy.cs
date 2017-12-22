@@ -11,7 +11,7 @@ public abstract class ShootingEnemy : BaseEnemy {
 
     #region Initialization
 
-    protected void Awake()
+    protected new void Awake()
     {
         base.Awake();
         weaponHandle = GetComponent<WeaponHandler>();

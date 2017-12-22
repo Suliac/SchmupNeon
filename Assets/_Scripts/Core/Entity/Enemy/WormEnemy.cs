@@ -16,7 +16,7 @@ public class WormEnemy : BaseEnemy
     #endregion
 
     #region Initialization
-    protected void Awake()
+    protected new void Awake()
     {
         base.Awake();
         botPosition = transform.GetChild(2).GetChild(1).position; // crado !

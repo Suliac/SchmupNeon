@@ -57,20 +57,24 @@ public class PlayerController : MonoBehaviour, IKillable
     public bool ImmobilisePlayer { get { return immobilisePlayer; } set { immobilisePlayer = value; } }
 
     private int scorePlayer;                //score du player...
-    public int ScorePlayer { set
+    public int ScorePlayer
+    {
+        set
         {
             scorePlayer = value;
             if (scorePlayer < 0)
                 scorePlayer = 0;
             GameManager.GetSingleton.ScoreManager.setScore(idPlayer, scorePlayer);
-        } get { return scorePlayer; } }
+        }
+        get { return scorePlayer; }
+    }
 
     private float horizMove;                //mouvement horizontal du joueur
     private float vertiMove;                //mouvement vertical du joueur
-    
+
 
     private bool hasMoved = false;          //a-t-on bougé ?
-    
+
 
     #endregion
 
@@ -83,6 +87,15 @@ public class PlayerController : MonoBehaviour, IKillable
         weaponHandle = GetComponent<WeaponHandler>();
         pickupHandle = GetComponent<PickupHandler>();
         animPlayer.GetComponent<SpriteRenderer>().color = colorPlayer;
+
+        for (int i = 0; i < 4; i++)
+        {
+            GameObject animator = transform.GetChild(1).GetChild(i).gameObject;
+            if (i == idPlayer) // desactive tous les animatirs sauf celui du joueur actuel
+                animPlayer = animator;
+            else
+                animator.SetActive(false);
+        }
         //weapons = new List<Weapons>();
         //SetupListWeapons();                     //setup la lsit des weapons
     }
@@ -96,30 +109,48 @@ public class PlayerController : MonoBehaviour, IKillable
         enabledPlayer = true;
     }
 
+    public void Init()
+    {
+        if (weaponHandle)
+            weaponHandle.Init();
+
+        if (pickupHandle)
+            pickupHandle.Init();
+    }
+
     #endregion
 
     #region Core
 
     private void InputPlayer()
     {
-        horizMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Horizontal");
-        vertiMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Vertical");
-
-        if(PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButton("FireA"))
+        if (!immobilisePlayer)
         {
-            //weapons[idWeapon].TryShoot();
-            weaponHandle.UseWeapon();
-        }
+            horizMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Horizontal");
+            vertiMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Vertical");
 
-        if(PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
-        {
-            pickupHandle.UseItem();
-        }
+            if (PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButton("FireA"))
+            {
+                //weapons[idWeapon].TryShoot();
+                weaponHandle.UseWeapon();
+            }
 
-        if (horizMove != 0 || vertiMove != 0)
-            hasMoved = true;
+            if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
+            {
+                pickupHandle.UseItem();
+            }
+
+            if (horizMove != 0 || vertiMove != 0)
+                hasMoved = true;
+            else
+                hasMoved = false;
+        }
         else
+        {
+            horizMove = 0f;
+            vertiMove = 0f;
             hasMoved = false;
+        }
     }
 
     private void MovePlayer()
@@ -153,9 +184,8 @@ public class PlayerController : MonoBehaviour, IKillable
         {
 
         }
-
-        if (!immobilisePlayer)
-            InputPlayer(); 
+        
+        InputPlayer();
     }
 
     private void FixedUpdate()
@@ -194,7 +224,7 @@ public class PlayerController : MonoBehaviour, IKillable
         if (!enabledPlayer)
             return;
         Debug.Log("Dead");
-        
+
         ScorePlayer -= lifeBehavior.ScoreToRemove;
 
 
@@ -202,6 +232,6 @@ public class PlayerController : MonoBehaviour, IKillable
 
         enabledPlayer = false;
         animPlayer.SetActive(false);
-        Invoke("RespawnIt", timeBeforeRespawn);        
+        Invoke("RespawnIt", timeBeforeRespawn);
     }
 }
