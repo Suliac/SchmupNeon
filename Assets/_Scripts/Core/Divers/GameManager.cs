@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
 
     public void ActiveGame(bool active)
     {
-        panelCanvasInGame.SetActive(active);                //active le canvas des scores
+        panelCanvasInGame.SetActive(true);                //active le canvas des scores
         movingPlatform.IsScrollingAcrtive = active;         //active la platforme mouvante
         if (!active)
         {
