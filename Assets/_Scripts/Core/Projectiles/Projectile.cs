@@ -18,7 +18,7 @@ public abstract class Projectile : MonoBehaviour, IKillable
 
 
 
-    [FoldoutGroup("Debug")] [Tooltip("ref sur playerController")] private PlayerController playerController;
+    [FoldoutGroup("Debug")] [Tooltip("ref sur playerController")] protected PlayerController playerController;
     public PlayerController PlayerController { set { playerController = value; } get { return playerController; } }
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
