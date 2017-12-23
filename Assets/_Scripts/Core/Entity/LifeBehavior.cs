@@ -118,7 +118,7 @@ public class LifeBehavior : MonoBehaviour
 
     public void Invicible(float time)
     {
-        print("invincible");
+        //print("invincible");
         if (!coroutineStarted)
             StartCoroutine(InvicibleForSeconds(time));
     }

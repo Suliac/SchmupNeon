@@ -69,6 +69,13 @@ public class BulletController : Projectile
             }
             deathBullet.transform.position = transform.position;
             deathBullet.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+
+            var renderer = deathBullet.GetComponent<SpriteRenderer>();
+            if (renderer)
+            {
+                renderer.color = playerController.ColorPlayer;
+            }
+
             deathBullet.SetActive(true);
         }
         

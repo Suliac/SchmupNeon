@@ -53,6 +53,9 @@ public class GameManager : MonoBehaviour
 
     [FoldoutGroup("Debug"), Tooltip("Nombre d'ennemis tués")]
     private int currentEnemiesKilled = 0;
+
+    [FoldoutGroup("Debug"), Tooltip("Désactive le gameover & victoire"), SerializeField]
+    private bool desactivateGameOverAndVictory = false;
     //public MovePlatform MovingPlatform { get { return movingPlatform; } }
 
     [FoldoutGroup("Debug"), Tooltip("optimisation fps"), SerializeField]
@@ -295,8 +298,11 @@ public class GameManager : MonoBehaviour
         {
         }
 
-        IsGameOver();
-        IsVictory();
+        if (!desactivateGameOverAndVictory)
+        {
+            IsGameOver();
+            IsVictory();
+        }
 
         InputVictory();
         InputGameOver();

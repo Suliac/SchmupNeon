@@ -41,12 +41,19 @@ public class SpawnPlayer : MonoBehaviour
             playerController = player.GetComponent<PlayerController>(); //get la reference du playerCOntroller
             playerController.IdPlayer = transform.GetSiblingIndex();    //set son id selon la position du spawnPlayer dans la hiérarchie
             playerController.ScorePlayer = GameManager.GetSingleton.ScoreManager.Data.scorePlayer[playerController.IdPlayer];   //set son score
+
             playerLife = player.GetComponent<LifeBehavior>();   //get reference de la vie
             player.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);    //set son emplacement dans la hiérarchie
             player.transform.position = transform.position; //change sa position
 
             animSpawn.SpawnPlayer = this;   //set la reference à l'animation
             animSpawn.gameObject.SetActive(false);  //desactive l'animation si elle est activé (on est en initialisation, on active pas encore...
+            
+            SpriteRenderer renderer = animSpawn.GetComponent<SpriteRenderer>();
+            if(renderer)
+            {
+                renderer.color = playerController.ColorPlayer;
+            }
         }
     }
     #endregion

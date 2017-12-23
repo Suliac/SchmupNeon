@@ -82,7 +82,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     protected void OnEnemyEnable()
     {
-        print("enable : " + name);
+        //print("enable : " + name);
         enableEnemy = true;
     }
 

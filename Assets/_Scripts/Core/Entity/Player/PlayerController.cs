@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour, IKillable
     {
         if (!enabledPlayer)
             return;
-        Debug.Log("Dead");
+        //Debug.Log("Dead");
 
         ScorePlayer -= lifeBehavior.ScoreToRemove;
 

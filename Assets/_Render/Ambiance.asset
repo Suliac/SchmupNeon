@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
-  m_Name: PPP
+  m_Name: Ambiance
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
@@ -21,7 +21,7 @@ MonoBehaviour:
         sourceOpacity: 1
         motionImageOpacity: 0
         motionImageAmplitude: 16
-        motionVectorsOpacity: 0
+        motionVectorsOpacity: 1
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
@@ -81,7 +81,7 @@ MonoBehaviour:
     m_Settings:
       shutterAngle: 270
       sampleCount: 10
-      frameBlending: 0.053
+      frameBlending: 0
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
@@ -100,7 +100,7 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       bloom:
-        intensity: 0.5
+        intensity: 1.38
         threshold: 1.1
         softKnee: 0.5
         radius: 4
@@ -109,7 +109,7 @@ MonoBehaviour:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       tonemapping:
         tonemapper: 2
