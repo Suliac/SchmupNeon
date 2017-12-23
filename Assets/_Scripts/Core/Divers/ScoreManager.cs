@@ -11,8 +11,8 @@ public class ScoreManager : MonoBehaviour
 {
     #region Attributes
     [FoldoutGroup("Object In World"), Tooltip("canvas des players"), SerializeField]
-    private List<TextMeshProUGUI> canvasPlayer;
-    public List<TextMeshProUGUI> CanvasPlayer { get { return canvasPlayer; } }
+    private List<Text> canvasPlayer;
+    public List<Text> CanvasPlayer { get { return canvasPlayer; } }
 
     [FoldoutGroup("Object In World"), Tooltip("canvas de victoire des scores players"), SerializeField]
     private List<Text> canvasVictoryPlayer;
@@ -55,7 +55,7 @@ public class ScoreManager : MonoBehaviour
     {
         for (int i = 0; i < canvasPlayer.Count; i++)
         {
-            canvasPlayer[i].text = data.scorePlayer[i].ToString();
+            canvasPlayer[i].text = data.scorePlayer[i].ToString("00000000");
         }
 
         for (int i = 0; i < canvasVictoryPlayer.Count; i++)
@@ -70,7 +70,7 @@ public class ScoreManager : MonoBehaviour
     public void SetScore(int idPlayer, int score)
     {
         data.scorePlayer[idPlayer] = score;
-        canvasPlayer[idPlayer].text = score.ToString();
+        canvasPlayer[idPlayer].text = score.ToString("00000000");
     }
 
     public void SetVictoryScores()

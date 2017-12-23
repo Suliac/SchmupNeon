@@ -13,17 +13,21 @@ public class ItemManager : MonoBehaviour
     [FoldoutGroup("Object In World"), Tooltip("canvas des players"), SerializeField]
     private List<Image> canvasPlayer;
     public List<Image> CanvasPlayer { get { return canvasPlayer; } }
-
-    [FoldoutGroup("Gameplay")][Tooltip("Sprite affiché dans l'UI quand le joueur n'a pas d'objet")][SerializeField]
-    private Sprite defaultObjectSpriteInUI;
-    public Sprite DefaultObjectSpriteInUI { get { return defaultObjectSpriteInUI; } }
+    
+    private Sprite[] defaultObjectSpriteInUI;
 
     #endregion
 
     #region Initialization
     private void Start()
     {
-        SetupItemImages();
+        defaultObjectSpriteInUI = new Sprite[4];
+        for (int i = 0; i < 4; i++)
+        {
+            defaultObjectSpriteInUI[i] = canvasPlayer[i].sprite;
+        }
+
+        ResetAll();
     }
     #endregion
 
@@ -42,7 +46,7 @@ public class ItemManager : MonoBehaviour
     public void ResetItem(int idPlayer)
     {
         canvasPlayer[idPlayer].color = new Color(255f, 255f, 255f, 0f);
-        canvasPlayer[idPlayer].sprite = null;
+        canvasPlayer[idPlayer].sprite = defaultObjectSpriteInUI[idPlayer];
     }
 
     public void ResetAll()

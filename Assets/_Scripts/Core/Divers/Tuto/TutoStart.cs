@@ -27,14 +27,14 @@ public class TutoStart : MonoBehaviour
     private List<GameObject> listTutoPX;
     [FoldoutGroup("Object In World"), Tooltip("Revenir à gauche"), SerializeField]
     private List<GameObject> listTutoBackLeftPX;
-    [FoldoutGroup("Object In World"), Tooltip("Sprite joypad"), SerializeField]
-    private List<GameObject> connectJoypad;
+    //[FoldoutGroup("Object In World"), Tooltip("Sprite joypad"), SerializeField]
+    //private List<GameObject> connectJoypad;
     [FoldoutGroup("Object In World"), Tooltip("redLine"), SerializeField]
     private Image redLine;
     [FoldoutGroup("Object In World"), Tooltip("Chrono tuto"), SerializeField]
     private GameObject tutoChrono;
     [FoldoutGroup("Object In World"), Tooltip("Text chrono"), SerializeField]
-    private TextMeshProUGUI textChrono;
+    private Text textChrono;
 
     [FoldoutGroup("Debug"), Tooltip("canvas des players"), SerializeField]
     private int[] listTutoState = new int[4];
@@ -196,28 +196,28 @@ public class TutoStart : MonoBehaviour
         if (!isAllOk || PlayerConnected.GetSingleton.NoPlayer())
         {
             //ici red line !
-            redLine.color = Color.red;
+            //redLine.color = Color.red;
             stopChronoTuto();
         }
         else
         {
             //ici green line !
-            redLine.color = Color.green;
+            //redLine.color = Color.green;
             ChronoTuto();
         }
     }
 
-    private void UpdateLockJoypad()
-    {
-        for (int i = 0; i < connectJoypad.Count; i++)
-        {
-            bool activeJoypad = PlayerConnected.GetSingleton.playerArrayConnected[i];
-            if (activeJoypad != !connectJoypad[i].activeInHierarchy)
-            {
-                connectJoypad[i].SetActive(!activeJoypad);
-            }
-        }
-    }
+    //private void UpdateLockJoypad()
+    //{
+    //    for (int i = 0; i < connectJoypad.Count; i++)
+    //    {
+    //        bool activeJoypad = PlayerConnected.GetSingleton.playerArrayConnected[i];
+    //        if (activeJoypad != !connectJoypad[i].activeInHierarchy)
+    //        {
+    //            connectJoypad[i].SetActive(!activeJoypad);
+    //        }
+    //    }
+    //}
 
     /// <summary>
     /// gère les inputs pour le tuto !
@@ -256,7 +256,7 @@ public class TutoStart : MonoBehaviour
         {
             UpdateMoveLeft();
             UpdateRedLine();
-            UpdateLockJoypad();
+            //UpdateLockJoypad();
         }
     }
 

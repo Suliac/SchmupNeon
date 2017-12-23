@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 114974945941140728}
   - component: {fileID: 114541318639044876}
   - component: {fileID: 114324849644174634}
+  - component: {fileID: 114186242874082720}
+  - component: {fileID: 114260961625255678}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,6 +46,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114186242874082720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1331242726934870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20dc373b25895c74fb05d68d62e53691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redLineX: 0.23
+  fourPlayerOnly: 0
+  timerTuto: 3
+  panelTutoInGame: {fileID: 0}
+  listTutoPX:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  listTutoBackLeftPX:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  redLine: {fileID: 0}
+  tutoChrono: {fileID: 0}
+  textChrono: {fileID: 0}
+  listTutoState: 00000000000000000000000000000000
+  updateTimer:
+    updateFrequency: 0.1
+--- !u!114 &114260961625255678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1331242726934870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d398d3b4bfc4c074082b00b64d154ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 1
 --- !u!114 &114324849644174634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60,8 +105,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  defaultObjectSpriteInUI: {fileID: 21300086, guid: 71ae9cf2cbddbbf46afcc9b7c0ab1d27,
-    type: 3}
 --- !u!114 &114541318639044876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,6 +117,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasPlayer:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  canvasVictoryPlayer:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  canvasIsHighScoreVictoryPlayer:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  canvasLettersVictoryPlayer:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -126,7 +184,10 @@ MonoBehaviour:
   enemyGroup: {fileID: 0}
   movingPlatform: {fileID: 0}
   panelCanvasInGame: {fileID: 0}
+  panelCanvasGameOver: {fileID: 0}
+  panelCanvasVictory: {fileID: 0}
   prefabsPlayer: {fileID: 1078389107829744, guid: 9fb3f57496f178d48a3ba21caf5f5880,
     type: 2}
+  desactivateGameOverAndVictory: 0
   updateTimer:
     updateFrequency: 0
