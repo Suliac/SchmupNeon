@@ -295,8 +295,8 @@ public class GameManager : MonoBehaviour
         {
         }
 
-        IsGameOver();
-        IsVictory();
+        //IsGameOver();
+        //IsVictory();
 
         InputVictory();
         InputGameOver();
