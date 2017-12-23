@@ -194,8 +194,13 @@ MonoBehaviour:
   entityType: 2
   StartLife: 5
   scoreToGiveToOther: 50
+  scoreToGiveToOtherOnHit: 0
   scoreToRemove: 0
   currentLife: 0
+  invincible: 0
+  entityRenderer: {fileID: 0}
+  invincibilityColorBlink: {r: 0, g: 0, b: 0, a: 0}
+  takeDamageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114381308466434992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,6 +287,13 @@ MonoBehaviour:
     updateFrequency: 1
   speed: 1
   wantToEnable: 1
+  prefabsDeathTag: 
+  timeBeforeMoving: 1
+  isShooting: 1
+  isMoving: 0
+  isDead: 0
+  shootFrequency:
+    updateFrequency: 0
 --- !u!114 &114921683491897296
 MonoBehaviour:
   m_ObjectHideFlags: 1

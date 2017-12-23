@@ -11,7 +11,8 @@ public class StateManager : MonoBehaviour
         Tuto,
         Play,
         Credits,
-        GameOver
+        GameOver,
+        Victory
     }
     #region Attributes
 

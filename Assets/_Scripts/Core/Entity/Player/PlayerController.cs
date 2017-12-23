@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour, IKillable
             scorePlayer = value;
             if (scorePlayer < 0)
                 scorePlayer = 0;
-            GameManager.GetSingleton.ScoreManager.setScore(idPlayer, scorePlayer);
+            GameManager.GetSingleton.ScoreManager.SetScore(idPlayer, scorePlayer);
         }
         get { return scorePlayer; }
     }
