@@ -25,6 +25,10 @@ public class LifeBehavior : MonoBehaviour
     private float StartLife = 100.0f;
     [FoldoutGroup("GamePlay"), Tooltip("Score à donner aux joueur quand cet objet meurt"), SerializeField]
     private int scoreToGiveToOther = 0;  //score à donner aux autre quand on meurt
+
+    [FoldoutGroup("GamePlay"), Tooltip("Score à donner aux joueur quand cet objet est touché"), SerializeField]
+    private int scoreToGiveToOtherOnHit = 0;  //score à donner aux autre quand on meurt
+
     [FoldoutGroup("GamePlay"), Tooltip("Score à enlever au joueur quand on meurt"), SerializeField]
     private int scoreToRemove = 0;   //score à enlever à soit même quand on meurt (pour les joueurs)
     public int ScoreToRemove { get { return scoreToRemove; } }
@@ -34,15 +38,18 @@ public class LifeBehavior : MonoBehaviour
     public float CurrentLife { get { return currentLife; } }
 
     private bool coroutineStarted = false;
+    private bool coroutineOnTakeDmgStarted = false;
 
     [FoldoutGroup("GamePlay"), Tooltip("Invincibilité"), SerializeField]
     private bool invincible = false;
 
     [FoldoutGroup("GamePlay"), Tooltip("Renderer à faire blink lors de l'invincibilité"), SerializeField]
     private Renderer entityRenderer;
-    
+
     [FoldoutGroup("GamePlay"), Tooltip("Couleur du blink lors de l'invincibilité"), SerializeField]
     private Color invincibilityColorBlink;
+    [FoldoutGroup("GamePlay"), Tooltip("Couleur lorsque l'entité se prend des dégats"), SerializeField]
+    private Color takeDamageColor;
     #endregion
 
     #region Initialization
@@ -69,23 +76,36 @@ public class LifeBehavior : MonoBehaviour
     /// <returns></returns>
     public int TakeDamages(float damages, bool oneShot)
     {
-        if (!invincible)
+        lock (this)
         {
-            if (oneShot)
-                damages = currentLife;
-
-            currentLife = Mathf.Max(0, currentLife - damages);
-
-            if (currentLife <= 0)
+            if (!invincible && currentLife > 0)
             {
-                if (killable != null)
+                if (/*!coroutineOnTakeDmgStarted &&*/ entityType == EntityType.Ennemy)
+                    StartCoroutine(OnTakeDamage(0.1f));
+
+                if (oneShot)
+                    damages = currentLife;
+
+                currentLife = Mathf.Max(0, currentLife - damages);
+
+                if (currentLife <= 0)
                 {
-                    killable.Kill();
-                    return (scoreToGiveToOther); //ici get le nombre de score que le gameObject donne en mourrant
+                    if (killable != null)
+                    {
+                        killable.Kill();
+                        return (scoreToGiveToOther); //ici get le nombre de score que le gameObject donne en mourrant
+                    }
                 }
-            } 
+                else
+                {
+                    //si on est pas mort, ajouter quand même le score au joueur ! 
+                    return (scoreToGiveToOtherOnHit);
+                }
+
+
+            }
+            return (0);
         }
-        return (0);
     }
 
     /// <summary>
@@ -141,6 +161,20 @@ public class LifeBehavior : MonoBehaviour
 
         coroutineStarted = false;
         invincible = false;
+        yield return null;
+    }
+
+    IEnumerator OnTakeDamage(float time)
+    {
+        coroutineOnTakeDmgStarted = true;
+        Color oldColor = entityRenderer ? entityRenderer.material.color : Color.white;
+
+        if (entityRenderer)
+            entityRenderer.material.color = takeDamageColor;
+
+        yield return new WaitForSeconds(time);
+        entityRenderer.material.color = oldColor;
+        coroutineOnTakeDmgStarted = false;
         yield return null;
     }
     #endregion

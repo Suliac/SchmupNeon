@@ -91,8 +91,13 @@ MonoBehaviour:
   entityType: 2
   StartLife: 5
   scoreToGiveToOther: 50
+  scoreToGiveToOtherOnHit: 5
   scoreToRemove: 0
   currentLife: 0
+  invincible: 0
+  entityRenderer: {fileID: 212037098434311236}
+  invincibilityColorBlink: {r: 0, g: 0, b: 0, a: 0}
+  takeDamageColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &114419927373599404
 MonoBehaviour:
   m_ObjectHideFlags: 1

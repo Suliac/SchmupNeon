@@ -763,9 +763,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: 2
   StartLife: 10
-  scoreToGiveToOther: 0
+  scoreToGiveToOther: 50
+  scoreToGiveToOtherOnHit: 5
   scoreToRemove: 0
   currentLife: 0
+  invincible: 0
+  entityRenderer: {fileID: 0}
+  invincibilityColorBlink: {r: 0, g: 0, b: 0, a: 0}
+  takeDamageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114098171251127410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -781,6 +786,11 @@ MonoBehaviour:
     updateFrequency: 0
   speed: 1
   wantToEnable: 1
+  prefabsDeathTag: 
+  timeBeforeMoving: 1
+  isShooting: 1
+  isMoving: 0
+  isDead: 0
 --- !u!114 &114116824051030440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -796,6 +806,11 @@ MonoBehaviour:
     updateFrequency: 0
   speed: 1
   wantToEnable: 1
+  prefabsDeathTag: 
+  timeBeforeMoving: 1
+  isShooting: 1
+  isMoving: 0
+  isDead: 0
 --- !u!114 &114123998984620174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -825,6 +840,11 @@ MonoBehaviour:
     updateFrequency: 0
   speed: 2
   wantToEnable: 0
+  prefabsDeathTag: 
+  timeBeforeMoving: 1
+  isShooting: 1
+  isMoving: 0
+  isDead: 0
 --- !u!114 &114293099717570636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -935,6 +955,11 @@ MonoBehaviour:
     updateFrequency: 0
   speed: 1
   wantToEnable: 1
+  prefabsDeathTag: 
+  timeBeforeMoving: 1
+  isShooting: 1
+  isMoving: 0
+  isDead: 0
 --- !u!114 &114588290817136598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1000,6 +1025,11 @@ MonoBehaviour:
     updateFrequency: 0
   speed: 1
   wantToEnable: 1
+  prefabsDeathTag: 
+  timeBeforeMoving: 1
+  isShooting: 1
+  isMoving: 0
+  isDead: 0
 --- !u!114 &114988144578104946
 MonoBehaviour:
   m_ObjectHideFlags: 1

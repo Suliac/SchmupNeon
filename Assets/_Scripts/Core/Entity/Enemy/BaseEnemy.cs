@@ -104,38 +104,6 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
         deathEnemy.SetActive(true);
     }
 
-    //IEnumerator Blink(float totalDuration, float oneColorDuration)
-    //{
-    //    coroutineStarted = true;
-    //    bool isRed = false;
-    //    float myTimer = 0.0f;
-
-    //    while (preShotTimer < totalDuration)
-    //    {
-    //        preShotTimer += Time.deltaTime;
-    //        myTimer += Time.deltaTime;
-
-    //        if (myTimer > oneColorDuration)
-    //        {
-    //            isRed = !isRed;
-    //            myTimer = 0.0f;
-    //        }
-
-    //        if (isRed)
-    //            renderer.material.color = Color.red;
-    //        else
-    //            renderer.material.color = Color.white;
-
-    //        yield return null;
-    //    }
-    //    renderer.material.color = Color.white;
-
-    //    preShotTimer = 0.0f;
-    //    coroutineStarted = false;
-    //    currentState = EnemyState.Shooting;
-    //    yield return null;
-    //}
-
     IEnumerator ReadyToMove(float time)
     {
         coroutinePrepareToMoveStarted = true;
@@ -165,7 +133,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     public void DeathAnimationFinised()
     {
-        print("real destroy");
+        GameManager.GetSingleton.NewEnemyKill();
         Destroy(gameObject);
     }
     #endregion
@@ -174,7 +142,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     protected void Update()
     {
-        if (!isDead)
+        if (!isDead && StateManager.Get.State < StateManager.GameState.GameOver)
         {
             if (((isOnCamera && isOnCamera.isOnScreen) || (!isOnCamera && wantToEnable)) && !enableEnemy) // Si l'ennemi vient d'apparaitre & n'a pas déja été spawn
                 OnEnemyEnable();

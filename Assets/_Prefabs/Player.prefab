@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4050279661002484}
   - component: {fileID: 212530614475569068}
-  - component: {fileID: 95673788644655744}
+  - component: {fileID: 95850408858496790}
   m_Layer: 0
   m_Name: animatorPlayer4
   m_TagString: Untagged
@@ -385,7 +385,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95673788644655744
+--- !u!95 &95850408858496790
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -394,7 +394,7 @@ Animator:
   m_GameObject: {fileID: 1536821009962404}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b8454b7e0d4b62d4284d373cb7f856ae, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8044e4cd36c06fc40ab36ecc13422e5a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -474,11 +474,13 @@ MonoBehaviour:
   entityType: 0
   StartLife: 10
   scoreToGiveToOther: 0
+  scoreToGiveToOtherOnHit: 0
   scoreToRemove: 5
   currentLife: 0
   invincible: 0
   entityRenderer: {fileID: 0}
   invincibilityColorBlink: {r: 0.52205884, g: 0.52205884, b: 0.52205884, a: 1}
+  takeDamageColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &114640442921096836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -683,7 +685,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7403612fec3e4b74ea45148f5acdfa12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e065c9ded262e2f428df2b6b47ba5d8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

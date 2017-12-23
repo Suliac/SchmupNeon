@@ -3,6 +3,7 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using Rewired;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 /// <summary>
 /// GameManager Description
@@ -41,11 +42,17 @@ public class GameManager : MonoBehaviour
     [FoldoutGroup("Object In World"), Tooltip("panel Canvas de gameover"), SerializeField]
     private GameObject panelCanvasGameOver;
 
+    [FoldoutGroup("Object In World"), Tooltip("panel canvas de victoire"), SerializeField]
+    private GameObject panelCanvasVictory;
 
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]
     private GameObject prefabsPlayer;
 
+    [FoldoutGroup("Debug"), Tooltip("Nombre d'ennemis dans le niveau")]
+    private int numberEnemyInLevel = 0;
 
+    [FoldoutGroup("Debug"), Tooltip("Nombre d'ennemis tués")]
+    private int currentEnemiesKilled = 0;
     //public MovePlatform MovingPlatform { get { return movingPlatform; } }
 
     [FoldoutGroup("Debug"), Tooltip("optimisation fps"), SerializeField]
@@ -101,17 +108,23 @@ public class GameManager : MonoBehaviour
 
     private void Init()
     {
-        print("yo");
+        //print("yo");
         StateManager.Get.State = StateManager.GameState.Tuto;
         SoundManager.GetSingularity.PlaySound("Stop_Menu");
         SoundManager.GetSingularity.PlaySound("Play_ingame");
 
+        var allEnemies = GameObject.FindObjectsOfType<BaseEnemy>();
+        numberEnemyInLevel = allEnemies.Length;
+        print("enemies = "+string.Join(" ", allEnemies.Select(e => e.name).ToArray()));
+        currentEnemiesKilled = 0;
 
         ActiveGame(false);  //desactive tout au start au cas ou
         tutoStart.ActiveTuto(true); //active les tutos
+        panelCanvasGameOver.SetActive(false);
+        panelCanvasVictory.SetActive(false);
 
         panelCanvasGameOver.SetActive(false);
-        scoreManager.resetAll();
+        scoreManager.ResetAll();
         itemManager.ResetAll();
         
 
@@ -139,7 +152,7 @@ public class GameManager : MonoBehaviour
         if (PlayerConnected.GetSingleton.getPlayer(-1).GetButtonDown("Escape")
             || PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("Start"))
         {
-            scoreManager.save();
+            scoreManager.Save();
             SceneChangeManager.GetSingleton.Quit();
         }
     }
@@ -221,6 +234,57 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void NewEnemyKill()
+    {
+        lock (this)
+        {
+            currentEnemiesKilled++;
+        }
+    }
+
+    public void IsVictory()
+    {
+        if (StateManager.Get.State == StateManager.GameState.Play)
+        {
+            if (currentEnemiesKilled >= numberEnemyInLevel)
+                Victory();
+
+        }
+
+    }
+
+    private void Victory()
+    {
+        StateManager.Get.State = StateManager.GameState.Victory;
+        panelCanvasVictory.SetActive(true);
+        panelCanvasInGame.SetActive(false);
+        movingPlatform.IsScrollingAcrtive = false;
+        scoreManager.SetVictoryScores();
+    }
+
+    private void InputVictory()
+    {
+        if (StateManager.Get.State == StateManager.GameState.Victory)
+        {
+            if (!scoreManager.IsPlayerEnteringName.Any(entering => entering)) // Si aucun des joueurs n'est en train de changer son nom
+            {
+                if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
+                {
+                    ////Init();
+                    //StateManager.Get.State = StateManager.GameState.Tuto;
+                    //SceneManager.LoadScene("2_Game");
+                }
+                if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
+                {
+                    //Init();
+                    StateManager.Get.State = StateManager.GameState.Menu;
+                    SceneManager.LoadScene("1_Menu");
+                } 
+            }
+        }
+    }
+
     #endregion
 
     #region Unity ending functions
@@ -232,6 +296,9 @@ public class GameManager : MonoBehaviour
         }
 
         IsGameOver();
+        IsVictory();
+
+        InputVictory();
         InputGameOver();
         Quit(); //input quitter
 

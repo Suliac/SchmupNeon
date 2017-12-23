@@ -2,6 +2,7 @@
 using Sirenix.OdinInspector;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 /// <summary>
 /// ScoreManager Description
@@ -13,9 +14,24 @@ public class ScoreManager : MonoBehaviour
     private List<TextMeshProUGUI> canvasPlayer;
     public List<TextMeshProUGUI> CanvasPlayer { get { return canvasPlayer; } }
 
+    [FoldoutGroup("Object In World"), Tooltip("canvas de victoire des scores players"), SerializeField]
+    private List<Text> canvasVictoryPlayer;
+    public List<Text> CanvasVictoryPlayer { get { return canvasVictoryPlayer; } }
+
+    [FoldoutGroup("Object In World"), Tooltip("canvas contenant le place holder prevenant d'un highscore"), SerializeField]
+    private List<Text> canvasIsHighScoreVictoryPlayer;
+    public List<Text> CanvasIsHighScoreVictoryPlayer { get { return canvasIsHighScoreVictoryPlayer; } }
+
+    [FoldoutGroup("Object In World"), Tooltip("canvas contenant le place holder des lettres d'un joueur"), SerializeField]
+    private List<GameObject> canvasLettersVictoryPlayer;
+    public List<GameObject> CanvasLettersVictoryPlayer { get { return canvasLettersVictoryPlayer; } }
+
     [FoldoutGroup("Debug"), Tooltip("Sauvegarde du joueur"), SerializeField]
     private PlayerData data = new PlayerData();
     public PlayerData Data { get { return data; } }
+
+    private bool[] isPlayerEnteringName;
+    public bool[] IsPlayerEnteringName { get { return isPlayerEnteringName; } }
     #endregion
 
     #region Initialization
@@ -25,8 +41,9 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         //if (!load())
-            resetAll();
+        ResetAll();
         SetupTextScore();
+        isPlayerEnteringName = new bool[PlayerConnected.GetSingleton.PlayerNumber];
     }
     #endregion
 
@@ -40,28 +57,47 @@ public class ScoreManager : MonoBehaviour
         {
             canvasPlayer[i].text = data.scorePlayer[i].ToString();
         }
+
+        for (int i = 0; i < canvasVictoryPlayer.Count; i++)
+        {
+            canvasVictoryPlayer[i].text = "0";
+        }
     }
 
     /// <summary>
     /// set le score à un joueur, et actualise
     /// </summary>
-    public void setScore(int idPlayer, int score)
+    public void SetScore(int idPlayer, int score)
     {
         data.scorePlayer[idPlayer] = score;
         canvasPlayer[idPlayer].text = score.ToString();
     }
 
+    public void SetVictoryScores()
+    {
+        for (int i = 0; i < canvasVictoryPlayer.Count; i++)
+        {
+            canvasVictoryPlayer[i].text = canvasPlayer[i].text;
+
+            bool isHighScore = PlayerConnected.GetSingleton.playerArrayConnected[i]; // TODO : tester si highscore
+
+            canvasIsHighScoreVictoryPlayer[i].enabled = isHighScore;
+            canvasLettersVictoryPlayer[i].SetActive(isHighScore);
+            //isPlayerEnteringName[i] = isHighScore;
+        }
+    }
+
     /// <summary>
     /// 
     /// </summary>
-    public void resetAll()
+    public void ResetAll()
     {
         Debug.Log("reset les stats du joueurs");
         if (data == null)
             data = new PlayerData();
         data.SetDefault();
 
-        save();
+        Save();
     }
 
 
@@ -70,7 +106,7 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     /// <returns></returns>
     [FoldoutGroup("Debug"), Button("load")]
-    public bool load()
+    public bool Load()
     {
         data = DataSaver.Load<PlayerData>("playerData.dat");
         if (data == null)
@@ -80,13 +116,13 @@ public class ScoreManager : MonoBehaviour
 
 
     [FoldoutGroup("Debug"), Button("save")]
-    public void save()
+    public void Save()
     {
         DataSaver.Save(data);
     }
 
     [FoldoutGroup("Debug"), Button("delete")]
-    public void delete()
+    public void Delete()
     {
         DataSaver.DeleteSave("playerData.dat");
     }
