@@ -80,7 +80,7 @@ public class LifeBehavior : MonoBehaviour
         {
             if (!invincible && currentLife > 0)
             {
-                if (/*!coroutineOnTakeDmgStarted &&*/ entityType == EntityType.Ennemy)
+                if (!coroutineOnTakeDmgStarted && entityType == EntityType.Ennemy)
                     StartCoroutine(OnTakeDamage(0.1f));
 
                 if (oneShot)

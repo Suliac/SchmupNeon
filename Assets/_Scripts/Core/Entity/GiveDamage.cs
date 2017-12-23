@@ -104,7 +104,7 @@ public class GiveDamage : MonoBehaviour
                     if (PlayerController) // NB si un ennemi fait des degats, il ne gagne pas de points et ne devrait pas avoir de playerController
                     {
                         PlayerController.ScorePlayer += score;
-                        print("score : " + score);
+                        //print("score : " + score);
                     }
                 }
                 else
