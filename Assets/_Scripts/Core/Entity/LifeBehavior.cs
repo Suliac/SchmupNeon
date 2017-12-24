@@ -92,6 +92,7 @@ public class LifeBehavior : MonoBehaviour
                 {
                     if (killable != null)
                     {
+                        
                         killable.Kill();
                         return (scoreToGiveToOther); //ici get le nombre de score que le gameObject donne en mourrant
                     }

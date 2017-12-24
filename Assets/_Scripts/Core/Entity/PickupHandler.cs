@@ -24,7 +24,14 @@ public class PickupHandler : MonoBehaviour
 
     public void Init()
     {
+        if (currentPickup)
+            currentPickup.Kill();
+
         currentPickup = null;
+
+        if (playerController)
+            GameManager.GetSingleton.ItemManager.ResetItem(playerController.IdPlayer);
+
     }
 
     #endregion
@@ -39,7 +46,7 @@ public class PickupHandler : MonoBehaviour
             currentPickup = null;
 
             if (playerController)
-                GameManager.GetSingleton.ItemManager.ResetItem(playerController.IdPlayer); 
+                GameManager.GetSingleton.ItemManager.ResetItem(playerController.IdPlayer);
         }
     }
     #endregion
@@ -70,5 +77,5 @@ public class PickupHandler : MonoBehaviour
 
     }
 
-	#endregion
+    #endregion
 }

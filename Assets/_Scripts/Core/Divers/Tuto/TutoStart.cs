@@ -18,7 +18,7 @@ public class TutoStart : MonoBehaviour
     private bool fourPlayerOnly = false;
     [FoldoutGroup("GamePlay"), Tooltip("Timer Chrono"), SerializeField]
     private int timerTuto = 3;
-    
+
 
     [FoldoutGroup("Object In World"), Tooltip("panel Tuto"), SerializeField]
     private GameObject panelTutoInGame;
@@ -26,7 +26,7 @@ public class TutoStart : MonoBehaviour
     [FoldoutGroup("Object In World"), Tooltip("canvas des players"), SerializeField]
     private List<GameObject> listTutoPX;
     [FoldoutGroup("Object In World"), Tooltip("Revenir à gauche"), SerializeField]
-    private List<GameObject> listTutoBackLeftPX;
+    private GameObject comeBackLeft;
     //[FoldoutGroup("Object In World"), Tooltip("Sprite joypad"), SerializeField]
     //private List<GameObject> connectJoypad;
     [FoldoutGroup("Object In World"), Tooltip("redLine"), SerializeField]
@@ -73,10 +73,7 @@ public class TutoStart : MonoBehaviour
         onChrono = false;
         if (active)
         {
-            listTutoBackLeftPX[0].SetActive(false);
-            listTutoBackLeftPX[1].SetActive(false);
-            listTutoBackLeftPX[2].SetActive(false);
-            listTutoBackLeftPX[3].SetActive(false);
+            comeBackLeft.SetActive(false);
             if (!active)
                 gameManager.ActiveGame(true);
         }
@@ -106,19 +103,19 @@ public class TutoStart : MonoBehaviour
     /// <summary>
     /// pour le  joueur (index), vérifi sa position par rapport à la ligne rouge
     /// </summary>
-    private void DetectIfOffLine(int index)
+    private bool DetectIfOffLine(int index)
     {
         Vector3 playerPos = gameManager.SpawnPlayer[index].PlayerController.transform.position;
         Vector2 ViewportPosition = cam.WorldToViewportPoint(playerPos);
         if (ViewportPosition.x > redLineX || (!gameManager.SpawnPlayer[index].PlayerController.EnabledPlayer && gameManager.SpawnPlayer[index].SpawnedOnce))
         {
             listTutoState[index] = 3;
-            listTutoBackLeftPX[index].SetActive(true);
+            return true;
         }
         else
         {
             listTutoState[index] = 2;
-            listTutoBackLeftPX[index].SetActive(false);
+            return false;
         }
 
     }
@@ -128,13 +125,18 @@ public class TutoStart : MonoBehaviour
     /// </summary>
     private void UpdateMoveLeft()
     {
+        int countPlayerOffLine = 0;
         for (int i = 0; i < 4; i++)
         {
             if (listTutoState[i] >= 2)   //si l'index est supérieur à 1, le joueur à déja appuyé sur A et est affiché !
             {
-                DetectIfOffLine(i);      //détecte la position du player
+                if (DetectIfOffLine(i))     // Si player a droite
+                    countPlayerOffLine++;
             }
         }
+
+        // Si au moins un des joueurs est a dorite de la ligne -> on affiche les fleches
+        comeBackLeft.SetActive(countPlayerOffLine > 0);
     }
 
     /// <summary>
@@ -251,7 +253,7 @@ public class TutoStart : MonoBehaviour
         if (!enableTuto)
             return;
         InputTuto();
-      //optimisation des fps
+        //optimisation des fps
         if (updateTimer.Ready())
         {
             UpdateMoveLeft();
@@ -260,5 +262,5 @@ public class TutoStart : MonoBehaviour
         }
     }
 
-	#endregion
+    #endregion
 }

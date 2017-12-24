@@ -17,6 +17,8 @@ public class GiveDamage : MonoBehaviour
     [FoldoutGroup("Gameplay"), Tooltip("Dommages sur les objets"), SerializeField]
     private float damages = 50.0f;
 
+    [FoldoutGroup("Gameplay"), Tooltip("tag de la prefab d'affichage de score"), SerializeField]
+    private string prefabScoreTag = "Score";
 
     [FoldoutGroup("Gameplay"), Tooltip("Nombre de collision avant de supprimmer la source de dégâts"), SerializeField]
     private int collisionBeforeKilling = 1; // nb : -1 = source de damages jamais killée (= le joueur ?) (peut être useless)
@@ -103,8 +105,31 @@ public class GiveDamage : MonoBehaviour
                 {
                     if (PlayerController) // NB si un ennemi fait des degats, il ne gagne pas de points et ne devrait pas avoir de playerController
                     {
+                        GameObject scorePrefab = ObjectsPooler.GetSingleton.GetPooledObject(prefabScoreTag, false);
+                        if (!scorePrefab)
+                        {
+                            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du ScorePrefab | ");
+                            return;
+                        }
+                        scorePrefab.transform.position = life.transform.position + life.transform.up*1.5f;
+                        scorePrefab.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+
+                        if (life.CurrentLife <= 0)
+                        {
+                            scorePrefab.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                            scorePrefab.transform.position = life.transform.position;
+                        }
+
+                        TextMesh text = scorePrefab.GetComponentInChildren<TextMesh>();
+                        if (text)
+                        {
+                            text.text = "+" + score;
+                            text.color = playerController.ColorPlayer;
+                        }
+
+                        scorePrefab.SetActive(true);
+
                         PlayerController.ScorePlayer += score;
-                        //print("score : " + score);
                     }
                 }
                 else

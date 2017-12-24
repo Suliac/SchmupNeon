@@ -66,11 +66,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  listTutoBackLeftPX:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  comeBackLeft: {fileID: 0}
   redLine: {fileID: 0}
   tutoChrono: {fileID: 0}
   textChrono: {fileID: 0}

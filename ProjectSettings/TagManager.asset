@@ -16,6 +16,8 @@ TagManager:
   - DeathZigZog
   - PickupConsumed
   - PickupRepulseActive
+  - DeathEnemy
+  - Score
   layers:
   - Default
   - TransparentFX

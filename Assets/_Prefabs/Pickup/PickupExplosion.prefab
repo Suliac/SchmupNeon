@@ -56,7 +56,7 @@ MonoBehaviour:
   prefabsTakePickup: PickupConsumed
   prefabsUsePickup: PickupRepulseActive
   killOnUse: 0
-  objectSpriteInUI: {fileID: 21300000, guid: c85f0f524116f654f9bea14f1f46a768, type: 3}
+  objectSpriteInUI: {fileID: 21300000, guid: 7cade24d0ecd289469980f275f87312f, type: 3}
   updateTimer:
     updateFrequency: 0
   maxDuration: 2

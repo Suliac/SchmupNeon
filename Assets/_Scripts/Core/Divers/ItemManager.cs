@@ -14,19 +14,11 @@ public class ItemManager : MonoBehaviour
     private List<Image> canvasPlayer;
     public List<Image> CanvasPlayer { get { return canvasPlayer; } }
     
-    private Sprite[] defaultObjectSpriteInUI;
-
     #endregion
 
     #region Initialization
     private void Start()
     {
-        defaultObjectSpriteInUI = new Sprite[4];
-        for (int i = 0; i < 4; i++)
-        {
-            defaultObjectSpriteInUI[i] = canvasPlayer[i].sprite;
-        }
-
         ResetAll();
     }
     #endregion
@@ -46,7 +38,7 @@ public class ItemManager : MonoBehaviour
     public void ResetItem(int idPlayer)
     {
         canvasPlayer[idPlayer].color = new Color(255f, 255f, 255f, 0f);
-        canvasPlayer[idPlayer].sprite = defaultObjectSpriteInUI[idPlayer];
+        canvasPlayer[idPlayer].sprite = null;
     }
 
     public void ResetAll()

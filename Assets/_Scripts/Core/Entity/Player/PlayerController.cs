@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour, IKillable
     private Color colorPlayer = Color.yellow;
     public Color ColorPlayer { get { return colorPlayer; } }
 
+    [FoldoutGroup("GamePlay"), Tooltip("tag de la prefab d'affichage de score"), SerializeField]
+    private string prefabScoreTag = "Score";
     //[FoldoutGroup("Debug"), Tooltip("objets weapons"), SerializeField]
     //private Transform parentWeapons;
 
@@ -184,7 +186,7 @@ public class PlayerController : MonoBehaviour, IKillable
         {
 
         }
-        
+
         InputPlayer();
     }
 
@@ -227,6 +229,28 @@ public class PlayerController : MonoBehaviour, IKillable
 
         ScorePlayer -= lifeBehavior.ScoreToRemove;
 
+        GameObject scorePrefab = ObjectsPooler.GetSingleton.GetPooledObject(prefabScoreTag, false);
+        if (!scorePrefab)
+        {
+            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du ScorePrefab | ");
+            return;
+        }
+        scorePrefab.transform.position = transform.position;
+        scorePrefab.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+
+        scorePrefab.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+        TextMesh text = scorePrefab.GetComponentInChildren<TextMesh>();
+        if (text)
+        {
+            text.text = "-" + lifeBehavior.ScoreToRemove;
+            text.color = ColorPlayer;
+        }
+
+        scorePrefab.SetActive(true);
+
+        weaponHandle.Init();
+        pickupHandle.Init();
 
         CreateDeathObject();
 
