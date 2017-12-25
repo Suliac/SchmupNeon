@@ -202,8 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: 2
   StartLife: 10
-  scoreToGiveToOther: 50
-  scoreToGiveToOtherOnHit: 5
+  scoreToGiveToOther: 1000
+  scoreToGiveToOtherOnHit: 100
   scoreToRemove: 0
   currentLife: 0
   invincible: 0

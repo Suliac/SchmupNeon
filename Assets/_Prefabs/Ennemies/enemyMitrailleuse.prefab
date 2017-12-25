@@ -178,8 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: 2
   StartLife: 5
-  scoreToGiveToOther: 50
-  scoreToGiveToOtherOnHit: 5
+  scoreToGiveToOther: 2500
+  scoreToGiveToOtherOnHit: 250
   scoreToRemove: 0
   currentLife: 0
   invincible: 0
@@ -214,6 +214,7 @@ MonoBehaviour:
   updateTimer:
     updateFrequency: 0
   damages: 1
+  prefabScoreTag: Score
   collisionBeforeKilling: -1
   collideOnEnter: 1
   collideOnExit: 0
