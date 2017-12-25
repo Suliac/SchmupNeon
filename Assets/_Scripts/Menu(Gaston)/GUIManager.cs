@@ -16,7 +16,7 @@ public class GUIManager : MonoBehaviour {
 
     public void Play()
     {
-        SceneManager.LoadScene("2_Game");
+        SceneManager.LoadScene("Game_Guillaume");
     }
 
 
