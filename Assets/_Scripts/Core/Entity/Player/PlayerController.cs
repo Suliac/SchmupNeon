@@ -6,7 +6,7 @@ using System.Collections.Generic;
 /// PlayerController handle player movement
 /// <summary>
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerController : MonoBehaviour, IKillable
+public class PlayerController : Pausable, IKillable
 {
     #region Attributes
 
@@ -148,6 +148,9 @@ public class PlayerController : MonoBehaviour, IKillable
 
                     if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
                         pickupHandle.UseItem();
+
+                    //if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireX")) // NON FONCTIONNEL
+                    //    GameManager.GetSingleton.Pause();
                     break;
             }
 
@@ -220,7 +223,7 @@ public class PlayerController : MonoBehaviour, IKillable
         deathPlayer.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
 
         SpriteRenderer renderer = deathPlayer.GetComponent<SpriteRenderer>();
-        if(renderer)
+        if (renderer)
             renderer.color = ColorPlayer;
 
         deathPlayer.SetActive(true);
@@ -283,5 +286,18 @@ public class PlayerController : MonoBehaviour, IKillable
         enabledPlayer = false;
         animPlayer.SetActive(false);
         Invoke("RespawnIt", timeBeforeRespawn);
+    }
+
+    public override void Pause()
+    {
+        immobilisePlayer = true;
+        // todo : stop anim
+    }
+
+    public override void Resume()
+    {
+        immobilisePlayer = false;
+        // todo : stop anim
+
     }
 }

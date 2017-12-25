@@ -36,6 +36,9 @@ public class TutoStart : MonoBehaviour
     [FoldoutGroup("Object In World"), Tooltip("Text chrono"), SerializeField]
     private Text textChrono;
 
+    [FoldoutGroup("Object In World"), Tooltip("Couleur ligne"), SerializeField]
+    private Color colorLine;
+
     [FoldoutGroup("Debug"), Tooltip("canvas des players"), SerializeField]
     private int[] listTutoState = new int[4];
 
@@ -198,13 +201,13 @@ public class TutoStart : MonoBehaviour
         if (!isAllOk || PlayerConnected.GetSingleton.NoPlayer())
         {
             //ici red line !
-            //redLine.color = Color.red;
+            redLine.color = Color.red;
             stopChronoTuto();
         }
         else
         {
             //ici green line !
-            //redLine.color = Color.green;
+            redLine.color = colorLine;
             ChronoTuto();
         }
     }

@@ -11,6 +11,7 @@ public class StateManager : MonoBehaviour
         Tuto,
         Play,
         Credits,
+        Pause,
         GameOver,
         Victory
     }

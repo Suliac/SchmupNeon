@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     private PlayerController[] playerControllers;
     public PlayerController[] PlayerControllers { get { return playerControllers; } }
 
-
+    private StateManager.GameState stateBeforePause;
     //singleton
     private static GameManager instance;
     public static GameManager GetSingleton
@@ -241,11 +241,56 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
+
+    private void InputPause()
+    {
+        if (StateManager.Get.State == StateManager.GameState.Pause)
+        {
+            if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
+            {
+                Resume();
+            }
+            if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
+            {
+                StateManager.Get.State = StateManager.GameState.Menu;
+                SceneManager.LoadScene("1_Menu_Gaston");
+            }
+        }
+    }
+
     public void OnWin()
     {
         panelCanvasInGame.SetActive(false);
         movingPlatform.IsScrollingAcrtive = false;
+    }
+
+    public void Pause()
+    {
+        if (StateManager.Get.State == StateManager.GameState.Tuto || StateManager.Get.State == StateManager.GameState.Play)
+        {
+            movingPlatform.IsScrollingAcrtive = false;
+            stateBeforePause = StateManager.Get.State;
+            StateManager.Get.State = StateManager.GameState.Pause;
+            Pausable[] pausableObjects = GameObject.FindObjectsOfType<Pausable>();
+            foreach (var pausable in pausableObjects)
+            {
+                pausable.Pause();
+            }
+        }
+    }
+
+    public void Resume()
+    {
+        if (StateManager.Get.State == StateManager.GameState.Pause)
+        {
+            movingPlatform.IsScrollingAcrtive = true;
+            StateManager.Get.State = stateBeforePause;
+            Pausable[] pausableObjects = GameObject.FindObjectsOfType<Pausable>();
+            foreach (var pausable in pausableObjects)
+            {
+                pausable.Resume();
+            }
+        }
     }
 
     #endregion
@@ -258,10 +303,14 @@ public class GameManager : MonoBehaviour
         {
         }
 
-        if (!desactivateGameOverAndVictory && StateManager.Get.State < StateManager.GameState.GameOver)
+        if (!desactivateGameOverAndVictory && StateManager.Get.State < StateManager.GameState.Pause)
         {
             IsGameOver();
             winManager.IsVictory();
+        }
+        else if (StateManager.Get.State == StateManager.GameState.Pause)
+        {
+            InputPause();
         }
 
         InputGameOver();
