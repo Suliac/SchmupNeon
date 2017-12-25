@@ -59,7 +59,7 @@ public class ExplosionPickup : HandablePickup
                     playersToPush.Add(otherPlayer);
                 }
             }
-            CreateTakeObject(currentPlayer.gameObject.transform, prefabsUsePickup); //utilise 
+            CreateTakeObject(currentPlayer.gameObject.transform, prefabsUsePickup, currentHandler); //utilise 
             UtilityFunctions.createWave(currentPlayer.transform.position, 0);
             //print(playersToPush.Count);
         }

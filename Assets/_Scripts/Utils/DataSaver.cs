@@ -36,7 +36,7 @@ public class DataSaver
 
 		bf.Serialize(file, data);
         file.Close();
-        Debug.Log(data.GetFilePath() + " saved!");
+        //Debug.Log(data.GetFilePath() + " saved!");
     }
 
     /// <summary>
@@ -51,7 +51,7 @@ public class DataSaver
 			T currentData = (T)bf.Deserialize (file);
 			file.Close ();
 
-			Debug.Log (path + " loaded!");
+			//Debug.Log (path + " loaded!");
 			return currentData;
 		}
 

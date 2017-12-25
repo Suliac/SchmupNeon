@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Main_Menu : MonoBehaviour {
+public class Main_Menu : MonoBehaviour
+{
 
     public GameObject PlayButton;
     public GameObject OptionButton;
@@ -28,6 +29,13 @@ public class Main_Menu : MonoBehaviour {
     public void Awake()
     {
         myEventSystem = GameObject.Find("EventSystem");
+    }
+
+    public void Start()
+    {
+        SoundManager.GetSingularity.PlaySound("Stop_ingame");
+        SoundManager.GetSingularity.PlaySound("Play_Menu");
+
     }
 
     public void OnEnable()

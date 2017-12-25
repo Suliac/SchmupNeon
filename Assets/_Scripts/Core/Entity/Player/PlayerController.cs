@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour, IKillable
 
     private void Awake()
     {
+        GameManager.GetSingleton.AddPlayerController(this, IdPlayer);
         playerBody = GetComponent<Rigidbody>();
         lifeBehavior = GetComponent<LifeBehavior>();
         weaponHandle = GetComponent<WeaponHandler>();
@@ -128,19 +129,28 @@ public class PlayerController : MonoBehaviour, IKillable
     {
         if (!immobilisePlayer)
         {
-            horizMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Horizontal");
-            vertiMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Vertical");
-
-            if (PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButton("FireA"))
+            switch (StateManager.Get.State)
             {
-                //weapons[idWeapon].TryShoot();
-                weaponHandle.UseWeapon();
+                case StateManager.GameState.GameOver:
+                    horizMove = 0;
+                    vertiMove = 0;
+                    break;
+                case StateManager.GameState.Victory: // lors de la victoire le player part vers la droite
+                    horizMove = 1;
+                    vertiMove = 0;
+                    break;
+                default: // Par défaut le player peut bouger
+                    horizMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Horizontal");
+                    vertiMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Vertical");
+
+                    if (PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButton("FireA"))
+                        weaponHandle.UseWeapon();
+
+                    if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
+                        pickupHandle.UseItem();
+                    break;
             }
 
-            if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
-            {
-                pickupHandle.UseItem();
-            }
 
             if (horizMove != 0 || vertiMove != 0)
                 hasMoved = true;
@@ -200,33 +210,24 @@ public class PlayerController : MonoBehaviour, IKillable
 
     private void CreateDeathObject()
     {
-        GameObject deathBullet = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
-        if (!deathBullet)
+        GameObject deathPlayer = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
+        if (!deathPlayer)
         {
             Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du player");
             return;
         }
-        deathBullet.transform.position = transform.position;
-        deathBullet.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
-        deathBullet.SetActive(true);
+        deathPlayer.transform.position = transform.position;
+        deathPlayer.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+
+        SpriteRenderer renderer = deathPlayer.GetComponent<SpriteRenderer>();
+        if(renderer)
+            renderer.color = ColorPlayer;
+
+        deathPlayer.SetActive(true);
     }
 
-    /// <summary>
-    /// pour respawn... juste désactive l'objet !
-    /// </summary>
-    private void RespawnIt()
+    private void CreateDeathScoreObject()
     {
-        gameObject.SetActive(false);
-    }
-    #endregion
-
-    [FoldoutGroup("Debug"), Button("Kill")]
-    public void Kill()
-    {
-        if (!enabledPlayer)
-            return;
-        //Debug.Log("Dead");
-
         ScorePlayer -= lifeBehavior.ScoreToRemove;
 
         GameObject scorePrefab = ObjectsPooler.GetSingleton.GetPooledObject(prefabScoreTag, false);
@@ -248,11 +249,36 @@ public class PlayerController : MonoBehaviour, IKillable
         }
 
         scorePrefab.SetActive(true);
+    }
+
+    /// <summary>
+    /// pour respawn... juste désactive l'objet !
+    /// </summary>
+    private void RespawnIt()
+    {
+        gameObject.SetActive(false);
+    }
+    #endregion
+
+    [FoldoutGroup("Debug"), Button("Kill")]
+    public void Kill()
+    {
+        if (!enabledPlayer)
+            return;
+        //Debug.Log("Dead");
+
+        if (StateManager.Get.State < StateManager.GameState.GameOver) // pas de déduction de score si gameover ou victoire
+        {
+            CreateDeathScoreObject();
+        }
 
         weaponHandle.Init();
         pickupHandle.Init();
 
         CreateDeathObject();
+
+        if (lifeBehavior.CurrentLife > 0)
+            lifeBehavior.OnExternalKill();
 
         enabledPlayer = false;
         animPlayer.SetActive(false);

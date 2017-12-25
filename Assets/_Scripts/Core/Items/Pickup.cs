@@ -32,7 +32,7 @@ public abstract class Pickup : MonoBehaviour, IKillable
     /// <summary>
     /// ici est appelé lorsque l'on prend le pickup
     /// </summary>
-    protected void CreateTakeObject(Transform refObject, string tagParticle)
+    protected void CreateTakeObject(Transform refObject, string tagParticle, PickupHandler handler = null)
     {
         GameObject deathTake = ObjectsPooler.GetSingleton.GetPooledObject(tagParticle, false);
         if (!deathTake)
@@ -42,6 +42,16 @@ public abstract class Pickup : MonoBehaviour, IKillable
         }
         deathTake.transform.position = refObject.position;
         deathTake.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+
+        if (handler != null)
+        {
+            SpriteRenderer renderer = deathTake.GetComponent<SpriteRenderer>();
+            PlayerController controller = handler.GetComponent<PlayerController>();
+
+            if (renderer && controller)
+                renderer.color = controller.ColorPlayer; 
+        }
+
         deathTake.SetActive(true);
     }
 

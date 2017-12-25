@@ -55,6 +55,9 @@ public class PickupHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
+        if (StateManager.Get.State >= StateManager.GameState.GameOver)
+            return;
+
         HandablePickup handablePickup = col.GetComponent<HandablePickup>();
         if (handablePickup && !handablePickup.IsAlreadyPicked)
         {

@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114324849644174634}
   - component: {fileID: 114186242874082720}
   - component: {fileID: 114260961625255678}
+  - component: {fileID: 114043728350435154}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,6 +47,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114043728350435154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1331242726934870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ef95384557c774ab5f8b8912528a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelWin: {fileID: 0}
+  playerUiWin:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerNameInUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerLettersInUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerScoreInUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  updateTimer:
+    updateFrequency: 0
 --- !u!114 &114186242874082720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,11 +152,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  canvasVictoryPlayer:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   canvasIsHighScoreVictoryPlayer:
   - {fileID: 0}
   - {fileID: 0}
@@ -181,7 +211,6 @@ MonoBehaviour:
   movingPlatform: {fileID: 0}
   panelCanvasInGame: {fileID: 0}
   panelCanvasGameOver: {fileID: 0}
-  panelCanvasVictory: {fileID: 0}
   prefabsPlayer: {fileID: 1078389107829744, guid: 9fb3f57496f178d48a3ba21caf5f5880,
     type: 2}
   desactivateGameOverAndVictory: 0

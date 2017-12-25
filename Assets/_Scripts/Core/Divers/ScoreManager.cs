@@ -14,9 +14,9 @@ public class ScoreManager : MonoBehaviour
     private List<Text> canvasPlayer;
     public List<Text> CanvasPlayer { get { return canvasPlayer; } }
 
-    [FoldoutGroup("Object In World"), Tooltip("canvas de victoire des scores players"), SerializeField]
-    private List<Text> canvasVictoryPlayer;
-    public List<Text> CanvasVictoryPlayer { get { return canvasVictoryPlayer; } }
+    //[FoldoutGroup("Object In World"), Tooltip("canvas de victoire des scores players"), SerializeField]
+    //private List<Text> canvasVictoryPlayer;
+    //public List<Text> CanvasVictoryPlayer { get { return canvasVictoryPlayer; } }
 
     [FoldoutGroup("Object In World"), Tooltip("canvas contenant le place holder prevenant d'un highscore"), SerializeField]
     private List<Text> canvasIsHighScoreVictoryPlayer;
@@ -57,11 +57,7 @@ public class ScoreManager : MonoBehaviour
         {
             canvasPlayer[i].text = data.scorePlayer[i].ToString("00000000");
         }
-
-        for (int i = 0; i < canvasVictoryPlayer.Count; i++)
-        {
-            canvasVictoryPlayer[i].text = "0";
-        }
+        
     }
 
     /// <summary>
@@ -73,19 +69,19 @@ public class ScoreManager : MonoBehaviour
         canvasPlayer[idPlayer].text = score.ToString("00000000");
     }
 
-    public void SetVictoryScores()
-    {
-        for (int i = 0; i < canvasVictoryPlayer.Count; i++)
-        {
-            canvasVictoryPlayer[i].text = canvasPlayer[i].text;
+    //public void SetVictoryScores()
+    //{
+    //    for (int i = 0; i < canvasVictoryPlayer.Count; i++)
+    //    {
+    //        canvasVictoryPlayer[i].text = canvasPlayer[i].text;
 
-            bool isHighScore = PlayerConnected.GetSingleton.playerArrayConnected[i]; // TODO : tester si highscore
+    //        bool isHighScore = PlayerConnected.GetSingleton.playerArrayConnected[i]; // TODO : tester si highscore
 
-            canvasIsHighScoreVictoryPlayer[i].enabled = isHighScore;
-            canvasLettersVictoryPlayer[i].SetActive(isHighScore);
-            //isPlayerEnteringName[i] = isHighScore;
-        }
-    }
+    //        canvasIsHighScoreVictoryPlayer[i].enabled = isHighScore;
+    //        canvasLettersVictoryPlayer[i].SetActive(isHighScore);
+    //        //isPlayerEnteringName[i] = isHighScore;
+    //    }
+    //}
 
     /// <summary>
     /// 

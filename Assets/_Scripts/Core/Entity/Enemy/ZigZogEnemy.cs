@@ -41,13 +41,7 @@ public class ZigZogEnemy : ShootingEnemy
         body.velocity = dir;
 
         if (currentTimeMoving >= timeMoving)
-        {
-            if (spaceEnemyGroup)
-            {
-                transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
-                spaceEnemyGroup = false;
-            }
-
+        {   
             body.velocity = Vector3.zero;
             currentTimeMoving = 0.0f;
             goingTop = !goingTop;
@@ -59,11 +53,17 @@ public class ZigZogEnemy : ShootingEnemy
 
     protected override void OnBeforeKill()
     {
-        // Nothing to do
+        transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
     }
 
     protected override void Shoot()
     {
+        if (spaceEnemyGroup)
+        {
+            transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+            spaceEnemyGroup = false;
+        }
+
         body.velocity = Vector3.zero;
         if (weaponHandle.UseWeapon())
             currentNumberOfShoots++;

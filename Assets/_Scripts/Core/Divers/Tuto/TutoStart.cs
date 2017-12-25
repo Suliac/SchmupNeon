@@ -165,7 +165,7 @@ public class TutoStart : MonoBehaviour
 
     IEnumerator ChronoPass()
     {
-        while (currentChrono >= 0)
+        while (currentChrono > 0)
         {
             if (!onChrono)
                 yield break;

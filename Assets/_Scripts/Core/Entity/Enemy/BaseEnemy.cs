@@ -133,7 +133,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     public void DeathAnimationFinised()
     {
-        GameManager.GetSingleton.NewEnemyKill();
+        GameManager.GetSingleton.WinManager.NewEnemyKill();
         Destroy(gameObject);
     }
     #endregion
@@ -142,7 +142,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     protected void Update()
     {
-        if (!isDead && StateManager.Get.State < StateManager.GameState.GameOver)
+        if (!isDead)
         {
             if (((isOnCamera && isOnCamera.isOnScreen) || (!isOnCamera && wantToEnable)) && !enableEnemy) // Si l'ennemi vient d'apparaitre & n'a pas déja été spawn
                 OnEnemyEnable();

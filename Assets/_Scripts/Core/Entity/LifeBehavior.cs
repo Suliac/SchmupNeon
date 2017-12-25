@@ -117,6 +117,11 @@ public class LifeBehavior : MonoBehaviour
         currentLife = StartLife;
     }
 
+    public void OnExternalKill()
+    {
+        currentLife = 0;
+    }
+
     public void Invicible(float time)
     {
         //print("invincible");

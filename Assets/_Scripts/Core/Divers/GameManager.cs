@@ -8,6 +8,7 @@ using System.Linq;
 /// <summary>
 /// GameManager Description
 /// </summary>
+[RequireComponent(typeof(WinManager))]
 [RequireComponent(typeof(TutoStart))]    //tuto !!
 [RequireComponent(typeof(ScoreManager))]    // le scoreManager doit être accroché à l'objet
 [RequireComponent(typeof(ItemManager))]    // item manager
@@ -42,21 +43,11 @@ public class GameManager : MonoBehaviour
     [FoldoutGroup("Object In World"), Tooltip("panel Canvas de gameover"), SerializeField]
     private GameObject panelCanvasGameOver;
 
-    [FoldoutGroup("Object In World"), Tooltip("panel canvas de victoire"), SerializeField]
-    private GameObject panelCanvasVictory;
-
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]
     private GameObject prefabsPlayer;
 
-    [FoldoutGroup("Debug"), Tooltip("Nombre d'ennemis dans le niveau")]
-    private int numberEnemyInLevel = 0;
-
-    [FoldoutGroup("Debug"), Tooltip("Nombre d'ennemis tués")]
-    private int currentEnemiesKilled = 0;
-
     [FoldoutGroup("Debug"), Tooltip("Désactive le gameover & victoire"), SerializeField]
     private bool desactivateGameOverAndVictory = false;
-    //public MovePlatform MovingPlatform { get { return movingPlatform; } }
 
     [FoldoutGroup("Debug"), Tooltip("optimisation fps"), SerializeField]
     private FrequencyTimer updateTimer;
@@ -73,6 +64,13 @@ public class GameManager : MonoBehaviour
 
     private TutoStart tutoStart;  //reference de l'itemManager;
     public TutoStart TutoStart { get { return tutoStart; } }
+
+    private WinManager winManager;
+    public WinManager WinManager { get { return winManager; } }
+
+    private PlayerController[] playerControllers;
+    public PlayerController[] PlayerControllers { get { return playerControllers; } }
+
 
     //singleton
     private static GameManager instance;
@@ -96,8 +94,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         SetSingleton();
+        playerControllers = new PlayerController[4];
         playerConnect = PlayerConnected.GetSingleton;
         tutoStart = GetComponent<TutoStart>();
+        winManager = GetComponent<WinManager>();
         scoreManager = GetComponent<ScoreManager>();
         itemManager = GetComponent<ItemManager>();
         if (!objectDynamiclyCreated)
@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Init();   
+        Init();
     }
 
     private void Init()
@@ -116,26 +116,30 @@ public class GameManager : MonoBehaviour
         SoundManager.GetSingularity.PlaySound("Stop_Menu");
         SoundManager.GetSingularity.PlaySound("Play_ingame");
 
-        var allEnemies = GameObject.FindObjectsOfType<BaseEnemy>();
-        numberEnemyInLevel = allEnemies.Length;
-        print("enemies = "+string.Join(" ", allEnemies.Select(e => e.name).ToArray()));
-        currentEnemiesKilled = 0;
-
         ActiveGame(false);  //desactive tout au start au cas ou
         tutoStart.ActiveTuto(true); //active les tutos
         panelCanvasGameOver.SetActive(false);
-        panelCanvasVictory.SetActive(false);
 
         panelCanvasGameOver.SetActive(false);
         scoreManager.ResetAll();
         itemManager.ResetAll();
-        
+
 
     }
 
     #endregion
 
     #region Core
+    public void AddPlayerController(PlayerController playerController, int idPlayer)
+    {
+        playerControllers[idPlayer] = playerController;
+    }
+
+    public void RemovePlayerController(int idPlayer)
+    {
+        playerControllers[idPlayer] = null;
+    }
+
     /// <summary>
     /// ici gère la déconexion des manettes
     /// (si une manette se connecte, le spawnPlayer va automatiquement
@@ -225,67 +229,23 @@ public class GameManager : MonoBehaviour
         {
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
             {
-                ////Init();
-                //StateManager.Get.State = StateManager.GameState.Tuto;
-                //SceneManager.LoadScene("2_Game");
+                StateManager.Get.State = StateManager.GameState.Tuto;
+                SoundManager.GetSingularity.PlaySound("Stop_ingame");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
             {
                 //Init();
                 StateManager.Get.State = StateManager.GameState.Menu;
-                SceneManager.LoadScene("1_Menu");
+                SceneManager.LoadScene("1_Menu_Gaston");
             }
         }
     }
-
-    public void NewEnemyKill()
+    
+    public void OnWin()
     {
-        lock (this)
-        {
-            currentEnemiesKilled++;
-        }
-    }
-
-    public void IsVictory()
-    {
-        if (StateManager.Get.State == StateManager.GameState.Play)
-        {
-            if (currentEnemiesKilled >= numberEnemyInLevel)
-                Victory();
-
-        }
-
-    }
-
-    private void Victory()
-    {
-        StateManager.Get.State = StateManager.GameState.Victory;
-        panelCanvasVictory.SetActive(true);
         panelCanvasInGame.SetActive(false);
         movingPlatform.IsScrollingAcrtive = false;
-        scoreManager.SetVictoryScores();
-    }
-
-    private void InputVictory()
-    {
-        if (StateManager.Get.State == StateManager.GameState.Victory)
-        {
-            if (!scoreManager.IsPlayerEnteringName.Any(entering => entering)) // Si aucun des joueurs n'est en train de changer son nom
-            {
-                if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
-                {
-                    ////Init();
-                    //StateManager.Get.State = StateManager.GameState.Tuto;
-                    //SceneManager.LoadScene("2_Game");
-                }
-                if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
-                {
-                    //Init();
-                    StateManager.Get.State = StateManager.GameState.Menu;
-                    SceneManager.LoadScene("1_Menu");
-                } 
-            }
-        }
     }
 
     #endregion
@@ -298,13 +258,12 @@ public class GameManager : MonoBehaviour
         {
         }
 
-        if (!desactivateGameOverAndVictory)
+        if (!desactivateGameOverAndVictory && StateManager.Get.State < StateManager.GameState.GameOver)
         {
             IsGameOver();
-            IsVictory();
+            winManager.IsVictory();
         }
 
-        InputVictory();
         InputGameOver();
         Quit(); //input quitter
 
