@@ -6,6 +6,8 @@ using UnityEngine;
 public class ZigZogEnemy : ShootingEnemy
 {
     #region Attributes
+    [Header("Attributs zigzog")]
+
     [FoldoutGroup("GamePlay"), Tooltip("Orientation du trajet de l'ennemi lors du déplacement vers le haut"), SerializeField]
     private float angleTop = 135.0f;
 
@@ -37,7 +39,7 @@ public class ZigZogEnemy : ShootingEnemy
         }
         currentTimeMoving += Time.deltaTime;
         float angle = goingTop ? angleTop : angleBot;
-        Vector3 dir = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle) * speed, Mathf.Sin(Mathf.Deg2Rad * angle) * speed, 0);
+        Vector3 dir = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle) * moveSpeed, Mathf.Sin(Mathf.Deg2Rad * angle) * moveSpeed, 0);
         body.velocity = dir;
 
         if (currentTimeMoving >= timeMoving)

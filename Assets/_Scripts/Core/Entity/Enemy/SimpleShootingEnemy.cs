@@ -7,7 +7,8 @@ using UnityEngine;
 public class SimpleShootingEnemy : ShootingEnemy
 {
     #region Attributes
-    [FoldoutGroup("Gameplay"), Tooltip("Tir toutes les X secondes"), SerializeField]
+    [Header("Attributs simpleshootingenemy")]
+    [FoldoutGroup("GamePlay"), Tooltip("Tir toutes les X secondes"), SerializeField]
     private FrequencyTimer shootFrequency;
     #endregion
 

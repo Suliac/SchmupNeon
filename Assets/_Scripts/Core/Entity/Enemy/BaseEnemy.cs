@@ -13,8 +13,9 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     [Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
 
+    [Header("Attributs ennemis généraux")]
     [FoldoutGroup("GamePlay"), Tooltip("Vitesse des ennemis"), SerializeField]
-    protected float speed = 1.0f;
+    protected float moveSpeed = 1.0f;
 
     [FoldoutGroup("GamePlay"), Tooltip("Ennemi activé par défaut"), SerializeField]
     protected bool wantToEnable = true;         // Etat actuel de l'ennemi

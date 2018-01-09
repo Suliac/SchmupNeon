@@ -318,7 +318,7 @@ public class WinManager : MonoBehaviour
                     //Init();
                     StateManager.Get.State = StateManager.GameState.Menu;
                     SoundManager.GetSingularity.PlaySound("Stop_ingame"); 
-                    SceneManager.LoadScene("1_Menu_Gaston");
+                    SceneManager.LoadScene("1_Menu");
 
                 }
             }

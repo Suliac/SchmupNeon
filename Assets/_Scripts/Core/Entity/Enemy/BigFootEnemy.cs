@@ -7,10 +7,12 @@ using UnityEngine;
 public class BigFootEnemy : ShootingEnemy
 {
     #region Attributes
-    [FoldoutGroup("Gameplay"), Tooltip("Tir toutes les X secondes"), SerializeField]
+    [Header("Attributs bigfoot")]
+
+    [FoldoutGroup("GamePlay"), Tooltip("Tir toutes les X secondes"), SerializeField]
     private FrequencyTimer shootFrequency;
 
-    [FoldoutGroup("Gameplay"), Tooltip("Nombre de tir durant les phases de tir"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Nombre de tir durant les phases de tir"), SerializeField]
     private int NumberOfShoots = 3;
 
     private Vector3 topPosition;
@@ -42,7 +44,7 @@ public class BigFootEnemy : ShootingEnemy
         Vector3 nextCheckPoint = goingTop ? topPosition : botPosition;
 
         Vector3 dir = nextCheckPoint - transform.position;
-        body.velocity = dir.normalized * speed;
+        body.velocity = dir.normalized * moveSpeed;
 
         if ((goingTop && transform.position.y >= topPosition.y) || (!goingTop && transform.position.y <= botPosition.y))
             goingTop = !goingTop;

@@ -19,11 +19,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4595459802124488}
+  - component: {fileID: 114419927373599404}
   - component: {fileID: 54966931066097826}
   - component: {fileID: 114292211328603702}
   - component: {fileID: 114921683491897296}
   - component: {fileID: 114279593261256906}
-  - component: {fileID: 114419927373599404}
   - component: {fileID: 212037098434311236}
   - component: {fileID: 135052385264279956}
   m_Layer: 9
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateTimer:
     updateFrequency: 0
-  speed: 10
+  moveSpeed: 1
   wantToEnable: 1
   prefabsDeathTag: DeathEnemy
   timeBeforeMoving: 0

@@ -237,7 +237,7 @@ public class GameManager : MonoBehaviour
             {
                 //Init();
                 StateManager.Get.State = StateManager.GameState.Menu;
-                SceneManager.LoadScene("1_Menu_Gaston");
+                SceneManager.LoadScene("1_Menu");
             }
         }
     }
@@ -253,7 +253,7 @@ public class GameManager : MonoBehaviour
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
             {
                 StateManager.Get.State = StateManager.GameState.Menu;
-                SceneManager.LoadScene("1_Menu_Gaston");
+                SceneManager.LoadScene("1_Menu");
             }
         }
     }

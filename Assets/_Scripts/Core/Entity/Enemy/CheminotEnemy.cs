@@ -8,13 +8,14 @@ using UnityEngine;
 public class CheminotEnemy : ShootingEnemy
 {
     #region Attributes
-    [FoldoutGroup("Gameplay"), Tooltip("Rotation entre chaque tir"), SerializeField, Range(0, 360)]
+    [Header("Attributs cheminot")]
+    [FoldoutGroup("GamePlay"), Tooltip("Rotation entre chaque tir"), SerializeField, Range(0, 360)]
     private float angleRotation = 25.0f;
 
-    [FoldoutGroup("Gameplay"), Tooltip("Durée des phases de déplacement"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Durée des phases de déplacement"), SerializeField]
     private float timeRotation = 1.0f;
 
-    [FoldoutGroup("Gameplay"), Tooltip("Tir toutes les X secondes"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("Tir toutes les X secondes"), SerializeField]
     private FrequencyTimer shootFrequency;
 
     private bool rotateRight = true;

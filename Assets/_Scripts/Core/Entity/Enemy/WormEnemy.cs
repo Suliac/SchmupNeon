@@ -38,7 +38,7 @@ public class WormEnemy : BaseEnemy
         Vector3 nextCheckPoint = goingTop ? topPosition : botPosition;
 
         Vector3 dir = nextCheckPoint - transform.position;
-        body.velocity = dir.normalized * speed;
+        body.velocity = dir.normalized * moveSpeed;
 
         if ((goingTop && transform.position.y >= topPosition.y)
                 || (!goingTop && transform.position.y <= botPosition.y))
