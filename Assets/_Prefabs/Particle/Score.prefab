@@ -155,3 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fde85cc837e95419b677d859a8e2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  desactiveParent: 1
+  updateTimer:
+    updateFrequency: 0.5

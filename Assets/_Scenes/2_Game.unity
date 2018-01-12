@@ -15230,7 +15230,6 @@ Transform:
   - {fileID: 1309769852}
   - {fileID: 1255888747}
   - {fileID: 1601455374}
-  - {fileID: 1589965631}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31729,8 +31728,8 @@ Transform:
   m_LocalPosition: {x: 836.6875, y: 557.8906, z: 29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 779908338}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1591329868
 Prefab:

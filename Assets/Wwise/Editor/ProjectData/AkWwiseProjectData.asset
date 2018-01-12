@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: -1343980689
-    m_lastTimePart2: -1999284347
+    m_lastTimePsrt1: -1214849188
+    m_lastTimePart2: -1999283943
     List:
     - Name: Play_ingame
       Path: Default Work Unit\Play_ingame
@@ -63,29 +63,29 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}'
-    m_lastTimePsrt1: 1964389160
-    m_lastTimePart2: -1999288736
+    m_lastTimePsrt1: -1202551957
+    m_lastTimePart2: -1999283943
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{3822E0A2-7722-45A1-AF3C-32EE7A20C4DF}'
-    m_lastTimePsrt1: 1970124504
-    m_lastTimePart2: -1999288736
+    m_lastTimePsrt1: -1198576944
+    m_lastTimePart2: -1999283943
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{68F6EB55-4DA4-4B32-A7F9-81D5A7B52B09}'
-    m_lastTimePsrt1: 1970661365
-    m_lastTimePart2: -1999288736
+    m_lastTimePsrt1: -1198566941
+    m_lastTimePart2: -1999283943
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8C84201B-D9D0-40FE-B479-AA99A1A7EEFD}'
-    m_lastTimePsrt1: -1080370077
-    m_lastTimePart2: -1999288361
+    m_lastTimePsrt1: -1198591968
+    m_lastTimePart2: -1999283943
     List:
     - Name: SchmupSoundBank
       Path: Default Work Unit\SchmupSoundBank
@@ -100,15 +100,15 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{1E9B848A-855A-40C2-9386-A1C1EF9C8A84}'
-    m_lastTimePsrt1: 1961663378
-    m_lastTimePart2: -1999288736
+    m_lastTimePsrt1: -1214839189
+    m_lastTimePart2: -1999283943
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{754452DD-0CA5-40F5-AFB4-B05FFE130201}'
-    m_lastTimePsrt1: 1971768577
-    m_lastTimePart2: -1999288736
+    m_lastTimePsrt1: -1198556958
+    m_lastTimePart2: -1999283943
     List: []
   ExpandedItems:
   - /SHMUP_WwiseProject

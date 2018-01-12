@@ -154,12 +154,18 @@ public class WinManager : MonoBehaviour
                 if (lastState != currentState)
                 {
                     // On change le layer des players pour qu'ils ne soient plus bloqués
-                    GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+                    //GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+//ici changement, on a déjà une liste des players dans le gameManager
+                    PlayerController[] players = GameManager.GetSingleton.PlayerControllers;
 
                     for (int i = 0; i < players.Length; i++)
                     {
-                        players[i].layer = 14;
+                        //players[i].layer = 14;
+                        players[i].gameObject.layer = 14;
                     }
+
+
                 }
 
                 // On attends que tous les players aient disparus de l'écran (kill) avant de passer à la phase suivante
@@ -311,14 +317,18 @@ public class WinManager : MonoBehaviour
                 {
                     StateManager.Get.State = StateManager.GameState.Tuto;
                     SoundManager.GetSingularity.PlaySound("Stop_ingame");
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+                    SceneChangeManager.GetSingleton.JumpToScene();
+                    //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
                 {
                     //Init();
                     StateManager.Get.State = StateManager.GameState.Menu;
-                    SoundManager.GetSingularity.PlaySound("Stop_ingame"); 
-                    SceneManager.LoadScene("1_Menu");
+                    SoundManager.GetSingularity.PlaySound("Stop_ingame");
+
+                    SceneChangeManager.GetSingleton.JumpToScene("1_Menu");
+                    //SceneManager.LoadScene("1_Menu");
 
                 }
             }

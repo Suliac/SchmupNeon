@@ -84,6 +84,10 @@ public class PlayerController : Pausable, IKillable
 
     private void Awake()
     {
+        if (!GameManager.GetSingleton)
+        {
+            Debug.LogError("Désactiver la trash !");
+        }
         GameManager.GetSingleton.AddPlayerController(this, IdPlayer);
         playerBody = GetComponent<Rigidbody>();
         lifeBehavior = GetComponent<LifeBehavior>();
@@ -183,34 +187,6 @@ public class PlayerController : Pausable, IKillable
 
     }
 
-    /////////////////////////////////////////////////////
-
-    private void OnDisable()
-    {
-        enabledPlayer = false;
-    }
-
-    private void Update()
-    {
-        if (!enabledPlayer)
-            return;
-
-        if (updateTimer.Ready())
-        {
-
-        }
-
-        InputPlayer();
-    }
-
-    private void FixedUpdate()
-    {
-        if (!enabledPlayer)
-            return;
-
-        MovePlayer();
-    }
-
     private void CreateDeathObject()
     {
         GameObject deathPlayer = ObjectsPooler.GetSingleton.GetPooledObject(prefabsDeathTag, false);
@@ -263,6 +239,34 @@ public class PlayerController : Pausable, IKillable
     }
     #endregion
 
+    #region Unity ending
+
+    private void OnDisable()
+    {
+        enabledPlayer = false;
+    }
+
+    private void Update()
+    {
+        if (!enabledPlayer)
+            return;
+
+        if (updateTimer.Ready())
+        {
+
+        }
+
+        InputPlayer();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!enabledPlayer)
+            return;
+
+        MovePlayer();
+    }
+
     [FoldoutGroup("Debug"), Button("Kill")]
     public void Kill()
     {
@@ -291,13 +295,13 @@ public class PlayerController : Pausable, IKillable
     public override void Pause()
     {
         immobilisePlayer = true;
-        // todo : stop anim
+        Debug.Log("todo : stop anim");
     }
 
     public override void Resume()
     {
         immobilisePlayer = false;
-        // todo : stop anim
-
+        Debug.Log("todo : restart anim");
     }
+    #endregion
 }

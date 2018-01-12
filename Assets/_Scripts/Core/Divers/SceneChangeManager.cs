@@ -88,11 +88,16 @@ public class SceneChangeManager : MonoBehaviour
 
     //////////////////////////////////////////////////////////////////////////////// transition scenes
     /// <summary>
-    /// jump à une scène
+    /// jump à une scène, si rien n'est passé en parametre, relancer la scene courante
     /// </summary>
     [ContextMenu("JumpToScene")]
-    public void JumpToScene(string scene = "Game")
+    public void JumpToScene(string scene = "")
     {
+        if (scene == "")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            return;
+        }
         SceneManager.LoadScene(scene);
     }
 
