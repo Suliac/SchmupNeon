@@ -9739,7 +9739,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 478192791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.3, y: 0, z: 0}
+  m_LocalPosition: {x: -15.1, y: 0, z: 0}
   m_LocalScale: {x: 2.7097313, y: 24.068174, z: 1}
   m_Children: []
   m_Father: {fileID: 1538931888}
@@ -11942,6 +11942,16 @@ Prefab:
         type: 2}
       propertyPath: NumberOfShoots
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114292211328603702, guid: 20c229f626031834f8623d0f8f0da1ca,
+        type: 2}
+      propertyPath: currentLife
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114279593261256906, guid: 20c229f626031834f8623d0f8f0da1ca,
+        type: 2}
+      propertyPath: isOnScreen
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20c229f626031834f8623d0f8f0da1ca, type: 2}
@@ -35008,25 +35018,6 @@ Prefab:
     - target: {fileID: 4477697364357580, guid: 2ee7d85cec754b948ba18df8af3fbd1f, type: 2}
       propertyPath: m_RootOrder
       value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 114038484861629292, guid: 2ee7d85cec754b948ba18df8af3fbd1f,
-        type: 2}
-      propertyPath: StartLife
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1021431564853822, guid: 2ee7d85cec754b948ba18df8af3fbd1f, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114066983380488950, guid: 2ee7d85cec754b948ba18df8af3fbd1f,
-        type: 2}
-      propertyPath: speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114038484861629292, guid: 2ee7d85cec754b948ba18df8af3fbd1f,
-        type: 2}
-      propertyPath: scoreToGiveToOther
-      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ee7d85cec754b948ba18df8af3fbd1f, type: 2}

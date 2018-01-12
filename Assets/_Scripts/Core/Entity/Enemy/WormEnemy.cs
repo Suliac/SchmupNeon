@@ -58,6 +58,14 @@ public class WormEnemy : BaseEnemy
             wormPart.Kill();
         }
     }
+
+    /// <summary>
+    /// lors de l'activation de l'objet quand il entre dans la caméra
+    /// </summary>
+    protected override void OnEnableInCamera()
+    {
+        // Nothing to do
+    }
     #endregion
 
     #region Unity ending functions

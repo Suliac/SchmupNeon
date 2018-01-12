@@ -42,7 +42,23 @@ public class CheminotEnemy : ShootingEnemy
     {
         // Nothing to do
     }
-    #endregion
+
+    /// <summary>
+    /// lors de l'activation de l'objet quand il entre dans la caméra
+    /// </summary>
+    protected override void OnEnableInCamera()
+    {
+        transform.SetParent(GameManager.GetSingleton.EnemyGroup);   //set l'ennemy dans la moving platform
+        if (timeBeforeStop != -1)
+            StartCoroutine(stopAfterSomeTime());
+    }
+
+    IEnumerator stopAfterSomeTime()
+    {
+        yield return new WaitForSeconds(timeBeforeStop);
+        
+        transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);   //set l'ennemy en static mouvement
+    }
 
     IEnumerator SmoothRotation(float timeForRotation, float angle)
     {
@@ -65,4 +81,6 @@ public class CheminotEnemy : ShootingEnemy
         rotateRight = !rotateRight;
         coroutineRunning = false;
     }
+    #endregion
+
 }

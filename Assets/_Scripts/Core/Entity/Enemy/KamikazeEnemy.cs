@@ -28,5 +28,13 @@ public class KamikazeEnemy : BaseEnemy
     {
         // Nothing to do
     }
+
+    /// <summary>
+    /// lors de l'activation de l'objet quand il entre dans la caméra
+    /// </summary>
+    protected override void OnEnableInCamera()
+    {
+        // Nothing to do
+    }
     #endregion
 }
