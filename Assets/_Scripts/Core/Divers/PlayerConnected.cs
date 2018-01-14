@@ -126,7 +126,8 @@ public class PlayerConnected : MonoBehaviour
     private void updatePlayerController(int id, bool isConnected)
     {
         playerArrayConnected[id] = isConnected;
-        GameManager.GetSingleton.updateJoypadDisconnect(id, isConnected);
+        if (GameManager.GetSingleton)
+            GameManager.GetSingleton.updateJoypadDisconnect(id, isConnected);
 
     }
 

@@ -9,6 +9,7 @@ public class Main_Menu : MonoBehaviour
     public GameObject PlayButton;
     public GameObject OptionButton;
     public GameObject Controls;
+    public GameObject Leaderboard;
     public GameObject CreditsButton;
     public GameObject QuitButton;
 
@@ -19,6 +20,7 @@ public class Main_Menu : MonoBehaviour
         if (EventSystem.current.currentSelectedGameObject != PlayButton &&
             EventSystem.current.currentSelectedGameObject != OptionButton &&
             EventSystem.current.currentSelectedGameObject != Controls &&
+            EventSystem.current.currentSelectedGameObject != Leaderboard &&
             EventSystem.current.currentSelectedGameObject != CreditsButton &&
             EventSystem.current.currentSelectedGameObject != QuitButton)
         {
