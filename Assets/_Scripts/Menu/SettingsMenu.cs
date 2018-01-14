@@ -9,10 +9,10 @@ using UnityEngine.UI;
 public class SettingsMenu : MonoBehaviour
 {
     
-    [FoldoutGroup("GamePlay"), Tooltip("phase du menu (pour les inputs)"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("phase du menu (pour les inputs)")]
     public int phaseMenu = 0;
 
-    [FoldoutGroup("GamePlay"), Tooltip("audio mixer (a changer car on est dans wwise)"), SerializeField]
+    [FoldoutGroup("GamePlay"), Tooltip("audio mixer (a changer car on est dans wwise)")]
     public AudioMixer audioMixer;
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
@@ -24,6 +24,8 @@ public class SettingsMenu : MonoBehaviour
     private Button quitNoButton;
     [FoldoutGroup("Debug"), Tooltip("boutton back dans les settings"), SerializeField]
     private Button settingBackButton;
+    [FoldoutGroup("Debug"), Tooltip("boutton back dans les credits"), SerializeField]
+    private Button creditBackButton;
 
     private TimeWithNoEffect TWNE;
 
@@ -70,6 +72,30 @@ public class SettingsMenu : MonoBehaviour
         phaseMenu = phase;
     }
 
+    /// <summary>
+    /// lance le jeu
+    /// </summary>
+    public void Play()
+    {
+        SceneChangeManager.GetSingleton.JumpToSceneWithFade("2_Game");
+    }
+
+    /// <summary>
+    /// lance le jeu
+    /// </summary>
+    public void Leaderboard()
+    {
+        SceneChangeManager.GetSingleton.JumpToSceneWithFade("3_Leaderboard");
+    }
+
+    /// <summary>
+    /// lance le jeu
+    /// </summary>
+    public void Quit()
+    {
+        SceneChangeManager.GetSingleton.Quit();
+    }
+
     /*
      * phase 0: menu de base
      * phase 1: are you sure ?
@@ -102,9 +128,16 @@ public class SettingsMenu : MonoBehaviour
                     settingBackButton.onClick.Invoke();
                 }
                 break;
+            case 3:
+                if (PlayerConnected.GetSingleton.getPlayer(0).GetButton("FireB"))
+                {
+                    TWNE.isOk = false;
+                    creditBackButton.onClick.Invoke();
+                }
+                break;
 
         }
-        
+
     }
 
     private void Update()

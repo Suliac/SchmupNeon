@@ -33,6 +33,9 @@ public class PlayerConnected : MonoBehaviour
 
     #endregion
 
+
+
+    #region  initialisation
     /// <summary>
     /// test si on met le script en UNIQUE
     /// </summary>
@@ -43,8 +46,6 @@ public class PlayerConnected : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
     }
-
-    #region  initialisation
     /// <summary>
     /// Initialisation
     /// </summary>

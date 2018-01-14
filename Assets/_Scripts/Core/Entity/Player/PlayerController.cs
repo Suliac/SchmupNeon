@@ -133,7 +133,7 @@ public class PlayerController : Pausable, IKillable
     {
         if (!immobilisePlayer)
         {
-            switch (StateManager.Get.State)
+            switch (StateManager.GetSingleton.State)
             {
                 case StateManager.GameState.GameOver:
                     horizMove = 0;
@@ -274,7 +274,7 @@ public class PlayerController : Pausable, IKillable
             return;
         //Debug.Log("Dead");
 
-        if (StateManager.Get.State < StateManager.GameState.GameOver) // pas de déduction de score si gameover ou victoire
+        if (StateManager.GetSingleton.State < StateManager.GameState.GameOver) // pas de déduction de score si gameover ou victoire
         {
             CreateDeathScoreObject();
         }

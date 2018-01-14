@@ -89,7 +89,7 @@ public class SpawnPlayer : MonoBehaviour
             return;
         }
 
-        if (StateManager.Get.State < StateManager.GameState.GameOver)
+        if (StateManager.GetSingleton.State < StateManager.GameState.GameOver)
         {
             isSpawning = false;
             animSpawn.gameObject.SetActive(false);
@@ -113,7 +113,7 @@ public class SpawnPlayer : MonoBehaviour
         //optimisation des fps
         if (updateTimer.Ready())
         {
-            if (player && !isSpawning && !player.activeInHierarchy && StateManager.Get.State < StateManager.GameState.GameOver)
+            if (player && !isSpawning && !player.activeInHierarchy && StateManager.GetSingleton.State < StateManager.GameState.GameOver)
             {
                 if (spawnedOnce)
                     prepareSpawning();

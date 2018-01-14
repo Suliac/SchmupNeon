@@ -114,15 +114,27 @@ public class SceneChangeManager : MonoBehaviour
 
     /// <summary>
     /// Change de scène avec un fade
+    /// /// jump à une scène, si rien n'est passé en parametre, relancer la scene courante
     /// </summary>
     /// <param name="scene"></param>
     [ContextMenu("JumpToSceneWithFade")]
-    public void JumpToSceneWithFade(string scene = "Game")
+    public void JumpToSceneWithFade(string scene = "")
     {
+        if (scene == "")
+            scene = SceneManager.GetActiveScene().name;
+
+        if (!this || !gameObject || !gameObject.GetComponent<Fading>())
+        {
+            Debug.Log("C'est normal, erreur, lancer le jeu depuis le menu !");
+            Quit();
+        }
+            
+
         if (!gameObject.GetComponent<Fading>().enabled)
         {
             gameObject.GetComponent<Fading>().enabled = true;
         }
+        
         StartCoroutine(JumpToSceneWithFadeWait(scene));
     }
 

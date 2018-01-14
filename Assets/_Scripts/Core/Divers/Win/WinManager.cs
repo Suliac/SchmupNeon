@@ -121,11 +121,11 @@ public class WinManager : MonoBehaviour
 
     public bool IsVictory()
     {
-        if (StateManager.Get.State == StateManager.GameState.Play)
+        if (StateManager.GetSingleton.State == StateManager.GameState.Play)
         {
             if (currentEnemiesKilled >= numberEnemyInLevel)
             {
-                StateManager.Get.State = StateManager.GameState.Victory;
+                StateManager.GetSingleton.State = StateManager.GameState.Victory;
                 currentState = VictoryStates.PlayerComingOut;
                 gameManager.OnWin();
 
@@ -309,13 +309,13 @@ public class WinManager : MonoBehaviour
 
     private void InputVictory()
     {
-        if (StateManager.Get.State == StateManager.GameState.Victory)
+        if (StateManager.GetSingleton.State == StateManager.GameState.Victory)
         {
             if (currentState == VictoryStates.Ready) // Si aucun des joueurs n'est en train de changer son nom
             {
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
                 {
-                    StateManager.Get.State = StateManager.GameState.Tuto;
+                    StateManager.GetSingleton.State = StateManager.GameState.Tuto;
                     SoundManager.GetSingularity.PlaySound("Stop_ingame");
 
                     SceneChangeManager.GetSingleton.JumpToScene();
@@ -324,7 +324,7 @@ public class WinManager : MonoBehaviour
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
                 {
                     //Init();
-                    StateManager.Get.State = StateManager.GameState.Menu;
+                    StateManager.GetSingleton.State = StateManager.GameState.Menu;
                     SoundManager.GetSingularity.PlaySound("Stop_ingame");
 
                     SceneChangeManager.GetSingleton.JumpToScene("1_Menu");
