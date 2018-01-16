@@ -1,22 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class DisableOnEndAnimation : MonoBehaviour {
+public class DisableOnEndAnimation : MonoBehaviour
+{
+    [FoldoutGroup("GamePlay"), Tooltip("desactiver l'objet courant ou le parent ?"), SerializeField]
+    public bool desactiveParent = false;
 
-    bool wantToDisable = false;
+    [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
+    private FrequencyTimer updateTimer;
 
-	public void DisableObject()
+    private bool wantToDisable = false;
+    private GameObject parent;
+
+    private void Awake()
+    {
+        parent = transform.parent.gameObject;
+    }
+
+    public void DisableObject()
     {
         wantToDisable = true;
     }
 	
 	// Update is called once per frame
-	void Update () {
-		if(wantToDisable)
+	void Update ()
+    {
+        if (updateTimer.Ready())
         {
-            wantToDisable = false;
-            gameObject.SetActive(false);
+            if (wantToDisable)
+            {
+                wantToDisable = false;
+                if (desactiveParent && parent)
+                    parent.SetActive(false);
+                else
+                    gameObject.SetActive(false);
+            }
         }
+
+        
 	}
 }

@@ -53,10 +53,6 @@ public class ZigZogEnemy : ShootingEnemy
         }
     }
 
-    protected override void OnBeforeKill()
-    {
-        transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
-    }
 
     protected override void Shoot()
     {
@@ -76,6 +72,19 @@ public class ZigZogEnemy : ShootingEnemy
             isMoving = true;
             isShooting = false;
         }
+    }
+
+    protected override void OnBeforeKill()
+    {
+        transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+    }
+
+    /// <summary>
+    /// lors de l'activation de l'objet quand il entre dans la caméra
+    /// </summary>
+    protected override void OnEnableInCamera()
+    {
+        // Nothing to do
     }
     #endregion
 }

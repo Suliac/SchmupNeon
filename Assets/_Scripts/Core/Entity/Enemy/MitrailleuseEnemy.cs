@@ -41,7 +41,15 @@ public class MitrailleuseEnemy : ShootingEnemy
     {
         // Nothing to do
     }
-    #endregion
+
+    /// <summary>
+    /// lors de l'activation de l'objet quand il entre dans la caméra
+    /// </summary>
+    protected override void OnEnableInCamera()
+    {
+        // Nothing to do
+    }
+    
 
     IEnumerator SmoothRotation(float timeForRotation, float angle)
     {
@@ -62,5 +70,5 @@ public class MitrailleuseEnemy : ShootingEnemy
         }
         coroutineRunning = false;
     }
-
+    #endregion
 }

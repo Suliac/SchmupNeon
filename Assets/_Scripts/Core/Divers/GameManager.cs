@@ -3,7 +3,6 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using Rewired;
 using UnityEngine.SceneManagement;
-using System.Linq;
 
 /// <summary>
 /// GameManager Description
@@ -12,7 +11,6 @@ using System.Linq;
 [RequireComponent(typeof(TutoStart))]    //tuto !!
 [RequireComponent(typeof(ScoreManager))]    // le scoreManager doit être accroché à l'objet
 [RequireComponent(typeof(ItemManager))]    // item manager
-[RequireComponent(typeof(StateManager))]    // state
 public class GameManager : MonoBehaviour
 {
     #region Attributes
@@ -112,7 +110,7 @@ public class GameManager : MonoBehaviour
     private void Init()
     {
         //print("yo");
-        StateManager.Get.State = StateManager.GameState.Tuto;
+        StateManager.GetSingleton.State = StateManager.GameState.Tuto;
         SoundManager.GetSingularity.PlaySound("Stop_Menu");
         SoundManager.GetSingularity.PlaySound("Play_ingame");
 
@@ -159,8 +157,8 @@ public class GameManager : MonoBehaviour
         if (PlayerConnected.GetSingleton.getPlayer(-1).GetButtonDown("Escape")
             || PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("Start"))
         {
-            scoreManager.Save();
-            SceneChangeManager.GetSingleton.Quit();
+            //scoreManager.Save();
+            SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
         }
     }
 
@@ -181,7 +179,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            StateManager.Get.State = StateManager.GameState.Play;
+            StateManager.GetSingleton.State = StateManager.GameState.Play;
 
             tutoStart.ActiveTuto(false);
             tutoStart.enabled = false;
@@ -190,7 +188,7 @@ public class GameManager : MonoBehaviour
 
     public void IsGameOver()
     {
-        if (StateManager.Get.State == StateManager.GameState.Play)
+        if (StateManager.GetSingleton.State == StateManager.GameState.Play)
         {
             int countDeadPlayer = 0;
             foreach (var player in spawnPlayer)
@@ -217,7 +215,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        StateManager.Get.State = StateManager.GameState.GameOver;
+        StateManager.GetSingleton.State = StateManager.GameState.GameOver;
         panelCanvasGameOver.SetActive(true);
         panelCanvasInGame.SetActive(false);
         movingPlatform.IsScrollingAcrtive = false;
@@ -225,26 +223,28 @@ public class GameManager : MonoBehaviour
 
     private void InputGameOver()
     {
-        if (StateManager.Get.State == StateManager.GameState.GameOver)
+        if (StateManager.GetSingleton.State == StateManager.GameState.GameOver)
         {
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
             {
-                StateManager.Get.State = StateManager.GameState.Tuto;
+                StateManager.GetSingleton.State = StateManager.GameState.Tuto;
                 SoundManager.GetSingularity.PlaySound("Stop_ingame");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneChangeManager.GetSingleton.JumpToSceneWithFade();
             }
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
             {
                 //Init();
-                StateManager.Get.State = StateManager.GameState.Menu;
-                SceneManager.LoadScene("1_Menu");
+                StateManager.GetSingleton.State = StateManager.GameState.Menu;
+                //SceneManager.LoadScene("1_Menu");
+                SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
             }
         }
     }
 
     private void InputPause()
     {
-        if (StateManager.Get.State == StateManager.GameState.Pause)
+        if (StateManager.GetSingleton.State == StateManager.GameState.Pause)
         {
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
             {
@@ -252,8 +252,9 @@ public class GameManager : MonoBehaviour
             }
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
             {
-                StateManager.Get.State = StateManager.GameState.Menu;
-                SceneManager.LoadScene("1_Menu");
+                StateManager.GetSingleton.State = StateManager.GameState.Menu;
+                //SceneManager.LoadScene("1_Menu");
+                SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
             }
         }
     }
@@ -266,11 +267,11 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        if (StateManager.Get.State == StateManager.GameState.Tuto || StateManager.Get.State == StateManager.GameState.Play)
+        if (StateManager.GetSingleton.State == StateManager.GameState.Tuto || StateManager.GetSingleton.State == StateManager.GameState.Play)
         {
             movingPlatform.IsScrollingAcrtive = false;
-            stateBeforePause = StateManager.Get.State;
-            StateManager.Get.State = StateManager.GameState.Pause;
+            stateBeforePause = StateManager.GetSingleton.State;
+            StateManager.GetSingleton.State = StateManager.GameState.Pause;
             Pausable[] pausableObjects = GameObject.FindObjectsOfType<Pausable>();
             foreach (var pausable in pausableObjects)
             {
@@ -281,10 +282,10 @@ public class GameManager : MonoBehaviour
 
     public void Resume()
     {
-        if (StateManager.Get.State == StateManager.GameState.Pause)
+        if (StateManager.GetSingleton.State == StateManager.GameState.Pause)
         {
             movingPlatform.IsScrollingAcrtive = true;
-            StateManager.Get.State = stateBeforePause;
+            StateManager.GetSingleton.State = stateBeforePause;
             Pausable[] pausableObjects = GameObject.FindObjectsOfType<Pausable>();
             foreach (var pausable in pausableObjects)
             {
@@ -303,12 +304,12 @@ public class GameManager : MonoBehaviour
         {
         }
 
-        if (!desactivateGameOverAndVictory && StateManager.Get.State < StateManager.GameState.Pause)
+        if (!desactivateGameOverAndVictory && StateManager.GetSingleton.State < StateManager.GameState.Pause)
         {
             IsGameOver();
             winManager.IsVictory();
         }
-        else if (StateManager.Get.State == StateManager.GameState.Pause)
+        else if (StateManager.GetSingleton.State == StateManager.GameState.Pause)
         {
             InputPause();
         }

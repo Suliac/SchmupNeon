@@ -50,6 +50,10 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
 
     [FoldoutGroup("GamePlay"), Tooltip("Ennemi en train de bouger"), SerializeField]
     protected bool isMoving = false;
+
+    [FoldoutGroup("GamePlay"), Tooltip("Temps avant que l'ennemi n ebouge plus dans la caméra (-1 si il bouge tout le temps)"), SerializeField]
+    protected float timeBeforeStop = 1f;
+
     protected bool lastFrameMoving = false;
     private bool readyToMove = false;
 
@@ -74,6 +78,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     abstract protected void Move();
     abstract protected void Shoot();
     abstract protected void OnBeforeKill();
+    abstract protected void OnEnableInCamera();
 
     //protected void OnPreShotPhase()
     //{
@@ -85,6 +90,8 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     {
         //print("enable : " + name);
         enableEnemy = true;
+        OnEnableInCamera(); //lors de l'activation, appeler cette fonction
+        transform.SetParent(GameManager.GetSingleton.EnemyGroup);   //set l'ennemy dans la moving platform
     }
 
     protected void OnEnemyDisable()

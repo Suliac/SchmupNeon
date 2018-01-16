@@ -108,6 +108,8 @@ public class GiveDamage : MonoBehaviour
                         GameObject scorePrefab = ObjectsPooler.GetSingleton.GetPooledObject(prefabScoreTag, false);
                         if (!scorePrefab)
                         {
+                            Debug.Log(prefabScoreTag);
+                            Debug.Log(gameObject.name);
                             Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du ScorePrefab | ");
                             return;
                         }

@@ -84,6 +84,10 @@ public class PlayerController : Pausable, IKillable
 
     private void Awake()
     {
+        if (!GameManager.GetSingleton)
+        {
+            Debug.LogError("Désactiver la trash !");
+        }
         GameManager.GetSingleton.AddPlayerController(this, IdPlayer);
         playerBody = GetComponent<Rigidbody>();
         lifeBehavior = GetComponent<LifeBehavior>();
@@ -129,7 +133,7 @@ public class PlayerController : Pausable, IKillable
     {
         if (!immobilisePlayer)
         {
-            switch (StateManager.Get.State)
+            switch (StateManager.GetSingleton.State)
             {
                 case StateManager.GameState.GameOver:
                     horizMove = 0;
@@ -181,34 +185,6 @@ public class PlayerController : Pausable, IKillable
             playerBody.velocity = Vector3.zero;
         }
 
-    }
-
-    /////////////////////////////////////////////////////
-
-    private void OnDisable()
-    {
-        enabledPlayer = false;
-    }
-
-    private void Update()
-    {
-        if (!enabledPlayer)
-            return;
-
-        if (updateTimer.Ready())
-        {
-
-        }
-
-        InputPlayer();
-    }
-
-    private void FixedUpdate()
-    {
-        if (!enabledPlayer)
-            return;
-
-        MovePlayer();
     }
 
     private void CreateDeathObject()
@@ -263,6 +239,34 @@ public class PlayerController : Pausable, IKillable
     }
     #endregion
 
+    #region Unity ending
+
+    private void OnDisable()
+    {
+        enabledPlayer = false;
+    }
+
+    private void Update()
+    {
+        if (!enabledPlayer)
+            return;
+
+        if (updateTimer.Ready())
+        {
+
+        }
+
+        InputPlayer();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!enabledPlayer)
+            return;
+
+        MovePlayer();
+    }
+
     [FoldoutGroup("Debug"), Button("Kill")]
     public void Kill()
     {
@@ -270,7 +274,7 @@ public class PlayerController : Pausable, IKillable
             return;
         //Debug.Log("Dead");
 
-        if (StateManager.Get.State < StateManager.GameState.GameOver) // pas de déduction de score si gameover ou victoire
+        if (StateManager.GetSingleton.State < StateManager.GameState.GameOver) // pas de déduction de score si gameover ou victoire
         {
             CreateDeathScoreObject();
         }
@@ -291,13 +295,13 @@ public class PlayerController : Pausable, IKillable
     public override void Pause()
     {
         immobilisePlayer = true;
-        // todo : stop anim
+        Debug.Log("todo : stop anim");
     }
 
     public override void Resume()
     {
         immobilisePlayer = false;
-        // todo : stop anim
-
+        Debug.Log("todo : restart anim");
     }
+    #endregion
 }

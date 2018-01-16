@@ -18,7 +18,7 @@ public class StateManager : MonoBehaviour
     #region Attributes
 
     private static StateManager instance;
-    public static StateManager Get
+    public static StateManager GetSingleton
     {
         get { return instance; }
     }
