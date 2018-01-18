@@ -109,10 +109,8 @@ public class GameManager : MonoBehaviour
 
     private void Init()
     {
-        //print("yo");
         StateManager.GetSingleton.State = StateManager.GameState.Tuto;
-        SoundManager.GetSingularity.PlaySound("Stop_Menu");
-        SoundManager.GetSingularity.PlaySound("Play_ingame");
+        SoundManager.GetSingularity.PlayGameMusic();
 
         ActiveGame(false);  //desactive tout au start au cas ou
         tutoStart.ActiveTuto(true); //active les tutos
@@ -228,15 +226,12 @@ public class GameManager : MonoBehaviour
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
             {
                 StateManager.GetSingleton.State = StateManager.GameState.Tuto;
-                SoundManager.GetSingularity.PlaySound("Stop_ingame");
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 SceneChangeManager.GetSingleton.JumpToSceneWithFade();
             }
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
             {
                 //Init();
                 StateManager.GetSingleton.State = StateManager.GameState.Menu;
-                //SceneManager.LoadScene("1_Menu");
                 SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
             }
         }
@@ -253,7 +248,6 @@ public class GameManager : MonoBehaviour
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
             {
                 StateManager.GetSingleton.State = StateManager.GameState.Menu;
-                //SceneManager.LoadScene("1_Menu");
                 SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
             }
         }

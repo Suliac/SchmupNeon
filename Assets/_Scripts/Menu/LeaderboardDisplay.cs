@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Sirenix.OdinInspector;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// LeaderboardDisplay Description
@@ -13,6 +14,7 @@ public class LeaderboardDisplay : MonoBehaviour
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
     private bool displayed = false;
+    private bool isQuiting = false;
 
     private Leaderboard leaderboard;
     #endregion
@@ -38,26 +40,25 @@ public class LeaderboardDisplay : MonoBehaviour
             //Something(child.gameObject);
             TextMeshProUGUI textGUI = child.GetComponent<TextMeshProUGUI>();
 
-            //s'il n'y a plus de donné, afficher empty
-            if (indexChild >= leaderboard.highscoresList.Length)
-                textGUI.text = (indexChild + 1) + ": AAA - 00000000";
-            else
-                textGUI.text = (indexChild + 1) + ": " + leaderboard.highscoresList[indexChild].username + " - " + leaderboard.highscoresList[indexChild].score;
+            string name = indexChild >= leaderboard.highscoresList.Length ? "AAA" : leaderboard.highscoresList[indexChild].username.Substring(0, 3).ToUpper();
+            string score = indexChild >= leaderboard.highscoresList.Length ? "00000000" : leaderboard.highscoresList[indexChild].score.ToString("00000000");
 
+            textGUI.text = (indexChild + 1) + " : " + name + " - " + score;
             indexChild++;
         }
     }
 
     private void InputMenu()
     {
-        if (PlayerConnected.GetSingleton.getPlayer(0).GetButton("FireB"))
+        if (PlayerConnected.GetSingleton.getPlayer(0).GetButton("FireB") && !isQuiting)
         {
-             SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
+            isQuiting = true;
+            SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
         }
     }
-#endregion
+    #endregion
 
-#region Unity ending functions
+    #region Unity ending functions
     private void Update()
     {
         InputMenu();
@@ -71,5 +72,5 @@ public class LeaderboardDisplay : MonoBehaviour
             }
         }
     }
-#endregion
+    #endregion
 }

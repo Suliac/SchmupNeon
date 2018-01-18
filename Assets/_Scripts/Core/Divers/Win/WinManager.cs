@@ -24,8 +24,27 @@ public class WinManager : MonoBehaviour
 {
     #region Attributes
 
+    [Header("Etape d'ajout de score")]
+    [FoldoutGroup("Object In World"), Tooltip("Frequence d'ajout du score"), SerializeField]
+    private float frequencyAddScore = 0.1f;
+
+    [FoldoutGroup("Object In World"), Tooltip("Score ajouté à chaque tick de la fréquence précisé au dessus"), SerializeField]
+    private int scoreToAdd = 500;
+
+    [Header("Etape choix pseudo")]
+    [FoldoutGroup("Object In World"), Tooltip("Fréquence de blink"), SerializeField]
+    private float blinkFrequency = 0.1f;
+
+    [Header("Canvas")]
+
     [FoldoutGroup("Object In World"), Tooltip("panel Win"), SerializeField]
     private GameObject panelWin;
+
+    [FoldoutGroup("Object In World"), Tooltip("Infos pour state ready"), SerializeField]
+    private GameObject inputInfo;
+
+    [FoldoutGroup("Object In World"), Tooltip("Infos pour state pseudo"), SerializeField]
+    private GameObject lettersInfo;
 
     [FoldoutGroup("Object In World"), Tooltip("Joueurs dans l'UI a afficher depuis la gauche"), SerializeField]
     private List<GameObject> playerUiWin;
@@ -55,6 +74,15 @@ public class WinManager : MonoBehaviour
     private LifeBehavior[] playersLife;
     private bool enableWin = true;
     private int numberPlayers = 4;
+    private List<Rewired.Player> playerConnected;
+
+    [FoldoutGroup("Debug"), Tooltip("Pseudo joueurs")]
+    private List<List<char>> playerNames;
+    [FoldoutGroup("Debug"), Tooltip("Lettres joueurs dans UI")]
+    private List<List<Text>> playersUILetters;
+    private List<int> currentLetterEditing;
+    private float changeLetterEach = 0.5f;
+    private List<float> changeLetterTimer;
 
     private int playerUIReady = 0;
     private int scoreUIReady = 0;
@@ -83,10 +111,34 @@ public class WinManager : MonoBehaviour
             playerInUI.SetActive(false);
         }
 
+        playersUILetters = new List<List<Text>>();
+        currentLetterEditing = new List<int> { 0, 0, 0, 0 };
+        changeLetterTimer = new List<float> { 0.0f, 0.0f, 0.0f, 0.0f };
         foreach (var playerLetters in playerLettersInUI)
         {
             playerLetters.SetActive(false);
+
+            List<Text> lettersSpecificPlayer = new List<Text>();
+            Text letter1 = playerLetters.transform.GetChild(0).GetComponent<Text>();
+            Text letter2 = playerLetters.transform.GetChild(1).GetComponent<Text>();
+            Text letter3 = playerLetters.transform.GetChild(2).GetComponent<Text>();
+
+            lettersSpecificPlayer.Add(letter1);
+            lettersSpecificPlayer.Add(letter2);
+            lettersSpecificPlayer.Add(letter3);
+
+            playersUILetters.Add(lettersSpecificPlayer);
         }
+
+        playerNames = new List<List<char>>();
+        playerNames.Add(new List<char> { 'A', 'A', 'A' });
+        playerNames.Add(new List<char> { 'A', 'A', 'A' });
+        playerNames.Add(new List<char> { 'A', 'A', 'A' });
+        playerNames.Add(new List<char> { 'A', 'A', 'A' });
+
+        UpdateUiName();
+
+        playerConnected = new List<Rewired.Player>();
 
         gameManager = GetComponent<GameManager>();
     }
@@ -125,22 +177,39 @@ public class WinManager : MonoBehaviour
         {
             if (currentEnemiesKilled >= numberEnemyInLevel)
             {
-                StateManager.GetSingleton.State = StateManager.GameState.Victory;
-                currentState = VictoryStates.PlayerComingOut;
-                gameManager.OnWin();
-
-                playersLife = new LifeBehavior[numberPlayers];
-                for (int i = 0; i < numberPlayers; i++)
-                {
-                    if (gameManager.PlayerControllers[i])
-                        playersLife[i] = gameManager.PlayerControllers[i].gameObject.GetComponent<LifeBehavior>();
-                }
-
+                OnVictory();
                 return true;
             }
 
         }
         return false;
+    }
+
+    [FoldoutGroup("Debug"), Button("Victory")]
+    private void OnVictory()
+    {
+        StateManager.GetSingleton.State = StateManager.GameState.Victory;
+        currentState = VictoryStates.PlayerComingOut;
+
+        inputInfo.SetActive(false);
+        lettersInfo.SetActive(true);
+
+        gameManager.OnWin();
+
+        playersLife = new LifeBehavior[numberPlayers];
+        for (int i = 0; i < numberPlayers; i++)
+        {
+            if (gameManager.PlayerControllers[i])
+                playersLife[i] = gameManager.PlayerControllers[i].gameObject.GetComponent<LifeBehavior>();
+        }
+        var connected = PlayerConnected.GetSingleton.playerArrayConnected;
+        for (int i = 0; i < connected.Length; i++)
+        {
+            if (connected[i])
+            {
+                playerConnected.Add(PlayerConnected.GetSingleton.getPlayer(i));
+            }
+        }
     }
 
     private void Victory()
@@ -156,13 +225,14 @@ public class WinManager : MonoBehaviour
                     // On change le layer des players pour qu'ils ne soient plus bloqués
                     //GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
-//ici changement, on a déjà une liste des players dans le gameManager
+                    //ici changement, on a déjà une liste des players dans le gameManager
                     PlayerController[] players = GameManager.GetSingleton.PlayerControllers;
 
                     for (int i = 0; i < players.Length; i++)
                     {
                         //players[i].layer = 14;
-                        players[i].gameObject.layer = 14;
+                        if (players[i] != null)
+                            players[i].gameObject.layer = 14;
                     }
 
 
@@ -206,8 +276,6 @@ public class WinManager : MonoBehaviour
             case VictoryStates.DisplayScore:
                 if (lastState != currentState)
                 {
-                    //print("Victory State : DisplayScore");
-
                     for (int i = 0; i < playerScoreInUI.Count; i++)
                     {
                         playerScoreInUI[i].enabled = true;
@@ -224,7 +292,7 @@ public class WinManager : MonoBehaviour
                     }
 
                     if (!coroutineScoreLaunched)
-                        StartCoroutine(AddScoreToPlayer(0.1f, 10, gameManager.ScoreManager.Data));
+                        StartCoroutine(AddScoreToPlayer(frequencyAddScore, scoreToAdd, gameManager.ScoreManager.Data));
                 }
 
                 break;
@@ -234,9 +302,26 @@ public class WinManager : MonoBehaviour
                 break;
             case VictoryStates.EnteringNames:
                 if (lastState != currentState)
-                    NextState(); // pour l'instant on passe à la suite
+                {
+                    StartCoroutine(BlinkLetters(blinkFrequency));
+                    bool[] arePlayersConnected = PlayerConnected.GetSingleton.playerArrayConnected;
+                    for (int i = 0; i < arePlayersConnected.Length; i++)
+                    {
+                        if (!arePlayersConnected[i])
+                            currentLetterEditing[i] = 3;
+                    }
+                }
+
+                int numberPlayersReady = currentLetterEditing.Where(l => l == 3).Count();
+                if(numberPlayersReady >= 4)
+                    NextState();
                 break;
             case VictoryStates.Ready:
+                if (lastState != currentState)
+                {
+                    inputInfo.SetActive(true);
+                    lettersInfo.SetActive(false);
+                }
                 break;
             default:
                 Debug.LogError("Etat de victoire non géré (voir le WinManager)");
@@ -316,7 +401,6 @@ public class WinManager : MonoBehaviour
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
                 {
                     StateManager.GetSingleton.State = StateManager.GameState.Tuto;
-                    SoundManager.GetSingularity.PlaySound("Stop_ingame");
 
                     SceneChangeManager.GetSingleton.JumpToScene();
                     //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -325,7 +409,6 @@ public class WinManager : MonoBehaviour
                 {
                     //Init();
                     StateManager.GetSingleton.State = StateManager.GameState.Menu;
-                    SoundManager.GetSingularity.PlaySound("Stop_ingame");
 
                     SceneChangeManager.GetSingleton.JumpToScene("1_Menu");
                     //SceneManager.LoadScene("1_Menu");
@@ -333,6 +416,136 @@ public class WinManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void InputEnteringNames()
+    {
+        if (StateManager.GetSingleton.State == StateManager.GameState.Victory && currentState == VictoryStates.EnteringNames)
+        {
+            foreach (var player in playerConnected)
+            {
+                changeLetterTimer[player.id] += Time.deltaTime;
+                if (player.GetButtonDown("FireA") || player.GetButtonDown("FireB"))
+                {
+                    if (player.GetButtonDown("FireA"))
+                    {
+                        if (currentLetterEditing[player.id] < 3)
+                            currentLetterEditing[player.id]++;
+                    }
+                    else if (player.GetButtonDown("FireB"))
+                    {
+                        if (currentLetterEditing[player.id] > 0)
+                            currentLetterEditing[player.id]--;
+                    }
+                }
+                else if (currentLetterEditing[player.id] < 3)
+                {
+                    var vertMove = player.GetAxis("Move Vertical");
+                    int orientation = -1;
+
+                    if (vertMove > 0)
+                        orientation = 0; // up
+                    else if (vertMove < 0)
+                        orientation = 1; // down
+                    else
+                        orientation = -1; // nothing
+
+                    if (changeLetterTimer[player.id] > changeLetterEach && orientation > -1)
+                    {
+                        changeLetterTimer[player.id] = 0.0f;
+                        switch (orientation)
+                        {
+                            case 0: // Haut
+                                    // Changer lettre précédante de l'alphabet                        
+                                playerNames[player.id][currentLetterEditing[player.id]]--;
+                                if (playerNames[player.id][currentLetterEditing[player.id]] < 65)
+                                    playerNames[player.id][currentLetterEditing[player.id]] = (char)90;
+                                break;
+                            case 1: // Bas
+                                    // Changer lettre suivante de l'alphabet
+                                playerNames[player.id][currentLetterEditing[player.id]]++;
+                                if (playerNames[player.id][currentLetterEditing[player.id]] > 90)
+                                    playerNames[player.id][currentLetterEditing[player.id]] = (char)65;
+                                break;
+                            default:
+                                // Aucun controle récupéré
+                                break;
+                        }
+
+                        if (orientation > -1)
+                            UpdateUiName();
+                    }
+                    else if (orientation == -1)
+                    {
+                        changeLetterTimer[player.id] = changeLetterEach;
+                    }
+
+                    //print(playerNames[0][0].ToString() + playerNames[0][1].ToString() + playerNames[0][2].ToString() + "  " + playerNames[1][0].ToString() + playerNames[1][1].ToString() + playerNames[1][2].ToString());
+                }
+            }
+        }
+    }
+
+    private void UpdateUiName()
+    {
+        for (int i = 0; i < playerNames.Count; i++)
+        {
+            playersUILetters[i][0].text = playerNames[i][0].ToString();
+            playersUILetters[i][1].text = playerNames[i][1].ToString();
+            playersUILetters[i][2].text = playerNames[i][2].ToString();
+        }
+    }
+
+    IEnumerator BlinkLetters(float blinkFrequency)
+    {
+        float currentTime = 0.0f;
+        float currentPhaseTime = 0.0f;
+
+        float phaseDuration = blinkFrequency;
+        bool isGrey = true;
+        List<List<Text>> uiLetters = new List<List<Text>>(playersUILetters);
+
+
+        List<Color> oldColors = new List<Color>();
+        foreach (var letters in uiLetters)
+        {
+            oldColors.Add(letters.First().color);
+        }
+
+        while (currentState == VictoryStates.EnteringNames)
+        {
+            currentTime += Time.deltaTime;
+            currentPhaseTime += Time.deltaTime;
+
+            if (currentPhaseTime > phaseDuration)
+            {
+                isGrey = !isGrey;
+                currentPhaseTime = 0.0f;
+            }
+
+            for (int i = 0; i < uiLetters.Count; i++)
+            {
+                for (int j = 0; j < uiLetters[i].Count; j++)
+                {
+                    if (currentLetterEditing[i] == j && currentLetterEditing[i] < 3 && isGrey)
+                        uiLetters[i][j].color = Color.grey;
+                    else
+                        uiLetters[i][j].color = oldColors[i];
+                }
+            }
+
+            yield return null;
+        }
+
+        for (int i = 0; i < uiLetters.Count; i++)
+        {
+            for (int j = 0; j < uiLetters[i].Count; j++)
+            {
+                uiLetters[i][j].color = oldColors[i];
+            }
+        }
+
+        yield return null;
     }
 
     #endregion
@@ -350,6 +563,7 @@ public class WinManager : MonoBehaviour
             if (updateTimer.Ready())
             {
                 InputVictory();
+                InputEnteringNames();
                 Victory();
             }
         }

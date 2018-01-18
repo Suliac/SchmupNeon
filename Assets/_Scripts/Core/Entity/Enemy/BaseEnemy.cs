@@ -135,7 +135,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
             if (animator)
                 animator.SetTrigger("enemyIsDead");
             else
-                Destroy(gameObject);
+                DeathAnimationFinised();
         }
     }
 

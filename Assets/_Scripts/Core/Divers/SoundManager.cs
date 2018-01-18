@@ -15,6 +15,8 @@ public class SoundManager : MonoBehaviour
         get { return instance; }
     }
 
+    private static bool isPlayingMenuMusic = false;
+    private static bool isPlayingIGMusic = false;
     #endregion
 
     #region Initialization
@@ -41,10 +43,35 @@ public class SoundManager : MonoBehaviour
 
     #region Core
 
-    public void PlaySound(string eventName)
+    private void PlaySound(string eventName)
     {
-        print("Post : " + eventName);
         AkSoundEngine.PostEvent(eventName, gameObject);
+    }
+
+    public void PlayMenuMusic()
+    {
+        if (!isPlayingMenuMusic)
+        {
+            print("Play menu music");
+            isPlayingIGMusic = false;
+            isPlayingMenuMusic = true;
+
+            SoundManager.GetSingularity.PlaySound("Stop_ingame");
+            SoundManager.GetSingularity.PlaySound("Play_Menu");
+        }
+    }
+
+    public void PlayGameMusic()
+    {
+        if (!isPlayingIGMusic)
+        {
+            print("play IG music");
+            isPlayingIGMusic = true;
+            isPlayingMenuMusic = false;
+
+            SoundManager.GetSingularity.PlaySound("Stop_Menu");
+            SoundManager.GetSingularity.PlaySound("Play_ingame");
+        }
     }
     #endregion
 }

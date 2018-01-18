@@ -142,6 +142,7 @@ public class SceneChangeManager : MonoBehaviour
     {
         float fadeTime = gameObject.GetComponent<Fading>().BeginFade(1);
         yield return new WaitForSeconds(fadeTime);
+        print("jump");
         JumpToScene(scene);
     }
 

@@ -42,8 +42,7 @@ public class MainMenuManager : MonoBehaviour
         displayOptionGame(false);
         menuOption.SetActive(false);
 
-        SoundManager.GetSingularity.PlaySound("Stop_ingame");
-        SoundManager.GetSingularity.PlaySound("Play_Menu");
+        SoundManager.GetSingularity.PlayMenuMusic();
     }
     #endregion
 

@@ -105,31 +105,8 @@ public class GiveDamage : MonoBehaviour
                 {
                     if (PlayerController) // NB si un ennemi fait des degats, il ne gagne pas de points et ne devrait pas avoir de playerController
                     {
-                        GameObject scorePrefab = ObjectsPooler.GetSingleton.GetPooledObject(prefabScoreTag, false);
-                        if (!scorePrefab)
-                        {
-                            Debug.Log(prefabScoreTag);
-                            Debug.Log(gameObject.name);
-                            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du ScorePrefab | ");
-                            return;
-                        }
-                        scorePrefab.transform.position = life.transform.position + life.transform.up*1.5f;
-                        scorePrefab.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
-
-                        if (life.CurrentLife <= 0)
-                        {
-                            scorePrefab.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                            scorePrefab.transform.position = life.transform.position;
-                        }
-
-                        TextMesh text = scorePrefab.GetComponentInChildren<TextMesh>();
-                        if (text)
-                        {
-                            text.text = "+" + score;
-                            text.color = playerController.ColorPlayer;
-                        }
-
-                        scorePrefab.SetActive(true);
+                        Vector3 scorePosition = life.CurrentLife <= 0 ? life.transform.position : life.transform.position + life.transform.up * 1.5f;
+                        CreateScorePrefab(scorePosition, life.CurrentLife <= 0, score);
 
                         PlayerController.ScorePlayer += score;
                     }
@@ -151,6 +128,35 @@ public class GiveDamage : MonoBehaviour
                 }
             }
         }
+    }
+
+
+    private void CreateScorePrefab(Vector3 position, bool dobleScale, int score)
+    {
+        GameObject scorePrefab = ObjectsPooler.GetSingleton.GetPooledObject(prefabScoreTag, false);
+        if (!scorePrefab)
+        {
+            Debug.Log(prefabScoreTag);
+            Debug.Log(gameObject.name);
+            Debug.LogError("y'en a + que prévue, voir dans objectPool OU dans le tag du ScorePrefab");
+            return;
+        }
+        scorePrefab.transform.position = position;
+        scorePrefab.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+
+        if (dobleScale)
+            scorePrefab.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        else
+            scorePrefab.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+        
+        TextMesh text = scorePrefab.GetComponentInChildren<TextMesh>();
+        if (text)
+        {
+            text.text = "+" + score;
+            text.color = playerController.ColorPlayer;
+        }
+
+        scorePrefab.SetActive(true);
     }
     #endregion
 

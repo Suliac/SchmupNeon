@@ -35,8 +35,8 @@ public class Main_Menu : MonoBehaviour
 
     public void Start()
     {
-        SoundManager.GetSingularity.PlaySound("Stop_ingame");
-        SoundManager.GetSingularity.PlaySound("Play_Menu");
+        print("Start() main menu");
+        SoundManager.GetSingularity.PlayMenuMusic();
 
     }
 
