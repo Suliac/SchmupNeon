@@ -129,29 +129,57 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_proj3" ID="{98A2B616-DC6D-4069-A55E-44010F4C5FA9}">
+				<Event Name="Play_respawnP1" ID="{2E4B9C0F-8F62-4544-8585-734E4F1C23C5}">
 					<ChildrenList>
-						<Action Name="" ID="{9A6F204C-7906-4418-AC41-A4B3C8C94C94}" ShortID="656069858">
+						<Action Name="" ID="{6FE734CD-FBB5-4547-9041-1C22F9EC864F}" ShortID="560674660">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="proj3" ID="{C60CA448-8B60-47DA-97D2-A00B9E1DC3C4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+									<ObjectRef Name="respawnP1" ID="{29FF2AB3-3BC0-4E92-8DCC-A81264BCD57D}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Stop_proj3" ID="{F7A001A9-865D-462D-BBBF-46074DC658DD}">
+				<Event Name="Play_respawnP2" ID="{1F46E880-B0B7-4C35-8554-D7ADF669523F}">
 					<ChildrenList>
-						<Action Name="" ID="{06C31B40-F177-44D0-93EA-071C4BC55846}" ShortID="269311420">
+						<Action Name="" ID="{3E57961A-38AA-4094-BC2B-6245D471C12B}" ShortID="535706249">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="proj3" ID="{C60CA448-8B60-47DA-97D2-A00B9E1DC3C4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+									<ObjectRef Name="respawnP2" ID="{9E2C02EA-7F26-4DB9-A395-684F422235F8}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_respawnP3" ID="{F7753B2F-D69D-4CBC-9037-4D4A955230B6}">
+					<ChildrenList>
+						<Action Name="" ID="{D3FEA88C-B797-4265-8A87-4CFAFB837D06}" ShortID="531422432">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="respawnP3" ID="{A44650F9-27CB-4AED-8B15-D9DF5CC956B0}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_respawnP4" ID="{0F22A32A-1D6E-4CB5-B3A8-FABDAFAF9E44}">
+					<ChildrenList>
+						<Action Name="" ID="{13781585-02F5-4136-BB72-B73C095D9EA1}" ShortID="23720194">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="respawnP4" ID="{4367E81B-1AC9-4CCE-8712-B25D9FD823A4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
