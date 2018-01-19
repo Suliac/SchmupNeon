@@ -1,10 +1,22 @@
 Event	ID	Name			Wwise Object Path	Notes
+	34159943	Play_proj2			\Default Work Unit\Play_proj2	
+	164924201	Stop_proj2			\Default Work Unit\Stop_proj2	
+	820008334	Stop_Shoot_6			\Default Work Unit\Stop_Shoot_6	
+	852983512	Play_Shoot_6			\Default Work Unit\Play_Shoot_6	
+	1083186600	Stop_gameover			\Default Work Unit\Stop_gameover	
 	1248442111	Stop_ingame			\Default Work Unit\Stop_ingame	
 	1278378707	Play_Menu			\Default Work Unit\Play_Menu	
 	2914981333	Stop_Menu			\Default Work Unit\Stop_Menu	
+	3174629258	Play_gameover			\Default Work Unit\Play_gameover	
 	3686970753	Play_ingame			\Default Work Unit\Play_ingame	
+	4030404899	Play_Explosion			\Default Work Unit\Play_Explosion	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	92670017	Menu	D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Linux\SFX\recherche schmup_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\Menu		10936864
-	470110280	ingame	D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Linux\SFX\ingame schmup_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\ingame		12700864
+	92670017	Menu	D:\Schmup\SHMUP_WwiseProject\.cache\Linux\SFX\recherche schmup_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\Menu		10936864
+	158611905	Explosion	D:\Schmup\SHMUP_WwiseProject\.cache\Linux\SFX\Explosion_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Explosions\Explosion		1234864
+	191042240	projectilep5	D:\Schmup\SHMUP_WwiseProject\.cache\Linux\SFX\projectilep5_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shoot\Shoot_6\projectilep5		22116
+	470110280	ingame	D:\Schmup\SHMUP_WwiseProject\.cache\Linux\SFX\ingame schmup_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\ingame		12700864
+	585267515	silence	D:\Schmup\SHMUP_WwiseProject\.cache\Linux\SFX\silence_E66A95F7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shoot\Shoot_6\silence		81004
+	708980893	gameover	D:\Schmup\SHMUP_WwiseProject\.cache\Linux\SFX\gameover_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Musiques\gameover		1587664
+	1033730774	proj2	D:\Schmup\SHMUP_WwiseProject\.cache\Linux\SFX\proj2_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shoot\proj2		22116
 

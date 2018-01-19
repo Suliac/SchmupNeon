@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="125">
 	<RootPaths>
-		<ProjectRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>D:\Schmup\SHMUP_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Schmup\SHMUP_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Schmup\SHMUP_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Schmup\SHMUP_WwiseProject\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -21,19 +21,46 @@
 			<ShortName>SchmupSoundBank</ShortName>
 			<Path>SchmupSoundBank.bnk</Path>
 			<IncludedEvents>
+				<Event Id="4030404899" Name="Play_Explosion" ObjectPath="\Events\Default Work Unit\Play_Explosion"/>
+				<Event Id="3174629258" Name="Play_gameover" ObjectPath="\Events\Default Work Unit\Play_gameover"/>
 				<Event Id="3686970753" Name="Play_ingame" ObjectPath="\Events\Default Work Unit\Play_ingame"/>
 				<Event Id="1278378707" Name="Play_Menu" ObjectPath="\Events\Default Work Unit\Play_Menu"/>
+				<Event Id="34159943" Name="Play_proj2" ObjectPath="\Events\Default Work Unit\Play_proj2"/>
+				<Event Id="852983512" Name="Play_Shoot_6" ObjectPath="\Events\Default Work Unit\Play_Shoot_6"/>
+				<Event Id="1083186600" Name="Stop_gameover" ObjectPath="\Events\Default Work Unit\Stop_gameover" MaxAttenuation="0.000000"/>
 				<Event Id="1248442111" Name="Stop_ingame" ObjectPath="\Events\Default Work Unit\Stop_ingame" MaxAttenuation="0.000000"/>
 				<Event Id="2914981333" Name="Stop_Menu" ObjectPath="\Events\Default Work Unit\Stop_Menu" MaxAttenuation="0.000000"/>
+				<Event Id="164924201" Name="Stop_proj2" ObjectPath="\Events\Default Work Unit\Stop_proj2" MaxAttenuation="0.000000"/>
+				<Event Id="820008334" Name="Stop_Shoot_6" ObjectPath="\Events\Default Work Unit\Stop_Shoot_6" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="92670017" Language="SFX">
 					<ShortName>recherche schmup.wav</ShortName>
 					<Path>SFX\recherche schmup_F17FB28C.wem</Path>
 				</File>
+				<File Id="158611905" Language="SFX">
+					<ShortName>Explosion.wav</ShortName>
+					<Path>SFX\Explosion_1C9C67B2.wem</Path>
+				</File>
+				<File Id="191042240" Language="SFX">
+					<ShortName>projectilep5.wav</ShortName>
+					<Path>SFX\projectilep5_1C9C67B2.wem</Path>
+				</File>
 				<File Id="470110280" Language="SFX">
 					<ShortName>ingame schmup.wav</ShortName>
 					<Path>SFX\ingame schmup_F17FB28C.wem</Path>
+				</File>
+				<File Id="585267515" Language="SFX">
+					<ShortName>silence.wav</ShortName>
+					<Path>SFX\silence_E66A95F7.wem</Path>
+				</File>
+				<File Id="708980893" Language="SFX">
+					<ShortName>gameover.wav</ShortName>
+					<Path>SFX\gameover_1C9C67B2.wem</Path>
+				</File>
+				<File Id="1033730774" Language="SFX">
+					<ShortName>proj2.wav</ShortName>
+					<Path>SFX\proj2_F17FB28C.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

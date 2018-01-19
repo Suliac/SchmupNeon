@@ -59,6 +59,104 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Explosion" ID="{EA16A40E-A95D-49A7-B368-4B9BF0B5D1DF}">
+					<ChildrenList>
+						<Action Name="" ID="{7F342BB2-5AC5-42CE-B2C7-92F97365BF21}" ShortID="593091432">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Explosion" ID="{85920E43-C7B6-46A5-B63F-03014817863B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_gameover" ID="{F67B13B5-B135-41C0-A608-7962769FC5F0}">
+					<ChildrenList>
+						<Action Name="" ID="{A5A867F8-7BDA-4552-BBD4-0CEE043F4345}" ShortID="878077639">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="gameover" ID="{798B9AEE-6009-45BB-869A-6935F58EB425}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_proj2" ID="{BB76989A-F70F-4201-BC6D-5EF88915C049}">
+					<ChildrenList>
+						<Action Name="" ID="{BFE89507-A99C-4ABF-B748-15E5385D1741}" ShortID="270412337">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="proj2" ID="{B73859C4-4225-42A9-9468-7599CA6C4557}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_proj2" ID="{5C001E75-D4AF-48F7-8A7A-0F06C488E9E4}">
+					<ChildrenList>
+						<Action Name="" ID="{2A0BFBA1-8BE6-48DA-AB8F-B867BFA6DF43}" ShortID="516159057">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="proj2" ID="{B73859C4-4225-42A9-9468-7599CA6C4557}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Shoot_6" ID="{9EC11BB2-F2B0-4069-8FE5-46A60D43BFE1}">
+					<ChildrenList>
+						<Action Name="" ID="{1C0B1756-3CDE-4BA2-B0B9-A0173FBD1AFB}" ShortID="235375739">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shoot_6" ID="{8F3D9A65-2451-480E-B720-0DBC47181A6E}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Shoot_6" ID="{14ACF972-6E41-41A2-90E2-CF119632B759}">
+					<ChildrenList>
+						<Action Name="" ID="{AD77D004-2AD1-4D23-8B88-3B953875D9E3}" ShortID="1019168257">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shoot_6" ID="{8F3D9A65-2451-480E-B720-0DBC47181A6E}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_gameover" ID="{E0153E9A-2D60-4422-B284-2BDC3A90FB94}">
+					<ChildrenList>
+						<Action Name="" ID="{48F2DA17-A39F-4DE0-9399-3070B1E57B85}" ShortID="252232611">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="gameover" ID="{798B9AEE-6009-45BB-869A-6935F58EB425}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
