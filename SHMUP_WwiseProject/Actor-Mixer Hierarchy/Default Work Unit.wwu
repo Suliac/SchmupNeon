@@ -1782,8 +1782,9 @@
 							<ChildrenList>
 								<AudioFileSource Name="Explosion" ID="{206852B9-9AA5-4E1F-B355-9B9E9012925E}" ShortID="158611905">
 									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="4.17948119624123E-03"/>
 										<Property Name="FadeOutDuration" Type="Real64" Value="1.66564651874521"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.358837031369549"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.390065592432714"/>
 										<Property Name="TrimEnd" Type="Real64" Value="2.28691660290742"/>
 									</PropertyList>
 									<Language>SFX</Language>
