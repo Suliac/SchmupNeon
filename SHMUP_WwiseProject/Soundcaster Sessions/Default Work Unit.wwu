@@ -6,77 +6,45 @@
 				<SoundcasterSession Name="New Soundcaster Session" ID="{138DD32A-9C98-40F5-84D4-CAA4FB2706AD}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="ingame" ID="{04449F7E-D075-45E3-8599-78C7DCA73B66}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="musique" ID="{8070E12E-1796-4985-9633-675DB6D40972}" WorkUnitID="{3D2FE7C6-186D-4F42-9B6A-C6B3C7BAC833}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Menu" ID="{88B43792-C261-4912-A8CB-E0596FF1B25B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="0" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="gameover" ID="{798B9AEE-6009-45BB-869A-6935F58EB425}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="0" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Shoot_1" ID="{FCE8C348-CD15-46A8-A0A2-900D8553FAAD}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="Explosion" ID="{85920E43-C7B6-46A5-B63F-03014817863B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Shoot_2" ID="{2D2A47B8-609F-4B4A-AF02-7CEEF127F729}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="deadplayer" ID="{362437BF-E125-4EFD-AB20-C5EEB8D0230B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Shoot_3" ID="{8AD4D6FA-DE20-4934-91B2-60D02AAC2E46}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="1" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Shoot_4" ID="{F3A8A0AB-FF31-4E0A-B0B5-314A331D115C}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="pickupP1" ID="{BFC36F13-952D-40DA-AC57-3226E2B5C873}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Shoot_4_01" ID="{538A99EA-53C2-47BA-AD98-A944130A40D7}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="pickupP2" ID="{30F24263-7117-46AE-80AB-5E84FEB48CCB}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Shoot_4_02" ID="{D4B92B21-0CB3-437B-BBA2-F476E0616D3A}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="pickupP3" ID="{574B529E-4183-4584-BADB-D1B5E9608AA0}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Shoot_5" ID="{05FF4E2E-502C-49C7-A0DB-DB9E6496E08C}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="3" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Shoot_6" ID="{8F3D9A65-2451-480E-B720-0DBC47181A6E}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="3" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Shoot_7" ID="{8C9A1579-267D-4095-A639-1B70E529ABBB}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="3" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Shoot_8" ID="{A26C5D3A-8E06-4256-A370-08E550CBCBA8}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="3" Y="3"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Explosion" ID="{85920E43-C7B6-46A5-B63F-03014817863B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="4" Y="0"/>
+							<ObjectRef Name="pickupP4" ID="{4A03BDEE-0B55-4D1D-B281-BC90D2A7ACA8}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="2" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="projectile" ID="{EEFA922B-FE23-4579-80B3-022E9809EAA4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="5" Y="0"/>
+							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="proj" ID="{F61D5DB3-CFEA-4769-B930-5DC2A46EC617}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="5" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="proj2" ID="{B73859C4-4225-42A9-9468-7599CA6C4557}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="5" Y="2"/>
+							<ObjectRef Name="proj3" ID="{C60CA448-8B60-47DA-97D2-A00B9E1DC3C4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="3" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Menu" ID="{54F633AE-4924-406A-AE87-2D1744196CF6}"/>
+						<CurrentStateRef Name="In_game" ID="{C6ABCDEA-DABE-49AA-B464-D09FFA72343D}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>

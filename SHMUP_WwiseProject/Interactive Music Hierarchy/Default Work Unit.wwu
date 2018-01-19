@@ -117,7 +117,7 @@
 								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-3</Value>
+										<Value>-9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -131,6 +131,9 @@
 							</ReferenceList>
 							<ChildrenList>
 								<MusicSegment Name="phase ingame" ID="{50CBEAAA-3709-4EBE-977E-EF48B6551E6B}" ShortID="659322060">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="72000"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -231,7 +234,7 @@
 							<ChildrenList>
 								<MusicSegment Name="phase game over" ID="{2FE526CC-F76F-46F7-AE70-1ECC7A4AD0D4}" ShortID="951531918">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="9000"/>
+										<Property Name="EndPosition" Type="Real64" Value="17000"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -242,20 +245,20 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicTrack Name="game over" ID="{72190F87-1610-4BDE-A15C-BB12C1786203}" ShortID="623811364">
+										<MusicTrack Name="gameover" ID="{8F7A5434-727E-4FA2-8FAD-9403C540F111}" ShortID="664927088">
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="gameover" ID="{225B4473-2B3A-4D67-94A4-8E781EA9AD09}" ShortID="875417451">
+												<AudioFileSource Name="gameover2" ID="{8A8529E2-2D62-40FE-B2E6-2F8A618667D9}" ShortID="362625940">
 													<Language>SFX</Language>
-													<AudioFile>gameover.wav</AudioFile>
+													<AudioFile>gameover2.wav</AudioFile>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
-												<MusicTransition Name="Root" ID="{86FF4B11-A9F6-4907-892B-EAE21E57E0C2}">
+												<MusicTransition Name="Root" ID="{A49A41BF-A9A3-4621-B0D2-04C2112643F6}">
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
@@ -263,15 +266,15 @@
 												</MusicTransition>
 											</TransitionList>
 											<SequenceList>
-												<MusicTrackSequence Name="" ID="{CC98FF85-2B38-47FE-8972-C1B60CE9DE47}">
+												<MusicTrackSequence Name="" ID="{5569FDD7-76F9-4925-A425-323ABD38EA9F}">
 													<ClipList>
-														<MusicClip Name="gameover" ID="{7F5B5212-0214-42FA-8034-79236FDD701C}">
+														<MusicClip Name="gameover2" ID="{D588C788-D1B2-4460-BDF5-5564769643B5}">
 															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="9000"/>
+																<Property Name="EndTrimOffset" Type="Real64" Value="8000"/>
 																<Property Name="FadeInMode" Type="int16" Value="0"/>
 																<Property Name="FadeOutMode" Type="int16" Value="0"/>
 															</PropertyList>
-															<AudioSourceRef Name="gameover" ID="{225B4473-2B3A-4D67-94A4-8E781EA9AD09}"/>
+															<AudioSourceRef Name="gameover2" ID="{8A8529E2-2D62-40FE-B2E6-2F8A618667D9}"/>
 														</MusicClip>
 													</ClipList>
 												</MusicTrackSequence>
@@ -304,6 +307,9 @@
 							</TransitionList>
 							<Playlist>
 								<MusicPlaylistItem Name="" ID="{072FE044-9895-4E09-99F0-9C846299F288}" ShortID="135625482">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
 									<ChildrenList>
 										<MusicPlaylistItem Name="" ID="{8E695F98-F0DB-40BF-822E-3BC75AB14BA3}" ShortID="851632381">
 											<PropertyList>

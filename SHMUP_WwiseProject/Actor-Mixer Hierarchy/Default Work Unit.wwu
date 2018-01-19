@@ -22,93 +22,6 @@
 						<ActiveSource Name="fire_effect_test" ID="{9AF0540F-ACB1-4F43-A074-DB10C1DD183F}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<ActorMixer Name="Musiques" ID="{7D378198-104D-426B-8869-0557F2C8526B}" ShortID="480766112">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="ingame" ID="{04449F7E-D075-45E3-8599-78C7DCA73B66}" ShortID="71435198">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-4</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="ingame schmup" ID="{6774634D-3242-4366-8E28-58ECD56C9F56}" ShortID="470110280">
-									<Language>SFX</Language>
-									<AudioFile>ingame schmup.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="ingame schmup" ID="{6774634D-3242-4366-8E28-58ECD56C9F56}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Menu" ID="{88B43792-C261-4912-A8CB-E0596FF1B25B}" ShortID="873073919">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="recherche schmup" ID="{4D09BC60-F32D-4A43-B28E-8A9799FE2B82}" ShortID="92670017">
-									<Language>SFX</Language>
-									<AudioFile>recherche schmup.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="recherche schmup" ID="{4D09BC60-F32D-4A43-B28E-8A9799FE2B82}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="gameover" ID="{798B9AEE-6009-45BB-869A-6935F58EB425}" ShortID="144445229">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>4</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="gameover" ID="{CA6E1011-3A75-4E3C-9D61-83946606E966}" ShortID="708980893">
-									<Language>SFX</Language>
-									<AudioFile>gameover.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="gameover" ID="{CA6E1011-3A75-4E3C-9D61-83946606E966}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-				</ActorMixer>
 				<ActorMixer Name="Shoot" ID="{1F1D7107-9132-4BB7-9DCC-159A6C63DB06}" ShortID="872148232">
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -1646,9 +1559,19 @@
 						<Sound Name="projectile" ID="{EEFA922B-FE23-4579-80B3-022E9809EAA4}" ShortID="99142513">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>35</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-430</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1729,7 +1652,12 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>180</Value>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-1</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1765,14 +1693,9 @@
 					<ChildrenList>
 						<Sound Name="Explosion" ID="{85920E43-C7B6-46A5-B63F-03014817863B}" ShortID="844087313">
 							<PropertyList>
-								<Property Name="Lowpass" Type="int16">
-									<ValueList>
-										<Value>41</Value>
-									</ValueList>
-								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>6</Value>
+										<Value>9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1787,10 +1710,10 @@
 							<ChildrenList>
 								<AudioFileSource Name="Explosion" ID="{206852B9-9AA5-4E1F-B355-9B9E9012925E}" ShortID="158611905">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="4.17948119624123E-03"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="1.66564651874521"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.390065592432714"/>
-										<Property Name="TrimEnd" Type="Real64" Value="2.28691660290742"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.235654169854629"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.05063830963308"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.40613292219553"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.48355011476664"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Explosion.wav</AudioFile>
@@ -1798,6 +1721,176 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Explosion" ID="{206852B9-9AA5-4E1F-B355-9B9E9012925E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="PickUp" ID="{2BFA8E72-163C-41EB-8685-B5FCED24F07B}" ShortID="884736992">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="pickupP1" ID="{BFC36F13-952D-40DA-AC57-3226E2B5C873}" ShortID="196773014">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="pickupP1" ID="{1E00D0DD-3848-4B53-8D8E-11A9E0001F02}" ShortID="747269259">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.12069786445565"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.76540039938444"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>pickupP1.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="pickupP1" ID="{1E00D0DD-3848-4B53-8D8E-11A9E0001F02}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="pickupP2" ID="{30F24263-7117-46AE-80AB-5E84FEB48CCB}" ShortID="627349870">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="pickupP2" ID="{109ED3E9-1072-4EED-BE7F-8B0AD6521661}" ShortID="508859420">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.00277959079577"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.46328352304962"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>pickupP2.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="pickupP2" ID="{109ED3E9-1072-4EED-BE7F-8B0AD6521661}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="pickupP3" ID="{574B529E-4183-4584-BADB-D1B5E9608AA0}" ShortID="944058968">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="pickupP3" ID="{CFEF8409-2B59-4F43-9B2C-473406163A20}" ShortID="897744416">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.03032098225671"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.47963389181227"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>pickupP3.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="pickupP3" ID="{CFEF8409-2B59-4F43-9B2C-473406163A20}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="pickupP4" ID="{4A03BDEE-0B55-4D1D-B281-BC90D2A7ACA8}" ShortID="226633535">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="pickupP4" ID="{F6883679-8E60-4992-BD6D-88794B5DF003}" ShortID="394875972">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.720450010149431"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.47705163371138"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>pickupP4.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="pickupP4" ID="{F6883679-8E60-4992-BD6D-88794B5DF003}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Mort" ID="{C5ABDC4B-7CC5-40E5-9620-AF1375ACADF6}" ShortID="94038560">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="deadplayer" ID="{362437BF-E125-4EFD-AB20-C5EEB8D0230B}" ShortID="236450598">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="deadplayer" ID="{FECFEF9D-26FE-4D86-AB3B-164D28AEC2F0}" ShortID="988057082">
+									<Language>SFX</Language>
+									<AudioFile>deadplayer.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="deadplayer" ID="{FECFEF9D-26FE-4D86-AB3B-164D28AEC2F0}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
