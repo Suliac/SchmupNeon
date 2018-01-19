@@ -62,6 +62,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMenuMusic()
     {
+        print("Play menu music");
         AkSoundEngine.SetState("musique", "Menu");
 
         //SoundManager.GetSingularity.PlaySound("Stop_ingame");
@@ -71,7 +72,19 @@ public class SoundManager : MonoBehaviour
 
     public void PlayGameMusic()
     {
+        print("Play game music");
         AkSoundEngine.SetState("musique", "In_game");
+
+        //SoundManager.GetSingularity.PlaySound("Stop_Menu");
+        //SoundManager.GetSingularity.PlaySound("Play_ingame");
+
+    }
+
+    public void PlayGameOverMusic()
+    {
+        print("Play game music");
+        AkSoundEngine.SetState("musique", "Game_Over");
+
         //SoundManager.GetSingularity.PlaySound("Stop_Menu");
         //SoundManager.GetSingularity.PlaySound("Play_ingame");
 

@@ -313,7 +313,7 @@ public class WinManager : MonoBehaviour
                 }
 
                 int numberPlayersReady = currentLetterEditing.Where(l => l == 3).Count();
-                if(numberPlayersReady >= 4)
+                if (numberPlayersReady >= 4)
                     NextState();
                 break;
             case VictoryStates.Ready:
@@ -321,6 +321,16 @@ public class WinManager : MonoBehaviour
                 {
                     inputInfo.SetActive(true);
                     lettersInfo.SetActive(false);
+
+                    PlayerData datas = gameManager.ScoreManager.Data;
+                    for (int i = 0; i < datas.scorePlayer.Count; i++)
+                    {
+                        if (datas.scorePlayer[i] > 0 && i < 4)
+                        {
+                            string playerName = playerNames[i][0].ToString() + playerNames[i][1].ToString() + playerNames[i][2].ToString();
+                            Leaderboard.GetSingleton.AddNewHighscore(playerName, datas.scorePlayer[i]);
+                        }
+                    }
                 }
                 break;
             default:
