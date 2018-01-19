@@ -113,8 +113,15 @@ public class SoundManager : MonoBehaviour
     public void PlayPickupSound(int playerNumber)
     {
         int tmpPlayer = playerNumber + 1;
-        print("Play pickup sound for P"+ tmpPlayer.ToString("0"));
+        print("Play pickup sound for P" + tmpPlayer.ToString("0"));
         PlaySound("Play_pickupP" + tmpPlayer.ToString("0"));
+    }
+
+    public void PlayRespawnSound(int playerNumber)
+    {
+        int tmpPlayer = playerNumber + 1;
+        print("Play respawn sound for P" + tmpPlayer.ToString("0"));
+        PlaySound("Play_respawnP" + tmpPlayer.ToString("0"));
     }
 
     //public void PlayProjectileSound()
@@ -129,6 +136,14 @@ public class SoundManager : MonoBehaviour
     //    PlaySound("Stop_proj3");
     //}
 
+    public void CleanProjectileSound()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            StopProjectileSound(i);
+        }
+    }
+
     public void PlayProjectileSound(int playerIndex)
     {
         lock (mutex)
@@ -138,7 +153,7 @@ public class SoundManager : MonoBehaviour
             if (playerShooting.Contains(true) && !isPlayingShoot) // Si au moins un joueur tir
             {
                 print("Play projectile sound");
-                PlaySound("Play_projectile");  
+                PlaySound("Play_projectile");
                 isPlayingShoot = true;
             }
         }

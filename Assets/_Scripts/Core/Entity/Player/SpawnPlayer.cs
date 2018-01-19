@@ -91,6 +91,7 @@ public class SpawnPlayer : MonoBehaviour
 
         if (StateManager.GetSingleton.State < StateManager.GameState.GameOver)
         {
+            SoundManager.GetSingularity.PlayRespawnSound(playerController.IdPlayer);
             isSpawning = false;
             animSpawn.gameObject.SetActive(false);
             player.SetActive(true);
