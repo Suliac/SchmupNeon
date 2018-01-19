@@ -46,6 +46,7 @@ public class ExplosionPickup : HandablePickup
         {
             launched = true;
             PlayerController currentPlayer = currentHandler.GetComponent<PlayerController>();
+            SoundManager.GetSingularity.PlayExplosionSound();
 
             Collider[] hits = Physics.OverlapSphere(currentHandler.transform.position, radius, 1 << 8);
             foreach (var hit in hits)

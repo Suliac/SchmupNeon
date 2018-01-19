@@ -16,9 +16,19 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: 855647361
-    m_lastTimePart2: -1999282377
+    m_lastTimePsrt1: 1628988171
+    m_lastTimePart2: -1999282367
     List:
+    - Name: Play_deadplayer
+      Path: Default Work Unit\Play_deadplayer
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_deadplayer
+        ObjectType: 3
+      ID: -243845901
+      Guid: cc2814a33bd5c34d9c6f8bbc9cf03d77
+      maxAttenuation: 0
     - Name: Play_Explosion
       Path: Default Work Unit\Play_Explosion
       PathAndIcons:
@@ -28,36 +38,6 @@ MonoBehaviour:
         ObjectType: 3
       ID: -264562397
       Guid: 0ea416ea5da9a749b3684b9bf0b5d1df
-      maxAttenuation: 0
-    - Name: Play_gameover
-      Path: Default Work Unit\Play_gameover
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_gameover
-        ObjectType: 3
-      ID: -1120338038
-      Guid: b5137bf635b1c041a6087962769fc5f0
-      maxAttenuation: 0
-    - Name: Play_ingame
-      Path: Default Work Unit\Play_ingame
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_ingame
-        ObjectType: 3
-      ID: -607996543
-      Guid: dbdf425619cb9341b0e3eba0a9d712c5
-      maxAttenuation: 0
-    - Name: Play_Menu
-      Path: Default Work Unit\Play_Menu
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_Menu
-        ObjectType: 3
-      ID: 1278378707
-      Guid: c2d273bf72a16f488ac25c042eda7c43
       maxAttenuation: 0
     - Name: Play_musique
       Path: Default Work Unit\Play_musique
@@ -69,75 +49,85 @@ MonoBehaviour:
       ID: 206418435
       Guid: 261a7e7407043c4399c62aac30db5910
       maxAttenuation: 0
-    - Name: Play_proj2
-      Path: Default Work Unit\Play_proj2
+    - Name: Play_pickupP1
+      Path: Default Work Unit\Play_pickupP1
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_proj2
+      - ElementName: Play_pickupP1
         ObjectType: 3
-      ID: 34159943
-      Guid: 9a9876bb0ff70142bc6d5ef88915c049
+      ID: -298266489
+      Guid: f0de9c967c72674fbeae289d2fbcd190
       maxAttenuation: 0
-    - Name: Play_Shoot_6
-      Path: Default Work Unit\Play_Shoot_6
+    - Name: Play_pickupP2
+      Path: Default Work Unit\Play_pickupP2
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_Shoot_6
+      - ElementName: Play_pickupP2
         ObjectType: 3
-      ID: 852983512
-      Guid: b21bc19eb0f269408fe546a60d43bfe1
+      ID: -298266492
+      Guid: 958bbe97249a5a48933a9a4ee343b29b
       maxAttenuation: 0
-    - Name: Stop_gameover
-      Path: Default Work Unit\Stop_gameover
+    - Name: Play_pickupP3
+      Path: Default Work Unit\Play_pickupP3
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Stop_gameover
+      - ElementName: Play_pickupP3
         ObjectType: 3
-      ID: 1083186600
-      Guid: 9a3e15e0602d2244b2842bdc3a90fb94
+      ID: -298266491
+      Guid: d66277b8813cbc41942ce49616f8fe3a
       maxAttenuation: 0
-    - Name: Stop_ingame
-      Path: Default Work Unit\Stop_ingame
+    - Name: Play_pickupP4
+      Path: Default Work Unit\Play_pickupP4
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Stop_ingame
+      - ElementName: Play_pickupP4
         ObjectType: 3
-      ID: 1248442111
-      Guid: af2468000fccbf4493c008e8aed93695
+      ID: -298266494
+      Guid: 4a6c76ed1d70a5418cc3a3506283bc20
       maxAttenuation: 0
-    - Name: Stop_Menu
-      Path: Default Work Unit\Stop_Menu
+    - Name: Play_proj3
+      Path: Default Work Unit\Play_proj3
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Stop_Menu
+      - ElementName: Play_proj3
         ObjectType: 3
-      ID: -1379985963
-      Guid: 17ac28eb4d00f340b87b5d2c883e6753
+      ID: 34159942
+      Guid: 16b6a2986ddc6940a55e44010f4c5fa9
       maxAttenuation: 0
-    - Name: Stop_proj2
-      Path: Default Work Unit\Stop_proj2
+    - Name: Play_projectile
+      Path: Default Work Unit\Play_projectile
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Stop_proj2
+      - ElementName: Play_projectile
         ObjectType: 3
-      ID: 164924201
-      Guid: 751e005cafd4f7488a7a0f06c488e9e4
+      ID: 880148599
+      Guid: 2b0aaad9276fe1458ea6721ae150853d
       maxAttenuation: 0
-    - Name: Stop_Shoot_6
-      Path: Default Work Unit\Stop_Shoot_6
+    - Name: Stop_proj3
+      Path: Default Work Unit\Stop_proj3
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Stop_Shoot_6
+      - ElementName: Stop_proj3
         ObjectType: 3
-      ID: 820008334
-      Guid: 72f9ac14416ea24190e2cf119632b759
+      ID: 164924200
+      Guid: a901a0f75d862d46bbbf46074dc658dd
+      maxAttenuation: 0
+    - Name: Stop_projectile
+      Path: Default Work Unit\Stop_projectile
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_projectile
+        ObjectType: 3
+      ID: 884225013
+      Guid: 1b94288c47e56d4898636247832d1465
       maxAttenuation: 0
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu

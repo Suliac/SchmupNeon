@@ -410,19 +410,16 @@ public class WinManager : MonoBehaviour
             {
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
                 {
-                    StateManager.GetSingleton.State = StateManager.GameState.Tuto;
-
-                    SceneChangeManager.GetSingleton.JumpToScene();
                     //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    StateManager.GetSingleton.State = StateManager.GameState.Tuto;
+                    SceneChangeManager.GetSingleton.JumpToScene();
                 }
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
                 {
                     //Init();
-                    StateManager.GetSingleton.State = StateManager.GameState.Menu;
-
-                    SceneChangeManager.GetSingleton.JumpToScene("1_Menu");
                     //SceneManager.LoadScene("1_Menu");
-
+                    StateManager.GetSingleton.State = StateManager.GameState.Menu;
+                    SceneChangeManager.GetSingleton.JumpToScene("1_Menu");
                 }
             }
         }
