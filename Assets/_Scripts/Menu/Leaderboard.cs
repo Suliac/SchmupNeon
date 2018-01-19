@@ -51,7 +51,7 @@ public class Leaderboard : MonoBehaviour
     /// <summary>
     /// cette fonction est static pour être appelé de n'importe quel script
     /// </summary>
-    public static void AddNewHighscore(string username, int score)
+    public void AddNewHighscore(string username, int score)
     {
         instance.StartCoroutine(instance.UploadNewHighscore(username, score));
     }

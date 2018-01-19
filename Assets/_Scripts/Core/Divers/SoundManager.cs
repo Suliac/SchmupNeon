@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
+using System.Linq;
 /// <summary>
 /// description
 /// <summary>
@@ -15,8 +17,11 @@ public class SoundManager : MonoBehaviour
         get { return instance; }
     }
 
-    private static bool isPlayingMenuMusic = false;
-    private static bool isPlayingIGMusic = false;
+    private static bool isPlayingShoot = false;
+    private static bool isInit = false;
+
+    private List<bool> playerShooting;
+    private object mutex = new object();
     #endregion
 
     #region Initialization
@@ -34,10 +39,26 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         SetSingleton();
+        playerShooting = new List<bool>();
+        playerShooting.Add(false);
+        playerShooting.Add(false);
+        playerShooting.Add(false);
+        playerShooting.Add(false);
     }
 
     private void Start()
     {
+        Init();
+    }
+
+    private void Init()
+    {
+        if (!isInit)
+        {
+            print("Init sound");
+            PlaySound("Play_musique");
+            isInit = true;
+        }
     }
     #endregion
 
@@ -50,27 +71,91 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMenuMusic()
     {
-        if (!isPlayingMenuMusic)
-        {
-            print("Play menu music");
-            isPlayingIGMusic = false;
-            isPlayingMenuMusic = true;
+        print("Play menu music");
+        AkSoundEngine.SetState("musique", "Menu");
 
-            SoundManager.GetSingularity.PlaySound("Stop_ingame");
-            SoundManager.GetSingularity.PlaySound("Play_Menu");
-        }
+        //SoundManager.GetSingularity.PlaySound("Stop_ingame");
+        //SoundManager.GetSingularity.PlaySound("Play_Menu");
+
     }
 
     public void PlayGameMusic()
     {
-        if (!isPlayingIGMusic)
-        {
-            print("play IG music");
-            isPlayingIGMusic = true;
-            isPlayingMenuMusic = false;
+        print("Play game music");
+        AkSoundEngine.SetState("musique", "In_game");
 
-            SoundManager.GetSingularity.PlaySound("Stop_Menu");
-            SoundManager.GetSingularity.PlaySound("Play_ingame");
+        //SoundManager.GetSingularity.PlaySound("Stop_Menu");
+        //SoundManager.GetSingularity.PlaySound("Play_ingame");
+
+    }
+
+    public void PlayGameOverMusic()
+    {
+        print("Play game over music");
+        AkSoundEngine.SetState("musique", "Game_Over");
+
+        //SoundManager.GetSingularity.PlaySound("Stop_Menu");
+        //SoundManager.GetSingularity.PlaySound("Play_ingame");
+    }
+
+    public void PlayDeadPlayerSound()
+    {
+        print("Play deadplayer sound");
+        PlaySound("Play_deadplayer");
+    }
+
+    public void PlayExplosionSound()
+    {
+        print("Play explosion sound");
+        PlaySound("Play_Explosion");
+    }
+
+    public void PlayPickupSound(int playerNumber)
+    {
+        int tmpPlayer = playerNumber + 1;
+        print("Play pickup sound for P"+ tmpPlayer.ToString("0"));
+        PlaySound("Play_pickupP" + tmpPlayer.ToString("0"));
+    }
+
+    //public void PlayProjectileSound()
+    //{
+    //    print("Play projectile sound");
+    //    PlaySound("Play_proj3");
+    //}
+
+    //public void StopProjectileSound()
+    //{
+    //    print("Play projectile sound");
+    //    PlaySound("Stop_proj3");
+    //}
+
+    public void PlayProjectileSound(int playerIndex)
+    {
+        lock (mutex)
+        {
+            playerShooting[playerIndex] = true;
+
+            if (playerShooting.Contains(true) && !isPlayingShoot) // Si au moins un joueur tir
+            {
+                print("Play projectile sound");
+                PlaySound("Play_projectile");  
+                isPlayingShoot = true;
+            }
+        }
+    }
+
+    public void StopProjectileSound(int playerIndex)
+    {
+        lock (mutex)
+        {
+            playerShooting[playerIndex] = false;
+
+            if (!playerShooting.Contains(true) && isPlayingShoot) // Si aucun joueur ne tir
+            {
+                print("Stop projectile sound");
+                PlaySound("Stop_projectile");
+                isPlayingShoot = false;
+            }
         }
     }
     #endregion

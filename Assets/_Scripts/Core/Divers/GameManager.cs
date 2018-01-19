@@ -213,6 +213,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        //SoundManager.GetSingularity.PlayGameOverMusic();
         StateManager.GetSingleton.State = StateManager.GameState.GameOver;
         panelCanvasGameOver.SetActive(true);
         panelCanvasInGame.SetActive(false);

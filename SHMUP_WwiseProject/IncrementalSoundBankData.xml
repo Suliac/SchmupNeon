@@ -3,52 +3,52 @@
 	<Platform GUID="{02A98F0E-0BFC-40DA-AF8F-B08BAFF6ED48}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Init" Hash="1115660705" Timestamp="131598952915062337"/>
-				<File Name="SchmupSoundBank" Hash="3724997718" Timestamp="131598952914789232"/>
+				<File Name="Init" Hash="3211469273" Timestamp="131608384516162184"/>
+				<File Name="SchmupSoundBank" Hash="3518920904" Timestamp="131608437035861819"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="2985024710" Timestamp="131598952915077399"/>
+				<File Name="" Hash="3190408927" Timestamp="131608437035901727"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
 	<Platform GUID="{AB6C9340-C8A1-4181-A66D-20FF98DA4CD4}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Init" Hash="2403855257" Timestamp="131598952926827174"/>
-				<File Name="SchmupSoundBank" Hash="3724997718" Timestamp="131598952926777019"/>
+				<File Name="Init" Hash="2149792785" Timestamp="131608384544005426"/>
+				<File Name="SchmupSoundBank" Hash="3518920904" Timestamp="131608437077816995"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="584244152" Timestamp="131598952926837201"/>
+				<File Name="" Hash="992989713" Timestamp="131608437077862027"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
 	<Platform GUID="{419E9DB1-C000-45E3-9AE0-7CD9CA50E791}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Init" Hash="2547431224" Timestamp="131598952918982159"/>
-				<File Name="SchmupSoundBank" Hash="3724997718" Timestamp="131598952918927008"/>
+				<File Name="Init" Hash="1701391936" Timestamp="131608384524364280"/>
+				<File Name="SchmupSoundBank" Hash="3518920904" Timestamp="131608437047922183"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="3611488019" Timestamp="131598952918997225"/>
+				<File Name="" Hash="2108921488" Timestamp="131608437047957207"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
 	<Platform GUID="{736DC550-7425-4A73-8426-836A589D23A3}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Init" Hash="580030591" Timestamp="131598952922882358"/>
-				<File Name="SchmupSoundBank" Hash="3724997718" Timestamp="131598952922585061"/>
+				<File Name="Init" Hash="407263639" Timestamp="131608384535205249"/>
+				<File Name="SchmupSoundBank" Hash="3518920904" Timestamp="131608437061221920"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1665763874" Timestamp="131598952922892385"/>
+				<File Name="" Hash="4015553267" Timestamp="131608437061271752"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

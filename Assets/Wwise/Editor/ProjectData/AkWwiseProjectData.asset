@@ -16,76 +16,175 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: -1214849188
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1628988171
+    m_lastTimePart2: -1999282367
     List:
-    - Name: Play_ingame
-      Path: Default Work Unit\Play_ingame
+    - Name: Play_deadplayer
+      Path: Default Work Unit\Play_deadplayer
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_ingame
+      - ElementName: Play_deadplayer
         ObjectType: 3
-      ID: -607996543
-      Guid: dbdf425619cb9341b0e3eba0a9d712c5
+      ID: -243845901
+      Guid: cc2814a33bd5c34d9c6f8bbc9cf03d77
       maxAttenuation: 0
-    - Name: Play_Menu
-      Path: Default Work Unit\Play_Menu
+    - Name: Play_Explosion
+      Path: Default Work Unit\Play_Explosion
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_Menu
+      - ElementName: Play_Explosion
         ObjectType: 3
-      ID: 1278378707
-      Guid: c2d273bf72a16f488ac25c042eda7c43
+      ID: -264562397
+      Guid: 0ea416ea5da9a749b3684b9bf0b5d1df
       maxAttenuation: 0
-    - Name: Stop_ingame
-      Path: Default Work Unit\Stop_ingame
+    - Name: Play_musique
+      Path: Default Work Unit\Play_musique
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Stop_ingame
+      - ElementName: Play_musique
         ObjectType: 3
-      ID: 1248442111
-      Guid: af2468000fccbf4493c008e8aed93695
+      ID: 206418435
+      Guid: 261a7e7407043c4399c62aac30db5910
       maxAttenuation: 0
-    - Name: Stop_Menu
-      Path: Default Work Unit\Stop_Menu
+    - Name: Play_pickupP1
+      Path: Default Work Unit\Play_pickupP1
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Stop_Menu
+      - ElementName: Play_pickupP1
         ObjectType: 3
-      ID: -1379985963
-      Guid: 17ac28eb4d00f340b87b5d2c883e6753
+      ID: -298266489
+      Guid: f0de9c967c72674fbeae289d2fbcd190
+      maxAttenuation: 0
+    - Name: Play_pickupP2
+      Path: Default Work Unit\Play_pickupP2
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_pickupP2
+        ObjectType: 3
+      ID: -298266492
+      Guid: 958bbe97249a5a48933a9a4ee343b29b
+      maxAttenuation: 0
+    - Name: Play_pickupP3
+      Path: Default Work Unit\Play_pickupP3
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_pickupP3
+        ObjectType: 3
+      ID: -298266491
+      Guid: d66277b8813cbc41942ce49616f8fe3a
+      maxAttenuation: 0
+    - Name: Play_pickupP4
+      Path: Default Work Unit\Play_pickupP4
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_pickupP4
+        ObjectType: 3
+      ID: -298266494
+      Guid: 4a6c76ed1d70a5418cc3a3506283bc20
+      maxAttenuation: 0
+    - Name: Play_proj3
+      Path: Default Work Unit\Play_proj3
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_proj3
+        ObjectType: 3
+      ID: 34159942
+      Guid: 16b6a2986ddc6940a55e44010f4c5fa9
+      maxAttenuation: 0
+    - Name: Play_projectile
+      Path: Default Work Unit\Play_projectile
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_projectile
+        ObjectType: 3
+      ID: 880148599
+      Guid: 2b0aaad9276fe1458ea6721ae150853d
+      maxAttenuation: 0
+    - Name: Stop_proj3
+      Path: Default Work Unit\Stop_proj3
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_proj3
+        ObjectType: 3
+      ID: 164924200
+      Guid: a901a0f75d862d46bbbf46074dc658dd
+      maxAttenuation: 0
+    - Name: Stop_projectile
+      Path: Default Work Unit\Stop_projectile
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_projectile
+        ObjectType: 3
+      ID: 884225013
+      Guid: 1b94288c47e56d4898636247832d1465
       maxAttenuation: 0
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}'
-    m_lastTimePsrt1: -1202551957
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1354383162
+    m_lastTimePart2: -1999282403
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{3822E0A2-7722-45A1-AF3C-32EE7A20C4DF}'
-    m_lastTimePsrt1: -1198576944
-    m_lastTimePart2: -1999283943
-    List: []
+    m_lastTimePsrt1: 158492295
+    m_lastTimePart2: -1999282392
+    List:
+    - Name: musique
+      Path: Default Work Unit\musique
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: musique
+        ObjectType: 9
+      ID: 69765534
+      Guid: cc7ea2b57ba6ff4ca3a3ca02d5163cb9
+      values:
+      - Game_Over
+      - In_game
+      - Menu
+      - None
+      ValueIcons:
+      - ElementName: Game_Over
+        ObjectType: 8
+      - ElementName: In_game
+        ObjectType: 8
+      - ElementName: Menu
+        ObjectType: 8
+      - ElementName: None
+        ObjectType: 8
+      valueIDs: 2c846555892ae1b0f0256c9bdb3ba32c
+      ValueGuids:
+      - bytes: f5797959e8eb294ca8b12ceb7ff719c7
+      - bytes: eacdabc6bedaaa49b464d09ffa72343d
+      - bytes: ae33f65424496a40ae872d1744196cf6
+      - bytes: 22b2f93f6c78f4449393b7077f0fa725
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{68F6EB55-4DA4-4B32-A7F9-81D5A7B52B09}'
-    m_lastTimePsrt1: -1198566941
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1357976758
+    m_lastTimePart2: -1999282403
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8C84201B-D9D0-40FE-B479-AA99A1A7EEFD}'
-    m_lastTimePsrt1: -1198591968
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1357820524
+    m_lastTimePart2: -1999282403
     List:
     - Name: SchmupSoundBank
       Path: Default Work Unit\SchmupSoundBank
@@ -100,15 +199,15 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{1E9B848A-855A-40C2-9386-A1C1EF9C8A84}'
-    m_lastTimePsrt1: -1214839189
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1330320243
+    m_lastTimePart2: -1999282403
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{754452DD-0CA5-40F5-AFB4-B05FFE130201}'
-    m_lastTimePsrt1: -1198556958
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1357976758
+    m_lastTimePart2: -1999282403
     List: []
   ExpandedItems:
   - /SHMUP_WwiseProject
@@ -116,6 +215,9 @@ MonoBehaviour:
   - /SHMUP_WwiseProject/Events/Default Work Unit
   - /SHMUP_WwiseProject/SoundBanks
   - /SHMUP_WwiseProject/SoundBanks/Default Work Unit
+  - /SHMUP_WwiseProject/States
+  - /SHMUP_WwiseProject/States/Default Work Unit
+  - /SHMUP_WwiseProject/States/Default Work Unit/musique
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 1

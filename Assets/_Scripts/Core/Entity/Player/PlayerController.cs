@@ -73,10 +73,10 @@ public class PlayerController : Pausable, IKillable
 
     private float horizMove;                //mouvement horizontal du joueur
     private float vertiMove;                //mouvement vertical du joueur
-
-
+    
     private bool hasMoved = false;          //a-t-on bougé ?
-
+    private bool isShooting = false;
+    private bool lastFrameIsShooting = false;
 
     #endregion
 
@@ -148,11 +148,27 @@ public class PlayerController : Pausable, IKillable
                     vertiMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Vertical");
 
                     if (PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButton("FireA"))
-                        weaponHandle.UseWeapon();
+                    {
+                        isShooting = true;
+                        weaponHandle.UseWeapon();                        
+                    }
+                    else
+                    {
+                        isShooting = false;
+                    }
+
+                    if(lastFrameIsShooting != isShooting)
+                    {
+                        if(isShooting)
+                            SoundManager.GetSingularity.PlayProjectileSound(idPlayer);
+                        else
+                            SoundManager.GetSingularity.StopProjectileSound(idPlayer);
+                    }
 
                     if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
                         pickupHandle.UseItem();
 
+                    lastFrameIsShooting = isShooting;
                     //if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireX")) // NON FONCTIONNEL
                     //    GameManager.GetSingleton.Pause();
                     break;
@@ -287,6 +303,7 @@ public class PlayerController : Pausable, IKillable
         if (lifeBehavior.CurrentLife > 0)
             lifeBehavior.OnExternalKill();
 
+        SoundManager.GetSingularity.PlayDeadPlayerSound();
         enabledPlayer = false;
         animPlayer.SetActive(false);
         Invoke("RespawnIt", timeBeforeRespawn);
