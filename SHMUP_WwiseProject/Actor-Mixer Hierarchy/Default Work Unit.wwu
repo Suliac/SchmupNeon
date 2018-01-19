@@ -1693,6 +1693,19 @@
 					<ChildrenList>
 						<Sound Name="Explosion" ID="{85920E43-C7B6-46A5-B63F-03014817863B}" ShortID="844087313">
 							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{45EC67FE-C13F-4A6C-A54C-EDFE1DEAC0C7}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="150"/>
+													<Property Name="Min" Type="Real64" Value="-150"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>9</Value>
@@ -1869,6 +1882,19 @@
 					<ChildrenList>
 						<Sound Name="deadplayer" ID="{362437BF-E125-4EFD-AB20-C5EEB8D0230B}" ShortID="236450598">
 							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{1597F3C6-39A2-4955-B133-2FF0E9E87BB5}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>7</Value>
