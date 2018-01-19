@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
 
     private static bool isPlayingMenuMusic = false;
     private static bool isPlayingIGMusic = false;
+    private static bool isInit = false;
     #endregion
 
     #region Initialization
@@ -38,6 +39,17 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        Init();
+    }
+
+    private void Init()
+    {
+        if (!isInit)
+        {
+            print("Init sound");
+            PlaySound("Play_musique");
+            isInit = true;
+        }
     }
     #endregion
 
@@ -50,28 +62,19 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMenuMusic()
     {
-        if (!isPlayingMenuMusic)
-        {
-            print("Play menu music");
-            isPlayingIGMusic = false;
-            isPlayingMenuMusic = true;
+        AkSoundEngine.SetState("musique", "Menu");
 
-            SoundManager.GetSingularity.PlaySound("Stop_ingame");
-            SoundManager.GetSingularity.PlaySound("Play_Menu");
-        }
+        //SoundManager.GetSingularity.PlaySound("Stop_ingame");
+        //SoundManager.GetSingularity.PlaySound("Play_Menu");
+
     }
 
     public void PlayGameMusic()
     {
-        if (!isPlayingIGMusic)
-        {
-            print("play IG music");
-            isPlayingIGMusic = true;
-            isPlayingMenuMusic = false;
+        AkSoundEngine.SetState("musique", "In_game");
+        //SoundManager.GetSingularity.PlaySound("Stop_Menu");
+        //SoundManager.GetSingularity.PlaySound("Play_ingame");
 
-            SoundManager.GetSingularity.PlaySound("Stop_Menu");
-            SoundManager.GetSingularity.PlaySound("Play_ingame");
-        }
     }
     #endregion
 }

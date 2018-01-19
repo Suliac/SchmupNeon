@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="80">
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="277408230" DateHigh="30642464"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="750689844" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="750689844" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="751940387" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="751940387" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="751940387" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="752096115" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Effects\Default Work Unit.wwu" DateLow="752096115" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Effects\Factory Effects.wwu" DateLow="752096115" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Events\Default Work Unit.wwu" DateLow="277423233" DateHigh="30642464"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="752096115" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="3874454207" DateHigh="30642448"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="776159034" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="776315087" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="776315087" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Presets\Default Work Unit.wwu" DateLow="779596396" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Queries\Default Work Unit.wwu" DateLow="779596396" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Queries\Factory Queries.wwu" DateLow="779596396" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\SHMUP_WwiseProject.wproj" DateLow="779596396" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="779596396" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="3875235463" DateHigh="30642448"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\States\Default Work Unit.wwu" DateLow="3875235463" DateHigh="30642448"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Switches\Default Work Unit.wwu" DateLow="779752630" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="779752630" DateHigh="30642438"/>
+	<ValidationCacheItem File="C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="779752630" DateHigh="30642438"/>
 	<ValidationCacheItem File="D:\Donnees\Travail\Projets_Unity\SHMUP\SHMUP_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1478736776" DateHigh="30634429"/>
 	<ValidationCacheItem File="D:\Donnees\Travail\Projets_Unity\SHMUP\SHMUP_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="3345676461" DateHigh="30634427"/>
 	<ValidationCacheItem File="D:\Donnees\Travail\Projets_Unity\SHMUP\SHMUP_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="3345686621" DateHigh="30634427"/>

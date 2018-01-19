@@ -16,9 +16,29 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: -1214849188
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 855647361
+    m_lastTimePart2: -1999282377
     List:
+    - Name: Play_Explosion
+      Path: Default Work Unit\Play_Explosion
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Explosion
+        ObjectType: 3
+      ID: -264562397
+      Guid: 0ea416ea5da9a749b3684b9bf0b5d1df
+      maxAttenuation: 0
+    - Name: Play_gameover
+      Path: Default Work Unit\Play_gameover
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_gameover
+        ObjectType: 3
+      ID: -1120338038
+      Guid: b5137bf635b1c041a6087962769fc5f0
+      maxAttenuation: 0
     - Name: Play_ingame
       Path: Default Work Unit\Play_ingame
       PathAndIcons:
@@ -38,6 +58,46 @@ MonoBehaviour:
         ObjectType: 3
       ID: 1278378707
       Guid: c2d273bf72a16f488ac25c042eda7c43
+      maxAttenuation: 0
+    - Name: Play_musique
+      Path: Default Work Unit\Play_musique
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_musique
+        ObjectType: 3
+      ID: 206418435
+      Guid: 261a7e7407043c4399c62aac30db5910
+      maxAttenuation: 0
+    - Name: Play_proj2
+      Path: Default Work Unit\Play_proj2
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_proj2
+        ObjectType: 3
+      ID: 34159943
+      Guid: 9a9876bb0ff70142bc6d5ef88915c049
+      maxAttenuation: 0
+    - Name: Play_Shoot_6
+      Path: Default Work Unit\Play_Shoot_6
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Shoot_6
+        ObjectType: 3
+      ID: 852983512
+      Guid: b21bc19eb0f269408fe546a60d43bfe1
+      maxAttenuation: 0
+    - Name: Stop_gameover
+      Path: Default Work Unit\Stop_gameover
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_gameover
+        ObjectType: 3
+      ID: 1083186600
+      Guid: 9a3e15e0602d2244b2842bdc3a90fb94
       maxAttenuation: 0
     - Name: Stop_ingame
       Path: Default Work Unit\Stop_ingame
@@ -59,33 +119,82 @@ MonoBehaviour:
       ID: -1379985963
       Guid: 17ac28eb4d00f340b87b5d2c883e6753
       maxAttenuation: 0
+    - Name: Stop_proj2
+      Path: Default Work Unit\Stop_proj2
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_proj2
+        ObjectType: 3
+      ID: 164924201
+      Guid: 751e005cafd4f7488a7a0f06c488e9e4
+      maxAttenuation: 0
+    - Name: Stop_Shoot_6
+      Path: Default Work Unit\Stop_Shoot_6
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Shoot_6
+        ObjectType: 3
+      ID: 820008334
+      Guid: 72f9ac14416ea24190e2cf119632b759
+      maxAttenuation: 0
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}'
-    m_lastTimePsrt1: -1202551957
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1354383162
+    m_lastTimePart2: -1999282403
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{3822E0A2-7722-45A1-AF3C-32EE7A20C4DF}'
-    m_lastTimePsrt1: -1198576944
-    m_lastTimePart2: -1999283943
-    List: []
+    m_lastTimePsrt1: 158492295
+    m_lastTimePart2: -1999282392
+    List:
+    - Name: musique
+      Path: Default Work Unit\musique
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: musique
+        ObjectType: 9
+      ID: 69765534
+      Guid: cc7ea2b57ba6ff4ca3a3ca02d5163cb9
+      values:
+      - Game_Over
+      - In_game
+      - Menu
+      - None
+      ValueIcons:
+      - ElementName: Game_Over
+        ObjectType: 8
+      - ElementName: In_game
+        ObjectType: 8
+      - ElementName: Menu
+        ObjectType: 8
+      - ElementName: None
+        ObjectType: 8
+      valueIDs: 2c846555892ae1b0f0256c9bdb3ba32c
+      ValueGuids:
+      - bytes: f5797959e8eb294ca8b12ceb7ff719c7
+      - bytes: eacdabc6bedaaa49b464d09ffa72343d
+      - bytes: ae33f65424496a40ae872d1744196cf6
+      - bytes: 22b2f93f6c78f4449393b7077f0fa725
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{68F6EB55-4DA4-4B32-A7F9-81D5A7B52B09}'
-    m_lastTimePsrt1: -1198566941
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1357976758
+    m_lastTimePart2: -1999282403
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8C84201B-D9D0-40FE-B479-AA99A1A7EEFD}'
-    m_lastTimePsrt1: -1198591968
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1357820524
+    m_lastTimePart2: -1999282403
     List:
     - Name: SchmupSoundBank
       Path: Default Work Unit\SchmupSoundBank
@@ -100,15 +209,15 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{1E9B848A-855A-40C2-9386-A1C1EF9C8A84}'
-    m_lastTimePsrt1: -1214839189
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1330320243
+    m_lastTimePart2: -1999282403
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{754452DD-0CA5-40F5-AFB4-B05FFE130201}'
-    m_lastTimePsrt1: -1198556958
-    m_lastTimePart2: -1999283943
+    m_lastTimePsrt1: 1357976758
+    m_lastTimePart2: -1999282403
     List: []
   ExpandedItems:
   - /SHMUP_WwiseProject
@@ -116,6 +225,9 @@ MonoBehaviour:
   - /SHMUP_WwiseProject/Events/Default Work Unit
   - /SHMUP_WwiseProject/SoundBanks
   - /SHMUP_WwiseProject/SoundBanks/Default Work Unit
+  - /SHMUP_WwiseProject/States
+  - /SHMUP_WwiseProject/States/Default Work Unit
+  - /SHMUP_WwiseProject/States/Default Work Unit/musique
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 1

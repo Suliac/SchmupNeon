@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Linux" BasePlatform="Linux" SchemaVersion="11" SoundbankVersion="125">
 	<RootPaths>
-		<ProjectRoot>D:\Schmup\SHMUP_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Schmup\SHMUP_WwiseProject\.cache\Linux\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Schmup\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Linux\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Schmup\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -25,6 +25,7 @@
 				<Event Id="3174629258" Name="Play_gameover" ObjectPath="\Events\Default Work Unit\Play_gameover"/>
 				<Event Id="3686970753" Name="Play_ingame" ObjectPath="\Events\Default Work Unit\Play_ingame"/>
 				<Event Id="1278378707" Name="Play_Menu" ObjectPath="\Events\Default Work Unit\Play_Menu"/>
+				<Event Id="206418435" Name="Play_musique" ObjectPath="\Events\Default Work Unit\Play_musique"/>
 				<Event Id="34159943" Name="Play_proj2" ObjectPath="\Events\Default Work Unit\Play_proj2"/>
 				<Event Id="852983512" Name="Play_Shoot_6" ObjectPath="\Events\Default Work Unit\Play_Shoot_6"/>
 				<Event Id="1083186600" Name="Stop_gameover" ObjectPath="\Events\Default Work Unit\Stop_gameover" MaxAttenuation="0.000000"/>
@@ -40,7 +41,7 @@
 				</File>
 				<File Id="158611905" Language="SFX">
 					<ShortName>Explosion.wav</ShortName>
-					<Path>SFX\Explosion_1C9C67B2.wem</Path>
+					<Path>SFX\Explosion_BFB398EE.wem</Path>
 				</File>
 				<File Id="191042240" Language="SFX">
 					<ShortName>projectilep5.wav</ShortName>
@@ -57,6 +58,10 @@
 				<File Id="708980893" Language="SFX">
 					<ShortName>gameover.wav</ShortName>
 					<Path>SFX\gameover_1C9C67B2.wem</Path>
+				</File>
+				<File Id="875417451" Language="SFX">
+					<ShortName>gameover.wav</ShortName>
+					<Path>SFX\gameover_F17FB28C.wem</Path>
 				</File>
 				<File Id="1033730774" Language="SFX">
 					<ShortName>proj2.wav</ShortName>
