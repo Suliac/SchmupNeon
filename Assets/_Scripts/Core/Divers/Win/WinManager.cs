@@ -189,6 +189,7 @@ public class WinManager : MonoBehaviour
     private void OnVictory()
     {
         StateManager.GetSingleton.State = StateManager.GameState.Victory;
+        SoundManager.GetSingularity.CleanProjectileSound();
         currentState = VictoryStates.PlayerComingOut;
 
         inputInfo.SetActive(false);

@@ -28,12 +28,18 @@
 				<Event Id="3996700804" Name="Play_pickupP2" ObjectPath="\Events\Default Work Unit\Play_pickupP2"/>
 				<Event Id="3996700805" Name="Play_pickupP3" ObjectPath="\Events\Default Work Unit\Play_pickupP3"/>
 				<Event Id="3996700802" Name="Play_pickupP4" ObjectPath="\Events\Default Work Unit\Play_pickupP4"/>
-				<Event Id="34159942" Name="Play_proj3" ObjectPath="\Events\Default Work Unit\Play_proj3"/>
 				<Event Id="880148599" Name="Play_projectile" ObjectPath="\Events\Default Work Unit\Play_projectile"/>
-				<Event Id="164924200" Name="Stop_proj3" ObjectPath="\Events\Default Work Unit\Stop_proj3" MaxAttenuation="0.000000"/>
+				<Event Id="2639668299" Name="Play_respawnP1" ObjectPath="\Events\Default Work Unit\Play_respawnP1"/>
+				<Event Id="2639668296" Name="Play_respawnP2" ObjectPath="\Events\Default Work Unit\Play_respawnP2"/>
+				<Event Id="2639668297" Name="Play_respawnP3" ObjectPath="\Events\Default Work Unit\Play_respawnP3"/>
+				<Event Id="2639668302" Name="Play_respawnP4" ObjectPath="\Events\Default Work Unit\Play_respawnP4"/>
 				<Event Id="884225013" Name="Stop_projectile" ObjectPath="\Events\Default Work Unit\Stop_projectile" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="50775084" Language="SFX">
+					<ShortName>respawnP3.wav</ShortName>
+					<Path>SFX\respawnP3_712F6A64.wem</Path>
+				</File>
 				<File Id="92670017" Language="SFX">
 					<ShortName>recherche schmup.wav</ShortName>
 					<Path>SFX\recherche schmup_F17FB28C.wem</Path>
@@ -58,9 +64,13 @@
 					<ShortName>pickupP2.wav</ShortName>
 					<Path>SFX\pickupP2_2338104B.wem</Path>
 				</File>
-				<File Id="555269768" Language="SFX">
-					<ShortName>proj3.wav</ShortName>
-					<Path>SFX\proj3_F17FB28C.wem</Path>
+				<File Id="576709884" Language="SFX">
+					<ShortName>respawnP1.wav</ShortName>
+					<Path>SFX\respawnP1_D522B8C1.wem</Path>
+				</File>
+				<File Id="589013513" Language="SFX">
+					<ShortName>respawnP2.wav</ShortName>
+					<Path>SFX\respawnP2_A5563742.wem</Path>
 				</File>
 				<File Id="702174246" Language="SFX">
 					<ShortName>projectile.wav</ShortName>
@@ -69,6 +79,10 @@
 				<File Id="747269259" Language="SFX">
 					<ShortName>pickupP1.wav</ShortName>
 					<Path>SFX\pickupP1_674C2360.wem</Path>
+				</File>
+				<File Id="788818331" Language="SFX">
+					<ShortName>respawnP4.wav</ShortName>
+					<Path>SFX\respawnP4_6B8B15AB.wem</Path>
 				</File>
 				<File Id="897744416" Language="SFX">
 					<ShortName>pickupP3.wav</ShortName>

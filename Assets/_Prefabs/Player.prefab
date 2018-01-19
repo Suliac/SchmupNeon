@@ -476,7 +476,7 @@ MonoBehaviour:
   StartLife: 10
   scoreToGiveToOther: 0
   scoreToGiveToOtherOnHit: 0
-  scoreToRemove: 5
+  scoreToRemove: 5000
   currentLife: 0
   invincible: 0
   entityRenderer: {fileID: 0}
