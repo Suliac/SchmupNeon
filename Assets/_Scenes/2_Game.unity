@@ -2728,8 +2728,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 139884971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 467, y: 292, z: 0}
+  m_LocalScale: {x: 0.51288193, y: 0.51288193, z: 0.51288193}
   m_Children:
   - {fileID: 1138913631}
   - {fileID: 54205797}
@@ -12724,6 +12724,7 @@ GameObject:
   - component: {fileID: 607343090}
   - component: {fileID: 607343089}
   - component: {fileID: 607343088}
+  - component: {fileID: 607343095}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13005,6 +13006,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &607343095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 607343087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cfcf639ef891c4996b611b1078e6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenBump: 0.25
+  shakeDuration: 5
 --- !u!4 &610285208 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4595459802124488, guid: 9110235b5aacb33429ec8eb81c575c92,

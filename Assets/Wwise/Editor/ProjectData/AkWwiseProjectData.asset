@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: 1628988171
-    m_lastTimePart2: -1999282367
+    m_lastTimePsrt1: 683840555
+    m_lastTimePart2: -1999282333
     List:
     - Name: Play_deadplayer
       Path: Default Work Unit\Play_deadplayer
@@ -89,16 +89,6 @@ MonoBehaviour:
       ID: -298266494
       Guid: 4a6c76ed1d70a5418cc3a3506283bc20
       maxAttenuation: 0
-    - Name: Play_proj3
-      Path: Default Work Unit\Play_proj3
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_proj3
-        ObjectType: 3
-      ID: 34159942
-      Guid: 16b6a2986ddc6940a55e44010f4c5fa9
-      maxAttenuation: 0
     - Name: Play_projectile
       Path: Default Work Unit\Play_projectile
       PathAndIcons:
@@ -109,15 +99,45 @@ MonoBehaviour:
       ID: 880148599
       Guid: 2b0aaad9276fe1458ea6721ae150853d
       maxAttenuation: 0
-    - Name: Stop_proj3
-      Path: Default Work Unit\Stop_proj3
+    - Name: Play_respawnP1
+      Path: Default Work Unit\Play_respawnP1
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Stop_proj3
+      - ElementName: Play_respawnP1
         ObjectType: 3
-      ID: 164924200
-      Guid: a901a0f75d862d46bbbf46074dc658dd
+      ID: -1655298997
+      Guid: 0f9c4b2e628f44458585734e4f1c23c5
+      maxAttenuation: 0
+    - Name: Play_respawnP2
+      Path: Default Work Unit\Play_respawnP2
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_respawnP2
+        ObjectType: 3
+      ID: -1655299000
+      Guid: 80e8461fb7b0354c8554d7adf669523f
+      maxAttenuation: 0
+    - Name: Play_respawnP3
+      Path: Default Work Unit\Play_respawnP3
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_respawnP3
+        ObjectType: 3
+      ID: -1655298999
+      Guid: 2f3b75f79dd6bc4c90374d4a955230b6
+      maxAttenuation: 0
+    - Name: Play_respawnP4
+      Path: Default Work Unit\Play_respawnP4
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_respawnP4
+        ObjectType: 3
+      ID: -1655298994
+      Guid: 2aa3220f6e1db54cb3a8fabdafaf9e44
       maxAttenuation: 0
     - Name: Stop_projectile
       Path: Default Work Unit\Stop_projectile
@@ -133,15 +153,15 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}'
-    m_lastTimePsrt1: 1354383162
-    m_lastTimePart2: -1999282403
+    m_lastTimePsrt1: 696945549
+    m_lastTimePart2: -1999282333
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{3822E0A2-7722-45A1-AF3C-32EE7A20C4DF}'
-    m_lastTimePsrt1: 158492295
-    m_lastTimePart2: -1999282392
+    m_lastTimePsrt1: 707217265
+    m_lastTimePart2: -1999282333
     List:
     - Name: musique
       Path: Default Work Unit\musique
@@ -176,15 +196,15 @@ MonoBehaviour:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{68F6EB55-4DA4-4B32-A7F9-81D5A7B52B09}'
-    m_lastTimePsrt1: 1357976758
-    m_lastTimePart2: -1999282403
+    m_lastTimePsrt1: 707237306
+    m_lastTimePart2: -1999282333
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8C84201B-D9D0-40FE-B479-AA99A1A7EEFD}'
-    m_lastTimePsrt1: 1357820524
-    m_lastTimePart2: -1999282403
+    m_lastTimePsrt1: 707177154
+    m_lastTimePart2: -1999282333
     List:
     - Name: SchmupSoundBank
       Path: Default Work Unit\SchmupSoundBank
@@ -199,15 +219,15 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{1E9B848A-855A-40C2-9386-A1C1EF9C8A84}'
-    m_lastTimePsrt1: 1330320243
-    m_lastTimePart2: -1999282403
+    m_lastTimePsrt1: 683860336
+    m_lastTimePart2: -1999282333
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{754452DD-0CA5-40F5-AFB4-B05FFE130201}'
-    m_lastTimePsrt1: 1357976758
-    m_lastTimePart2: -1999282403
+    m_lastTimePsrt1: 707257376
+    m_lastTimePart2: -1999282333
     List: []
   ExpandedItems:
   - /SHMUP_WwiseProject

@@ -304,6 +304,13 @@ public class PlayerController : Pausable, IKillable
             lifeBehavior.OnExternalKill();
 
         SoundManager.GetSingularity.PlayDeadPlayerSound();
+
+        ScreenShake ScreenShake = Camera.main.GetComponent<ScreenShake>();
+        if (ScreenShake != null)
+        {
+            ScreenShake.Shake();
+        }
+
         enabledPlayer = false;
         animPlayer.SetActive(false);
         Invoke("RespawnIt", timeBeforeRespawn);
