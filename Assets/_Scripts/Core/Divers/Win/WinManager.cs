@@ -313,7 +313,7 @@ public class WinManager : MonoBehaviour
                 }
 
                 int numberPlayersReady = currentLetterEditing.Where(l => l == 3).Count();
-                if(numberPlayersReady >= 4)
+                if (numberPlayersReady >= 4)
                     NextState();
                 break;
             case VictoryStates.Ready:
@@ -321,6 +321,16 @@ public class WinManager : MonoBehaviour
                 {
                     inputInfo.SetActive(true);
                     lettersInfo.SetActive(false);
+
+                    PlayerData datas = gameManager.ScoreManager.Data;
+                    for (int i = 0; i < datas.scorePlayer.Count; i++)
+                    {
+                        if (datas.scorePlayer[i] > 0 && i < 4)
+                        {
+                            string playerName = playerNames[i][0].ToString() + playerNames[i][1].ToString() + playerNames[i][2].ToString();
+                            Leaderboard.GetSingleton.AddNewHighscore(playerName, datas.scorePlayer[i]);
+                        }
+                    }
                 }
                 break;
             default:
@@ -400,19 +410,16 @@ public class WinManager : MonoBehaviour
             {
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
                 {
-                    StateManager.GetSingleton.State = StateManager.GameState.Tuto;
-
-                    SceneChangeManager.GetSingleton.JumpToScene();
                     //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    StateManager.GetSingleton.State = StateManager.GameState.Tuto;
+                    SceneChangeManager.GetSingleton.JumpToScene();
                 }
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
                 {
                     //Init();
-                    StateManager.GetSingleton.State = StateManager.GameState.Menu;
-
-                    SceneChangeManager.GetSingleton.JumpToScene("1_Menu");
                     //SceneManager.LoadScene("1_Menu");
-
+                    StateManager.GetSingleton.State = StateManager.GameState.Menu;
+                    SceneChangeManager.GetSingleton.JumpToScene("1_Menu");
                 }
             }
         }

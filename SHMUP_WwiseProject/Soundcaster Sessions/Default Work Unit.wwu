@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{3302BCB1-30BB-4426-AE78-7F9718327893}" SchemaVersion="80">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{3302BCB1-30BB-4426-AE78-7F9718327893}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{3302BCB1-30BB-4426-AE78-7F9718327893}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{138DD32A-9C98-40F5-84D4-CAA4FB2706AD}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="musique" ID="{8070E12E-1796-4985-9633-675DB6D40972}" WorkUnitID="{3D2FE7C6-186D-4F42-9B6A-C6B3C7BAC833}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Explosion" ID="{85920E43-C7B6-46A5-B63F-03014817863B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="deadplayer" ID="{362437BF-E125-4EFD-AB20-C5EEB8D0230B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="pickupP1" ID="{BFC36F13-952D-40DA-AC57-3226E2B5C873}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="pickupP2" ID="{30F24263-7117-46AE-80AB-5E84FEB48CCB}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="pickupP3" ID="{574B529E-4183-4584-BADB-D1B5E9608AA0}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="pickupP4" ID="{4A03BDEE-0B55-4D1D-B281-BC90D2A7ACA8}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="projectile" ID="{EEFA922B-FE23-4579-80B3-022E9809EAA4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="respawnP1" ID="{29FF2AB3-3BC0-4E92-8DCC-A81264BCD57D}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="respawnP2" ID="{9E2C02EA-7F26-4DB9-A395-684F422235F8}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="respawnP3" ID="{A44650F9-27CB-4AED-8B15-D9DF5CC956B0}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="4" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="respawnP4" ID="{4367E81B-1AC9-4CCE-8712-B25D9FD823A4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="4" Y="3"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="In_game" ID="{C6ABCDEA-DABE-49AA-B464-D09FFA72343D}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

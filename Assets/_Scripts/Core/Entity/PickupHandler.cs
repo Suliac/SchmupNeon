@@ -65,7 +65,10 @@ public class PickupHandler : MonoBehaviour
             handablePickup.Pick(this);
 
             if (playerController)
+            {
                 GameManager.GetSingleton.ItemManager.SetItem(playerController.IdPlayer, handablePickup.ObjectSpriteInUI);
+                SoundManager.GetSingularity.PlayPickupSound(playerController.IdPlayer);
+            }
         }
         else
         {
@@ -73,6 +76,9 @@ public class PickupHandler : MonoBehaviour
 
             if (instantPickup != null)
             {
+                if (playerController)
+                    SoundManager.GetSingularity.PlayPickupSound(playerController.IdPlayer);
+
                 instantPickup.CurrentHandler = this;
                 instantPickup.TryUse();
             }
