@@ -1897,7 +1897,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>7</Value>
+										<Value>4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1917,6 +1917,138 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="deadplayer" ID="{FECFEF9D-26FE-4D86-AB3B-164D28AEC2F0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Respawn" ID="{F5FA3F97-BA65-4C10-B96E-C0D3F2ADCC28}" ShortID="674107099">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="respawnP1" ID="{29FF2AB3-3BC0-4E92-8DCC-A81264BCD57D}" ShortID="103742236">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="respawnP1" ID="{3F1F13C7-FBCB-454A-9345-FADAE8CA386F}" ShortID="576709884">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.38504208110176"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.561782708492731"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>respawnP1.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="respawnP1" ID="{3F1F13C7-FBCB-454A-9345-FADAE8CA386F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="respawnP2" ID="{9E2C02EA-7F26-4DB9-A395-684F422235F8}" ShortID="310676466">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="respawnP2" ID="{E4D15985-F3AC-429E-9467-CA9CFF0D2F47}" ShortID="589013513">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.387337413925019"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.518171384850804"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>respawnP2.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="respawnP2" ID="{E4D15985-F3AC-429E-9467-CA9CFF0D2F47}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="respawnP3" ID="{A44650F9-27CB-4AED-8B15-D9DF5CC956B0}" ShortID="930344497">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="respawnP3" ID="{1856B5AD-736B-4AAA-A018-9CD0BE6A0456}" ShortID="50775084">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.428653404743688"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.557765876052028"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>respawnP3.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="respawnP3" ID="{1856B5AD-736B-4AAA-A018-9CD0BE6A0456}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="respawnP4" ID="{4367E81B-1AC9-4CCE-8712-B25D9FD823A4}" ShortID="99401938">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="respawnP4" ID="{7D36DCD6-2667-49B3-9FF8-5EC3F941D405}" ShortID="788818331">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.573068094873757"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.696250956388677"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>respawnP4.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="respawnP4" ID="{7D36DCD6-2667-49B3-9FF8-5EC3F941D405}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
