@@ -14,6 +14,16 @@ public class TutoStart : MonoBehaviour
     #region Attributes
     [FoldoutGroup("GamePlay"), Tooltip("position Ligne Rouge"), SerializeField, Range(0, 1)]
     private float redLineX = 0.3f;
+
+    [FoldoutGroup("GamePlay"), Tooltip("position Ligne Rouge"), SerializeField, Range(0, 1)]
+    private float leftLineX = 0.3f;
+    [FoldoutGroup("GamePlay"), Tooltip("position Ligne Rouge"), SerializeField, Range(0, 1)]
+    private float rightLineX = 0.5f;
+    [FoldoutGroup("GamePlay"), Tooltip("position Ligne Rouge"), SerializeField, Range(0, 1)]
+    private float topLineY = 0.5f;
+    [FoldoutGroup("GamePlay"), Tooltip("position Ligne Rouge"), SerializeField, Range(0, 1)]
+    private float botLineY = 0.3f;
+
     [FoldoutGroup("GamePlay"), Tooltip("Autorise moins de 4 manettes"), SerializeField]
     private bool fourPlayerOnly = false;
     [FoldoutGroup("GamePlay"), Tooltip("Timer Chrono"), SerializeField]
@@ -31,6 +41,9 @@ public class TutoStart : MonoBehaviour
     //private List<GameObject> connectJoypad;
     [FoldoutGroup("Object In World"), Tooltip("redLine"), SerializeField]
     private Image redLine;
+    [FoldoutGroup("Object In World"), Tooltip("Lines"), SerializeField]
+    private List<Image> Lines;
+    
     [FoldoutGroup("Object In World"), Tooltip("Chrono tuto"), SerializeField]
     private GameObject tutoChrono;
     [FoldoutGroup("Object In World"), Tooltip("Text chrono"), SerializeField]
@@ -110,7 +123,7 @@ public class TutoStart : MonoBehaviour
     {
         Vector3 playerPos = gameManager.SpawnPlayer[index].PlayerController.transform.position;
         Vector2 ViewportPosition = cam.WorldToViewportPoint(playerPos);
-        if (ViewportPosition.x > redLineX || (!gameManager.SpawnPlayer[index].PlayerController.EnabledPlayer && gameManager.SpawnPlayer[index].SpawnedOnce))
+        if (!(ViewportPosition.x > leftLineX && ViewportPosition.x < rightLineX && ViewportPosition.y > botLineY && ViewportPosition.y < topLineY) || (!gameManager.SpawnPlayer[index].PlayerController.EnabledPlayer && gameManager.SpawnPlayer[index].SpawnedOnce))
         {
             listTutoState[index] = 3;
             return true;
@@ -201,13 +214,22 @@ public class TutoStart : MonoBehaviour
         if (!isAllOk || PlayerConnected.GetSingleton.NoPlayer())
         {
             //ici red line !
-            redLine.color = Color.red;
+            //redLine.color = Color.red;
+            foreach (var line in Lines)
+            {
+                line.color = Color.red;
+            }
+
             stopChronoTuto();
         }
         else
         {
             //ici green line !
-            redLine.color = colorLine;
+            foreach (var line in Lines)
+            {
+                line.color = colorLine;
+            }
+            //redLine.color = colorLine;
             ChronoTuto();
         }
     }

@@ -61,7 +61,7 @@ MonoBehaviour:
     updateFrequency: 0
   maxDuration: 2
   radius: 5
-  speedPush: 50
+  speedPush: 75
 --- !u!135 &135639206203568342
 SphereCollider:
   m_ObjectHideFlags: 1
