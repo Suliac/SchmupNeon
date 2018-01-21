@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 114541318639044876}
   - component: {fileID: 114324849644174634}
   - component: {fileID: 114186242874082720}
-  - component: {fileID: 114260961625255678}
   - component: {fileID: 114043728350435154}
   m_Layer: 0
   m_Name: GameManager
@@ -58,7 +57,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ef95384557c774ab5f8b8912528a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frequencyAddScore: 0.1
+  scoreToAdd: 500
+  blinkFrequency: 0.1
   panelWin: {fileID: 0}
+  inputInfo: {fileID: 0}
+  lettersInfo: {fileID: 0}
   playerUiWin:
   - {fileID: 0}
   - {fileID: 0}
@@ -93,6 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redLineX: 0.23
+  leftLineX: 0.25
+  rightLineX: 0.46
+  topLineY: 0.7
+  botLineY: 0.28
   fourPlayerOnly: 0
   timerTuto: 3
   panelTutoInGame: {fileID: 0}
@@ -103,23 +111,17 @@ MonoBehaviour:
   - {fileID: 0}
   comeBackLeft: {fileID: 0}
   redLine: {fileID: 0}
+  Lines:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   tutoChrono: {fileID: 0}
   textChrono: {fileID: 0}
+  colorLine: {r: 0.29411766, g: 0.5019608, b: 0.7490196, a: 0.722}
   listTutoState: 00000000000000000000000000000000
   updateTimer:
     updateFrequency: 0.1
---- !u!114 &114260961625255678
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331242726934870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d398d3b4bfc4c074082b00b64d154ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 1
 --- !u!114 &114324849644174634
 MonoBehaviour:
   m_ObjectHideFlags: 1
