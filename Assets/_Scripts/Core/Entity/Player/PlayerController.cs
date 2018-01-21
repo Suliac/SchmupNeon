@@ -55,8 +55,10 @@ public class PlayerController : Pausable, IKillable
     private WeaponHandler weaponHandle;
     private PickupHandler pickupHandle;
 
-    private bool immobilisePlayer = false;
-    public bool ImmobilisePlayer { get { return immobilisePlayer; } set { immobilisePlayer = value; } }
+    //private bool immobilisePlayer = false;
+    //public bool ImmobilisePlayer { get { return immobilisePlayer; } set { immobilisePlayer = value; } }
+    private float inhibCoeff = 1.0f;
+    public float InhibCoeff { get { return inhibCoeff; } set { inhibCoeff = value; } }
 
     private int scorePlayer;                //score du player...
     public int ScorePlayer
@@ -73,7 +75,7 @@ public class PlayerController : Pausable, IKillable
 
     private float horizMove;                //mouvement horizontal du joueur
     private float vertiMove;                //mouvement vertical du joueur
-    
+
     private bool hasMoved = false;          //a-t-on bougé ?
     private bool isShooting = false;
     private bool lastFrameIsShooting = false;
@@ -131,68 +133,68 @@ public class PlayerController : Pausable, IKillable
 
     private void InputPlayer()
     {
-        if (!immobilisePlayer)
+        //if (!immobilisePlayer)
+        //{
+        switch (StateManager.GetSingleton.State)
         {
-            switch (StateManager.GetSingleton.State)
-            {
-                case StateManager.GameState.GameOver:
-                    horizMove = 0;
-                    vertiMove = 0;
-                    break;
-                case StateManager.GameState.Victory: // lors de la victoire le player part vers la droite
-                    horizMove = 1;
-                    vertiMove = 0;
-                    break;
-                default: // Par défaut le player peut bouger
-                    horizMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Horizontal");
-                    vertiMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Vertical");
+            case StateManager.GameState.GameOver:
+                horizMove = 0;
+                vertiMove = 0;
+                break;
+            case StateManager.GameState.Victory: // lors de la victoire le player part vers la droite
+                horizMove = 1;
+                vertiMove = 0;
+                break;
+            default: // Par défaut le player peut bouger
+                horizMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Horizontal");
+                vertiMove = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetAxis("Move Vertical");
 
-                    if (PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButton("FireA"))
-                    {
-                        isShooting = true;
-                        weaponHandle.UseWeapon();                        
-                    }
+                if (PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButton("FireA"))
+                {
+                    isShooting = true;
+                    weaponHandle.UseWeapon();
+                }
+                else
+                {
+                    isShooting = false;
+                }
+
+                if (lastFrameIsShooting != isShooting)
+                {
+                    if (isShooting)
+                        SoundManager.GetSingularity.PlayProjectileSound(idPlayer);
                     else
-                    {
-                        isShooting = false;
-                    }
+                        SoundManager.GetSingularity.StopProjectileSound(idPlayer);
+                }
 
-                    if(lastFrameIsShooting != isShooting)
-                    {
-                        if(isShooting)
-                            SoundManager.GetSingularity.PlayProjectileSound(idPlayer);
-                        else
-                            SoundManager.GetSingularity.StopProjectileSound(idPlayer);
-                    }
+                if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
+                    pickupHandle.UseItem();
 
-                    if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
-                        pickupHandle.UseItem();
-
-                    lastFrameIsShooting = isShooting;
-                    //if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireX")) // NON FONCTIONNEL
-                    //    GameManager.GetSingleton.Pause();
-                    break;
-            }
-
-
-            if (horizMove != 0 || vertiMove != 0)
-                hasMoved = true;
-            else
-                hasMoved = false;
+                lastFrameIsShooting = isShooting;
+                //if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireX")) // NON FONCTIONNEL
+                //    GameManager.GetSingleton.Pause();
+                break;
         }
+
+
+        if (horizMove != 0 || vertiMove != 0)
+            hasMoved = true;
         else
-        {
-            horizMove = 0f;
-            vertiMove = 0f;
             hasMoved = false;
-        }
+        //}
+        //else
+        //{
+        //    horizMove = 0f;
+        //    vertiMove = 0f;
+        //    hasMoved = false;
+        //}
     }
 
     private void MovePlayer()
     {
         if (hasMoved)
         {
-            Vector3 movement = new Vector3(horizMove * moveSpeed * Time.deltaTime, vertiMove * moveSpeed * Time.deltaTime, 0.0f);
+            Vector3 movement = new Vector3(horizMove * moveSpeed * Time.deltaTime, vertiMove * moveSpeed * Time.deltaTime * inhibCoeff, 0.0f);
 
             playerBody.velocity = Vector3.ClampMagnitude(movement, moveSpeed);
         }
@@ -318,13 +320,13 @@ public class PlayerController : Pausable, IKillable
 
     public override void Pause()
     {
-        immobilisePlayer = true;
+        inhibCoeff = 0.0f;
         Debug.Log("todo : stop anim");
     }
 
     public override void Resume()
     {
-        immobilisePlayer = false;
+        inhibCoeff = 1.0f;
         Debug.Log("todo : restart anim");
     }
     #endregion

@@ -11,10 +11,11 @@ public class PlayerConnected : MonoBehaviour
 {
     #region variable
 
-    [FoldoutGroup("Vibration"), Tooltip("Active les vibrations")]  public bool enabledVibration = true;
-    [FoldoutGroup("Vibration"), Tooltip("the first motor")]        public int motorIndex = 0; 
-    [FoldoutGroup("Vibration"), Tooltip("full motor speed")]       public float motorLevel = 1.0f;
-    [FoldoutGroup("Vibration"), Tooltip("durée de la vibration")]  public float duration = 2.0f;
+    [FoldoutGroup("Vibration"), Tooltip("Active les vibrations")] public bool enabledVibration = true;
+    [FoldoutGroup("Vibration"), Tooltip("the first motor")] public int motorIndex = 0;
+    [FoldoutGroup("Vibration"), Tooltip("full motor speed")] public float motorLevel = 1.0f;
+    [FoldoutGroup("Vibration"), Tooltip("durée de la vibration")] public float duration = 2.0f;
+    [FoldoutGroup("Controls"), Tooltip("Joueur 1 au clavier")] public bool isP1Keyboard = false;
 
     public bool[] playerArrayConnected;                      //tableau d'état des controller connecté
 
@@ -89,13 +90,12 @@ public class PlayerConnected : MonoBehaviour
     {
         foreach (Player player in ReInput.players.GetPlayers(true))
         {
-            //if (player.id == 0)
-            //{
-            //    player.controllers.hasKeyboard = true;
-            //    setPlayerController(player.id, true);
-            //}
-
-            if (player.controllers.joystickCount > 0)
+            if (isP1Keyboard && player.id == 0)
+            {
+                player.controllers.hasKeyboard = true;
+                setPlayerController(player.id, true);
+            }
+            else if (player.controllers.joystickCount > 0)
             {
                 foreach (Joystick j in player.controllers.Joysticks)
                 {

@@ -71,7 +71,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMenuMusic()
     {
-        print("Play menu music");
+        //print("Play menu music");
         AkSoundEngine.SetState("musique", "Menu");
 
         //SoundManager.GetSingularity.PlaySound("Stop_ingame");
@@ -81,7 +81,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayGameMusic()
     {
-        print("Play game music");
+        //print("Play game music");
         AkSoundEngine.SetState("musique", "In_game");
 
         //SoundManager.GetSingularity.PlaySound("Stop_Menu");
@@ -91,7 +91,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayGameOverMusic()
     {
-        print("Play game over music");
+        //print("Play game over music");
         AkSoundEngine.SetState("musique", "Game_Over");
 
         //SoundManager.GetSingularity.PlaySound("Stop_Menu");
@@ -100,39 +100,39 @@ public class SoundManager : MonoBehaviour
 
     public void PlayDeadPlayerSound()
     {
-        print("Play deadplayer sound");
+        //print("Play deadplayer sound");
         PlaySound("Play_deadplayer");
     }
 
     public void PlayExplosionSound()
     {
-        print("Play explosion sound");
+        //print("Play explosion sound");
         PlaySound("Play_Explosion");
     }
 
     public void PlayPickupSound(int playerNumber)
     {
         int tmpPlayer = playerNumber + 1;
-        print("Play pickup sound for P" + tmpPlayer.ToString("0"));
+        //print("Play pickup sound for P" + tmpPlayer.ToString("0"));
         PlaySound("Play_pickupP" + tmpPlayer.ToString("0"));
     }
 
     public void PlayRespawnSound(int playerNumber)
     {
         int tmpPlayer = playerNumber + 1;
-        print("Play respawn sound for P" + tmpPlayer.ToString("0"));
+        //print("Play respawn sound for P" + tmpPlayer.ToString("0"));
         PlaySound("Play_respawnP" + tmpPlayer.ToString("0"));
     }
 
     //public void PlayProjectileSound()
     //{
-    //    print("Play projectile sound");
+    //    //print("Play projectile sound");
     //    PlaySound("Play_proj3");
     //}
 
     //public void StopProjectileSound()
     //{
-    //    print("Play projectile sound");
+    //    //print("Play projectile sound");
     //    PlaySound("Stop_proj3");
     //}
 
@@ -152,7 +152,7 @@ public class SoundManager : MonoBehaviour
 
             if (playerShooting.Contains(true) && !isPlayingShoot) // Si au moins un joueur tir
             {
-                print("Play projectile sound");
+                //print("Play projectile sound");
                 PlaySound("Play_projectile");
                 isPlayingShoot = true;
             }

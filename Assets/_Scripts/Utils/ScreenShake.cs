@@ -22,10 +22,10 @@ public class ScreenShake : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	   if (Input.GetMouseButtonDown(0))
-        {
-            Shake();
-        }
+	   //if (Input.GetMouseButtonDown(0))
+    //    {
+    //        Shake();
+    //    }
 	}
 
    
@@ -36,9 +36,9 @@ public class ScreenShake : MonoBehaviour {
         if (shakeTimer <= shakeDuration)
         {
             xPos = Random.Range(-1, 2) * screenBump;
-            print("xPos" + xPos);
+            //print("xPos" + xPos);
             yPos = Random.Range(-1, 2) * screenBump;
-            print("yPos" + yPos);
+            //print("yPos" + yPos);
 
             transform.localPosition = new Vector3(xPos, yPos, -13);
 
