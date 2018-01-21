@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114556756611676596}
   - component: {fileID: 114215919978523652}
   - component: {fileID: 212007391884874016}
+  - component: {fileID: 95159576902082176}
   m_Layer: 9
   m_Name: enemyMitrailleuse
   m_TagString: Untagged
@@ -85,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100990555219728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.16000009, z: 0}
   m_LocalScale: {x: 0.6240547, y: 0.6240547, z: 0.6240547}
   m_Children:
   - {fileID: 4433174194748232}
@@ -121,6 +122,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!95 &95159576902082176
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100990555219728}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62725bfee3c7b024e91119ffe17405dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114076981040418656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,12 +172,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateTimer:
     updateFrequency: 0
-  speed: 1
+  moveSpeed: 1
   wantToEnable: 1
   prefabsDeathTag: DeathEnemy
   timeBeforeMoving: 1
   isShooting: 1
   isMoving: 1
+  timeBeforeStop: 1
   isDead: 0
   angleRotation: 25
   timeRotation: 1

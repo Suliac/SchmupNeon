@@ -129,6 +129,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
             isDead = true;
             enableEnemy = false;
             body.velocity = Vector3.zero;
+            transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
             OnBeforeKill();
             CreateDeathObject();
 

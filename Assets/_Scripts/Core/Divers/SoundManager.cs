@@ -167,7 +167,7 @@ public class SoundManager : MonoBehaviour
 
             if (!playerShooting.Contains(true) && isPlayingShoot) // Si aucun joueur ne tir
             {
-                print("Stop projectile sound");
+                //print("Stop projectile sound");
                 PlaySound("Stop_projectile");
                 isPlayingShoot = false;
             }

@@ -76,7 +76,7 @@ public class ZigZogEnemy : ShootingEnemy
 
     protected override void OnBeforeKill()
     {
-        transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+        //transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
     }
 
     /// <summary>

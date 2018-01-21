@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2728,8 +2728,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 139884971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 467, y: 292, z: 0}
-  m_LocalScale: {x: 0.51288193, y: 0.51288193, z: 0.51288193}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1138913631}
   - {fileID: 54205797}
@@ -8334,6 +8334,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9110235b5aacb33429ec8eb81c575c92, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &373015470 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114581488800365826, guid: 402ffaf701387894eaa658ac25fea129,
+    type: 2}
+  m_PrefabInternal: {fileID: 1331064431}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &374023522
 GameObject:
   m_ObjectHideFlags: 0
@@ -9153,146 +9159,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: panelTutoInGame
-      value: 
-      objectReference: {fileID: 54205796}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: listTutoPX.Array.data[0]
-      value: 
-      objectReference: {fileID: 471616692}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: listTutoPX.Array.data[1]
-      value: 
-      objectReference: {fileID: 1963387579}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: listTutoPX.Array.data[2]
-      value: 
-      objectReference: {fileID: 602255302}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: listTutoPX.Array.data[3]
-      value: 
-      objectReference: {fileID: 1780627904}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: comeBackLeft
-      value: 
-      objectReference: {fileID: 512838694}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: redLine
-      value: 
-      objectReference: {fileID: 4923868}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: tutoChrono
-      value: 
-      objectReference: {fileID: 35651534}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: textChrono
-      value: 
-      objectReference: {fileID: 1754168544}
-    - target: {fileID: 114541318639044876, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: canvasPlayer.Array.data[0]
-      value: 
-      objectReference: {fileID: 117471883}
-    - target: {fileID: 114541318639044876, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: canvasPlayer.Array.data[1]
-      value: 
-      objectReference: {fileID: 1143241092}
-    - target: {fileID: 114541318639044876, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: canvasPlayer.Array.data[2]
-      value: 
-      objectReference: {fileID: 694737268}
-    - target: {fileID: 114541318639044876, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: canvasPlayer.Array.data[3]
-      value: 
-      objectReference: {fileID: 1043777319}
-    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: spawnPlayer.Array.data[0]
-      value: 
-      objectReference: {fileID: 395696176}
-    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: spawnPlayer.Array.data[1]
-      value: 
-      objectReference: {fileID: 8063551}
-    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: spawnPlayer.Array.data[2]
-      value: 
-      objectReference: {fileID: 749843466}
-    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: spawnPlayer.Array.data[3]
-      value: 
-      objectReference: {fileID: 736542099}
-    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: objectDynamiclyCreated
-      value: 
-      objectReference: {fileID: 299530965}
-    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: objectNotMovingDynamiclyCreated
-      value: 
-      objectReference: {fileID: 190989785}
-    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: enemyGroup
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: movingPlatform
-      value: 
-      objectReference: {fileID: 192990897}
-    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: panelCanvasInGame
-      value: 
-      objectReference: {fileID: 1138913630}
-    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: panelCanvasGameOver
-      value: 
-      objectReference: {fileID: 1183581442}
-    - target: {fileID: 114324849644174634, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: canvasPlayer.Array.data[0]
-      value: 
-      objectReference: {fileID: 1692161821}
-    - target: {fileID: 114324849644174634, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: canvasPlayer.Array.data[1]
-      value: 
-      objectReference: {fileID: 694233238}
-    - target: {fileID: 114324849644174634, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: canvasPlayer.Array.data[2]
-      value: 
-      objectReference: {fileID: 82274541}
-    - target: {fileID: 114324849644174634, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: canvasPlayer.Array.data[3]
-      value: 
-      objectReference: {fileID: 1850325074}
     - target: {fileID: 114043728350435154, guid: dead104ab74320a4c82bbee4b1f85136,
         type: 2}
       propertyPath: panelWin
       value: 
       objectReference: {fileID: 962930198}
+    - target: {fileID: 114043728350435154, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: inputInfo
+      value: 
+      objectReference: {fileID: 1492529478}
+    - target: {fileID: 114043728350435154, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: lettersInfo
+      value: 
+      objectReference: {fileID: 150333218}
     - target: {fileID: 114043728350435154, guid: dead104ab74320a4c82bbee4b1f85136,
         type: 2}
       propertyPath: playerUiWin.Array.data[0]
@@ -9373,58 +9254,162 @@ Prefab:
       propertyPath: playerScoreInUI.Array.data[3]
       value: 
       objectReference: {fileID: 2119881254}
-    - target: {fileID: 114785173296525566, guid: dead104ab74320a4c82bbee4b1f85136,
+    - target: {fileID: 114324849644174634, guid: dead104ab74320a4c82bbee4b1f85136,
         type: 2}
-      propertyPath: alpha
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: listTutoState.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114260961625255678, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: state
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: colorLine.r
-      value: 0.29411766
-      objectReference: {fileID: 0}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: colorLine.g
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: colorLine.b
-      value: 0.7490196
-      objectReference: {fileID: 0}
-    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: colorLine.a
-      value: 0.722
-      objectReference: {fileID: 0}
-    - target: {fileID: 114043728350435154, guid: dead104ab74320a4c82bbee4b1f85136,
-        type: 2}
-      propertyPath: inputInfo
+      propertyPath: canvasPlayer.Array.data[0]
       value: 
-      objectReference: {fileID: 1492529478}
-    - target: {fileID: 114043728350435154, guid: dead104ab74320a4c82bbee4b1f85136,
+      objectReference: {fileID: 1692161821}
+    - target: {fileID: 114324849644174634, guid: dead104ab74320a4c82bbee4b1f85136,
         type: 2}
-      propertyPath: lettersInfo
+      propertyPath: canvasPlayer.Array.data[1]
       value: 
-      objectReference: {fileID: 150333218}
-    m_RemovedComponents:
-    - {fileID: 114260961625255678, guid: dead104ab74320a4c82bbee4b1f85136, type: 2}
+      objectReference: {fileID: 694233238}
+    - target: {fileID: 114324849644174634, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: canvasPlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 82274541}
+    - target: {fileID: 114324849644174634, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: canvasPlayer.Array.data[3]
+      value: 
+      objectReference: {fileID: 1850325074}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: spawnPlayer.Array.data[0]
+      value: 
+      objectReference: {fileID: 395696176}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: spawnPlayer.Array.data[1]
+      value: 
+      objectReference: {fileID: 8063551}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: spawnPlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 749843466}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: spawnPlayer.Array.data[3]
+      value: 
+      objectReference: {fileID: 736542099}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: objectDynamiclyCreated
+      value: 
+      objectReference: {fileID: 299530965}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: objectNotMovingDynamiclyCreated
+      value: 
+      objectReference: {fileID: 190989785}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: enemyGroup
+      value: 
+      objectReference: {fileID: 305968876}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: movingPlatform
+      value: 
+      objectReference: {fileID: 192990897}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: panelCanvasInGame
+      value: 
+      objectReference: {fileID: 1138913630}
+    - target: {fileID: 114974945941140728, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: panelCanvasGameOver
+      value: 
+      objectReference: {fileID: 1183581442}
+    - target: {fileID: 114541318639044876, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: canvasPlayer.Array.data[0]
+      value: 
+      objectReference: {fileID: 117471883}
+    - target: {fileID: 114541318639044876, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: canvasPlayer.Array.data[1]
+      value: 
+      objectReference: {fileID: 1143241092}
+    - target: {fileID: 114541318639044876, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: canvasPlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 694737268}
+    - target: {fileID: 114541318639044876, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: canvasPlayer.Array.data[3]
+      value: 
+      objectReference: {fileID: 1043777319}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: panelTutoInGame
+      value: 
+      objectReference: {fileID: 54205796}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: listTutoPX.Array.data[0]
+      value: 
+      objectReference: {fileID: 471616692}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: listTutoPX.Array.data[1]
+      value: 
+      objectReference: {fileID: 1963387579}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: listTutoPX.Array.data[2]
+      value: 
+      objectReference: {fileID: 602255302}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: listTutoPX.Array.data[3]
+      value: 
+      objectReference: {fileID: 1780627904}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: comeBackLeft
+      value: 
+      objectReference: {fileID: 512838694}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: redLine
+      value: 
+      objectReference: {fileID: 4923868}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: Lines.Array.data[0]
+      value: 
+      objectReference: {fileID: 373015470}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: Lines.Array.data[1]
+      value: 
+      objectReference: {fileID: 2133750371}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: Lines.Array.data[2]
+      value: 
+      objectReference: {fileID: 1994799489}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: Lines.Array.data[3]
+      value: 
+      objectReference: {fileID: 4923868}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: tutoChrono
+      value: 
+      objectReference: {fileID: 35651534}
+    - target: {fileID: 114186242874082720, guid: dead104ab74320a4c82bbee4b1f85136,
+        type: 2}
+      propertyPath: textChrono
+      value: 
+      objectReference: {fileID: 1754168544}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dead104ab74320a4c82bbee4b1f85136, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &420681699 stripped
@@ -15679,6 +15664,16 @@ Prefab:
       propertyPath: scoreToGiveToOther
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 114419927373599404, guid: 9110235b5aacb33429ec8eb81c575c92,
+        type: 2}
+      propertyPath: isDead
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114279593261256906, guid: 9110235b5aacb33429ec8eb81c575c92,
+        type: 2}
+      propertyPath: isOnScreen
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9110235b5aacb33429ec8eb81c575c92, type: 2}
   m_IsPrefabParent: 0
@@ -20239,6 +20234,23 @@ Prefab:
       propertyPath: scoreToGiveToOther
       value: 2000
       objectReference: {fileID: 0}
+    - target: {fileID: 4247426842763934, guid: 52ccc96850507cc44af90d90ac11ce87, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.6240547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247426842763934, guid: 52ccc96850507cc44af90d90ac11ce87, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.6240547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247426842763934, guid: 52ccc96850507cc44af90d90ac11ce87, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.6240547
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217972430357118, guid: 52ccc96850507cc44af90d90ac11ce87,
+        type: 2}
+      propertyPath: currentLife
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52ccc96850507cc44af90d90ac11ce87, type: 2}
   m_IsPrefabParent: 0
@@ -24763,6 +24775,18 @@ Prefab:
         type: 2}
       propertyPath: scoreToGiveToOther
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595459802124488, guid: 9110235b5aacb33429ec8eb81c575c92, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595459802124488, guid: 9110235b5aacb33429ec8eb81c575c92, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595459802124488, guid: 9110235b5aacb33429ec8eb81c575c92, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9110235b5aacb33429ec8eb81c575c92, type: 2}
@@ -34307,6 +34331,7 @@ MonoBehaviour:
   motorIndex: 0
   motorLevel: 1
   duration: 2
+  isP1Keyboard: 0
   playerArrayConnected: 01000000
 --- !u!1 &1743057544
 GameObject:
@@ -38217,6 +38242,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4595459802124488, guid: 9110235b5aacb33429ec8eb81c575c92,
     type: 2}
   m_PrefabInternal: {fileID: 1013200628}
+--- !u!114 &1994799489 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114113733263835114, guid: 402ffaf701387894eaa658ac25fea129,
+    type: 2}
+  m_PrefabInternal: {fileID: 1331064431}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1995085487
 Prefab:
   m_ObjectHideFlags: 0
@@ -41125,6 +41156,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4553497285825170, guid: 09406b4ff24bcc9458ef1838304957c9,
     type: 2}
   m_PrefabInternal: {fileID: 2127153889}
+--- !u!114 &2133750371 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114223064190274274, guid: 402ffaf701387894eaa658ac25fea129,
+    type: 2}
+  m_PrefabInternal: {fileID: 1331064431}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &2134075878 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4595459802124488, guid: 9110235b5aacb33429ec8eb81c575c92,

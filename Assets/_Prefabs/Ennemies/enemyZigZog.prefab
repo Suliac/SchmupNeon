@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221095074222132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.82, y: -5.46, z: 0}
+  m_LocalPosition: {x: 5.77, y: -2.82, z: 0}
   m_LocalScale: {x: 0.82594997, y: 0.82594997, z: 0.82594997}
   m_Children:
   - {fileID: 4258900196123364}
@@ -223,12 +223,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateTimer:
     updateFrequency: 0
-  speed: 5
+  moveSpeed: 1
   wantToEnable: 1
   prefabsDeathTag: DeathEnemy
   timeBeforeMoving: 0.1
   isShooting: 1
   isMoving: 0
+  timeBeforeStop: 1
   isDead: 0
   angleTop: 135
   angleBot: 225
