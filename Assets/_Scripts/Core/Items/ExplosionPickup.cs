@@ -81,7 +81,7 @@ public class ExplosionPickup : HandablePickup
             //optimisation des fps
             if (updateTimer.Ready())
             {
-                if (playersToPush.Count > 0 && currentDuration < maxDuration)
+                if (playersToPush.Count > 0)
                 {
                     List<PlayerController> tmpPlayers = new List<PlayerController>(playersToPush);
                     foreach (var playerToPush in tmpPlayers)
@@ -97,9 +97,25 @@ public class ExplosionPickup : HandablePickup
                         }
 
                         //playerToPush.InhibCoeff = 0.0f;
-                        var lessSpeedOverDistance = 1-dtDistanceBetweenSourceAndTarget;
+                        var lessSpeedOverDistance = Mathf.Max(1 - dtDistanceBetweenSourceAndTarget, 0.25f);
                         diff.Normalize(); // On veut une distance normalisée
-                        playerToPush.transform.Translate(diff * speedPush * Time.deltaTime * lessSpeedOverDistance);
+                        Vector3 dirWanted = diff * speedPush * Time.deltaTime * lessSpeedOverDistance;
+                        Vector3 newPos = playerToPush.transform.position + playerToPush.transform.TransformDirection(dirWanted);
+
+                        RaycastHit hit;
+                        Physics.Raycast(playerToPush.transform.position, diff, out hit, radius, 1 << 12);
+                        if (hit.collider && hit.collider.bounds.Contains(newPos))
+                        {
+                            print("hit wall");
+                            playerToPush.transform.position = hit.point;
+                            playerToPush.InhibCoeff = 1.0f;
+                            playersToPush.Remove(playerToPush);
+
+                        }
+                        else
+                        {
+                            playerToPush.transform.Translate(dirWanted);
+                        }
                     }
                 }
                 else

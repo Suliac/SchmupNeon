@@ -99,7 +99,7 @@ MonoBehaviour:
   redLineX: 0.23
   leftLineX: 0.25
   rightLineX: 0.46
-  topLineY: 0.7
+  topLineY: 0.6
   botLineY: 0.28
   fourPlayerOnly: 0
   timerTuto: 3

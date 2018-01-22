@@ -42,6 +42,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     protected bool enableEnemy = false;         // Etat actuel de l'ennemi
     protected IsOnCamera isOnCamera;
     protected Rigidbody body;             //ref du rigidbody
+    protected Collider collider;             //ref du collider
     //private Renderer renderer;
     protected Animator animator;
 
@@ -67,7 +68,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
         isOnCamera = GetComponent<IsOnCamera>();
         body = GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
-        //renderer = GetComponent<Renderer>();
+        collider = GetComponent<Collider>();
 
         readyToMove = isMoving;
     }
@@ -90,6 +91,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     {
         //print("enable : " + name);
         enableEnemy = true;
+        collider.enabled = true;
         OnEnableInCamera(); //lors de l'activation, appeler cette fonction
         transform.SetParent(GameManager.GetSingleton.EnemyGroup);   //set l'ennemy dans la moving platform
     }
@@ -130,6 +132,8 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
             enableEnemy = false;
             body.velocity = Vector3.zero;
             transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+            collider.enabled = false;
+
             OnBeforeKill();
             CreateDeathObject();
 

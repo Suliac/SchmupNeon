@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 /// <summary>
 /// TutoStart Description
@@ -43,7 +44,7 @@ public class TutoStart : MonoBehaviour
     private Image redLine;
     [FoldoutGroup("Object In World"), Tooltip("Lines"), SerializeField]
     private List<Image> Lines;
-    
+
     [FoldoutGroup("Object In World"), Tooltip("Chrono tuto"), SerializeField]
     private GameObject tutoChrono;
     [FoldoutGroup("Object In World"), Tooltip("Text chrono"), SerializeField]
@@ -123,7 +124,7 @@ public class TutoStart : MonoBehaviour
     {
         Vector3 playerPos = gameManager.SpawnPlayer[index].PlayerController.transform.position;
         Vector2 ViewportPosition = cam.WorldToViewportPoint(playerPos);
-        if (!(ViewportPosition.x > leftLineX && ViewportPosition.x < rightLineX && ViewportPosition.y > botLineY && ViewportPosition.y < topLineY) || (!gameManager.SpawnPlayer[index].PlayerController.EnabledPlayer && gameManager.SpawnPlayer[index].SpawnedOnce))
+        if (!(ViewportPosition.x > leftLineX && ViewportPosition.x < rightLineX && ViewportPosition.y > botLineY && ViewportPosition.y < topLineY) /*|| (!gameManager.SpawnPlayer[index].PlayerController.EnabledPlayer && gameManager.SpawnPlayer[index].SpawnedOnce)*/)
         {
             listTutoState[index] = 3;
             return true;
@@ -200,17 +201,27 @@ public class TutoStart : MonoBehaviour
     private void UpdateRedLine()
     {
         bool isAllOk = true;
+
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    if (listTutoState[i] < 3)   //si l'index est supérieur à 1, le joueur à déja appuyé sur A et est affiché !
+        //    {
+        //        if (!PlayerConnected.GetSingleton.playerArrayConnected[i] && !gameManager.SpawnPlayer[i].SpawnedOnce && !fourPlayerOnly)    //si on a jamais spawner, et qu'on est déconecté... on oublie ?
+        //        {
+        //            continue;
+        //        }
+        //        isAllOk = false;
+        //    }
+        //}
+        int countPlayerOffLine = 0;
         for (int i = 0; i < 4; i++)
         {
-            if (listTutoState[i] != 2)   //si l'index est supérieur à 1, le joueur à déja appuyé sur A et est affiché !
-            {
-                if (!PlayerConnected.GetSingleton.playerArrayConnected[i] && !gameManager.SpawnPlayer[i].SpawnedOnce && !fourPlayerOnly)    //si on a jamais spawner, et qu'on est déconecté... on oublie ?
-                {
-                    continue;
-                }
-                isAllOk = false;
-            }
+            if (listTutoState[i] == 3)
+                countPlayerOffLine++;
         }
+
+        isAllOk = countPlayerOffLine == 0 && listTutoState.Any(state => state >= 2);
+
         if (!isAllOk || PlayerConnected.GetSingleton.NoPlayer())
         {
             //ici red line !

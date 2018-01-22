@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1378212966994414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.743, y: -5.017, z: 0}
-  m_LocalScale: {x: 0.2851796, y: 0.2851796, z: 0.2851796}
+  m_LocalPosition: {x: 20.630005, y: -5.33, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
   prefabsTakePickup: PickupConsumed
   prefabsUsePickup: PickupRepulseActive
   killOnUse: 0
-  objectSpriteInUI: {fileID: 21300000, guid: 7cade24d0ecd289469980f275f87312f, type: 3}
+  objectSpriteInUI: {fileID: 21300000, guid: ee07b9f75b69028408e9ca7bcc62db35, type: 3}
   updateTimer:
     updateFrequency: 0
   maxDuration: 2
@@ -72,8 +72,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.72
-  m_Center: {x: -0, y: 0.12, z: 0}
+  m_Radius: 0.84
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212216700368319150
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 94b9fce4a095b884699503bde1bd94f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7cade24d0ecd289469980f275f87312f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee07b9f75b69028408e9ca7bcc62db35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

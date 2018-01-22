@@ -302,7 +302,7 @@ public class GameManager : MonoBehaviour
 
         if (!desactivateGameOverAndVictory && StateManager.GetSingleton.State < StateManager.GameState.Pause)
         {
-            IsGameOver();
+            //IsGameOver();
             winManager.IsVictory();
         }
         else if (StateManager.GetSingleton.State == StateManager.GameState.Pause)
@@ -310,7 +310,7 @@ public class GameManager : MonoBehaviour
             InputPause();
         }
 
-        InputGameOver();
+        //InputGameOver();
         Quit(); //input quitter
 
     }

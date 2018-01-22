@@ -194,7 +194,7 @@ public class PlayerController : Pausable, IKillable
     {
         if (hasMoved)
         {
-            Vector3 movement = new Vector3(horizMove * moveSpeed * Time.deltaTime, vertiMove * moveSpeed * Time.deltaTime * inhibCoeff, 0.0f);
+            Vector3 movement = new Vector3(horizMove * moveSpeed * Time.deltaTime * inhibCoeff, vertiMove * moveSpeed * Time.deltaTime * inhibCoeff, 0.0f);
 
             playerBody.velocity = Vector3.ClampMagnitude(movement, moveSpeed);
         }
