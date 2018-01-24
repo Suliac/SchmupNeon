@@ -64,6 +64,12 @@ public class SpawnPlayer : MonoBehaviour
     /// </summary>
     public void prepareSpawning()
     {
+        if (StateManager.GetSingleton.State > StateManager.GameState.GameOver)
+        {
+            animSpawn.gameObject.SetActive(false);
+            return;
+        }
+
         isSpawning = true;
         animSpawn.gameObject.SetActive(true);
 
@@ -76,6 +82,12 @@ public class SpawnPlayer : MonoBehaviour
     /// </summary>
     public void spawnIt()
     {
+        if(StateManager.GetSingleton.State > StateManager.GameState.GameOver)
+        {
+            animSpawn.gameObject.SetActive(false);
+            return;
+        }
+
         //ici on test si la manette du joueur est connecté
         //si elle ne l'ai pas, ne rien faire (l'animation va boucler,
         //  et appeler cette fonction à chaque tour de boucle)

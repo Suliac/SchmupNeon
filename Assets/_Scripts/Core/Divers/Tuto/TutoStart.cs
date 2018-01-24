@@ -76,6 +76,11 @@ public class TutoStart : MonoBehaviour
         gameManager = GetComponent<GameManager>();
         cam = Camera.main;
     }
+
+    private void Start()
+    {
+        tutoChrono.SetActive(false);
+    }
     #endregion
 
     #region Core
@@ -89,7 +94,7 @@ public class TutoStart : MonoBehaviour
     public void ActiveTuto(bool active)
     {
         panelTutoInGame.SetActive(active);
-        tutoChrono.SetActive(false);
+        //tutoChrono.SetActive(false);
         onChrono = false;
         if (active)
         {
@@ -208,14 +213,18 @@ public class TutoStart : MonoBehaviour
             currentChrono--;
         }
 
+        textChrono.text = "Go !";
+
         for (int i = 0; i < 4; i++)
         {
             gameManager.PlayersInGame[i] = listTutoState[i] > 1;
         }
 
-        //Debug.Log("la");
-        tutoChrono.SetActive(false);
         activeGame();
+        //Debug.Log("la");
+        yield return new WaitForSeconds(1);
+
+        tutoChrono.SetActive(false);
     }
 
     /// <summary>

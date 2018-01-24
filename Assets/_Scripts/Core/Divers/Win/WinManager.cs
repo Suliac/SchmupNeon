@@ -225,14 +225,14 @@ public class WinManager : MonoBehaviour
     /// </summary>
     private void setCourone()
     {
-        Debug.Log("set couronne !");
+        //Debug.Log("set couronne !");
         //GameObject coutoneTmp = Instantiate(prefabsCouroneWinner);
         PlayerData dataScore = gameManager.ScoreManager.Data;
         int score = 0;
         int indexPlayerWinner = 0;
         for (int i = 0; i < dataScore.scorePlayer.Count; i++)
         {
-            if (dataScore.scorePlayer[i] > score)
+            if (dataScore.scorePlayer[i] > score && gameManager.PlayersInGame[i])
             {
                 indexPlayerWinner = i;
                 score = dataScore.scorePlayer[i];
