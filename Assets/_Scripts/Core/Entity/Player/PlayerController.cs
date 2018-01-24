@@ -22,6 +22,10 @@ public class PlayerController : Pausable, IKillable
     [FoldoutGroup("GamePlay"), Tooltip("Objet Animator"), SerializeField]
     private GameObject animPlayer;
 
+    [FoldoutGroup("GamePlay"), Tooltip("Picku^p Animator"), SerializeField]
+    private GameObject animPick;
+    public GameObject AnimPick { get { return animPick; } }
+
     [FoldoutGroup("GamePlay"), Tooltip("Objet Animator"), SerializeField]
     private Color colorPlayer = Color.yellow;
     public Color ColorPlayer { get { return colorPlayer; } }
@@ -35,7 +39,7 @@ public class PlayerController : Pausable, IKillable
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
-    
+
 
     ////id weapons du joueur
     //private int idWeapon = 0;
@@ -107,6 +111,7 @@ public class PlayerController : Pausable, IKillable
             else
                 animator.SetActive(false);
         }
+        //animPick = transform.GetChild(3).GetComponent<Animator>();
         //weapons = new List<Weapons>();
         //SetupListWeapons();                     //setup la lsit des weapons
     }
@@ -115,6 +120,14 @@ public class PlayerController : Pausable, IKillable
     {
         gameObject.SetActive(true);
         animPlayer.SetActive(true);
+        if (animPick)
+        {
+            SpriteRenderer renderer = animPick.GetComponent<SpriteRenderer>();
+            if (renderer)
+            {
+                renderer.sprite = null;
+            } 
+        }
         playerBody.velocity = Vector3.zero;
         hasMoved = false;
         enabledPlayer = true;
@@ -293,6 +306,15 @@ public class PlayerController : Pausable, IKillable
         if (!enabledPlayer)
             return;
         //Debug.Log("Dead");
+        if (animPick)
+        {
+            animPick.SetActive(false);
+            SpriteRenderer renderer = animPick.GetComponent<SpriteRenderer>();
+            if (renderer)
+            {
+                renderer.sprite = null;
+            }
+        }
 
         if (StateManager.GetSingleton.State < StateManager.GameState.GameOver) // pas de déduction de score si gameover ou victoire
         {

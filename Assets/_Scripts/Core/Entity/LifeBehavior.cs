@@ -126,9 +126,10 @@ public class LifeBehavior : MonoBehaviour
 
     public void ForceStopInvincibility()
     {
-        print("Force Stop invincibility");
+        //print("Force Stop invincibility");
         entityRenderer.material.color = defaultColor;
         invincible = false;
+        StopCoroutine("InvicibleForSeconds");
         coroutineStarted = false;
     }
 
@@ -176,7 +177,7 @@ public class LifeBehavior : MonoBehaviour
         entityRenderer.material.color = defaultColor;
         coroutineStarted = false;
         invincible = false;
-        print("end coroutine invincible");
+        //print("end coroutine invincible");
         yield return null;
     }
 

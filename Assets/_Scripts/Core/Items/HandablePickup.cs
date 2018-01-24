@@ -50,7 +50,7 @@ public abstract class HandablePickup : Pickup
     public void Pick(PickupHandler handler)
     {
         Hide();
-        CreateTakeObject(gameObject.transform, prefabsTakePickup); //utilise 
+        //CreateTakeObject(gameObject.transform, prefabsTakePickup); //utilise 
         currentHandler = handler;
     }
     

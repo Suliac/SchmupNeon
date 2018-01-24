@@ -36,7 +36,7 @@ public class Vibration : MonoBehaviour
         }
         else
         {
-            Debug.Log("here");
+            //Debug.Log("here");
             float intensity = (rotorUsed == 0) ? inensityLevel0 : inensityLevel1;
             float duration = (rotorUsed == 0) ? duration0 : duration1;
             PlayerConnected.GetSingleton.getPlayer(idPlayer).SetVibration(rotorUsed, intensity, duration);

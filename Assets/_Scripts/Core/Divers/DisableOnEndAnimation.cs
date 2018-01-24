@@ -14,12 +14,16 @@ public class DisableOnEndAnimation : MonoBehaviour
 
     private void Awake()
     {
-        parent = transform.parent.gameObject;
+        if (desactiveParent)
+        {
+            parent = transform.parent.gameObject; 
+        }
     }
 
     public void DisableObject()
     {
         wantToDisable = true;
+        //print("yo");
     }
 	
 	// Update is called once per frame

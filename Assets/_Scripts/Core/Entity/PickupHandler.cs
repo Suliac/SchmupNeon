@@ -45,6 +45,24 @@ public class PickupHandler : MonoBehaviour
             currentPickup.TryUse();
             currentPickup = null;
 
+            if(PlayerController)
+            {
+                GameObject pickGO = playerController.AnimPick;
+                if (pickGO)
+                {
+                    if (pickGO.activeInHierarchy)
+                    {
+                        pickGO.SetActive(false);
+                        SpriteRenderer renderer = pickGO.GetComponent<SpriteRenderer>();
+                        if(renderer)
+                        {
+                            renderer.sprite = null;
+                        }
+                    }
+                    
+                }
+            }
+
             if (playerController)
                 GameManager.GetSingleton.ItemManager.ResetItem(playerController.IdPlayer);
         }
@@ -66,6 +84,21 @@ public class PickupHandler : MonoBehaviour
 
             if (playerController)
             {
+                GameObject pickGO = playerController.AnimPick;
+                if (pickGO)
+                {
+                    if (pickGO.activeInHierarchy)
+                        pickGO.SetActive(false);
+
+                    pickGO.SetActive(true);
+
+                    Animator anim = pickGO.GetComponent<Animator>();
+                    if (anim)
+                    {
+                        anim.SetTrigger("Pick");
+                    }
+                }
+
                 GameManager.GetSingleton.ItemManager.SetItem(playerController.IdPlayer, handablePickup.ObjectSpriteInUI);
                 SoundManager.GetSingularity.PlayPickupSound(playerController.IdPlayer);
             }
