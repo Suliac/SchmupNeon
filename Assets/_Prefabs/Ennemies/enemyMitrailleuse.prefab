@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100990555219728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.16000009, z: 0}
+  m_LocalPosition: {x: 210.85, y: -4, z: 0}
   m_LocalScale: {x: 0.6240547, y: 0.6240547, z: 0.6240547}
   m_Children:
   - {fileID: 4433174194748232}
@@ -183,7 +183,7 @@ MonoBehaviour:
   angleRotation: 25
   timeRotation: 1
   shootFrequency:
-    updateFrequency: 1
+    updateFrequency: 0.001
 --- !u!114 &114217972430357118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,9 +196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityType: 2
-  StartLife: 5
-  scoreToGiveToOther: 2500
-  scoreToGiveToOtherOnHit: 250
+  StartLife: 150
+  scoreToGiveToOther: 2000
+  scoreToGiveToOtherOnHit: 100
   scoreToRemove: 0
   currentLife: 0
   invincible: 0

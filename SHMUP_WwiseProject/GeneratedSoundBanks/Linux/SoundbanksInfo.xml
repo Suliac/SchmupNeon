@@ -21,6 +21,7 @@
 			<ShortName>SchmupSoundBank</ShortName>
 			<Path>SchmupSoundBank.bnk</Path>
 			<IncludedEvents>
+				<Event Id="2629826670" Name="Play_Bulle" ObjectPath="\Events\Default Work Unit\Play_Bulle"/>
 				<Event Id="4030404899" Name="Play_Explosion" ObjectPath="\Events\Default Work Unit\Play_Explosion"/>
 				<Event Id="2947295501" Name="Play_impact1" ObjectPath="\Events\Default Work Unit\Play_impact1"/>
 				<Event Id="2947295502" Name="Play_impact2" ObjectPath="\Events\Default Work Unit\Play_impact2"/>
@@ -38,10 +39,16 @@
 				<Event Id="2639668297" Name="Play_respawnP3" ObjectPath="\Events\Default Work Unit\Play_respawnP3"/>
 				<Event Id="2639668302" Name="Play_respawnP4" ObjectPath="\Events\Default Work Unit\Play_respawnP4"/>
 				<Event Id="4254480360" Name="Play_sfx_dead" ObjectPath="\Events\Default Work Unit\Play_sfx_dead"/>
+				<Event Id="1264733341" Name="Play_sfx_explode" ObjectPath="\Events\Default Work Unit\Play_sfx_explode"/>
 				<Event Id="2553471791" Name="Play_Tir" ObjectPath="\Events\Default Work Unit\Play_Tir"/>
+				<Event Id="3340477129" Name="Play_Tir4" ObjectPath="\Events\Default Work Unit\Play_Tir4"/>
 				<Event Id="73143491" Name="Play_UI_menu1" ObjectPath="\Events\Default Work Unit\Play_UI_menu1"/>
+				<Event Id="73143488" Name="Play_UI_menu2" ObjectPath="\Events\Default Work Unit\Play_UI_menu2"/>
+				<Event Id="73143489" Name="Play_UI_menu3" ObjectPath="\Events\Default Work Unit\Play_UI_menu3"/>
+				<Event Id="1443616532" Name="Stop_Bulle" ObjectPath="\Events\Default Work Unit\Stop_Bulle" MaxAttenuation="0.000000"/>
 				<Event Id="884225013" Name="Stop_projectile" ObjectPath="\Events\Default Work Unit\Stop_projectile" MaxAttenuation="0.000000"/>
 				<Event Id="975758325" Name="Stop_Tir" ObjectPath="\Events\Default Work Unit\Stop_Tir" MaxAttenuation="0.000000"/>
+				<Event Id="2204031643" Name="Stop_Tir4" ObjectPath="\Events\Default Work Unit\Stop_Tir4" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="50775084" Language="SFX">
@@ -60,6 +67,14 @@
 					<ShortName>Explosion.wav</ShortName>
 					<Path>SFX\Explosion_E2CCD3B2.wem</Path>
 				</File>
+				<File Id="172020860" Language="SFX">
+					<ShortName>silence.wav</ShortName>
+					<Path>SFX\silence_8E21E871.wem</Path>
+				</File>
+				<File Id="195626815" Language="SFX">
+					<ShortName>sfx explode.wav</ShortName>
+					<Path>SFX\sfx explode_1C9C67B2.wem</Path>
+				</File>
 				<File Id="195890741" Language="SFX">
 					<ShortName>playerdead3.wav</ShortName>
 					<Path>SFX\playerdead3_1C9C67B2.wem</Path>
@@ -75,6 +90,10 @@
 				<File Id="394875972" Language="SFX">
 					<ShortName>pickupP4.wav</ShortName>
 					<Path>SFX\pickupP4_A8A51CE8.wem</Path>
+				</File>
+				<File Id="414691203" Language="SFX">
+					<ShortName>Tir4.wav</ShortName>
+					<Path>SFX\Tir4_F7A7FF5C.wem</Path>
 				</File>
 				<File Id="430136103" Language="SFX">
 					<ShortName>impact4.wav</ShortName>
@@ -104,6 +123,10 @@
 					<ShortName>impact1.wav</ShortName>
 					<Path>SFX\impact1_1C9C67B2.wem</Path>
 				</File>
+				<File Id="673048841" Language="SFX">
+					<ShortName>UI_menu5.wav</ShortName>
+					<Path>SFX\UI_menu5_1C9C67B2.wem</Path>
+				</File>
 				<File Id="702174246" Language="SFX">
 					<ShortName>projectile.wav</ShortName>
 					<Path>SFX\projectile_F17FB28C.wem</Path>
@@ -124,9 +147,13 @@
 					<ShortName>pickupP3.wav</ShortName>
 					<Path>SFX\pickupP3_53D985FF.wem</Path>
 				</File>
+				<File Id="977066764" Language="SFX">
+					<ShortName>UI_menu3.wav</ShortName>
+					<Path>SFX\UI_menu3_1C9C67B2.wem</Path>
+				</File>
 				<File Id="1032452741" Language="SFX">
 					<ShortName>tchiou.wav</ShortName>
-					<Path>SFX\tchiou_3DC87D60.wem</Path>
+					<Path>SFX\tchiou_00C2613B.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

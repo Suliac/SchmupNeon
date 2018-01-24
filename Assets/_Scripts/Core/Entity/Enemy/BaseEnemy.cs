@@ -110,7 +110,7 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
             return;
         }
         deathEnemy.transform.position = transform.position;
-        deathEnemy.transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+        deathEnemy.transform.SetParent(GameManager.GetSingleton.EnemyGroup);
         deathEnemy.SetActive(true);
     }
 
@@ -128,16 +128,21 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     {
         if (!isDead)
         {
-            SoundManager.GetSingularity.PlayDeadEnemySound();
 
             isDead = true;
             enableEnemy = false;
             body.velocity = Vector3.zero;
-            transform.SetParent(GameManager.GetSingleton.ObjectDynamiclyCreated);
+            transform.SetParent(GameManager.GetSingleton.EnemyGroup);
             collider.enabled = false;
 
             OnBeforeKill();
-            CreateDeathObject();
+
+            var life = GetComponent<LifeBehavior>();
+            if (life && life.CurrentLife <= 0)
+            {
+                CreateDeathObject();
+                SoundManager.GetSingularity.PlayDeadEnemySound();
+            }
 
             if (animator)
                 animator.SetTrigger("enemyIsDead");
