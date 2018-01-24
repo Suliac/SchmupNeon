@@ -213,6 +213,104 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_playerdead2" ID="{6A1B2B45-058F-4859-AD5A-5187FD9CFEBE}">
+					<ChildrenList>
+						<Action Name="" ID="{52FE2217-1F5C-4D25-A786-FFFAF8772686}" ShortID="673805053">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="playerdead2" ID="{B265CF8C-98CC-4160-8B47-DE8B92C26545}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_playerdead3" ID="{E55A3763-3E7D-46A1-8BB2-EF25DC4A097A}">
+					<ChildrenList>
+						<Action Name="" ID="{71540A5E-5A19-4428-A4CE-62DEAC2BE36A}" ShortID="299531738">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="playerdead3" ID="{C31809CF-5DF9-4A88-8AC5-B7DDCAFF11CF}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_menu1" ID="{B94D5280-64F3-469C-94D3-6DACC19020B3}">
+					<ChildrenList>
+						<Action Name="" ID="{321F0C45-08DA-4F42-918C-08EA92ADB167}" ShortID="602666326">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_menu1" ID="{3D01F9AE-B217-4ED7-A474-48C34D592EC0}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_impactP1" ID="{F1F70B21-F447-458C-8371-CA375635EF4E}">
+					<ChildrenList>
+						<Action Name="" ID="{4472912C-D8FD-4261-986C-5121C6DD829C}" ShortID="874575841">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impactP1" ID="{19B13EB8-E6B3-41C9-9B98-428E0FBDFB97}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_impactP2" ID="{4691E2A9-68BA-433C-931F-650D34E52F27}">
+					<ChildrenList>
+						<Action Name="" ID="{230D8E5E-A31B-4CA3-9180-5D657297E539}" ShortID="297043706">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impactP2" ID="{EDA27109-51B4-4523-AC83-50664E534C8B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_impactP3" ID="{16BC0228-1703-4B91-A182-AA3890EFAFB0}">
+					<ChildrenList>
+						<Action Name="" ID="{78E392EC-4380-4EB7-A7E7-D7A46108DC9C}" ShortID="883740270">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impactP3" ID="{CE1531C4-D487-46D3-AE83-619B2928A681}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_impactP4" ID="{762D987F-FBC2-4D64-907E-B191946BC25A}">
+					<ChildrenList>
+						<Action Name="" ID="{F8B1B416-5FC9-4047-AB82-8CBE012D9FF5}" ShortID="784150694">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impactP4" ID="{7B76E91F-FE85-4351-A017-716CC2D8D07A}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
