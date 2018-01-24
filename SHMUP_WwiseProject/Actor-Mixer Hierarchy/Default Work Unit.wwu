@@ -1679,6 +1679,37 @@
 								<ActiveSource Name="proj3" ID="{0B549B68-0635-4902-9817-F08EE6C94278}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Tir" ID="{03F6F7CF-A7E8-44B1-94CE-E3A4E665F8BC}" ShortID="564898423">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="tchiou" ID="{863DE8F1-D221-4564-B9E5-C6990B5DBEEB}" ShortID="1032452741">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.102574832534391"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.236232947654961"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>tchiou.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="tchiou" ID="{863DE8F1-D221-4564-B9E5-C6990B5DBEEB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Explosions" ID="{9C7E3A75-B71A-46EE-95B3-2076A910D5C0}" ShortID="967058828">

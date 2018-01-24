@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using Sirenix.OdinInspector;
 
 /// <summary>
 /// Leaderboard Description
@@ -10,12 +10,15 @@ using System.Collections;
 /// Ajouter un score comme ça n'import ou dans le jeu:
 /// Leaderboard.GetSingleton.AddNewHighscore("Noob", 7);
 /// </summary>
+[ShowOdinSerializedPropertiesInInspector]
 public class Leaderboard : MonoBehaviour
 {
     #region Attributes
     const string privateCode = "Zuy6exDtzECGsloaUcXDAQvaxU7J93vES2Aq8I-c2QPQ";
     const string publicCode = "5a5b77e939992b09e430621e";
     const string webURL = "http://dreamlo.com/lb/";
+
+    
     public Highscore[] highscoresList;
     public bool uploadedScore = false;
 
@@ -48,6 +51,12 @@ public class Leaderboard : MonoBehaviour
     #endregion
 
     #region Core
+    [Button]
+    public void addScore()
+    {
+        AddNewHighscore("Toto", 90600);
+    }
+
     /// <summary>
     /// cette fonction est static pour être appelé de n'importe quel script
     /// </summary>
