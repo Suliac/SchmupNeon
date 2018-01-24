@@ -167,7 +167,7 @@ public class PlayerController : Pausable, IKillable
                         SoundManager.GetSingularity.StopProjectileSound(idPlayer);
                 }
 
-                if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
+                if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireX"))
                     pickupHandle.UseItem();
 
                 lastFrameIsShooting = isShooting;
