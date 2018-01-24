@@ -54,5 +54,5 @@ MonoBehaviour:
   rotorUsed: 0
   inensityLevel0: 1
   inensityLevel1: 0
-  duration0: 1
+  duration0: 0.5
   duration1: 0
