@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class Main_Menu : MonoBehaviour
 {
-
     public GameObject PlayButton;
     public GameObject OptionButton;
     public GameObject Controls;
@@ -33,15 +32,8 @@ public class Main_Menu : MonoBehaviour
         myEventSystem = GameObject.Find("EventSystem");
     }
 
-    public void Start()
-    {
-        print("Start() main menu");
-        SoundManager.GetSingularity.PlayMenuMusic();
-
-    }
-
     public void OnEnable()
     {
-        myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(PlayButton);
+        myEventSystem.GetComponent<EventSystem>().SetSelectedGameObject(PlayButton);
     }
 }

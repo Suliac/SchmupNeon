@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -139,13 +139,13 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2638264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 210.5, y: 118.5, z: 0}
-  m_LocalScale: {x: 0.21927083, y: 0.21927083, z: 0.21927083}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 693062918}
   - {fileID: 740348586}
-  - {fileID: 2101641121}
   - {fileID: 685996194}
+  - {fileID: 2101641121}
   - {fileID: 1353841788}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2638264}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -229,8 +229,16 @@ MonoBehaviour:
     updateFrequency: 0
   quitButton: {fileID: 331090310}
   quitNoButton: {fileID: 1325550060}
+  quitYesButton: {fileID: 1771138660}
   settingBackButton: {fileID: 1341868381}
   creditBackButton: {fileID: 382202582}
+  buttonsMainMenu:
+  - {fileID: 637921246}
+  - {fileID: 407213571}
+  - {fileID: 1652312306}
+  - {fileID: 1326471307}
+  - {fileID: 1756688645}
+  - {fileID: 331090310}
 --- !u!114 &2638270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +253,7 @@ MonoBehaviour:
   timeOpti: 0.01
   timeWithNoEffect: 0.15
   whoUseThis: nobody
-  isOk: 1
+  isOk: 0
   restart: 0
   additionnalTime: 1
 --- !u!1 &32257572
@@ -1450,7 +1458,7 @@ Transform:
   - {fileID: 1904540186}
   - {fileID: 382202581}
   m_Father: {fileID: 2638265}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &685996195
 MonoBehaviour:
@@ -1614,7 +1622,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 740348586}
-  - component: {fileID: 740348587}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1642,23 +1649,6 @@ Transform:
   m_Father: {fileID: 2638265}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &740348587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 740348585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 215f126f772b18f46ab5945edf074090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayButton: {fileID: 637921245}
-  OptionButton: {fileID: 407213569}
-  Controls: {fileID: 1652312304}
-  Leaderboard: {fileID: 1326471305}
-  CreditsButton: {fileID: 1756688643}
-  QuitButton: {fileID: 331090308}
 --- !u!1 &845998534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,7 +2904,7 @@ Prefab:
     - target: {fileID: 114607392931374246, guid: 8a2a55100a89c154dba6593045f762c2,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4783076814675620, guid: 8a2a55100a89c154dba6593045f762c2, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3140,6 +3130,36 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_MinSize
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114607392931374246, guid: 8a2a55100a89c154dba6593045f762c2,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114607392931374246, guid: 8a2a55100a89c154dba6593045f762c2,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114607392931374246, guid: 8a2a55100a89c154dba6593045f762c2,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114607392931374246, guid: 8a2a55100a89c154dba6593045f762c2,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2638269}
+    - target: {fileID: 114607392931374246, guid: 8a2a55100a89c154dba6593045f762c2,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: debugSetPhase0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114607392931374246, guid: 8a2a55100a89c154dba6593045f762c2,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a2a55100a89c154dba6593045f762c2, type: 2}
@@ -4232,6 +4252,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1756688643}
+--- !u!114 &1771138660 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114510640507388670, guid: 8a2a55100a89c154dba6593045f762c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1325550059}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1808155348
 GameObject:
   m_ObjectHideFlags: 0
@@ -4351,6 +4377,7 @@ MonoBehaviour:
   motorIndex: 0
   motorLevel: 1
   duration: 2
+  isP1Keyboard: 0
   playerArrayConnected: 01000000
 --- !u!114 &1836074882
 MonoBehaviour:

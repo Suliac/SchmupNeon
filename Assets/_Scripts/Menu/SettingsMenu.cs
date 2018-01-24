@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using Sirenix.OdinInspector;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public class SettingsMenu : MonoBehaviour
@@ -22,16 +23,35 @@ public class SettingsMenu : MonoBehaviour
     private Button quitButton;
     [FoldoutGroup("Debug"), Tooltip("Boutton 'no' pas quitter"), SerializeField]
     private Button quitNoButton;
+    [FoldoutGroup("Debug"), Tooltip("Boutton 'no' pas quitter"), SerializeField]
+    private Button quitYesButton;
     [FoldoutGroup("Debug"), Tooltip("boutton back dans les settings"), SerializeField]
     private Button settingBackButton;
     [FoldoutGroup("Debug"), Tooltip("boutton back dans les credits"), SerializeField]
     private Button creditBackButton;
 
+    [Tooltip("Debug"), SerializeField]
+    private List<Button> buttonsMainMenu;
+
+    private GameObject myEventSystem;
+
+    //debug de la selection des boutons
+    private bool justPhase0 = false;
+    private bool justPhase1 = false;
+
     private TimeWithNoEffect TWNE;
+
+    private void Awake()
+    {
+        myEventSystem = GameObject.Find("EventSystem");
+    }
 
     private void Start()
     {
         TWNE = GetComponent<TimeWithNoEffect>();
+        SoundManager.GetSingularity.PlayMenuMusic();
+        Cursor.visible = false;
+        buttonsMainMenu[0].Select();
     }
 
     public void SetRes1()
@@ -96,6 +116,14 @@ public class SettingsMenu : MonoBehaviour
         SceneChangeManager.GetSingleton.Quit();
     }
 
+    /// <summary>
+    /// set la phase 0 (debug du menu quand on appuis sur NO) pour retourner au menu)
+    /// </summary>
+    public void debugSetPhase0()
+    {
+        justPhase0 = true;
+    }
+
     /*
      * phase 0: menu de base
      * phase 1: are you sure ?
@@ -108,16 +136,33 @@ public class SettingsMenu : MonoBehaviour
         switch (phaseMenu)
         {
             case 0:
+                if (justPhase0)
+                {
+                    justPhase0 = false;
+                    justPhase1 = false;
+                    buttonsMainMenu[0].Select();
+                }
+
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButton("FireB"))
                 {
                     TWNE.isOk = false;
                     quitButton.onClick.Invoke();
+                    //mainMenu.enabled = true;
                 }
                 break;
             case 1:
+                if (!justPhase1)
+                {
+                    Debug.Log("ici le selection du NO NE MARCHE PAAAS");
+                    //EventSystem.current.SetSelectedGameObject(quitNoButton.gameObject);
+                    //quitNoButton.Select();
+                    justPhase1 = true;
+                }
+
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButton("FireB"))
                 {
                     TWNE.isOk = false;
+                    justPhase0 = true;
                     quitNoButton.onClick.Invoke();
                 }
                 break;
@@ -125,6 +170,7 @@ public class SettingsMenu : MonoBehaviour
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButton("FireB"))
                 {
                     TWNE.isOk = false;
+                    justPhase0 = true;
                     settingBackButton.onClick.Invoke();
                 }
                 break;
@@ -132,6 +178,7 @@ public class SettingsMenu : MonoBehaviour
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButton("FireB"))
                 {
                     TWNE.isOk = false;
+                    justPhase0 = true;
                     creditBackButton.onClick.Invoke();
                 }
                 break;
@@ -140,13 +187,39 @@ public class SettingsMenu : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// est appelé pour débug le clique
+    /// Quand on clique avec la souris: reselect le premier bouton !
+    /// </summary>
+    private void DebugMouseCLick()
+    {
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
+        {
+            buttonsMainMenu[0].Select();
+        }
+        if (phaseMenu == 0)
+        {
+            bool isSomeoneSelected = false;
+            for (int i = 0; i < buttonsMainMenu.Count; i++)
+            {
+                if (EventSystem.current.currentSelectedGameObject == buttonsMainMenu[i].gameObject)
+                    isSomeoneSelected = true;
+            }
+            if (!isSomeoneSelected)
+            {
+                //EventSystem.current.SetSelectedGameObject(PlayButton);
+                buttonsMainMenu[0].Select();
+            }
+        }
+    }
+
     private void Update()
     {
         InputMenu();
         //optimisation des fps
         if (updateTimer.Ready())
         {
-
+            DebugMouseCLick();
         }
     }
 }
