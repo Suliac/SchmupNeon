@@ -305,6 +305,8 @@ public class PlayerController : Pausable, IKillable
         if (lifeBehavior.CurrentLife > 0)
             lifeBehavior.OnExternalKill();
 
+        lifeBehavior.ForceStopInvincibility();
+
         SoundManager.GetSingularity.PlayDeadPlayerSound();
 
         ScreenShake ScreenShake = Camera.main.GetComponent<ScreenShake>();

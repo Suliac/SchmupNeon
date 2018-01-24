@@ -69,6 +69,10 @@ public class GameManager : MonoBehaviour
     private PlayerController[] playerControllers;
     public PlayerController[] PlayerControllers { get { return playerControllers; } }
 
+    [FoldoutGroup("Debug"), Tooltip("Joueurs en jeu")]
+    private bool[] playersInGame;
+    public bool[] PlayersInGame { get { return playersInGame; } set { playersInGame = value; } }
+
     private StateManager.GameState stateBeforePause;
     //singleton
     private static GameManager instance;
@@ -93,6 +97,7 @@ public class GameManager : MonoBehaviour
     {
         SetSingleton();
         playerControllers = new PlayerController[4];
+        playersInGame = new bool[4];
         playerConnect = PlayerConnected.GetSingleton;
         tutoStart = GetComponent<TutoStart>();
         winManager = GetComponent<WinManager>();
@@ -214,7 +219,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         SoundManager.GetSingularity.CleanProjectileSound();
-        
+
         StateManager.GetSingleton.State = StateManager.GameState.GameOver;
         panelCanvasGameOver.SetActive(true);
         panelCanvasInGame.SetActive(false);
