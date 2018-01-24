@@ -98,9 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redLineX: 0.23
   leftLineX: 0.25
-  rightLineX: 0.46
-  topLineY: 0.6
-  botLineY: 0.28
+  rightLineX: 0.45
+  topLineY: 0.63
+  botLineY: 0.23
   fourPlayerOnly: 0
   timerTuto: 3
   panelTutoInGame: {fileID: 0}

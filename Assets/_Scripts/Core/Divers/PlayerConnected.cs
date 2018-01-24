@@ -5,16 +5,12 @@ using Sirenix.OdinInspector;
 /// <summary>
 /// Gère la connexion / déconnexion des manettes
 /// <summary>
-
 //[RequireComponent(typeof(CircleCollider2D))]
 public class PlayerConnected : MonoBehaviour
 {
     #region variable
 
     [FoldoutGroup("Vibration"), Tooltip("Active les vibrations")] public bool enabledVibration = true;
-    [FoldoutGroup("Vibration"), Tooltip("the first motor")] public int motorIndex = 0;
-    [FoldoutGroup("Vibration"), Tooltip("full motor speed")] public float motorLevel = 1.0f;
-    [FoldoutGroup("Vibration"), Tooltip("durée de la vibration")] public float duration = 2.0f;
     [FoldoutGroup("Controls"), Tooltip("Joueur 1 au clavier")] public bool isP1Keyboard = false;
 
     public bool[] playerArrayConnected;                      //tableau d'état des controller connecté
@@ -160,7 +156,7 @@ public class PlayerConnected : MonoBehaviour
     /// set les vibrations du gamepad
     /// </summary>
     /// <param name="id">l'id du joueur</param>
-    public void setVibrationPlayer(int id)
+    public void setVibrationPlayer(int id, int motorIndex = 0, float motorLevel = 1.0f, float duration = 1.0f)
     {
         if (!enabledVibration)
             return;

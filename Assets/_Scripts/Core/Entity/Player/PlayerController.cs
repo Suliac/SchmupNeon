@@ -30,10 +30,12 @@ public class PlayerController : Pausable, IKillable
     private string prefabScoreTag = "Score";
     //[FoldoutGroup("Debug"), Tooltip("objets weapons"), SerializeField]
     //private Transform parentWeapons;
+    [FoldoutGroup("GamePlay"), Tooltip("quand on meurt"), SerializeField]
+    private Vibration dieVibration;
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
-
+    
 
     ////id weapons du joueur
     //private int idWeapon = 0;
@@ -167,7 +169,7 @@ public class PlayerController : Pausable, IKillable
                         SoundManager.GetSingularity.StopProjectileSound(idPlayer);
                 }
 
-                if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireB"))
+                if (PlayerConnected.GetSingleton.getPlayer(IdPlayer).GetButton("FireX"))
                     pickupHandle.UseItem();
 
                 lastFrameIsShooting = isShooting;
@@ -296,6 +298,7 @@ public class PlayerController : Pausable, IKillable
         {
             CreateDeathScoreObject();
         }
+        dieVibration.play(idPlayer);
 
         weaponHandle.Init();
         pickupHandle.Init();
@@ -304,6 +307,8 @@ public class PlayerController : Pausable, IKillable
 
         if (lifeBehavior.CurrentLife > 0)
             lifeBehavior.OnExternalKill();
+
+        lifeBehavior.ForceStopInvincibility();
 
         SoundManager.GetSingularity.PlayDeadPlayerSound();
 

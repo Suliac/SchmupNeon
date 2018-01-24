@@ -50,7 +50,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1149021314561150
 GameObject:
   m_ObjectHideFlags: 1
@@ -264,8 +264,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1078389107829744}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4707590934284084}
@@ -457,8 +457,10 @@ MonoBehaviour:
   prefabsDeathTag: DeathPlayer
   timeBeforeRespawn: 0.5
   animPlayer: {fileID: 1149021314561150}
-  colorPlayer: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colorPlayer: {r: 1, g: 0.9764706, b: 0.52156866, a: 1}
   prefabScoreTag: Score
+  dieVibration: {fileID: 114706700268823424, guid: 148f7c4e33d259b4080395e987b024c6,
+    type: 2}
   updateTimer:
     updateFrequency: 0
 --- !u!114 &114615846370654086
@@ -479,7 +481,7 @@ MonoBehaviour:
   scoreToRemove: 5000
   currentLife: 0
   invincible: 0
-  entityRenderer: {fileID: 0}
+  entityRenderer: {fileID: 212287414244761158}
   invincibilityColorBlink: {r: 0.52205884, g: 0.52205884, b: 0.52205884, a: 1}
   takeDamageColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &114640442921096836

@@ -207,6 +207,12 @@ public class TutoStart : MonoBehaviour
             yield return new WaitForSeconds(1);
             currentChrono--;
         }
+
+        for (int i = 0; i < 4; i++)
+        {
+            gameManager.PlayersInGame[i] = listTutoState[i] > 1;
+        }
+
         //Debug.Log("la");
         tutoChrono.SetActive(false);
         activeGame();
