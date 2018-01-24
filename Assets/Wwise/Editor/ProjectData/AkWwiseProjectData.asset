@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: 936614504
-    m_lastTimePart2: -1999281410
+    m_lastTimePsrt1: 277363423
+    m_lastTimePart2: -1999281390
     List:
     - Name: Play_deadplayer
       Path: Default Work Unit\Play_deadplayer
@@ -139,6 +139,16 @@ MonoBehaviour:
       ID: -1655298994
       Guid: 2aa3220f6e1db54cb3a8fabdafaf9e44
       maxAttenuation: 0
+    - Name: Play_Tir
+      Path: Default Work Unit\Play_Tir
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Tir
+        ObjectType: 3
+      ID: -1741495505
+      Guid: 6ac1b69bc637944c9efd464d71e68253
+      maxAttenuation: 0
     - Name: Stop_projectile
       Path: Default Work Unit\Stop_projectile
       PathAndIcons:
@@ -148,6 +158,16 @@ MonoBehaviour:
         ObjectType: 3
       ID: 884225013
       Guid: 1b94288c47e56d4898636247832d1465
+      maxAttenuation: 0
+    - Name: Stop_Tir
+      Path: Default Work Unit\Stop_Tir
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Tir
+        ObjectType: 3
+      ID: 975758325
+      Guid: 9520129076ac0d48a9256a1cfcd85cb5
       maxAttenuation: 0
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu

@@ -31,7 +31,7 @@ public class MovePlatform : MonoBehaviour
     /// </summary>
     private void Scroll()
     {
-        float translation = Time.deltaTime * speedScrolling;
+        float translation = speedScrolling * Time.deltaTime;
         transform.Translate(translation, 0, 0);
     }
     #endregion
