@@ -23,6 +23,8 @@ public class SettingsMenu : MonoBehaviour
     private Button quitButton;
     [FoldoutGroup("Debug"), Tooltip("Boutton 'no' pas quitter"), SerializeField]
     private Button quitNoButton;
+    [FoldoutGroup("Debug"), Tooltip("Boutton 'no' pas quitter"), SerializeField]
+    private Button quitYesButton;
     [FoldoutGroup("Debug"), Tooltip("boutton back dans les settings"), SerializeField]
     private Button settingBackButton;
     [FoldoutGroup("Debug"), Tooltip("boutton back dans les credits"), SerializeField]
@@ -35,6 +37,7 @@ public class SettingsMenu : MonoBehaviour
 
     //debug de la selection des boutons
     private bool justPhase0 = false;
+    private bool justPhase1 = false;
 
     private TimeWithNoEffect TWNE;
 
@@ -136,6 +139,7 @@ public class SettingsMenu : MonoBehaviour
                 if (justPhase0)
                 {
                     justPhase0 = false;
+                    justPhase1 = false;
                     buttonsMainMenu[0].Select();
                 }
 
@@ -147,6 +151,14 @@ public class SettingsMenu : MonoBehaviour
                 }
                 break;
             case 1:
+                if (!justPhase1)
+                {
+                    Debug.Log("ici le selection du NO NE MARCHE PAAAS");
+                    //EventSystem.current.SetSelectedGameObject(quitNoButton.gameObject);
+                    //quitNoButton.Select();
+                    justPhase1 = true;
+                }
+
                 if (PlayerConnected.GetSingleton.getPlayer(0).GetButton("FireB"))
                 {
                     TWNE.isOk = false;
