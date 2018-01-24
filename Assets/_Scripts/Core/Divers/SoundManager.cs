@@ -133,14 +133,22 @@ public class SoundManager : MonoBehaviour
     public void PlayDeadEnemySound()
     {
         PlaySound("Play_sfx_dead");
-        //print("Play_sfx_dead");
 
     }
 
     public void PlayMenuSound()
     {
-        //print("Play explosion sound");
         PlaySound("Play_UI_menu1");
+    }
+
+    public void PlayMenuSoundEnter()
+    {
+        PlaySound("Play_UI_menu2");
+    }
+
+    public void PlayMenuSoundLeave()
+    {
+        PlaySound("Play_UI_menu3");
     }
 
     //public void PlayProjectileSound()

@@ -128,7 +128,6 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     {
         if (!isDead)
         {
-            SoundManager.GetSingularity.PlayDeadEnemySound();
 
             isDead = true;
             enableEnemy = false;
@@ -137,7 +136,13 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
             collider.enabled = false;
 
             OnBeforeKill();
-            CreateDeathObject();
+
+            var life = GetComponent<LifeBehavior>();
+            if (life && life.CurrentLife <= 0)
+            {
+                CreateDeathObject();
+                SoundManager.GetSingularity.PlayDeadEnemySound();
+            }
 
             if (animator)
                 animator.SetTrigger("enemyIsDead");

@@ -1,4 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
+	73143488	Play_UI_menu2			\Default Work Unit\Play_UI_menu2	
+	73143489	Play_UI_menu3			\Default Work Unit\Play_UI_menu3	
 	73143491	Play_UI_menu1			\Default Work Unit\Play_UI_menu1	
 	206418435	Play_musique			\Default Work Unit\Play_musique	
 	880148599	Play_projectile			\Default Work Unit\Play_projectile	
@@ -6,6 +8,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	975758325	Stop_Tir			\Default Work Unit\Stop_Tir	
 	1179023290	Play_playerdead3			\Default Work Unit\Play_playerdead3	
 	2553471791	Play_Tir			\Default Work Unit\Play_Tir	
+	2629826670	Play_Bulle			\Default Work Unit\Play_Bulle	
 	2639668296	Play_respawnP2			\Default Work Unit\Play_respawnP2	
 	2639668297	Play_respawnP3			\Default Work Unit\Play_respawnP3	
 	2639668299	Play_respawnP1			\Default Work Unit\Play_respawnP1	
@@ -26,8 +29,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	65147047	impact3	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\impact3_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Impacts\impact3		661564
 	92670017	menu	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\recherche schmup_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\musique\Menu\phase menu\menu		10936864
 	158611905	Explosion	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\Explosion_E2CCD3B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Explosions\Explosion		190124
+	172020860	silence	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\silence_8E21E871.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bulle\silence		362852
 	195890741	playerdead3	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\playerdead3_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mort\playerdead3		1587668
-	200492880	sfx dead	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\sfx dead2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx dead		529264
+	200492880	sfx dead	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\sfx dead2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bulle\sfx dead		529264
 	362625940	gameover	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\gameover2_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\musique\gameover\phase game over\gameover		1411264
 	394875972	pickupP4	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\pickupP4_A8A51CE8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUp\pickupP4		260616
 	430136103	impact4	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\impact4_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Impacts\impact4		793864
@@ -37,10 +41,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	589013513	respawnP2	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\respawnP2_A5563742.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respawn\respawnP2		91468
 	589175796	UI_menu1	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\UI_menu2_90558C42.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\UI_menu1		227212
 	632019275	impact1	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\impact1_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Impacts\impact1		529264
+	673048841	UI_menu3	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\UI_menu5_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\UI_menu3		428848
 	702174246	projectile	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\projectile_F17FB28C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shoot\projectile		22116
 	747269259	pickupP1	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\pickupP1_674C2360.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUp\pickupP1		311480
 	750532254	impact2	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\impact2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Impacts\impact2		529264
 	788818331	respawnP4	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\respawnP4_6B8B15AB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respawn\respawnP4		122884
 	897744416	pickupP3	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\pickupP3_53D985FF.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUp\pickupP3		261072
-	1032452741	Tir	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\tchiou_3DC87D60.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shoot\Tir		41736
+	977066764	UI_menu2	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\UI_menu3_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\UI_menu2		914796
+	1032452741	Tir	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\SFX\tchiou_00C2613B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Shoot\Tir		29672
 

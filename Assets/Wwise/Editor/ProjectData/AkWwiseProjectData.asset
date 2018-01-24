@@ -16,9 +16,19 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: 718359345
-    m_lastTimePart2: -1999281372
+    m_lastTimePsrt1: -413025401
+    m_lastTimePart2: -1999281352
     List:
+    - Name: Play_Bulle
+      Path: Default Work Unit\Play_Bulle
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Bulle
+        ObjectType: 3
+      ID: -1665140626
+      Guid: 6ab2829f40a3aa4d9f612588f356b9c4
+      maxAttenuation: 0
     - Name: Play_Explosion
       Path: Default Work Unit\Play_Explosion
       PathAndIcons:
@@ -209,6 +219,26 @@ MonoBehaviour:
       ID: 73143491
       Guid: 80524db9f3649c4694d36dacc19020b3
       maxAttenuation: 0
+    - Name: Play_UI_menu2
+      Path: Default Work Unit\Play_UI_menu2
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_menu2
+        ObjectType: 3
+      ID: 73143488
+      Guid: 987f63b280274540848d276f7593a200
+      maxAttenuation: 0
+    - Name: Play_UI_menu3
+      Path: Default Work Unit\Play_UI_menu3
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_menu3
+        ObjectType: 3
+      ID: 73143489
+      Guid: cdf8e8aa9c7c2641a29c7852a06b2314
+      maxAttenuation: 0
     - Name: Stop_projectile
       Path: Default Work Unit\Stop_projectile
       PathAndIcons:
@@ -312,6 +342,7 @@ MonoBehaviour:
   ExpandedItems:
   - /SHMUP_WwiseProject
   - /SHMUP_WwiseProject/Events
+  - /SHMUP_WwiseProject/Events/Default Work Unit
   - /SHMUP_WwiseProject/SoundBanks
   - /SHMUP_WwiseProject/SoundBanks/Default Work Unit
   - /SHMUP_WwiseProject/States
