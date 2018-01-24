@@ -339,6 +339,48 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_sfx_explode" ID="{7A326901-ADAB-454F-9D62-DE291F86F439}">
+					<ChildrenList>
+						<Action Name="" ID="{686E8983-8FAC-4A7B-994D-10B8B5C35623}" ShortID="259385171">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx explode" ID="{9DCC6392-8367-451E-90C3-1791299816C9}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Tir4" ID="{E42F58B4-94A5-486E-9902-91045F63F205}">
+					<ChildrenList>
+						<Action Name="" ID="{E5BFDAB9-B690-416F-88F7-CB3AFD9D5924}" ShortID="594815946">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tir4" ID="{3B7BD959-9B22-4BE3-9F12-CF5B67001BD5}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Tir4" ID="{010F4F90-ED15-4413-863D-9A7D7F74B07C}">
+					<ChildrenList>
+						<Action Name="" ID="{E26FD40F-43DF-476E-9614-BFF95A800005}" ShortID="143211549">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tir4" ID="{3B7BD959-9B22-4BE3-9F12-CF5B67001BD5}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
