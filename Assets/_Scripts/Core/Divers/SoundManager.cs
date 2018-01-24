@@ -132,7 +132,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayDeadEnemySound()
     {
-        PlaySound("Play_sfx_dead");
+        PlaySound("Play_sfx_explode");
 
     }
 
@@ -180,7 +180,7 @@ public class SoundManager : MonoBehaviour
             if (playerShooting.Contains(true) && !isPlayingShoot) // Si au moins un joueur tir
             {
                 //print("Play projectile sound");
-                PlaySound("Play_Tir");
+                PlaySound("Play_Tir4");
                 isPlayingShoot = true;
             }
         }
@@ -195,7 +195,7 @@ public class SoundManager : MonoBehaviour
             if (!playerShooting.Contains(true) && isPlayingShoot) // Si aucun joueur ne tir
             {
                 //print("Stop projectile sound");
-                PlaySound("Stop_Tir");
+                PlaySound("Stop_Tir4");
                 isPlayingShoot = false;
             }
         }

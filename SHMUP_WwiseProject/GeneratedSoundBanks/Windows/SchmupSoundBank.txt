@@ -7,6 +7,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	884225013	Stop_projectile			\Default Work Unit\Stop_projectile	
 	975758325	Stop_Tir			\Default Work Unit\Stop_Tir	
 	1179023290	Play_playerdead3			\Default Work Unit\Play_playerdead3	
+	1264733341	Play_sfx_explode			\Default Work Unit\Play_sfx_explode	
+	2204031643	Stop_Tir4			\Default Work Unit\Stop_Tir4	
 	2553471791	Play_Tir			\Default Work Unit\Play_Tir	
 	2629826670	Play_Bulle			\Default Work Unit\Play_Bulle	
 	2639668296	Play_respawnP2			\Default Work Unit\Play_respawnP2	
@@ -17,6 +19,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2947295501	Play_impact1			\Default Work Unit\Play_impact1	
 	2947295502	Play_impact2			\Default Work Unit\Play_impact2	
 	2947295503	Play_impact3			\Default Work Unit\Play_impact3	
+	3340477129	Play_Tir4			\Default Work Unit\Play_Tir4	
 	3996700802	Play_pickupP4			\Default Work Unit\Play_pickupP4	
 	3996700804	Play_pickupP2			\Default Work Unit\Play_pickupP2	
 	3996700805	Play_pickupP3			\Default Work Unit\Play_pickupP3	
@@ -30,10 +33,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	92670017	menu	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\recherche schmup_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\musique\Menu\phase menu\menu		10936864
 	158611905	Explosion	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\Explosion_E2CCD3B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Explosions\Explosion		190124
 	172020860	silence	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\silence_8E21E871.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bulle\silence		362852
+	195626815	sfx explode	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\sfx explode_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx explode		573364
 	195890741	playerdead3	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\playerdead3_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mort\playerdead3		1587668
 	200492880	sfx dead	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\sfx dead2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bulle\sfx dead		529264
 	362625940	gameover	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\gameover2_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\musique\gameover\phase game over\gameover		1411264
 	394875972	pickupP4	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\pickupP4_A8A51CE8.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUp\pickupP4		260616
+	414691203	Tir4	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\Tir4_F7A7FF5C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tir4		27056
 	430136103	impact4	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\impact4_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Impacts\impact4		793864
 	470110280	ingame	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\ingame schmup_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\musique\ingame\phase ingame\ingame		12700864
 	508859420	pickupP2	C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Windows\SFX\pickupP2_2338104B.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUp\pickupP2		258188
