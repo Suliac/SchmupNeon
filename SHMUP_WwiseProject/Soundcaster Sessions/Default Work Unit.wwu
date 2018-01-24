@@ -38,6 +38,14 @@
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="proj3" ID="{C60CA448-8B60-47DA-97D2-A00B9E1DC3C4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Tir" ID="{03F6F7CF-A7E8-44B1-94CE-E3A4E665F8BC}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="respawnP1" ID="{29FF2AB3-3BC0-4E92-8DCC-A81264BCD57D}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="4" Y="0"/>
 						</Module>
