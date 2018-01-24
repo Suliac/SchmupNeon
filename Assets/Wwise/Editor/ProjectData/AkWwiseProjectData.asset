@@ -16,19 +16,9 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: 277363423
-    m_lastTimePart2: -1999281390
+    m_lastTimePsrt1: -1463120486
+    m_lastTimePart2: -1999281383
     List:
-    - Name: Play_deadplayer
-      Path: Default Work Unit\Play_deadplayer
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_deadplayer
-        ObjectType: 3
-      ID: -243845901
-      Guid: cc2814a33bd5c34d9c6f8bbc9cf03d77
-      maxAttenuation: 0
     - Name: Play_Explosion
       Path: Default Work Unit\Play_Explosion
       PathAndIcons:
@@ -38,6 +28,46 @@ MonoBehaviour:
         ObjectType: 3
       ID: -264562397
       Guid: 0ea416ea5da9a749b3684b9bf0b5d1df
+      maxAttenuation: 0
+    - Name: Play_impact1
+      Path: Default Work Unit\Play_impact1
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_impact1
+        ObjectType: 3
+      ID: -1347671795
+      Guid: 95f510110f0f314682495ce829e51b40
+      maxAttenuation: 0
+    - Name: Play_impact2
+      Path: Default Work Unit\Play_impact2
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_impact2
+        ObjectType: 3
+      ID: -1347671794
+      Guid: ea886b8ca636304abbfe8084a9447f4f
+      maxAttenuation: 0
+    - Name: Play_impact3
+      Path: Default Work Unit\Play_impact3
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_impact3
+        ObjectType: 3
+      ID: -1347671793
+      Guid: 033263ef7dd9874db895d76fdd6dc57d
+      maxAttenuation: 0
+    - Name: Play_impact4
+      Path: Default Work Unit\Play_impact4
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_impact4
+        ObjectType: 3
+      ID: -1347671800
+      Guid: 394fb3d1ac4fe845b2941344716a9503
       maxAttenuation: 0
     - Name: Play_musique
       Path: Default Work Unit\Play_musique
@@ -89,6 +119,16 @@ MonoBehaviour:
       ID: -298266494
       Guid: 4a6c76ed1d70a5418cc3a3506283bc20
       maxAttenuation: 0
+    - Name: Play_playerdead3
+      Path: Default Work Unit\Play_playerdead3
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_playerdead3
+        ObjectType: 3
+      ID: 1179023290
+      Guid: 63375ae57d3ea1468bb2ef25dc4a097a
+      maxAttenuation: 0
     - Name: Play_projectile
       Path: Default Work Unit\Play_projectile
       PathAndIcons:
@@ -139,6 +179,16 @@ MonoBehaviour:
       ID: -1655298994
       Guid: 2aa3220f6e1db54cb3a8fabdafaf9e44
       maxAttenuation: 0
+    - Name: Play_sfx_dead
+      Path: Default Work Unit\Play_sfx_dead
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_sfx_dead
+        ObjectType: 3
+      ID: -40486936
+      Guid: e50e6ee82940af4699fbc58b54a4caad
+      maxAttenuation: 0
     - Name: Play_Tir
       Path: Default Work Unit\Play_Tir
       PathAndIcons:
@@ -148,6 +198,16 @@ MonoBehaviour:
         ObjectType: 3
       ID: -1741495505
       Guid: 6ac1b69bc637944c9efd464d71e68253
+      maxAttenuation: 0
+    - Name: Play_UI_menu1
+      Path: Default Work Unit\Play_UI_menu1
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_menu1
+        ObjectType: 3
+      ID: 73143491
+      Guid: 80524db9f3649c4694d36dacc19020b3
       maxAttenuation: 0
     - Name: Stop_projectile
       Path: Default Work Unit\Stop_projectile
