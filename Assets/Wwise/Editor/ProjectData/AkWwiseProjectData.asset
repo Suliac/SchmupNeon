@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: 1043852195
-    m_lastTimePart2: -1999281346
+    m_lastTimePsrt1: 833323760
+    m_lastTimePart2: -1999281341
     List:
     - Name: Play_Bulle
       Path: Default Work Unit\Play_Bulle
@@ -258,6 +258,16 @@ MonoBehaviour:
         ObjectType: 3
       ID: 73143489
       Guid: cdf8e8aa9c7c2641a29c7852a06b2314
+      maxAttenuation: 0
+    - Name: Stop_Bulle
+      Path: Default Work Unit\Stop_Bulle
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Bulle
+        ObjectType: 3
+      ID: 1443616532
+      Guid: 7ebeac067e1d02458289a895b6a2d222
       maxAttenuation: 0
     - Name: Stop_projectile
       Path: Default Work Unit\Stop_projectile

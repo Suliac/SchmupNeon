@@ -8,6 +8,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	975758325	Stop_Tir			\Default Work Unit\Stop_Tir	
 	1179023290	Play_playerdead3			\Default Work Unit\Play_playerdead3	
 	1264733341	Play_sfx_explode			\Default Work Unit\Play_sfx_explode	
+	1443616532	Stop_Bulle			\Default Work Unit\Stop_Bulle	
 	2204031643	Stop_Tir4			\Default Work Unit\Stop_Tir4	
 	2553471791	Play_Tir			\Default Work Unit\Play_Tir	
 	2629826670	Play_Bulle			\Default Work Unit\Play_Bulle	

@@ -45,6 +45,7 @@
 				<Event Id="73143491" Name="Play_UI_menu1" ObjectPath="\Events\Default Work Unit\Play_UI_menu1"/>
 				<Event Id="73143488" Name="Play_UI_menu2" ObjectPath="\Events\Default Work Unit\Play_UI_menu2"/>
 				<Event Id="73143489" Name="Play_UI_menu3" ObjectPath="\Events\Default Work Unit\Play_UI_menu3"/>
+				<Event Id="1443616532" Name="Stop_Bulle" ObjectPath="\Events\Default Work Unit\Stop_Bulle" MaxAttenuation="0.000000"/>
 				<Event Id="884225013" Name="Stop_projectile" ObjectPath="\Events\Default Work Unit\Stop_projectile" MaxAttenuation="0.000000"/>
 				<Event Id="975758325" Name="Stop_Tir" ObjectPath="\Events\Default Work Unit\Stop_Tir" MaxAttenuation="0.000000"/>
 				<Event Id="2204031643" Name="Stop_Tir4" ObjectPath="\Events\Default Work Unit\Stop_Tir4" MaxAttenuation="0.000000"/>

@@ -73,7 +73,7 @@ public class SoundManager : MonoBehaviour
     {
         //print("Play menu music");
         AkSoundEngine.SetState("musique", "Menu");
-
+        PlaySound("Stop_Bulle");
         //SoundManager.GetSingularity.PlaySound("Stop_ingame");
         //SoundManager.GetSingularity.PlaySound("Play_Menu");
 
@@ -83,6 +83,7 @@ public class SoundManager : MonoBehaviour
     {
         //print("Play game music");
         AkSoundEngine.SetState("musique", "In_game");
+        PlaySound("Play_Bulle");
 
         //SoundManager.GetSingularity.PlaySound("Stop_Menu");
         //SoundManager.GetSingularity.PlaySound("Play_ingame");
