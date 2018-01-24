@@ -227,7 +227,8 @@ public class PlayerController : Pausable, IKillable
 
     private void CreateDeathScoreObject()
     {
-        ScorePlayer -= lifeBehavior.ScoreToRemove;
+        //ScorePlayer -= lifeBehavior.ScoreToRemove;
+        ScorePlayer -= ScorePlayer / 100 * lifeBehavior.ScoreToRemovePercent;
 
         GameObject scorePrefab = ObjectsPooler.GetSingleton.GetPooledObject(prefabScoreTag, false);
         if (!scorePrefab)
@@ -243,7 +244,7 @@ public class PlayerController : Pausable, IKillable
         TextMesh text = scorePrefab.GetComponentInChildren<TextMesh>();
         if (text)
         {
-            text.text = "-" + lifeBehavior.ScoreToRemove;
+            text.text = "-" + (ScorePlayer / 100 * lifeBehavior.ScoreToRemovePercent);//lifeBehavior.ScoreToRemove;
             text.color = ColorPlayer;
         }
 

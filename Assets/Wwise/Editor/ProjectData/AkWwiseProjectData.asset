@@ -16,9 +16,19 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: 718359345
-    m_lastTimePart2: -1999281372
+    m_lastTimePsrt1: 833323760
+    m_lastTimePart2: -1999281341
     List:
+    - Name: Play_Bulle
+      Path: Default Work Unit\Play_Bulle
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Bulle
+        ObjectType: 3
+      ID: -1665140626
+      Guid: 6ab2829f40a3aa4d9f612588f356b9c4
+      maxAttenuation: 0
     - Name: Play_Explosion
       Path: Default Work Unit\Play_Explosion
       PathAndIcons:
@@ -189,6 +199,16 @@ MonoBehaviour:
       ID: -40486936
       Guid: e50e6ee82940af4699fbc58b54a4caad
       maxAttenuation: 0
+    - Name: Play_sfx_explode
+      Path: Default Work Unit\Play_sfx_explode
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_sfx_explode
+        ObjectType: 3
+      ID: 1264733341
+      Guid: 0169327aabad4f459d62de291f86f439
+      maxAttenuation: 0
     - Name: Play_Tir
       Path: Default Work Unit\Play_Tir
       PathAndIcons:
@@ -199,6 +219,16 @@ MonoBehaviour:
       ID: -1741495505
       Guid: 6ac1b69bc637944c9efd464d71e68253
       maxAttenuation: 0
+    - Name: Play_Tir4
+      Path: Default Work Unit\Play_Tir4
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Tir4
+        ObjectType: 3
+      ID: -954490167
+      Guid: b4582fe4a5946e48990291045f63f205
+      maxAttenuation: 0
     - Name: Play_UI_menu1
       Path: Default Work Unit\Play_UI_menu1
       PathAndIcons:
@@ -208,6 +238,36 @@ MonoBehaviour:
         ObjectType: 3
       ID: 73143491
       Guid: 80524db9f3649c4694d36dacc19020b3
+      maxAttenuation: 0
+    - Name: Play_UI_menu2
+      Path: Default Work Unit\Play_UI_menu2
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_menu2
+        ObjectType: 3
+      ID: 73143488
+      Guid: 987f63b280274540848d276f7593a200
+      maxAttenuation: 0
+    - Name: Play_UI_menu3
+      Path: Default Work Unit\Play_UI_menu3
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_menu3
+        ObjectType: 3
+      ID: 73143489
+      Guid: cdf8e8aa9c7c2641a29c7852a06b2314
+      maxAttenuation: 0
+    - Name: Stop_Bulle
+      Path: Default Work Unit\Stop_Bulle
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Bulle
+        ObjectType: 3
+      ID: 1443616532
+      Guid: 7ebeac067e1d02458289a895b6a2d222
       maxAttenuation: 0
     - Name: Stop_projectile
       Path: Default Work Unit\Stop_projectile
@@ -228,6 +288,16 @@ MonoBehaviour:
         ObjectType: 3
       ID: 975758325
       Guid: 9520129076ac0d48a9256a1cfcd85cb5
+      maxAttenuation: 0
+    - Name: Stop_Tir4
+      Path: Default Work Unit\Stop_Tir4
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Tir4
+        ObjectType: 3
+      ID: -2090935653
+      Guid: 904f0f0115ed1344863d9a7d7f74b07c
       maxAttenuation: 0
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -312,6 +382,7 @@ MonoBehaviour:
   ExpandedItems:
   - /SHMUP_WwiseProject
   - /SHMUP_WwiseProject/Events
+  - /SHMUP_WwiseProject/Events/Default Work Unit
   - /SHMUP_WwiseProject/SoundBanks
   - /SHMUP_WwiseProject/SoundBanks/Default Work Unit
   - /SHMUP_WwiseProject/States

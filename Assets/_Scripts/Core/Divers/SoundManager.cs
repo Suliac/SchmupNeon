@@ -73,7 +73,7 @@ public class SoundManager : MonoBehaviour
     {
         //print("Play menu music");
         AkSoundEngine.SetState("musique", "Menu");
-
+        PlaySound("Stop_Bulle");
         //SoundManager.GetSingularity.PlaySound("Stop_ingame");
         //SoundManager.GetSingularity.PlaySound("Play_Menu");
 
@@ -83,6 +83,7 @@ public class SoundManager : MonoBehaviour
     {
         //print("Play game music");
         AkSoundEngine.SetState("musique", "In_game");
+        PlaySound("Play_Bulle");
 
         //SoundManager.GetSingularity.PlaySound("Stop_Menu");
         //SoundManager.GetSingularity.PlaySound("Play_ingame");
@@ -132,15 +133,23 @@ public class SoundManager : MonoBehaviour
 
     public void PlayDeadEnemySound()
     {
-        PlaySound("Play_sfx_dead");
-        //print("Play_sfx_dead");
+        PlaySound("Play_sfx_explode");
 
     }
 
     public void PlayMenuSound()
     {
-        //print("Play explosion sound");
         PlaySound("Play_UI_menu1");
+    }
+
+    public void PlayMenuSoundEnter()
+    {
+        PlaySound("Play_UI_menu2");
+    }
+
+    public void PlayMenuSoundLeave()
+    {
+        PlaySound("Play_UI_menu3");
     }
 
     //public void PlayProjectileSound()
@@ -172,7 +181,7 @@ public class SoundManager : MonoBehaviour
             if (playerShooting.Contains(true) && !isPlayingShoot) // Si au moins un joueur tir
             {
                 //print("Play projectile sound");
-                PlaySound("Play_Tir");
+                PlaySound("Play_Tir4");
                 isPlayingShoot = true;
             }
         }
@@ -187,7 +196,7 @@ public class SoundManager : MonoBehaviour
             if (!playerShooting.Contains(true) && isPlayingShoot) // Si aucun joueur ne tir
             {
                 //print("Stop projectile sound");
-                PlaySound("Stop_Tir");
+                PlaySound("Stop_Tir4");
                 isPlayingShoot = false;
             }
         }

@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114809486763952458}
   - component: {fileID: 114641274278503226}
   - component: {fileID: 212620613875089996}
+  - component: {fileID: 95588920363802210}
   m_Layer: 9
   m_Name: enemyCheminot
   m_TagString: Untagged
@@ -99,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021431564853822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 141.17998, y: -3.81, z: 0}
+  m_LocalPosition: {x: 256.29, y: -3.81, z: 0}
   m_LocalScale: {x: 0.54864, y: 0.54864, z: 0.54864}
   m_Children:
   - {fileID: 4428785178517224}
@@ -121,6 +122,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!95 &95588920363802210
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021431564853822}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1023dc5213dd54e428147b79a2b202b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114038484861629292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,9 +151,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityType: 2
-  StartLife: 200
-  scoreToGiveToOther: 10000
-  scoreToGiveToOtherOnHit: 500
+  StartLife: 300
+  scoreToGiveToOther: 2500
+  scoreToGiveToOtherOnHit: 50
   scoreToRemove: 0
   currentLife: 5
   invincible: 0
@@ -163,10 +181,10 @@ MonoBehaviour:
   isMoving: 1
   timeBeforeStop: 4
   isDead: 0
-  angleRotation: 90
+  angleRotation: 55
   timeRotation: 2
   shootFrequency:
-    updateFrequency: 0.3
+    updateFrequency: 0.03
 --- !u!114 &114071884693724784
 MonoBehaviour:
   m_ObjectHideFlags: 1

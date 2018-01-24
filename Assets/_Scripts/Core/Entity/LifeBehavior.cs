@@ -33,6 +33,10 @@ public class LifeBehavior : MonoBehaviour
     private int scoreToRemove = 0;   //score à enlever à soit même quand on meurt (pour les joueurs)
     public int ScoreToRemove { get { return scoreToRemove; } }
 
+    [FoldoutGroup("GamePlay"), Tooltip("Score à enlever au joueur quand on meurt"), SerializeField]
+    private int scoreToRemovePercent = 0;   //score à enlever à soit même quand on meurt (pour les joueurs)
+    public int ScoreToRemovePercent { get { return scoreToRemovePercent; } }
+
     [FoldoutGroup("Debug"), Tooltip("vie courante de l'objet"), SerializeField]
     private float currentLife = 0.0f;
     public float CurrentLife { get { return currentLife; } }

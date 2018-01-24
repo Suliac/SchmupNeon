@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2a402093fadf84ca6757c90074a638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotorUsed: 2
+  rotorUsed: 0
   inensityLevel0: 1
-  inensityLevel1: 1
-  duration0: 2
-  duration1: 2
+  inensityLevel1: 0
+  duration0: 1
+  duration1: 0
