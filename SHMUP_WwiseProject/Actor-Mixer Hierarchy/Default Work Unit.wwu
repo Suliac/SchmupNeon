@@ -2389,7 +2389,7 @@
 						</Sound>
 					</ChildrenList>
 				</ActorMixer>
-				<Sound Name="sfx dead" ID="{DFCB332A-5C1E-4FE6-91DF-FBD905954DD5}" ShortID="398297047">
+				<Sound Name="sfx dead(2)" ID="{DFCB332A-5C1E-4FE6-91DF-FBD905954DD5}" ShortID="398297047">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
@@ -2415,7 +2415,7 @@
 						<ActiveSource Name="sfx dead" ID="{AC405B89-8F48-44F2-8E5F-FF45BA9689B9}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="sfx dead2" ID="{8914D3AF-6436-4341-8E37-4E33E040BB71}" ShortID="412951593">
+				<Sound Name="sfx dead" ID="{8914D3AF-6436-4341-8E37-4E33E040BB71}" ShortID="412951593">
 					<PropertyList>
 						<Property Name="Pitch" Type="int32">
 							<ModifierList>

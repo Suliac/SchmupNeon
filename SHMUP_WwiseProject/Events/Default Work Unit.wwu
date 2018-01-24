@@ -115,20 +115,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_deadplayer" ID="{A31428CC-D53B-4DC3-9C6F-8BBC9CF03D77}">
-					<ChildrenList>
-						<Action Name="" ID="{E5750EDB-AA72-4032-B8A0-E0E26A66DA0B}" ShortID="411515915">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="deadplayer" ID="{362437BF-E125-4EFD-AB20-C5EEB8D0230B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Play_respawnP1" ID="{2E4B9C0F-8F62-4544-8585-734E4F1C23C5}">
 					<ChildrenList>
 						<Action Name="" ID="{6FE734CD-FBB5-4547-9041-1C22F9EC864F}" ShortID="560674660">
@@ -213,20 +199,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_playerdead2" ID="{6A1B2B45-058F-4859-AD5A-5187FD9CFEBE}">
-					<ChildrenList>
-						<Action Name="" ID="{52FE2217-1F5C-4D25-A786-FFFAF8772686}" ShortID="673805053">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="playerdead2" ID="{B265CF8C-98CC-4160-8B47-DE8B92C26545}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Play_playerdead3" ID="{E55A3763-3E7D-46A1-8BB2-EF25DC4A097A}">
 					<ChildrenList>
 						<Action Name="" ID="{71540A5E-5A19-4428-A4CE-62DEAC2BE36A}" ShortID="299531738">
@@ -255,57 +227,71 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_impactP1" ID="{F1F70B21-F447-458C-8371-CA375635EF4E}">
+				<Event Name="Play_sfx_dead" ID="{E86E0EE5-4029-46AF-99FB-C58B54A4CAAD}">
 					<ChildrenList>
-						<Action Name="" ID="{4472912C-D8FD-4261-986C-5121C6DD829C}" ShortID="874575841">
+						<Action Name="" ID="{B7E3115C-D510-48CD-97FC-AD93680D4285}" ShortID="77204370">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="impactP1" ID="{19B13EB8-E6B3-41C9-9B98-428E0FBDFB97}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+									<ObjectRef Name="sfx dead" ID="{8914D3AF-6436-4341-8E37-4E33E040BB71}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_impactP2" ID="{4691E2A9-68BA-433C-931F-650D34E52F27}">
+				<Event Name="Play_impact1" ID="{1110F595-0F0F-4631-8249-5CE829E51B40}">
 					<ChildrenList>
-						<Action Name="" ID="{230D8E5E-A31B-4CA3-9180-5D657297E539}" ShortID="297043706">
+						<Action Name="" ID="{471074A7-9894-4A08-8E58-A3B9EF78C91E}" ShortID="642776316">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="impactP2" ID="{EDA27109-51B4-4523-AC83-50664E534C8B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+									<ObjectRef Name="impact1" ID="{E4D17374-ABFC-47D5-BE72-150A3A91470C}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_impactP3" ID="{16BC0228-1703-4B91-A182-AA3890EFAFB0}">
+				<Event Name="Play_impact2" ID="{8C6B88EA-36A6-4A30-BBFE-8084A9447F4F}">
 					<ChildrenList>
-						<Action Name="" ID="{78E392EC-4380-4EB7-A7E7-D7A46108DC9C}" ShortID="883740270">
+						<Action Name="" ID="{DEFF57B5-C913-4E41-905F-FB5F9AE71193}" ShortID="143078206">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="impactP3" ID="{CE1531C4-D487-46D3-AE83-619B2928A681}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+									<ObjectRef Name="impact2" ID="{465238EB-8B62-4B18-9BB4-DA0862E738AE}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_impactP4" ID="{762D987F-FBC2-4D64-907E-B191946BC25A}">
+				<Event Name="Play_impact3" ID="{EF633203-D97D-4D87-B895-D76FDD6DC57D}">
 					<ChildrenList>
-						<Action Name="" ID="{F8B1B416-5FC9-4047-AB82-8CBE012D9FF5}" ShortID="784150694">
+						<Action Name="" ID="{F4C665FA-0D07-418D-9631-B34A868EFC5D}" ShortID="274891476">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="impactP4" ID="{7B76E91F-FE85-4351-A017-716CC2D8D07A}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+									<ObjectRef Name="impact3" ID="{D04930ED-6C15-42F4-91AC-75708C7521F9}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_impact4" ID="{D1B34F39-4FAC-45E8-B294-1344716A9503}">
+					<ChildrenList>
+						<Action Name="" ID="{366F87AC-25DF-4DDA-BC60-75BCB9051620}" ShortID="586431672">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impact4" ID="{9A4B8718-508F-40C2-A5EC-2DC8895CA309}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

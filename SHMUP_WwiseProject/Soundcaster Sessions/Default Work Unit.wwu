@@ -22,7 +22,7 @@
 							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="sfx dead2" ID="{8914D3AF-6436-4341-8E37-4E33E040BB71}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="sfx dead" ID="{8914D3AF-6436-4341-8E37-4E33E040BB71}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
