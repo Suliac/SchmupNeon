@@ -61,8 +61,15 @@ public class WinManager : MonoBehaviour
     [FoldoutGroup("Debug"), Tooltip("Nombre d'ennemis dans le niveau")]
     private int numberEnemyInLevel = 0;
 
+    [FoldoutGroup("Debug"), Tooltip("prefabs Courone"), SerializeField]
+    private GameObject prefabsCouroneWinner;
+
     [FoldoutGroup("Debug"), Tooltip("Nombre d'ennemis tués")]
     private int currentEnemiesKilled = 0;
+
+    [FoldoutGroup("Object In World"), Tooltip("Lettres des joueurs dans l'UI "), SerializeField]
+    private List<GameObject> objectPositionCourone;
+
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
@@ -213,6 +220,29 @@ public class WinManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// set la couronne sur le joueur
+    /// </summary>
+    private void setCourone()
+    {
+        Debug.Log("set couronne !");
+        //GameObject coutoneTmp = Instantiate(prefabsCouroneWinner);
+        PlayerData dataScore = gameManager.ScoreManager.Data;
+        int score = 0;
+        int indexPlayerWinner = 0;
+        for (int i = 0; i < dataScore.scorePlayer.Count; i++)
+        {
+            if (dataScore.scorePlayer[i] > score)
+            {
+                indexPlayerWinner = i;
+                score = dataScore.scorePlayer[i];
+            }
+                
+        }
+        prefabsCouroneWinner.transform.position = objectPositionCourone[indexPlayerWinner].transform.position;
+        prefabsCouroneWinner.SetActive(true);
+    }
+
     private void Victory()
     {
         switch (currentState)
@@ -299,7 +329,11 @@ public class WinManager : MonoBehaviour
                 break;
             case VictoryStates.DisplayWinner:
                 if (lastState != currentState)
+                {
                     NextState(); // pour l'instant on passe à la suite
+                    setCourone();
+                }
+                    
                 break;
             case VictoryStates.EnteringNames:
                 if (lastState != currentState)

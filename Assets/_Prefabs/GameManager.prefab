@@ -83,6 +83,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  objectPositionCourone:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   updateTimer:
     updateFrequency: 0
 --- !u!114 &114186242874082720
@@ -105,6 +110,11 @@ MonoBehaviour:
   timerTuto: 3
   panelTutoInGame: {fileID: 0}
   listTutoPX:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Overlay:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -213,6 +223,7 @@ MonoBehaviour:
   movingPlatform: {fileID: 0}
   panelCanvasInGame: {fileID: 0}
   panelCanvasGameOver: {fileID: 0}
+  menuPause: {fileID: 0}
   prefabsPlayer: {fileID: 1078389107829744, guid: 9fb3f57496f178d48a3ba21caf5f5880,
     type: 2}
   desactivateGameOverAndVictory: 0

@@ -18,6 +18,7 @@ TagManager:
   - PickupRepulseActive
   - DeathEnemy
   - Score
+  - courone
   layers:
   - Default
   - TransparentFX
