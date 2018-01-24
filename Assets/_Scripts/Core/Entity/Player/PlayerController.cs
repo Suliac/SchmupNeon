@@ -30,10 +30,12 @@ public class PlayerController : Pausable, IKillable
     private string prefabScoreTag = "Score";
     //[FoldoutGroup("Debug"), Tooltip("objets weapons"), SerializeField]
     //private Transform parentWeapons;
+    [FoldoutGroup("GamePlay"), Tooltip("quand on meurt"), SerializeField]
+    private Vibration dieVibration;
 
     [FoldoutGroup("Debug"), Tooltip("opti fps"), SerializeField]
     private FrequencyTimer updateTimer;
-
+    
 
     ////id weapons du joueur
     //private int idWeapon = 0;
@@ -296,6 +298,7 @@ public class PlayerController : Pausable, IKillable
         {
             CreateDeathScoreObject();
         }
+        dieVibration.play(idPlayer);
 
         weaponHandle.Init();
         pickupHandle.Init();

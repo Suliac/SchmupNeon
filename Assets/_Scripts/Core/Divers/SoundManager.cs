@@ -101,7 +101,7 @@ public class SoundManager : MonoBehaviour
     public void PlayDeadPlayerSound()
     {
         //print("Play deadplayer sound");
-        PlaySound("Play_deadplayer3");
+        PlaySound("Play_playerdead3");
     }
 
     public void PlayExplosionSound()
