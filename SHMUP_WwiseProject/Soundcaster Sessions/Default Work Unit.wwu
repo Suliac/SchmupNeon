@@ -14,6 +14,14 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="UI_menu2" ID="{C4846240-0281-4AFD-B9A7-EF773882A6D4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="UI_menu3" ID="{58A7BD4E-1D11-4C48-90B7-F856EAD06041}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Explosion" ID="{85920E43-C7B6-46A5-B63F-03014817863B}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="1" Y="0"/>
 						</Module>
@@ -24,6 +32,10 @@
 						<Module>
 							<ObjectRef Name="sfx dead" ID="{8914D3AF-6436-4341-8E37-4E33E040BB71}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Bulle" ID="{55669F69-D088-40FC-AB98-2DDACA04B941}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<Position X="1" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="pickupP1" ID="{BFC36F13-952D-40DA-AC57-3226E2B5C873}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
