@@ -101,7 +101,7 @@ public class SoundManager : MonoBehaviour
     public void PlayDeadPlayerSound()
     {
         //print("Play deadplayer sound");
-        PlaySound("Play_deadplayer");
+        PlaySound("Play_playerdead3");
     }
 
     public void PlayExplosionSound()
@@ -122,6 +122,19 @@ public class SoundManager : MonoBehaviour
         int tmpPlayer = playerNumber + 1;
         //print("Play respawn sound for P" + tmpPlayer.ToString("0"));
         PlaySound("Play_respawnP" + tmpPlayer.ToString("0"));
+    }
+
+    public void PlayImpactSound(int playerNumber)
+    {
+        int tmpPlayer = playerNumber + 1;
+        PlaySound("Play_impact" + tmpPlayer.ToString("0"));
+    }
+
+    public void PlayDeadEnemySound()
+    {
+        PlaySound("Play_sfx_dead");
+        print("Play_sfx_dead");
+
     }
 
     //public void PlayProjectileSound()
@@ -153,7 +166,7 @@ public class SoundManager : MonoBehaviour
             if (playerShooting.Contains(true) && !isPlayingShoot) // Si au moins un joueur tir
             {
                 //print("Play projectile sound");
-                PlaySound("Play_projectile");
+                PlaySound("Play_Tir");
                 isPlayingShoot = true;
             }
         }
@@ -168,7 +181,7 @@ public class SoundManager : MonoBehaviour
             if (!playerShooting.Contains(true) && isPlayingShoot) // Si aucun joueur ne tir
             {
                 //print("Stop projectile sound");
-                PlaySound("Stop_projectile");
+                PlaySound("Stop_Tir");
                 isPlayingShoot = false;
             }
         }
