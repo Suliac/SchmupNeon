@@ -381,6 +381,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Stop_Bulle" ID="{06ACBE7E-1D7E-4502-8289-A895B6A2D222}">
+					<ChildrenList>
+						<Action Name="" ID="{7ED93261-59E7-4974-BC40-97D47CFD8325}" ShortID="240672303">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bulle" ID="{55669F69-D088-40FC-AB98-2DDACA04B941}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
