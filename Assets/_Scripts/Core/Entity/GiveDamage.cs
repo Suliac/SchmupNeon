@@ -107,8 +107,8 @@ public class GiveDamage : MonoBehaviour
                     {
                         Vector3 scorePosition = life.CurrentLife <= 0 ? life.transform.position : life.transform.position + life.transform.up * 1.5f;
                         CreateScorePrefab(scorePosition, life.CurrentLife <= 0, score);
-
                         PlayerController.ScorePlayer += score;
+                        SoundManager.GetSingularity.PlayImpactSound(PlayerController.IdPlayer);
                     }
                 }
                 else

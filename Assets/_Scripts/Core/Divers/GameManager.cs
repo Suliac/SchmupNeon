@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     [FoldoutGroup("Object In World"), Tooltip("panel Canvas de gameover"), SerializeField]
     private GameObject panelCanvasGameOver;
 
+    [FoldoutGroup("Object In World"), Tooltip("mennu pause"), SerializeField]
+    private GameObject menuPause;
+
     [FoldoutGroup("Debug"), Tooltip("Mouvement du joueur"), SerializeField]
     private GameObject prefabsPlayer;
 
@@ -69,6 +72,10 @@ public class GameManager : MonoBehaviour
     private PlayerController[] playerControllers;
     public PlayerController[] PlayerControllers { get { return playerControllers; } }
 
+    [FoldoutGroup("Debug"), Tooltip("Joueurs en jeu")]
+    private bool[] playersInGame;
+    public bool[] PlayersInGame { get { return playersInGame; } set { playersInGame = value; } }
+
     private StateManager.GameState stateBeforePause;
     //singleton
     private static GameManager instance;
@@ -76,6 +83,8 @@ public class GameManager : MonoBehaviour
     {
         get { return instance; }
     }
+
+    private bool paused = false;
 
     #endregion
 
@@ -93,6 +102,7 @@ public class GameManager : MonoBehaviour
     {
         SetSingleton();
         playerControllers = new PlayerController[4];
+        playersInGame = new bool[4];
         playerConnect = PlayerConnected.GetSingleton;
         tutoStart = GetComponent<TutoStart>();
         winManager = GetComponent<WinManager>();
@@ -150,13 +160,29 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// quite le jeu ?
     /// </summary>
-    private void Quit()
+    private void InputQuit()
     {
-        if (PlayerConnected.GetSingleton.getPlayer(-1).GetButtonDown("Escape")
-            || PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("Start"))
+        if (!paused)
         {
-            //scoreManager.Save();
-            SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
+            if (PlayerConnected.GetSingleton.getPlayer(-1).GetButtonDown("Escape")
+                || PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("Start"))
+            {
+                Pause();
+            }
+        }
+        else
+        {
+            if (PlayerConnected.GetSingleton.getPlayer(-1).GetButtonDown("UICancel")
+                || PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
+            {
+                Resume();
+            }
+            else if (PlayerConnected.GetSingleton.getPlayer(-1).GetButtonDown("UISubmit")
+                || PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
+            {
+                Time.timeScale = 1;
+                SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
+            }
         }
     }
 
@@ -214,7 +240,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         SoundManager.GetSingularity.CleanProjectileSound();
-        
+
         StateManager.GetSingleton.State = StateManager.GameState.GameOver;
         panelCanvasGameOver.SetActive(true);
         panelCanvasInGame.SetActive(false);
@@ -241,7 +267,7 @@ public class GameManager : MonoBehaviour
 
     private void InputPause()
     {
-        if (StateManager.GetSingleton.State == StateManager.GameState.Pause)
+        /*if (StateManager.GetSingleton.State == StateManager.GameState.Pause)
         {
             if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
             {
@@ -252,7 +278,8 @@ public class GameManager : MonoBehaviour
                 StateManager.GetSingleton.State = StateManager.GameState.Menu;
                 SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
             }
-        }
+        }*/
+
     }
 
     public void OnWin()
@@ -263,6 +290,13 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
+        //scoreManager.Save();
+        
+        menuPause.SetActive(true);
+        paused = true;
+        Time.timeScale = 0;
+
+        /*
         if (StateManager.GetSingleton.State == StateManager.GameState.Tuto || StateManager.GetSingleton.State == StateManager.GameState.Play)
         {
             movingPlatform.IsScrollingAcrtive = false;
@@ -273,11 +307,15 @@ public class GameManager : MonoBehaviour
             {
                 pausable.Pause();
             }
-        }
+        }*/
     }
 
     public void Resume()
     {
+        menuPause.SetActive(false);
+        paused = false;
+        Time.timeScale = 1;
+        /*
         if (StateManager.GetSingleton.State == StateManager.GameState.Pause)
         {
             movingPlatform.IsScrollingAcrtive = true;
@@ -287,7 +325,7 @@ public class GameManager : MonoBehaviour
             {
                 pausable.Resume();
             }
-        }
+        }*/
     }
 
     #endregion
@@ -305,14 +343,23 @@ public class GameManager : MonoBehaviour
             //IsGameOver();
             winManager.IsVictory();
         }
-        else if (StateManager.GetSingleton.State == StateManager.GameState.Pause)
+        /*else if (StateManager.GetSingleton.State == StateManager.GameState.Pause)
         {
             InputPause();
-        }
+        }*/
+
 
         //InputGameOver();
-        Quit(); //input quitter
+        if (!paused)
+            InputQuit(); //input quitter
 
+    }
+
+    private void OnGUI()
+    {
+        if (!paused)
+            return;
+        InputQuit(); //input quitter
     }
 
     #endregion

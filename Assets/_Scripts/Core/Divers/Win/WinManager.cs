@@ -305,7 +305,7 @@ public class WinManager : MonoBehaviour
                 if (lastState != currentState)
                 {
                     StartCoroutine(BlinkLetters(blinkFrequency));
-                    bool[] arePlayersConnected = PlayerConnected.GetSingleton.playerArrayConnected;
+                    bool[] arePlayersConnected = gameManager.PlayersInGame;
                     for (int i = 0; i < arePlayersConnected.Length; i++)
                     {
                         if (!arePlayersConnected[i])
@@ -409,13 +409,24 @@ public class WinManager : MonoBehaviour
         {
             if (currentState == VictoryStates.Ready) // Si aucun des joueurs n'est en train de changer son nom
             {
-                if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireA"))
+                bool[] playersConnected = gameManager.PlayersInGame;
+                int firstIndexPlayerInGame = 0;
+                for (int i = 0; i < playersConnected.Length; i++)
+                {
+                    if(playersConnected[i])
+                    {
+                        firstIndexPlayerInGame = i;
+                        break;
+                    }
+                }
+
+                if (PlayerConnected.GetSingleton.getPlayer(firstIndexPlayerInGame).GetButtonDown("FireA"))
                 {
                     //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     StateManager.GetSingleton.State = StateManager.GameState.Tuto;
                     SceneChangeManager.GetSingleton.JumpToScene();
                 }
-                if (PlayerConnected.GetSingleton.getPlayer(0).GetButtonDown("FireB"))
+                if (PlayerConnected.GetSingleton.getPlayer(firstIndexPlayerInGame).GetButtonDown("FireB"))
                 {
                     //Init();
                     //SceneManager.LoadScene("1_Menu");

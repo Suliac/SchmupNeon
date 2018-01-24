@@ -36,6 +36,8 @@ public class TutoStart : MonoBehaviour
 
     [FoldoutGroup("Object In World"), Tooltip("canvas des players"), SerializeField]
     private List<GameObject> listTutoPX;
+    public List<GameObject> Overlay;
+
     [FoldoutGroup("Object In World"), Tooltip("Revenir à gauche"), SerializeField]
     private GameObject comeBackLeft;
     //[FoldoutGroup("Object In World"), Tooltip("Sprite joypad"), SerializeField]
@@ -64,6 +66,7 @@ public class TutoStart : MonoBehaviour
     private bool enableTuto = true;
     private int currentChrono;
     private bool onChrono = false;
+    private bool coroutineLaunched = false;
     #endregion
 
     #region Initialization
@@ -115,6 +118,20 @@ public class TutoStart : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
         gameManager.SpawnPlayer[index].gameObject.SetActive(true);    //active les spawn des players
         listTutoState[index] = 2;
+
+        yield return null;
+
+        if (gameManager.PlayerControllers[index] != null) //désactiver l'overlay du player
+        {
+            Renderer rend = Overlay[index].GetComponent<SpriteRenderer>();
+            rend.material.color = gameManager.PlayerControllers[index].ColorPlayer;
+
+            yield return new WaitForSeconds(3.0f);
+
+            Overlay[index].SetActive(false);
+            yield return null;
+        }
+        yield return null;
     }
 
     /// <summary>
@@ -163,7 +180,7 @@ public class TutoStart : MonoBehaviour
     {
         if (onChrono)   //si on est déjà en mode chrono...
             return;
-        StopAllCoroutines();
+        StopCoroutine("ChronoPass");
         onChrono = true;
         tutoChrono.SetActive(true);
         currentChrono = timerTuto;
@@ -175,7 +192,7 @@ public class TutoStart : MonoBehaviour
         if (!onChrono)   //si on est déjà en mode chrono...
             return;
         //Debug.Log("ici ??");
-        StopAllCoroutines();
+        StopCoroutine("ChronoPass");
         tutoChrono.SetActive(false);
         onChrono = false;
     }
@@ -190,6 +207,12 @@ public class TutoStart : MonoBehaviour
             yield return new WaitForSeconds(1);
             currentChrono--;
         }
+
+        for (int i = 0; i < 4; i++)
+        {
+            gameManager.PlayersInGame[i] = listTutoState[i] > 1;
+        }
+
         //Debug.Log("la");
         tutoChrono.SetActive(false);
         activeGame();
@@ -270,6 +293,9 @@ public class TutoStart : MonoBehaviour
             }
         }
     }
+
+
+
 
     /// <summary>
     /// active le jeu après le tuto

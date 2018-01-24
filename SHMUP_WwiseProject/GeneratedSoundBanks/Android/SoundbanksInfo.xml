@@ -21,24 +21,36 @@
 			<ShortName>SchmupSoundBank</ShortName>
 			<Path>SchmupSoundBank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="4051121395" Name="Play_deadplayer" ObjectPath="\Events\Default Work Unit\Play_deadplayer"/>
 				<Event Id="4030404899" Name="Play_Explosion" ObjectPath="\Events\Default Work Unit\Play_Explosion"/>
+				<Event Id="2947295501" Name="Play_impact1" ObjectPath="\Events\Default Work Unit\Play_impact1"/>
+				<Event Id="2947295502" Name="Play_impact2" ObjectPath="\Events\Default Work Unit\Play_impact2"/>
+				<Event Id="2947295503" Name="Play_impact3" ObjectPath="\Events\Default Work Unit\Play_impact3"/>
+				<Event Id="2947295496" Name="Play_impact4" ObjectPath="\Events\Default Work Unit\Play_impact4"/>
 				<Event Id="206418435" Name="Play_musique" ObjectPath="\Events\Default Work Unit\Play_musique"/>
 				<Event Id="3996700807" Name="Play_pickupP1" ObjectPath="\Events\Default Work Unit\Play_pickupP1"/>
 				<Event Id="3996700804" Name="Play_pickupP2" ObjectPath="\Events\Default Work Unit\Play_pickupP2"/>
 				<Event Id="3996700805" Name="Play_pickupP3" ObjectPath="\Events\Default Work Unit\Play_pickupP3"/>
 				<Event Id="3996700802" Name="Play_pickupP4" ObjectPath="\Events\Default Work Unit\Play_pickupP4"/>
+				<Event Id="1179023290" Name="Play_playerdead3" ObjectPath="\Events\Default Work Unit\Play_playerdead3"/>
 				<Event Id="880148599" Name="Play_projectile" ObjectPath="\Events\Default Work Unit\Play_projectile"/>
 				<Event Id="2639668299" Name="Play_respawnP1" ObjectPath="\Events\Default Work Unit\Play_respawnP1"/>
 				<Event Id="2639668296" Name="Play_respawnP2" ObjectPath="\Events\Default Work Unit\Play_respawnP2"/>
 				<Event Id="2639668297" Name="Play_respawnP3" ObjectPath="\Events\Default Work Unit\Play_respawnP3"/>
 				<Event Id="2639668302" Name="Play_respawnP4" ObjectPath="\Events\Default Work Unit\Play_respawnP4"/>
+				<Event Id="4254480360" Name="Play_sfx_dead" ObjectPath="\Events\Default Work Unit\Play_sfx_dead"/>
+				<Event Id="2553471791" Name="Play_Tir" ObjectPath="\Events\Default Work Unit\Play_Tir"/>
+				<Event Id="73143491" Name="Play_UI_menu1" ObjectPath="\Events\Default Work Unit\Play_UI_menu1"/>
 				<Event Id="884225013" Name="Stop_projectile" ObjectPath="\Events\Default Work Unit\Stop_projectile" MaxAttenuation="0.000000"/>
+				<Event Id="975758325" Name="Stop_Tir" ObjectPath="\Events\Default Work Unit\Stop_Tir" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="50775084" Language="SFX">
 					<ShortName>respawnP3.wav</ShortName>
 					<Path>SFX\respawnP3_712F6A64.wem</Path>
+				</File>
+				<File Id="65147047" Language="SFX">
+					<ShortName>impact3.wav</ShortName>
+					<Path>SFX\impact3_1C9C67B2.wem</Path>
 				</File>
 				<File Id="92670017" Language="SFX">
 					<ShortName>recherche schmup.wav</ShortName>
@@ -48,6 +60,14 @@
 					<ShortName>Explosion.wav</ShortName>
 					<Path>SFX\Explosion_E2CCD3B2.wem</Path>
 				</File>
+				<File Id="195890741" Language="SFX">
+					<ShortName>playerdead3.wav</ShortName>
+					<Path>SFX\playerdead3_1C9C67B2.wem</Path>
+				</File>
+				<File Id="200492880" Language="SFX">
+					<ShortName>sfx dead2.wav</ShortName>
+					<Path>SFX\sfx dead2_1C9C67B2.wem</Path>
+				</File>
 				<File Id="362625940" Language="SFX">
 					<ShortName>gameover2.wav</ShortName>
 					<Path>SFX\gameover2_F17FB28C.wem</Path>
@@ -55,6 +75,10 @@
 				<File Id="394875972" Language="SFX">
 					<ShortName>pickupP4.wav</ShortName>
 					<Path>SFX\pickupP4_A8A51CE8.wem</Path>
+				</File>
+				<File Id="430136103" Language="SFX">
+					<ShortName>impact4.wav</ShortName>
+					<Path>SFX\impact4_1C9C67B2.wem</Path>
 				</File>
 				<File Id="470110280" Language="SFX">
 					<ShortName>ingame schmup.wav</ShortName>
@@ -72,6 +96,14 @@
 					<ShortName>respawnP2.wav</ShortName>
 					<Path>SFX\respawnP2_A5563742.wem</Path>
 				</File>
+				<File Id="589175796" Language="SFX">
+					<ShortName>UI_menu2.wav</ShortName>
+					<Path>SFX\UI_menu2_90558C42.wem</Path>
+				</File>
+				<File Id="632019275" Language="SFX">
+					<ShortName>impact1.wav</ShortName>
+					<Path>SFX\impact1_1C9C67B2.wem</Path>
+				</File>
 				<File Id="702174246" Language="SFX">
 					<ShortName>projectile.wav</ShortName>
 					<Path>SFX\projectile_F17FB28C.wem</Path>
@@ -79,6 +111,10 @@
 				<File Id="747269259" Language="SFX">
 					<ShortName>pickupP1.wav</ShortName>
 					<Path>SFX\pickupP1_674C2360.wem</Path>
+				</File>
+				<File Id="750532254" Language="SFX">
+					<ShortName>impact2.wav</ShortName>
+					<Path>SFX\impact2_1C9C67B2.wem</Path>
 				</File>
 				<File Id="788818331" Language="SFX">
 					<ShortName>respawnP4.wav</ShortName>
@@ -88,9 +124,9 @@
 					<ShortName>pickupP3.wav</ShortName>
 					<Path>SFX\pickupP3_53D985FF.wem</Path>
 				</File>
-				<File Id="988057082" Language="SFX">
-					<ShortName>deadplayer.wav</ShortName>
-					<Path>SFX\deadplayer_1C9C67B2.wem</Path>
+				<File Id="1032452741" Language="SFX">
+					<ShortName>tchiou.wav</ShortName>
+					<Path>SFX\tchiou_3DC87D60.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

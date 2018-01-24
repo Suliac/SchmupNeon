@@ -21,6 +21,14 @@ public class ExplosionPickup : HandablePickup
     [FoldoutGroup("GamePlay"), Tooltip("Force de poussée"), SerializeField]
     private float speedPush = 5.0f;
 
+    [FoldoutGroup("Vibration"), Tooltip("Utilisation de l'item"), SerializeField]
+    private Vibration useItemVibration;
+    [FoldoutGroup("Vibration"), Tooltip("se fait poussé"), SerializeField]
+    private Vibration getPushed;
+
+
+
+
     [FoldoutGroup("Debug"), Tooltip("Est ce que l'item a été utilisé")]
     private bool launched = false;
 
@@ -48,6 +56,9 @@ public class ExplosionPickup : HandablePickup
         {
             launched = true;
             PlayerController currentPlayer = currentHandler.GetComponent<PlayerController>();
+            //PlayerConnected.GetSingleton.setVibrationPlayer(currentPlayer.IdPlayer, 0, 1, 1);
+            useItemVibration.play(currentPlayer.IdPlayer);
+
             SoundManager.GetSingularity.PlayExplosionSound();
 
             Collider[] hits = Physics.OverlapSphere(currentHandler.transform.position, radius, 1 << 8);
@@ -59,6 +70,8 @@ public class ExplosionPickup : HandablePickup
                 {
                     //print(otherPlayer.gameObject.name+" "+otherPlayer.gameObject.layer);
                     otherPlayer.InhibCoeff = 0.0f;
+                    //PlayerConnected.GetSingleton.setVibrationPlayer(otherPlayer.IdPlayer, 1, 1, 1);
+                    getPushed.play(otherPlayer.IdPlayer);
                     playersToPush.Add(otherPlayer);
                 }
             }

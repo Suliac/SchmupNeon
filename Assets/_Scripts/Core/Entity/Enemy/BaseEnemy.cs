@@ -128,6 +128,8 @@ public abstract class BaseEnemy : MonoBehaviour, IKillable
     {
         if (!isDead)
         {
+            SoundManager.GetSingularity.PlayDeadEnemySound();
+
             isDead = true;
             enableEnemy = false;
             body.velocity = Vector3.zero;

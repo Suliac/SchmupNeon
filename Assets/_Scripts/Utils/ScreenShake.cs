@@ -13,43 +13,33 @@ public class ScreenShake : MonoBehaviour {
     private float yPos;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         camPosition = transform.localPosition;
         shakeTimer = 0;
         xPos = 0;
         yPos = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	   //if (Input.GetMouseButtonDown(0))
-    //    {
-    //        Shake();
-    //    }
-	}
-
    
     public void Shake()
     {
         lock(this)
         {
-        if (shakeTimer <= shakeDuration)
-        {
-            xPos = Random.Range(-1, 2) * screenBump;
-            //print("xPos" + xPos);
-            yPos = Random.Range(-1, 2) * screenBump;
-            //print("yPos" + yPos);
+            if (shakeTimer <= shakeDuration)
+            {
+                xPos = Random.Range(-1, 2) * screenBump;
+                yPos = Random.Range(-1, 2) * screenBump;
 
-            transform.localPosition = new Vector3(xPos, yPos, -13);
+                transform.localPosition = new Vector3(xPos, yPos, -13);
 
-            shakeTimer++;
-            StartCoroutine(ShakeWaiting());
-        }
-        else
-        {
-            transform.localPosition = camPosition;
-            shakeTimer = 0;
-        }
+                shakeTimer++;
+                StartCoroutine(ShakeWaiting());
+            }
+            else
+            {
+                transform.localPosition = camPosition;
+                shakeTimer = 0;
+            }
         }
     }
    

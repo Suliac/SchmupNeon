@@ -45,6 +45,7 @@ public class LifeBehavior : MonoBehaviour
 
     [FoldoutGroup("GamePlay"), Tooltip("Renderer à faire blink lors de l'invincibilité"), SerializeField]
     private Renderer entityRenderer;
+    private Color defaultColor;
 
     [FoldoutGroup("GamePlay"), Tooltip("Couleur du blink lors de l'invincibilité"), SerializeField]
     private Color invincibilityColorBlink;
@@ -115,11 +116,20 @@ public class LifeBehavior : MonoBehaviour
     public void InitLife()
     {
         currentLife = StartLife;
+        
     }
 
     public void OnExternalKill()
     {
         currentLife = 0;
+    }
+
+    public void ForceStopInvincibility()
+    {
+        print("Force Stop invincibility");
+        entityRenderer.material.color = defaultColor;
+        invincible = false;
+        coroutineStarted = false;
     }
 
     public void Invicible(float time)
@@ -140,7 +150,7 @@ public class LifeBehavior : MonoBehaviour
         float phaseDuration = 0.1f;
         bool isGrey = true;
 
-        Color oldColor = entityRenderer ? entityRenderer.material.color : Color.white;
+        defaultColor = entityRenderer ? entityRenderer.material.color : Color.white;
 
         while (currentTime < time)
         {
@@ -158,15 +168,15 @@ public class LifeBehavior : MonoBehaviour
                 if (isGrey)
                     entityRenderer.material.color = invincibilityColorBlink;
                 else
-                    entityRenderer.material.color = oldColor;
+                    entityRenderer.material.color = defaultColor;
             }
 
             yield return null;
         }
-        entityRenderer.material.color = oldColor;
-
+        entityRenderer.material.color = defaultColor;
         coroutineStarted = false;
         invincible = false;
+        print("end coroutine invincible");
         yield return null;
     }
 
