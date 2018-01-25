@@ -122,11 +122,7 @@ public class PlayerController : Pausable, IKillable
         animPlayer.SetActive(true);
         if (animPick)
         {
-            SpriteRenderer renderer = animPick.GetComponent<SpriteRenderer>();
-            if (renderer)
-            {
-                renderer.sprite = null;
-            } 
+            animPick.SetActive(false);
         }
         playerBody.velocity = Vector3.zero;
         hasMoved = false;
