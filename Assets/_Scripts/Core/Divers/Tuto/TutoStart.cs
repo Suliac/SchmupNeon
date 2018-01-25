@@ -66,7 +66,7 @@ public class TutoStart : MonoBehaviour
     private bool enableTuto = true;
     private int currentChrono;
     private bool onChrono = false;
-    private bool coroutineLaunched = false;
+    private List<Coroutine> coroutines;
     #endregion
 
     #region Initialization
@@ -75,6 +75,7 @@ public class TutoStart : MonoBehaviour
     {
         gameManager = GetComponent<GameManager>();
         cam = Camera.main;
+        coroutines = new List<Coroutine>();
     }
 
     private void Start()
@@ -185,21 +186,29 @@ public class TutoStart : MonoBehaviour
     {
         if (onChrono)   //si on est déjà en mode chrono...
             return;
-        StopCoroutine("ChronoPass");
+        StopCoroutineChrono();
         onChrono = true;
         tutoChrono.SetActive(true);
         currentChrono = timerTuto;
-        StartCoroutine(ChronoPass());
+        coroutines.Add(StartCoroutine(ChronoPass()));
     }
 
     private void stopChronoTuto()
     {
         if (!onChrono)   //si on est déjà en mode chrono...
             return;
-        //Debug.Log("ici ??");
-        StopCoroutine("ChronoPass");
+        StopCoroutineChrono();
         tutoChrono.SetActive(false);
         onChrono = false;
+    }
+
+    private void StopCoroutineChrono()
+    {
+        foreach (var coroutine in coroutines)
+        {
+            StopCoroutine(coroutine);
+        }
+        coroutines.Clear();
     }
 
     IEnumerator ChronoPass()
