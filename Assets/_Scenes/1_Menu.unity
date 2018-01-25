@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -657,7 +657,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 331090308}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: -222.00002, z: 0}
+  m_LocalPosition: {x: 8, y: -182.8, z: 0}
   m_LocalScale: {x: 0.52625, y: 0.52625, z: 0.52625}
   m_Children:
   - {fileID: 1854779295}
@@ -666,7 +666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -222}
+  m_AnchoredPosition: {x: 8, y: -182.8}
   m_SizeDelta: {x: 279.4, y: 81.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331090310
@@ -1036,7 +1036,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2638271}
-          m_MethodName: PlayMenuSound
+          m_MethodName: PlayMenuSoundEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1814,7 +1814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &740348586
 Transform:
   m_ObjectHideFlags: 0
@@ -2400,7 +2400,7 @@ Prefab:
       objectReference: {fileID: 2638271}
     - target: {fileID: 1142667157034060, guid: 94262b54145b50d40b53a8066ee45075, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224069879430989582, guid: 94262b54145b50d40b53a8066ee45075,
         type: 2}
@@ -2432,7 +2432,18 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -18
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114166970817492342, guid: 94262b54145b50d40b53a8066ee45075,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayMenuSoundEnter
+      objectReference: {fileID: 0}
+    - target: {fileID: 114385092737977468, guid: 94262b54145b50d40b53a8066ee45075,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: PlayMenuSoundChangeButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114546663015259592, guid: 94262b54145b50d40b53a8066ee45075, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 94262b54145b50d40b53a8066ee45075, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1325550059
@@ -2557,7 +2568,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1326471305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.299988, y: -135.6, z: 0}
+  m_LocalPosition: {x: 9.299988, y: -95.604996, z: 0}
   m_LocalScale: {x: 0.52625, y: 0.52625, z: 0.52625}
   m_Children:
   - {fileID: 709463834}
@@ -2566,7 +2577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.3, y: -135.6}
+  m_AnchoredPosition: {x: 9.299999, y: -95.604996}
   m_SizeDelta: {x: 747, y: 90.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326471307
@@ -3418,7 +3429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1652312305
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3568,7 +3579,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1756688643}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.699997, y: -179, z: 0}
+  m_LocalPosition: {x: 7.699997, y: -139.00497, z: 0}
   m_LocalScale: {x: 0.52625, y: 0.52625, z: 0.52625}
   m_Children:
   - {fileID: 1627834866}
@@ -3577,7 +3588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.7, y: -179}
+  m_AnchoredPosition: {x: 7.7, y: -139.00497}
   m_SizeDelta: {x: 399.5, y: 87.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1756688645

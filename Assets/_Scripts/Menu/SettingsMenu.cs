@@ -56,19 +56,19 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetRes1()
     {
-        Screen.SetResolution(768, 432, true);
+        Screen.SetResolution(768, 432, Screen.fullScreen);
         Debug.Log(Screen.currentResolution);
     }
 
     public void SetRes2()
     {
-        Screen.SetResolution(1280, 720, true);
+        Screen.SetResolution(1280, 720, Screen.fullScreen);
         Debug.Log(Screen.currentResolution);
     }
 
     public void SetRes3()
     {
-        Screen.SetResolution(1920, 1080, true);
+        Screen.SetResolution(1920, 1080, Screen.fullScreen);
         Debug.Log(Screen.currentResolution);
     }
 

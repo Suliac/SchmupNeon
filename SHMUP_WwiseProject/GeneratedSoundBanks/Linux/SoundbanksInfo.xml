@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Linux" BasePlatform="Linux" SchemaVersion="11" SoundbankVersion="125">
 	<RootPaths>
-		<ProjectRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Linux\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</SoundBanksRoot>
+		<ProjectRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Linux\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Linux\</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>

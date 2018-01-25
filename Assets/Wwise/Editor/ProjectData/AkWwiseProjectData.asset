@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: 833323760
-    m_lastTimePart2: -1999281341
+    m_lastTimePsrt1: 141813381
+    m_lastTimePart2: -1999281144
     List:
     - Name: Play_Bulle
       Path: Default Work Unit\Play_Bulle
@@ -382,7 +382,6 @@ MonoBehaviour:
   ExpandedItems:
   - /SHMUP_WwiseProject
   - /SHMUP_WwiseProject/Events
-  - /SHMUP_WwiseProject/Events/Default Work Unit
   - /SHMUP_WwiseProject/SoundBanks
   - /SHMUP_WwiseProject/SoundBanks/Default Work Unit
   - /SHMUP_WwiseProject/States

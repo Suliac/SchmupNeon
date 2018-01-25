@@ -18,7 +18,6 @@ public class Leaderboard : MonoBehaviour
     const string publicCode = "5a5b77e939992b09e430621e";
     const string webURL = "http://dreamlo.com/lb/";
 
-    
     public Highscore[] highscoresList;
     public bool uploadedScore = false;
 
@@ -45,9 +44,10 @@ public class Leaderboard : MonoBehaviour
     private void Awake()
     {
         SetSingleton();
-        
+
         DownloadHighscores();
     }
+    
     #endregion
 
     #region Core
@@ -74,7 +74,7 @@ public class Leaderboard : MonoBehaviour
         {
             Debug.Log("Upload Successful");
             DownloadHighscores();
-        }            
+        }
         else
         {
             Debug.Log("Error uploading: " + www.error);
@@ -122,11 +122,12 @@ public class Leaderboard : MonoBehaviour
             //Debug.Log(highscoresList[i].username + ": " + highscoresList[i].score);
         }
     }
+
     #endregion
 
     #region Unity ending functions
 
-	#endregion
+    #endregion
 }
 
 /// <summary>

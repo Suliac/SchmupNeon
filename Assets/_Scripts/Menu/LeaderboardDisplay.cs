@@ -2,6 +2,7 @@
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// LeaderboardDisplay Description
@@ -16,6 +17,7 @@ public class LeaderboardDisplay : MonoBehaviour
     private bool displayed = false;
     private bool isQuiting = false;
 
+    public UnityEngine.UI.Button backButton;
     private Leaderboard leaderboard;
     #endregion
 
@@ -24,6 +26,7 @@ public class LeaderboardDisplay : MonoBehaviour
     private void Start()
     {
         leaderboard = Leaderboard.GetSingleton;
+        backButton.Select();
     }
     #endregion
 
@@ -48,6 +51,12 @@ public class LeaderboardDisplay : MonoBehaviour
         }
     }
 
+
+    public void ReturnToMenu()
+    {
+        SceneChangeManager.GetSingleton.JumpToSceneWithFade("1_Menu");
+    }
+
     private void InputMenu()
     {
         if (PlayerConnected.GetSingleton.getPlayer(0).GetButton("FireB") && !isQuiting)
@@ -61,7 +70,7 @@ public class LeaderboardDisplay : MonoBehaviour
     #region Unity ending functions
     private void Update()
     {
-        InputMenu();
+        //InputMenu();
         //optimisation des fps
         if (updateTimer.Ready())
         {
@@ -69,6 +78,12 @@ public class LeaderboardDisplay : MonoBehaviour
             {
                 SetupLeaderboard();
                 displayed = true;
+            }
+
+            if (!EventSystem.current.currentSelectedGameObject)
+            {
+                print("autoselect");
+                backButton.Select();
             }
         }
     }
