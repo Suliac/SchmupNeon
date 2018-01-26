@@ -285,6 +285,8 @@ public class WinManager : MonoBehaviour
                 // TODO : Fade in ?
                 if (lastState != currentState)
                 {
+                    SoundManager.GetSingularity.PlayMenuMusic();
+
                     //print("Victory State : DisplayUI");
                     panelWin.SetActive(true);
                     NextState();

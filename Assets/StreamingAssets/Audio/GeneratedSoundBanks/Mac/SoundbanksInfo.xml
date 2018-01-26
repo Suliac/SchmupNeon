@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="125">
 	<RootPaths>
-		<ProjectRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Donnees\Travail\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Mac\</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\sulia\Source\Repos\SchmupNeon\SHMUP_WwiseProject\GeneratedSoundBanks\Mac\</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -22,6 +22,8 @@
 			<Path>SchmupSoundBank.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2629826670" Name="Play_Bulle" ObjectPath="\Events\Default Work Unit\Play_Bulle"/>
+				<Event Id="3252723435" Name="Play_Decompte" ObjectPath="\Events\Default Work Unit\Play_Decompte"/>
+				<Event Id="2322119967" Name="Play_Decompte_01" ObjectPath="\Events\Default Work Unit\Play_Decompte_01"/>
 				<Event Id="4030404899" Name="Play_Explosion" ObjectPath="\Events\Default Work Unit\Play_Explosion"/>
 				<Event Id="2947295501" Name="Play_impact1" ObjectPath="\Events\Default Work Unit\Play_impact1"/>
 				<Event Id="2947295502" Name="Play_impact2" ObjectPath="\Events\Default Work Unit\Play_impact2"/>
@@ -38,6 +40,7 @@
 				<Event Id="2639668296" Name="Play_respawnP2" ObjectPath="\Events\Default Work Unit\Play_respawnP2"/>
 				<Event Id="2639668297" Name="Play_respawnP3" ObjectPath="\Events\Default Work Unit\Play_respawnP3"/>
 				<Event Id="2639668302" Name="Play_respawnP4" ObjectPath="\Events\Default Work Unit\Play_respawnP4"/>
+				<Event Id="3240049516" Name="Play_Score" ObjectPath="\Events\Default Work Unit\Play_Score"/>
 				<Event Id="4254480360" Name="Play_sfx_dead" ObjectPath="\Events\Default Work Unit\Play_sfx_dead"/>
 				<Event Id="1264733341" Name="Play_sfx_explode" ObjectPath="\Events\Default Work Unit\Play_sfx_explode"/>
 				<Event Id="2553471791" Name="Play_Tir" ObjectPath="\Events\Default Work Unit\Play_Tir"/>
@@ -47,10 +50,15 @@
 				<Event Id="73143489" Name="Play_UI_menu3" ObjectPath="\Events\Default Work Unit\Play_UI_menu3"/>
 				<Event Id="1443616532" Name="Stop_Bulle" ObjectPath="\Events\Default Work Unit\Stop_Bulle" MaxAttenuation="0.000000"/>
 				<Event Id="884225013" Name="Stop_projectile" ObjectPath="\Events\Default Work Unit\Stop_projectile" MaxAttenuation="0.000000"/>
+				<Event Id="2178222430" Name="Stop_Score" ObjectPath="\Events\Default Work Unit\Stop_Score" MaxAttenuation="0.000000"/>
 				<Event Id="975758325" Name="Stop_Tir" ObjectPath="\Events\Default Work Unit\Stop_Tir" MaxAttenuation="0.000000"/>
 				<Event Id="2204031643" Name="Stop_Tir4" ObjectPath="\Events\Default Work Unit\Stop_Tir4" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="19937077" Language="SFX">
+					<ShortName>Tir3.wav</ShortName>
+					<Path>SFX\Tir3_76DD0C22.wem</Path>
+				</File>
 				<File Id="50775084" Language="SFX">
 					<ShortName>respawnP3.wav</ShortName>
 					<Path>SFX\respawnP3_712F6A64.wem</Path>
@@ -139,9 +147,17 @@
 					<ShortName>impact2.wav</ShortName>
 					<Path>SFX\impact2_1C9C67B2.wem</Path>
 				</File>
+				<File Id="788777704" Language="SFX">
+					<ShortName>Tir1.wav</ShortName>
+					<Path>SFX\Tir1_1EA0A837.wem</Path>
+				</File>
 				<File Id="788818331" Language="SFX">
 					<ShortName>respawnP4.wav</ShortName>
 					<Path>SFX\respawnP4_6B8B15AB.wem</Path>
+				</File>
+				<File Id="830436615" Language="SFX">
+					<ShortName>Tir3.wav</ShortName>
+					<Path>SFX\Tir3_07FB476A.wem</Path>
 				</File>
 				<File Id="897744416" Language="SFX">
 					<ShortName>pickupP3.wav</ShortName>
