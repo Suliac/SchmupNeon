@@ -30,12 +30,8 @@
 							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="sfx dead" ID="{8914D3AF-6436-4341-8E37-4E33E040BB71}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="1" Y="2"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="Bulle" ID="{55669F69-D088-40FC-AB98-2DDACA04B941}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="1" Y="3"/>
+							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="pickupP1" ID="{BFC36F13-952D-40DA-AC57-3226E2B5C873}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
@@ -54,23 +50,23 @@
 							<Position X="2" Y="3"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="projectile" ID="{EEFA922B-FE23-4579-80B3-022E9809EAA4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="Tir4" ID="{3B7BD959-9B22-4BE3-9F12-CF5B67001BD5}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="proj3" ID="{C60CA448-8B60-47DA-97D2-A00B9E1DC3C4}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="sfx explode" ID="{9DCC6392-8367-451E-90C3-1791299816C9}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="3" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Tir" ID="{03F6F7CF-A7E8-44B1-94CE-E3A4E665F8BC}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="Decompte" ID="{5346A04C-3067-44E1-8940-FFBA53D32F01}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="3" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="sfx explode" ID="{9DCC6392-8367-451E-90C3-1791299816C9}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="Decompte_01" ID="{58AC20C4-79A7-4842-BCAD-B0B1477A8024}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="3" Y="3"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Tir1" ID="{44785D46-48F8-4AD5-A61F-FC182256444A}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+							<ObjectRef Name="Score" ID="{44785D46-48F8-4AD5-A61F-FC182256444A}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="3" Y="4"/>
 						</Module>
 						<Module>
@@ -108,14 +104,6 @@
 						<Module>
 							<ObjectRef Name="impact4" ID="{9A4B8718-508F-40C2-A5EC-2DC8895CA309}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
 							<Position X="5" Y="3"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Tir3" ID="{5346A04C-3067-44E1-8940-FFBA53D32F01}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="5" Y="4"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Tir4" ID="{3B7BD959-9B22-4BE3-9F12-CF5B67001BD5}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
-							<Position X="6" Y="4"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>

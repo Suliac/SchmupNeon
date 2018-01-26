@@ -1744,7 +1744,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>9</Value>
+										<Value>5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1785,13 +1785,6 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="pickupP1" ID="{BFC36F13-952D-40DA-AC57-3226E2B5C873}" ShortID="196773014">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>3</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -1815,13 +1808,6 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="pickupP2" ID="{30F24263-7117-46AE-80AB-5E84FEB48CCB}" ShortID="627349870">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>2</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -1845,13 +1831,6 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="pickupP3" ID="{574B529E-4183-4584-BADB-D1B5E9608AA0}" ShortID="944058968">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>2</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -1875,13 +1854,6 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="pickupP4" ID="{4A03BDEE-0B55-4D1D-B281-BC90D2A7ACA8}" ShortID="226633535">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>2</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -1981,6 +1953,11 @@
 										<Value>37</Value>
 									</ValueList>
 								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-1</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2013,13 +1990,6 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="respawnP1" ID="{29FF2AB3-3BC0-4E92-8DCC-A81264BCD57D}" ShortID="103742236">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>2</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -2043,13 +2013,6 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="respawnP2" ID="{9E2C02EA-7F26-4DB9-A395-684F422235F8}" ShortID="310676466">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>2</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -2073,13 +2036,6 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="respawnP3" ID="{A44650F9-27CB-4AED-8B15-D9DF5CC956B0}" ShortID="930344497">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>2</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -2148,7 +2104,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-1</Value>
+										<Value>-2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2175,6 +2131,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="UI_menu2" ID="{C4846240-0281-4AFD-B9A7-EF773882A6D4}" ShortID="1027614012">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -2332,7 +2295,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2358,7 +2321,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2384,7 +2347,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2410,7 +2373,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2465,6 +2428,11 @@
 						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -2647,7 +2615,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>4</Value>
+								<Value>3</Value>
 							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
@@ -2678,7 +2646,7 @@
 						<ActiveSource Name="sfx explode" ID="{5BF31B22-8A83-482F-9C30-0767A45E4955}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Tir1" ID="{44785D46-48F8-4AD5-A61F-FC182256444A}" ShortID="755392992">
+				<Sound Name="Score" ID="{44785D46-48F8-4AD5-A61F-FC182256444A}" ShortID="755392992">
 					<PropertyList>
 						<Property Name="Highpass" Type="int16">
 							<ValueList>
@@ -2693,7 +2661,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-8</Value>
+								<Value>-9</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -2708,9 +2676,9 @@
 					<ChildrenList>
 						<AudioFileSource Name="Tir1" ID="{8DA22B3A-478A-4112-8A42-C2835AED1FB4}" ShortID="788777704">
 							<PropertyList>
-								<Property Name="FadeOutDuration" Type="Real64" Value="0.139250191277736"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="9.10482019892892E-02"/>
 								<Property Name="TrimBegin" Type="Real64" Value="2.14231063504208E-02"/>
-								<Property Name="TrimEnd" Type="Real64" Value="0.192807957153788"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.131216526396328"/>
 							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>Tir1.wav</AudioFile>
@@ -2752,10 +2720,7 @@
 						<ActiveSource Name="Tir2" ID="{635DE872-DC5A-4EA2-A5DF-09847DF834B8}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Tir3" ID="{5346A04C-3067-44E1-8940-FFBA53D32F01}" ShortID="1017267393">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-					</PropertyList>
+				<Sound Name="Decompte" ID="{5346A04C-3067-44E1-8940-FFBA53D32F01}" ShortID="1017267393">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -2768,7 +2733,7 @@
 						<AudioFileSource Name="Tir3" ID="{92E18564-F389-4519-A1C4-516AF24D2AF2}" ShortID="19937077">
 							<PropertyList>
 								<Property Name="FadeOutDuration" Type="Real64" Value="0.182478959449121"/>
-								<Property Name="TrimEnd" Type="Real64" Value="0.182478959449121"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.757459831675594"/>
 							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>Tir3.wav</AudioFile>
@@ -2780,6 +2745,18 @@
 				</Sound>
 				<Sound Name="Tir4" ID="{3B7BD959-9B22-4BE3-9F12-CF5B67001BD5}" ShortID="511555625">
 					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{D3E6320D-6A0F-4454-A560-821C68C4B510}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="40"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Lowpass" Type="int16">
 							<ValueList>
@@ -2793,6 +2770,13 @@
 											<Property Name="Max" Type="Real64" Value="28"/>
 										</PropertyList>
 									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{A27DFC1C-29B9-43FA-889D-75CA206D07C6}"/>
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
@@ -2821,8 +2805,41 @@
 							<AudioFile>Tir4.wav</AudioFile>
 						</AudioFileSource>
 					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{B3E99733-8BD6-4AD5-9957-2CC6B17BEC90}"/>
+					</PositioningInfo>
 					<ActiveSourceList>
 						<ActiveSource Name="Tir4" ID="{07DDB360-E351-415E-9B54-8A6BDE31E561}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Decompte_01" ID="{58AC20C4-79A7-4842-BCAD-B0B1477A8024}" ShortID="71143519">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>510</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Tir3" ID="{C284A465-F293-4003-8C97-1C81BA87E4A7}" ShortID="830436615">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.864192807957155"/>
+								<Property Name="TrimEnd" Type="Real64" Value="2.66143840856924"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Tir3.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Tir3" ID="{C284A465-F293-4003-8C97-1C81BA87E4A7}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>
