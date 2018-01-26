@@ -6,6 +6,7 @@
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\marie\Desktop\Schmup\Tir"/>
 				<Property Name="Event Action List\{006824AF-CC0F-44BF-93C0-08E8AED93695}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{010F4F90-ED15-4413-863D-9A7D7F74B07C}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{0424BF71-DA8B-423E-AF24-747E4F651E96}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{06ACBE7E-1D7E-4502-8289-A895B6A2D222}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{0F22A32A-1D6E-4CB5-B3A8-FABDAFAF9E44}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{1110F595-0F0F-4631-8249-5CE829E51B40}\x64_Expand States" Type="string" Value=""/>
@@ -22,6 +23,8 @@
 				<Property Name="Event Action List\{762D987F-FBC2-4D64-907E-B191946BC25A}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{780A47A6-F6D9-4AEB-9772-1660C7F5E43C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{7A326901-ADAB-454F-9D62-DE291F86F439}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{7ACBD85E-A8DB-4AF1-B167-3FA8B08BCEC9}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{7EABB6E0-F4EB-4721-BD45-0592E7455637}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{890E29B6-D3A3-4C8B-8BEC-AE84F1F0EB7F}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{8C28941B-E547-486D-9863-6247832D1465}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{8C6B88EA-36A6-4A30-BBFE-8084A9447F4F}\x64_Expand States" Type="string" Value=""/>

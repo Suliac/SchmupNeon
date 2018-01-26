@@ -395,6 +395,62 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Decompte" ID="{0424BF71-DA8B-423E-AF24-747E4F651E96}">
+					<ChildrenList>
+						<Action Name="" ID="{1F2553F1-45F0-4DB6-AF9B-10587507053E}" ShortID="5805046">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Decompte" ID="{5346A04C-3067-44E1-8940-FFBA53D32F01}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Decompte_01" ID="{7EABB6E0-F4EB-4721-BD45-0592E7455637}">
+					<ChildrenList>
+						<Action Name="" ID="{DDE544BC-A91E-44E3-9D18-40094BC06640}" ShortID="138076286">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Decompte_01" ID="{58AC20C4-79A7-4842-BCAD-B0B1477A8024}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Score" ID="{7ACBD85E-A8DB-4AF1-B167-3FA8B08BCEC9}">
+					<ChildrenList>
+						<Action Name="" ID="{4134377C-4C37-4D79-9CA9-D8A46715EC9F}" ShortID="210339238">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Score" ID="{44785D46-48F8-4AD5-A61F-FC182256444A}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Score" ID="{C6D955D0-0FD1-45C7-8AA8-EFCDC69C6103}">
+					<ChildrenList>
+						<Action Name="" ID="{0B88F316-153A-4C0C-9229-07C6849447B3}" ShortID="1037810121">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Score" ID="{44785D46-48F8-4AD5-A61F-FC182256444A}" WorkUnitID="{7C3ADE90-11B1-446A-A57D-56768191C4B4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
