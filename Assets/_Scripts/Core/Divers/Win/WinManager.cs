@@ -307,6 +307,7 @@ public class WinManager : MonoBehaviour
             case VictoryStates.DisplayScore:
                 if (lastState != currentState)
                 {
+                    SoundManager.GetSingularity.PlayScoreSound();
                     for (int i = 0; i < playerScoreInUI.Count; i++)
                     {
                         playerScoreInUI[i].enabled = true;
@@ -409,6 +410,7 @@ public class WinManager : MonoBehaviour
             yield return null;
         }
 
+        SoundManager.GetSingularity.StopScore();
         NextState(); // Une fois les score mis a jours on passe à l'étape suivante
         coroutineScoreLaunched = false;
         yield return null;

@@ -5,7 +5,7 @@
   <CreateWwiseGlobal>true</CreateWwiseGlobal>
   <CreateWwiseListener>true</CreateWwiseListener>
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
-  <WwiseInstallationPathWindows>D:\Travail\Logiciels\WWise</WwiseInstallationPathWindows>
+  <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2017.1.3.6377</WwiseInstallationPathWindows>
   <WwiseInstallationPathMac>null</WwiseInstallationPathMac>
   <CreatedPicker>true</CreatedPicker>
 </WwiseSettings>

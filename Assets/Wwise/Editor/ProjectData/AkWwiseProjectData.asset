@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{8514F812-C151-4368-93E1-D1BC280C19AC}'
-    m_lastTimePsrt1: 141813381
-    m_lastTimePart2: -1999281144
+    m_lastTimePsrt1: 1610368895
+    m_lastTimePart2: -1999280967
     List:
     - Name: Play_Bulle
       Path: Default Work Unit\Play_Bulle
@@ -28,6 +28,26 @@ MonoBehaviour:
         ObjectType: 3
       ID: -1665140626
       Guid: 6ab2829f40a3aa4d9f612588f356b9c4
+      maxAttenuation: 0
+    - Name: Play_Decompte
+      Path: Default Work Unit\Play_Decompte
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Decompte
+        ObjectType: 3
+      ID: -1042243861
+      Guid: 71bf24048bda3e42af24747e4f651e96
+      maxAttenuation: 0
+    - Name: Play_Decompte_01
+      Path: Default Work Unit\Play_Decompte_01
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Decompte_01
+        ObjectType: 3
+      ID: -1972847329
+      Guid: e0b6ab7eebf42147bd450592e7455637
       maxAttenuation: 0
     - Name: Play_Explosion
       Path: Default Work Unit\Play_Explosion
@@ -189,6 +209,16 @@ MonoBehaviour:
       ID: -1655298994
       Guid: 2aa3220f6e1db54cb3a8fabdafaf9e44
       maxAttenuation: 0
+    - Name: Play_Score
+      Path: Default Work Unit\Play_Score
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Score
+        ObjectType: 3
+      ID: -1054917780
+      Guid: 5ed8cb7adba8f14ab1673fa8b08bcec9
+      maxAttenuation: 0
     - Name: Play_sfx_dead
       Path: Default Work Unit\Play_sfx_dead
       PathAndIcons:
@@ -278,6 +308,16 @@ MonoBehaviour:
         ObjectType: 3
       ID: 884225013
       Guid: 1b94288c47e56d4898636247832d1465
+      maxAttenuation: 0
+    - Name: Stop_Score
+      Path: Default Work Unit\Stop_Score
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Score
+        ObjectType: 3
+      ID: -2116744866
+      Guid: d055d9c6d10fc7458aa8efcdc69c6103
       maxAttenuation: 0
     - Name: Stop_Tir
       Path: Default Work Unit\Stop_Tir
@@ -382,6 +422,7 @@ MonoBehaviour:
   ExpandedItems:
   - /SHMUP_WwiseProject
   - /SHMUP_WwiseProject/Events
+  - /SHMUP_WwiseProject/Events/Default Work Unit
   - /SHMUP_WwiseProject/SoundBanks
   - /SHMUP_WwiseProject/SoundBanks/Default Work Unit
   - /SHMUP_WwiseProject/States

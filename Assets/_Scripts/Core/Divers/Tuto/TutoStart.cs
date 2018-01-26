@@ -218,11 +218,13 @@ public class TutoStart : MonoBehaviour
             if (!onChrono)
                 yield break;
             textChrono.text = currentChrono.ToString();
+            SoundManager.GetSingularity.PlayChronoSound();
             yield return new WaitForSeconds(1);
             currentChrono--;
         }
 
         textChrono.text = "Go !";
+        SoundManager.GetSingularity.PlayChronoFinalSound();
 
         for (int i = 0; i < 4; i++)
         {

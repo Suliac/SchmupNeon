@@ -2,6 +2,7 @@
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 /// <summary>
 /// description
 /// <summary>
@@ -200,6 +201,26 @@ public class SoundManager : MonoBehaviour
                 isPlayingShoot = false;
             }
         }
+    }
+
+    public void PlayChronoSound()
+    {
+        PlaySound("Play_Decompte");
+    }
+
+    public void PlayChronoFinalSound()
+    {
+        PlaySound("Play_Decompte_01");
+    }
+
+    public void PlayScoreSound()
+    {
+        PlaySound("Play_Score");
+    }
+
+    public void StopScore()
+    {
+        PlaySound("Stop_Score");
     }
     #endregion
 }
