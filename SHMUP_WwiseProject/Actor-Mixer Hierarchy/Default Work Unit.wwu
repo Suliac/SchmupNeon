@@ -1744,7 +1744,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2661,7 +2661,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-9</Value>
+								<Value>6</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -2721,6 +2721,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Decompte" ID="{5346A04C-3067-44E1-8940-FFBA53D32F01}" ShortID="1017267393">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
@@ -2760,7 +2767,7 @@
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Lowpass" Type="int16">
 							<ValueList>
-								<Value>46</Value>
+								<Value>20</Value>
 							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
@@ -2779,11 +2786,6 @@
 									<Modifier Name="" ID="{A27DFC1C-29B9-43FA-889D-75CA206D07C6}"/>
 								</ModifierInfo>
 							</ModifierList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-3</Value>
-							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
@@ -2819,6 +2821,11 @@
 								<Value>510</Value>
 							</ValueList>
 						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>9</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -2840,6 +2847,156 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="Tir3" ID="{C284A465-F293-4003-8C97-1C81BA87E4A7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Score_01" ID="{96C0733D-D72F-41DC-B89B-1029031BFAD2}" ShortID="129220691">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>34</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>60</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-30</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Tir1" ID="{18496004-DA08-4FFB-9A16-20C73B1D4437}" ShortID="441530984">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="9.10482019892892E-02"/>
+								<Property Name="TrimBegin" Type="Real64" Value="2.14231063504208E-02"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.131216526396328"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Tir1.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="788777704"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Tir1" ID="{18496004-DA08-4FFB-9A16-20C73B1D4437}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Score_02" ID="{6E64E1CB-C82F-4875-BE09-075373704B59}" ShortID="850335595">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>34</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>60</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>30</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Tir1" ID="{A5967714-1A1C-4F44-8960-35B1D60E00DC}" ShortID="517339470">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="9.10482019892892E-02"/>
+								<Property Name="TrimBegin" Type="Real64" Value="2.14231063504208E-02"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.131216526396328"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Tir1.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="788777704"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Tir1" ID="{A5967714-1A1C-4F44-8960-35B1D60E00DC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Score_03" ID="{B66BA17D-6FCC-42D3-BAFB-DE3933F923D4}" ShortID="667990831">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>34</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>60</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>280</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3DD6068D-43BD-4A05-8F2C-CCC3A2FF347F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D898FF07-5C12-49D3-B95C-F2AD7AF17D21}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Tir1" ID="{83C500D8-724A-4178-B0A5-67032E5F99FB}" ShortID="101920843">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="9.10482019892892E-02"/>
+								<Property Name="TrimBegin" Type="Real64" Value="2.14231063504208E-02"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.131216526396328"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Tir1.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="788777704"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Tir1" ID="{83C500D8-724A-4178-B0A5-67032E5F99FB}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>
