@@ -26,7 +26,7 @@
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Switches\Default Work Unit.wwu" DateLow="934384194" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="934394237" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\Schmup\SHMUP_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="934404396" DateHigh="30635037"/>
-	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="3398000273" DateHigh="30643764"/>
+	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="723969133" DateHigh="30643881"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="922913777" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="922993918" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="923014283" DateHigh="30635037"/>
@@ -35,7 +35,7 @@
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="923505803" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Effects\Default Work Unit.wwu" DateLow="923525318" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Effects\Factory Effects.wwu" DateLow="923767200" DateHigh="30635037"/>
-	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Events\Default Work Unit.wwu" DateLow="2919627944" DateHigh="30643499"/>
+	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Events\Default Work Unit.wwu" DateLow="552974400" DateHigh="30643874"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="923987774" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="2965559958" DateHigh="30643455"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="931687030" DateHigh="30635037"/>
@@ -44,10 +44,10 @@
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Presets\Default Work Unit.wwu" DateLow="933562084" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Queries\Default Work Unit.wwu" DateLow="933573288" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Queries\Factory Queries.wwu" DateLow="933582385" DateHigh="30635037"/>
-	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\SHMUP_WwiseProject.marie.wsettings" DateLow="3747299942" DateHigh="30643764"/>
+	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\SHMUP_WwiseProject.marie.wsettings" DateLow="821990279" DateHigh="30645768"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\SHMUP_WwiseProject.wproj" DateLow="934334171" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="967874024" DateHigh="30636429"/>
-	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="3397925068" DateHigh="30643764"/>
+	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="2317873329" DateHigh="30643882"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\States\Default Work Unit.wwu" DateLow="3506023806" DateHigh="30642449"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Switches\Default Work Unit.wwu" DateLow="934384194" DateHigh="30635037"/>
 	<ValidationCacheItem File="D:\shmup2\SHMUP_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="934394237" DateHigh="30635037"/>
