@@ -4,12 +4,12 @@
 		<Banks>
 			<Language ID="393239870">
 				<File Name="Init" Hash="3211469273" Timestamp="131614432134161933"/>
-				<File Name="SchmupSoundBank" Hash="2804903368" Timestamp="131614458384483203"/>
+				<File Name="SchmupSoundBank" Hash="3344622151" Timestamp="131641985099462744"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="3398588479" Timestamp="131614458384538231"/>
+				<File Name="" Hash="3398588479" Timestamp="131641985099507599"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
@@ -17,12 +17,12 @@
 		<Banks>
 			<Language ID="393239870">
 				<File Name="Init" Hash="2149792785" Timestamp="131614432206713331"/>
-				<File Name="SchmupSoundBank" Hash="2804903368" Timestamp="131614458400853597"/>
+				<File Name="SchmupSoundBank" Hash="3344622151" Timestamp="131641985133225750"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1990002437" Timestamp="131614458400903627"/>
+				<File Name="" Hash="1990002437" Timestamp="131641985133505941"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
@@ -30,12 +30,12 @@
 		<Banks>
 			<Language ID="393239870">
 				<File Name="Init" Hash="1701391936" Timestamp="131614432161298116"/>
-				<File Name="SchmupSoundBank" Hash="2804903368" Timestamp="131614458390942724"/>
+				<File Name="SchmupSoundBank" Hash="3344622151" Timestamp="131641985110909041"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="2886200102" Timestamp="131614458390987209"/>
+				<File Name="" Hash="2886200102" Timestamp="131641985111231568"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
@@ -43,12 +43,12 @@
 		<Banks>
 			<Language ID="393239870">
 				<File Name="Init" Hash="407263639" Timestamp="131614432181687194"/>
-				<File Name="SchmupSoundBank" Hash="2804903368" Timestamp="131614458397220565"/>
+				<File Name="SchmupSoundBank" Hash="3344622151" Timestamp="131641985122546438"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="2983757195" Timestamp="131614458397270616"/>
+				<File Name="" Hash="2983757195" Timestamp="131641985122863160"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
